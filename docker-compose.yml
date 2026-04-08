@@ -1,0 +1,128 @@
+version: '3.8'
+
+
+services:
+
+  backend:
+    container_name: backend
+    image: ghcr.io/smd-ka/smd-ka/backend:main
+    build:
+      context: ./backend
+      dockerfile: ./Dockerfile
+    environment:
+      AUTHENTIK_BEARER_TOKEN: ${AUTHENTIK_BEARER_TOKEN:-}
+      SMD_PRAYER_BOX_TARGET: ${SMD_PRAYER_BOX_TARGET:-}
+    volumes:
+      # this volume should be included in the Nextcloud AiO backup
+      - pb_data:/pb/pb_data
+      - ./backend/migrations:/pb/migrations
+    networks:
+      - default
+    restart: always
+
+  frontend:
+    container_name: frontend
+    image: ghcr.io/smd-ka/smd-ka/frontend:main
+    build:
+      context: ./frontend
+      dockerfile: ./Dockerfile
+    networks:
+      - default
+    restart: always
+
+  kings_cafe:
+    container_name: kings_cafe
+    image: ghcr.io/smd-ka/smd-ka/kings_cafe:main
+    build:
+      context: ./kings-cafe
+      dockerfile: ../frontend/Dockerfile
+    networks:
+      - default
+    restart: always
+
+  dokuwiki:
+    image: dokuwiki/dokuwiki:stable
+    restart: always
+    environment:
+      PHP_TIMEZONE: Europe/Berlin
+      #PHP_MEMORYLIMIT: 256M  #default is 256M
+      #PHP_UPLOADLIMIT: 128M #default is 128M
+    volumes:
+      # this volume should be included in the Nextcloud AiO backup
+      - dokuwiki_data:/storage
+    networks:
+      - default
+
+  caddy:
+    container_name: caddy
+    image: docker.io/library/caddy:2.8
+    environment:
+      DOMAIN_LONG: ${DOMAIN_LONG:-smd-karlsruhe.de}
+      DOMAIN_SHORT: ${DOMAIN_SHORT:-smd-ka.de}
+      DOMAIN_KINGS_CAFE: ${DOMAIN_KINGS_CAFE:-kings-cafe.de}
+      DOMAIN_LECTURE_TALK: ${DOMAIN_LECTURE_TALK:-hoersaalvortrag-ka.de}
+    ports:
+      - ${HTTP_PORT}:80
+      - ${HTTPS_PORT}:443
+      - ${HTTPS_PORT}:443/udp
+    networks:
+      - default
+      - caddy_net
+    volumes:
+      - ./caddy:/etc/caddy:ro
+      - caddy_config:/config
+      - caddy_data:/data
+    restart: always
+
+  # INFO: this does not automatically deploy a working Nextcloud instance
+  # rather one needs to initialize Nextcloud AiO via its web UI (see Caddyfile for URL)
+  # based on https://github.com/nextcloud/all-in-one/blob/main/compose.yaml
+  # adapted for reverse-proxy setup, see https://github.com/nextcloud/all-in-one/blob/main/reverse-proxy.md
+  nextcloud-aio:
+    # WARN: this container’s name MUST be set to this
+    container_name: nextcloud-aio-mastercontainer
+    image: nextcloud/all-in-one:latest
+    init: true
+    environment:
+      # binding of Nextcloud’s internal reverse proxy
+      APACHE_ADDITIONAL_NETWORK: caddy_net
+      APACHE_IP_BINDING: 127.0.0.1  # <- binding applied by Docker (i.e. outside of container)
+      APACHE_PORT: 8081  # is also used as internal port
+      SKIP_DOMAIN_VALIDATION: "true"  # does not work for us anyway
+    ports:
+      # binding of Nextcloud AiO web UI
+      - 127.0.0.1:8080:8080
+    volumes:
+      - nextcloud_aio_mastercontainer:/mnt/docker-aio-config
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+    network_mode: bridge  # attaches to "docker run"-bridge
+
+
+networks:
+  default:
+    driver: bridge
+
+  # network for other docker-composes to attach to
+  # how to use this network:
+  # - (usually requires control over docker-compose of that service)
+  # - throw service container in this network
+  # - do NOT add a "ports:" binding to that container
+  # - instead, give that container an unique alias
+  # - in the Caddyfile, use that alias to reach the service
+  caddy_net:
+    name: caddy_net
+    driver: bridge
+    attachable: true  # allow containers outside any compose to attach
+
+
+volumes:
+  caddy_config:
+  caddy_data:
+  # WARN: this is ONLY the config & data of the master container
+  # Nextcloud will create its own volume not listed here to store its data (i.e. user data)
+  nextcloud_aio_mastercontainer:
+    # WARN: this volume’s name MUST be set to this
+    name: nextcloud_aio_mastercontainer
+  pb_data:
+  dokuwiki_data:
