@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Saos from 'saos';
-	import header from '$lib/assets/pages/home/background_kings_cafe.jpg';
+	import header from '$lib/assets/pages/home/hoffnungstage_flyer_front.png';
 	import {
 		faArrowDown,
 		faArrowUpRightFromSquare,
@@ -12,10 +12,6 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import HeroShot from '$lib/components/HeroShot.svelte';
 	import type { PageData } from './$types';
-	import trailer from '$lib/assets/pages/home/trailer_compressed.mp4';
-	import logo from '$lib/assets/logos/kings-cafe_white.svg';
-	import logo_black from '$lib/assets/logos/kings-cafe.svg';
-	import evening from '$lib/assets/pages/home/evening.jpg';
 	import { faTelegram } from '@fortawesome/free-brands-svg-icons';
 	import { onDestroy, onMount } from 'svelte';
 	import { browser } from '$app/environment';
@@ -81,9 +77,9 @@
 </script>
 
 <HeroShot imgSrc={header} bgPosition={'bg-[center_left_60%]'}>
-	<div class="text-grey absolute top-1/2 flex w-full -translate-y-1/2 justify-center text-center">
-		<img src={logo} alt="Kings Cafe Logo" class="" />
-	</div>
+	<div
+		class="absolute top-1/2 flex w-full -translate-y-1/2 justify-center text-center text-grey"
+	></div>
 </HeroShot>
 
 <main class="container mx-auto flex flex-col gap-24 px-4 py-12 text-lg">
@@ -92,7 +88,7 @@
 		animation_out={'slide-out-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
 	>
 		<div class="flex flex-col items-center">
-			<h1 class="font-caveat text-center">Every Sunday 7 PM</h1>
+			<h1 class="text-center font-caveat">Every Sunday 7 PM</h1>
 			<div class="flex gap-4 max-md:flex-col">
 				<a
 					class="fa bg-primary px-4 py-2 text-lg text-white no-underline hover:underline md:text-2xl"
@@ -139,7 +135,7 @@
 		<div class="flex justify-center py-8">
 			<a
 				href="#trailer"
-				class="bg-primary flex items-center gap-2 px-4 py-2 text-white no-underline hover:underline"
+				class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
 			>
 				Sneak Peak (Trailer)
 				<Fa icon={faArrowDown} />
@@ -152,15 +148,15 @@
 
 		{#if browser && data.events}
 			<Carousel infinite={false} particlesToShow={mobileScreen ? 1 : 3} bind:this={carousel}>
-				<div slot="prev" class="text-grey grid items-center p-2 text-3xl lg:text-5xl">
+				<div slot="prev" class="grid items-center p-2 text-3xl text-grey lg:text-5xl">
 					<button on:click={carousel.goToPrev}> <Fa icon={faChevronLeft} /></button>
 				</div>
 
 				{#each data.events.items as event}
 					<div class="md:p-4">
 						<div class="h-full border border-gray-400 shadow-md">
-							<div class="bg-grey rounded-t-md p-4 py-12">
-								<h3 class="text-primary text-center">{event.title_en || event.title}</h3>
+							<div class="rounded-t-md bg-grey p-4 py-12">
+								<h3 class="text-center text-primary">{event.title_en || event.title}</h3>
 								<div class="py-2 text-base font-bold text-white">
 									{getFullDate(event.start_date_time, event.end_date_time)}
 								</div>
@@ -188,7 +184,7 @@
 					</div>
 				{/each}
 
-				<div slot="next" class="text-grey grid items-center p-2 text-3xl lg:text-5xl">
+				<div slot="next" class="grid items-center p-2 text-3xl text-grey lg:text-5xl">
 					<button on:click={carousel.goToNext}> <Fa icon={faChevronRight} /></button>
 				</div>
 			</Carousel>
@@ -205,13 +201,7 @@
 			animation={'slide-in-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
 			animation_out={'slide-out-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
 		>
-			<div class="flex justify-center">
-				<video class="py-16" poster={logo_black} controls>
-					<source src={trailer} type="video/mp4" />
-					<track kind="captions" />
-					Your browser does not support the video tag.
-				</video>
-			</div>
+			<div class="flex justify-center"></div>
 		</Saos>
 	</section>
 

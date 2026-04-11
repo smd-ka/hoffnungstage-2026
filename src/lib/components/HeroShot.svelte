@@ -4,6 +4,7 @@
 
 	export let imgSrc: string;
 	export let bgPosition: string = 'bg-center';
+	export let bgBrightness: string = '50';
 	export let height: string = 'h-dvh';
 
 	let resizeObserver: ResizeObserver;
@@ -31,7 +32,7 @@
 <section id="header_section" class="{height} -mb-[72px]">
 	<div
 		id="header_image"
-		class=" absolute top-0 {height} w-full bg-red-300 bg-cover brightness-50 {bgPosition}"
+		class=" absolute top-0 {height} w-full bg-red-300 bg-cover brightness-{bgBrightness} {bgPosition}"
 		style="background-image: url({imgSrc});"
 	></div>
 	<slot />

@@ -20,7 +20,7 @@ const config = {
 				background: 'hsl(var(--background) / <alpha-value>)',
 				foreground: 'hsl(var(--foreground) / <alpha-value>)',
 				'primary-text': '#212427',
-				primary: '#E84C05',
+				primary: '#FC6431',
 				grey: '#323232',
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
