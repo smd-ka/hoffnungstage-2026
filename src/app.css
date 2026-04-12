@@ -114,16 +114,20 @@
 }
 
 @layer components {
-  .card {
-    @apply bg-white rounded-md p-4 md:p-8 shadow-md;
-  }
 
   .main {
-    @apply px-2 xs:px-4 py-12 text-base xs:text-lg;
+    @apply px-2 xs:px-4;
+    @apply py-12;
+    @apply text-base xs:text-lg;
   }
 
   .pad {
-    @apply xl:px-40 px-4;
+    @apply px-4 xl:px-40;
+  }
+
+  .card {
+    @apply p-4 md:p-8;
+    @apply bg-white rounded-md shadow-md;
   }
 
   .fa {
