@@ -50,10 +50,12 @@
 >
 	<div class="absolute top-1/2 flex w-full -translate-y-1/2 justify-center text-center text-white">
 		<div class="flex flex-col items-center gap-4">
-			<h1 class="hyphens-manual text-5xl normal-case md:text-9xl">
+			<h1 class="xs:text-5xl hyphens-manual text-3xl md:text-7xl xl:text-8xl">
 				<span class="title-serif">Hoffnungs</span>&shy;<span class="title-caveat">tage</span>
 			</h1>
-			<div class="subtitle-generic flex flex-col gap-4 text-2xl md:gap-8 md:text-5xl">
+			<div
+				class="subtitle-generic xs:text-2xl flex flex-col gap-4 text-xl md:gap-8 md:text-4xl xl:text-5xl"
+			>
 				<p>
 					<Fa icon={faCalendarDays} class="mr-1 inline" alt="Datum" /> 08. - 11.06.2026
 				</p>
@@ -66,14 +68,14 @@
 	</div>
 </HeroShot>
 
-<main class="container mx-auto flex flex-col gap-8 px-4 py-12 text-lg md:gap-24" lang="de">
+<main class="main container mx-auto flex flex-col gap-8 md:gap-24" lang="de">
 	<!-- Über die Hoffnungtage -->
 	<Saos
 		animation={'slide-in-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
 		animation_out={'slide-out-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
 	>
 		<section class="pad">
-			<h3 class="pb-4 text-center text-5xl max-md:hidden">Über die Hoffnungstage</h3>
+			<h1 class="pb-4 text-center">Über die Hoffnungstage</h1>
 			<div class="grid gap-4 py-4 md:grid-cols-2">
 				<div>
 					<h3>Was erwartet dich?</h3>
@@ -128,13 +130,13 @@
 
 	<!-- Programm Section -->
 	<section class="pad">
-		<h3 class="pb-4 text-center text-5xl">Programm</h3>
+		<h1 class="pb-4 text-center">Programm</h1>
 		<p class="text-center">Unser Programm wird hier in wenigen Wochen hier zu sehen sein.</p>
 	</section>
 
 	<!-- Wer wir sind -->
 	<section class="pad">
-		<h3 class="pb-4 text-center text-5xl">Wer wir sind</h3>
+		<h1 class="pb-4 text-center">Wer wir sind</h1>
 		<p class="pb-4 text-center">
 			Die Hoffnungstage werden organisiert von den Hochschulgruppen <b>SfC</b> und <b>SMD</b>.
 		</p>
@@ -184,7 +186,7 @@
 
 	<!-- Spenden Section -->
 	<section class="pad">
-		<h3 class="pb-4 text-center text-5xl">Spenden</h3>
+		<h1 class="pb-4 text-center">Spenden</h1>
 		<p class="hyphens-auto pb-4 text-center">
 			Die Hoffnungstage sind für alle kostenlos. Damit das möglich ist, sind wir auf Unterstützung
 			angewiesen.
@@ -215,7 +217,7 @@
 
 	<!-- Mitarbeit Section -->
 	<section class="pad">
-		<h3 class="pb-4 text-center text-5xl">Mitarbeit</h3>
+		<h1 class="pb-4 text-center">Mitarbeit</h1>
 		<p class="hyphens-auto pb-4">
 			Du bist engagiert und möchtest mitarbeiten? Tritt der WhatsApp Community im Bereich Mitarbeit
 			bei, und sei vor Ort dabei!
@@ -241,7 +243,7 @@
 
 	<!-- Kontakt Section -->
 	<section class="pad">
-		<h3 class="pb-4 text-center text-5xl">Kontakt</h3>
+		<h1 class="pb-4 text-center">Kontakt</h1>
 		<p class="hyphens-auto pb-4 text-center">
 			Du hast Fragen oder willst mehr wissen? 👉 Schreib uns gerne:
 		</p>
@@ -258,6 +260,11 @@
 </main>
 
 <style>
+	h1,
+	h2 {
+		@apply normal-case;
+	}
+
 	h3 {
 		@apply overflow-visible;
 	}

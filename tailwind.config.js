@@ -56,6 +56,10 @@ const config = {
 				sans: ['roboto', 'sans-serif'],
 				mincho: ['Shippori Mincho B1', 'serif'],
 				caveat: ['Caveat Variable', 'cursive']
+			},
+			screens: {
+				/* the point where the logos in the topbar would begin to shrink on too small mobile devices */
+				'xs': '380px',
 			}
 		}
 	}

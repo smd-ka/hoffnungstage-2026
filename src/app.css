@@ -92,15 +92,15 @@
   }
 
   h1 {
-    @apply md:text-5xl text-4xl font-bold uppercase pb-8;
+    @apply text-3xl xs:text-4xl md:text-5xl font-bold uppercase pb-8;
   }
 
   h2 {
-    @apply md:text-4xl text-3xl font-bold uppercase pb-4;
+    @apply text-2xl xs:text-3xl md:text-4xl font-bold uppercase pb-4;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-bold;
+    @apply text-xl xs:text-2xl md:text-3xl font-bold;
   }
 
   b {
@@ -115,11 +115,11 @@
 
 @layer components {
   .card {
-    @apply bg-white rounded-md p-8 shadow-md;
+    @apply bg-white rounded-md p-4 md:p-8 shadow-md;
   }
 
   .main {
-    @apply flex flex-col gap-24 justify-center container mx-auto py-24;
+    @apply px-2 xs:px-4 py-12 text-base xs:text-lg;
   }
 
   .pad {
