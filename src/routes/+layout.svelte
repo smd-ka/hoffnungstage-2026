@@ -117,22 +117,26 @@
 				</div>
 
 				<section
-					class="mt-16 grid grid-cols-[1fr_9rem] border-t-[1px] border-[#BEBEBE] py-3 max-md:flex-col"
+					class="mt-16 grid grid-cols-[1fr_auto] border-t-[1px] border-[#BEBEBE] py-3 max-md:flex-col"
 				>
-					<div class="underline-a flex flex-wrap pt-1 max-md:flex-col md:gap-8">
+					<div class="underline-a flex flex-wrap pt-1 max-md:flex-col max-md:gap-1 md:gap-8">
 						<a href="https://smd-karlsruhe.de/imprint">Impressum</a>
 						<a href="https://smd-karlsruhe.de/privacy">Datenschutz</a>
 					</div>
 
-					<div class="flex gap-4 max-md:flex-col max-md:items-end md:items-center md:justify-end">
-						<a href="https://www.instagram.com/smd_karlsruhe/" class="flex items-center">
+					<div
+						class="flex max-md:flex-col max-md:items-end max-md:gap-1 md:items-center md:justify-end md:gap-6"
+					>
+						<a href="https://www.instagram.com/smd_karlsruhe/" class="flex items-center gap-2">
+							<img src={smd_logo} alt="SMD Logo" class="h-auto w-10" />
 							<img src={insta} alt="Instagram Logo" class="w-10" />
 						</a>
-						<a href="https://www.instagram.com/sfckarlsruhe/" class="flex items-center">
+						<a href="https://www.instagram.com/sfckarlsruhe/" class="flex items-center gap-2">
+							<img src={sfc_logo} alt="SfC Logo" class="h-auto w-10" />
 							<img src={insta} alt="Instagram Logo" class="w-10" />
 						</a>
 						<a class="pr-1 text-3xl" href="mailto:leitung@aktionstage-ka.de">
-							<Fa icon={faEnvelope} />
+							<Fa icon={faEnvelope} alt="Mail" />
 						</a>
 					</div>
 				</section>
