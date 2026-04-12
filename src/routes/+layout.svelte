@@ -31,13 +31,14 @@
 				"
 		>
 			<a class="fond-bold flex basis-full items-center gap-2 py-0" href="https://sfc-karlsruhe.de">
-				<img class="max-h-14" src={sfc_logo} alt="SfC" />
+				<img class="xs:max-h-10 max-h-8 md:max-h-14" src={sfc_logo} alt="SfC" />
 				<span class="sfc-font text-2xl text-white max-md:hidden">Karlsruhe</span>
 			</a>
 
 			<a class="flex justify-center gap-4 md:basis-full" href="/">
 				<p
-					class="static-fade-in text-4xl text-white delay-100 {onMainPage && !scrolledBelowHeroShot
+					class="static-fade-in xs:text-3xl text-2xl text-white delay-100 md:text-4xl {onMainPage &&
+					!scrolledBelowHeroShot
 						? 'opacity-0'
 						: 'opacity-100'}"
 				>
@@ -51,7 +52,11 @@
 				href="https://smd-karlsruhe.de"
 			>
 				<img class="max-h-7 max-md:hidden" src={smd_ka_logo} alt="Hochschul-SMD Karlsruhe" />
-				<img class="max-h-7 md:hidden" src={hs_smd_logo_white} alt="Hochschul-SMD Karlsruhe" />
+				<img
+					class="xs:max-h-5 max-h-4 md:hidden"
+					src={hs_smd_logo_white}
+					alt="Hochschul-SMD Karlsruhe"
+				/>
 			</a>
 		</div>
 
