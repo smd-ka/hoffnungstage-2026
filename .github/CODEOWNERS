@@ -1,0 +1,14 @@
+# repository configuration
+/.github/ @smd-ka/admins
+
+# editor configurations
+/.vscode/ @smd-ka/admins
+
+# other dev environment stuff
+.envrc @smd-ka/admins
+/flake.lock @smd-ka/admins
+/flake.nix @smd-ka/admins
+
+# Deployment relevant
+docker-compose.yml @smd-ka/admins
+Dockerfile @smd-ka/admins
