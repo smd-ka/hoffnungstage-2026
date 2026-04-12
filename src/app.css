@@ -116,13 +116,13 @@
 @layer components {
 
   .main {
-    @apply px-2 xs:px-4;
+    @apply px-2 sm:px-4;
     @apply py-12;
     @apply text-base xs:text-lg;
   }
 
   .pad {
-    @apply px-4 xl:px-40;
+    @apply px-2 xs:px-4 xl:px-40;
   }
 
   .card {
