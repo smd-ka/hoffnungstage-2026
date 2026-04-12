@@ -12,3 +12,4 @@
 # Deployment relevant
 docker-compose.yml @smd-ka/admins
 Dockerfile @smd-ka/admins
+/package.json @smd-ka/admins
