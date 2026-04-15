@@ -1,16 +1,9 @@
 <script lang="ts">
-	import Saos from 'saos';
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
-	import flyer_front from '$lib/assets/pages/home/flyer_front.png';
 	import sfc_logo from '$lib/assets/logos/sfc-white.png';
 	import smd_logo from '$lib/assets/logos/Hochschul-SMD_kurz_weiß.png';
-	import spenden_qr from '$lib/assets/qr-codes/hoffnungstage-spenden.jpg';
-	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 
-	import whatsapp_qr_link from '$lib/assets/qr-codes/whatsapp_group.png';
-	import whatsapp_qr_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_Green_RGB_2026.svg';
-
-	import { faCalendarDays, faEnvelope, faMap } from '@fortawesome/free-solid-svg-icons';
+	import { faEnvelope, faHandHoldingHeart } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
 </script>
 
@@ -31,6 +24,13 @@
 		<div class="absolute bottom-16 left-16 font-league font-semibold tracking-tighter xl:text-6xl">
 			08. - 11.06.2026
 		</div>
+		<a
+			href="/helfen"
+			class="absolute bottom-[4.5rem] right-16 flex items-center gap-2 rounded-full bg-indigo-500 p-4 text-white no-underline hover:underline md:py-2"
+		>
+			<Fa icon={faHandHoldingHeart} />
+			<span class="max-md:hidden"> unterstützen </span>
+		</a>
 	</section>
 
 	<!-- Worauf hoffst du? -->
