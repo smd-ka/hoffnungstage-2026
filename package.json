@@ -36,6 +36,8 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/caveat": "^5.0.18",
+		"@fontsource-variable/league-spartan": "^5.2.8",
+		"@fontsource/poppins": "^5.2.7",
 		"@fontsource/shippori-mincho-b1": "^5.0.17",
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",
 		"@fortawesome/free-solid-svg-icons": "^6.4.2",

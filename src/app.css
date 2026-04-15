@@ -2,136 +2,67 @@
 @tailwind components;
 @tailwind utilities;
 
-
-/* see: https://gwfh.mranftl.com/fonts/poppins?subsets=latin */
-/* poppins-300 - latin */
-@font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 300;
-  src: url('/fonts/poppins-v24-latin-300.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-.sfc-font {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-}
-
-
-/* "Hochschul""tage" text font */
-/* imitates the design from Canva */
-/* official font is 'Times New Roman' */
-
-.title-generic {
-  /*
-    we prefer Noto Serif because:
-    - Linux systems (including Android) have 'Times New Roman' not installed
-    - some rather fallback to 'Liberation Sans', which is equivally metric, but does look a lot different than 'Times New Roman'
-    - 'Noto Serif' looks way better in comparison
-    - Windows systems, which have 'Times New Roman' installed, usually do not have 'Noto Serif' installed
-  */
-  font-family: 'Noto Serif', 'Times New Roman', Times, serif;
-}
-
-.title-serif {
-  @apply title-generic;
-  font-weight: 800;
-}
-
-.title-caveat {
-  @apply title-generic;
-  font-style: italic;
-  font-weight: 400;
-}
-
-
-/* subtitle font from official flyer */
-/* league-spartan-700 - latin */
-@font-face {
-  font-display: swap;
-  /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-  font-family: 'League Spartan';
-  font-style: normal;
-  font-weight: 700;
-  src: url('../fonts/league-spartan-v15-latin-700.woff2') format('woff2');
-  /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-.subtitle-generic {
-  font-family: 'League Spartan', sans-serif;
-}
-
-
 .flex-vert-center {
-  @apply flex items-center justify-center;
+	@apply flex items-center justify-center;
 }
 
-
-
+.title-italic {
+	@apply font-normal italic;
+}
 
 @layer base {
+	html {
+		/* make overflow scrolling look better */
+		/* i.e. use same color as navbar & footer */
+		@apply bg-grey;
+		scroll-behavior: smooth;
+	}
 
-  html {
-    /* make overflow scrolling look better */
-    /* i.e. use same color as navbar & footer */
-    @apply bg-grey;
-  }
+	body {
+		@apply text-primary-text;
+		@apply xl:text-lg;
+		/* revert overwritten background color */
+		/* @apply bg-white; */
+	}
 
-  body {
-    @apply text-primary-text;
-    @apply xl:text-lg;
-    /* revert overwritten background color */
-    @apply bg-white;
-  }
+	p > a {
+		@apply underline hover:no-underline;
+	}
 
-  p>a {
-    @apply underline hover:no-underline;
-  }
+	h1 {
+		@apply font-roman py-6 text-4xl font-bold tracking-tighter md:text-5xl xl:text-7xl;
+	}
 
-  h1 {
-    @apply text-3xl xs:text-4xl md:text-5xl font-bold uppercase pb-8;
-  }
+	h2 {
+		@apply py-4 text-xl md:text-2xl xl:text-4xl;
+	}
 
-  h2 {
-    @apply text-2xl xs:text-3xl md:text-4xl font-bold uppercase pb-4;
-  }
+	h3 {
+		@apply text-sm md:text-lg xl:text-xl;
+	}
 
-  h3 {
-    @apply text-xl xs:text-2xl md:text-3xl font-bold;
-  }
+	b {
+		@apply font-bold;
+	}
 
-  b {
-    @apply font-bold;
-  }
-
-  i {
-    @apply italic
-  }
-
+	i {
+		@apply italic;
+	}
 }
 
 @layer components {
+	.main {
+		@apply px-2 sm:px-4;
+		@apply py-12;
+		@apply text-base xs:text-lg;
+	}
 
-  .main {
-    @apply px-2 sm:px-4;
-    @apply py-12;
-    @apply text-base xs:text-lg;
-  }
+	.card {
+		@apply p-4 md:p-8;
+		@apply rounded-md bg-white shadow-md;
+	}
 
-  .pad {
-    @apply px-2 xs:px-4 xl:px-40;
-  }
-
-  .card {
-    @apply p-4 md:p-8;
-    @apply bg-white rounded-md shadow-md;
-  }
-
-  .fa {
-    @apply flex items-center gap-2;
-  }
-
+	.fa {
+		@apply flex items-center gap-2;
+	}
 }

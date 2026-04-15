@@ -2,70 +2,100 @@
 	import '../app.css';
 	import '@fontsource-variable/caveat';
 	import '@fontsource/shippori-mincho-b1';
+	import '@fontsource-variable/league-spartan';
+	import '@fontsource/poppins';
 
 	import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 	import hs_smd_logo_white from '$lib/assets/logos/Hochschul-SMD_kurz_weiß.png';
 	import smd_logo from '$lib/assets/logos/Hochschul-SMD_kurz_weiß.png';
-	import sfc_logo from '$lib/assets/logos/sfc.png';
+	import sfc_logo from '$lib/assets/logos/sfc-white.png';
 	import insta from '$lib/assets/logos/insta.svg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import { headerImageHeight } from '$lib/stores';
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
 	import { page } from '$app/stores';
+	import { onDestroy, onMount } from 'svelte';
 
 	let scrollY: number;
 	const navbarHeight = 90;
 	$: onMainPage = $page.url.pathname === '/';
 	$: scrolledBelowHeroShot = scrollY > $headerImageHeight - navbarHeight;
+
+	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
+	onMount(() => {
+		headerImageHeight.set(window.innerHeight);
+
+		const handleResize = () => {
+			headerImageHeight.set(window.innerHeight);
+		};
+
+		window.addEventListener('resize', handleResize);
+
+		onDestroy(() => {
+			window.removeEventListener('resize', handleResize);
+			headerImageHeight.set(0);
+		});
+	});
 </script>
 
 <svelte:window bind:scrollY />
 <main class="flex min-h-screen flex-col">
-	<nav class="sticky top-0 z-50 flex flex-[0_1_auto] flex-col shadow-md">
-		<div
-			class="{scrolledBelowHeroShot
-				? 'bg-grey'
-				: 'bg-transparent backdrop-blur-lg backdrop-brightness-90'} static-fade-in flex items-center justify-between gap-4 px-4
-				py-3
-				"
-		>
-			<a class="fond-bold flex basis-full items-center gap-2 py-0" href="https://sfc-karlsruhe.de">
-				<img class="xs:max-h-10 max-h-8 md:max-h-14" src={sfc_logo} alt="SfC" />
-				<span class="sfc-font text-2xl text-white max-md:hidden">Karlsruhe</span>
-			</a>
-
-			<a class="flex justify-center gap-4 md:basis-full" href="/">
-				<p
-					class="static-fade-in xs:text-3xl text-2xl text-white delay-100 md:text-4xl {onMainPage &&
-					!scrolledBelowHeroShot
-						? 'opacity-0'
-						: 'opacity-100'}"
-				>
-					<span class="title-serif">Hoffnungs</span><span class="title-caveat">tage</span>
-				</p>
-			</a>
-
-			<!-- class="fond-bold flex items-center gap-2 py-2 font-mincho text-2xl text-white md:basis-full" -->
-			<a
-				class="flex basis-full items-center justify-end gap-4 py-2 text-xl text-white"
-				href="https://smd-karlsruhe.de"
+	<nav class="fixed top-0 z-50 flex w-full flex-[0_1_auto] flex-col">
+		<div class="relative flex items-center justify-between gap-4 overflow-hidden px-4 py-1">
+			<div
+				class="static-fade-in pointer-events-none absolute inset-0 bg-gradient-to-r from-orange-400 from-20% via-pink-500 to-indigo-500 {onMainPage &&
+				!scrolledBelowHeroShot
+					? 'opacity-0'
+					: 'opacity-100'}"
+			></div>
+			<div
+				class="relative flex w-full items-center justify-between {onMainPage &&
+				!scrolledBelowHeroShot
+					? 'opacity-0'
+					: 'opacity-100'}"
 			>
-				<img class="max-h-7 max-md:hidden" src={smd_ka_logo} alt="Hochschul-SMD Karlsruhe" />
-				<img
-					class="xs:max-h-5 max-h-4 md:hidden"
-					src={hs_smd_logo_white}
-					alt="Hochschul-SMD Karlsruhe"
-				/>
-			</a>
+				<div>
+					<a class="flex justify-center gap-4 md:basis-full" href="/">
+						<p
+							class="font-roman static-fade-in text-2xl text-white delay-100 xs:text-3xl md:text-4xl"
+						>
+							<span>Hoffnungs</span><span class="title-italic">tage</span>
+						</p>
+					</a>
+				</div>
+
+				<div class="flex gap-2 text-white">
+					<div class="hidden self-end pb-4 text-xs md:inline">veranstaltet von</div>
+					<a
+						class="flex items-center gap-4 py-2 text-xl text-white"
+						href="https://smd-karlsruhe.de"
+					>
+						<img class="max-h-7 max-md:hidden" src={smd_ka_logo} alt="Hochschul-SMD Karlsruhe" />
+						<img
+							class="max-h-4 xs:max-h-5 md:hidden"
+							src={hs_smd_logo_white}
+							alt="Hochschul-SMD Karlsruhe"
+						/>
+					</a>
+					<div class="self-center">&</div>
+					<a
+						class="flex items-center gap-1 py-2 text-xl text-white"
+						href="https://sfc-karlsruhe.de/"
+					>
+						<img class="max-md:max-h-4 xs:max-h-5 md:max-h-10" src={sfc_logo} alt="SFC Karlsruhe" />
+						<span class="hidden text-2xl text-white md:inline">Karlsruhe</span>
+					</a>
+				</div>
+			</div>
 		</div>
 
-		<div class="h-1 bg-primary"></div>
+		<div class="bg-green h1"></div>
 	</nav>
 
 	<!-- -------- begin content --------- -->
 
-	<div class=" flex-[1_1_auto]">
+	<div class="flex-[1_1_auto] {onMainPage ? '' : 'pt-[90px]'}">
 		<slot />
 	</div>
 

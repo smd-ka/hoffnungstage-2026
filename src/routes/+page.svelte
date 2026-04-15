@@ -1,9 +1,9 @@
 <script lang="ts">
 	import Saos from 'saos';
-	import flyer_background from '$lib/assets/pages/home/flyer_background.png';
+	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import flyer_front from '$lib/assets/pages/home/flyer_front.png';
-	import sfc_logo from '$lib/assets/logos/sfc.png';
-	import smd_logo from '$lib/assets/logos/Hochschul-SMD_kurz.png';
+	import sfc_logo from '$lib/assets/logos/sfc-white.png';
+	import smd_logo from '$lib/assets/logos/Hochschul-SMD_kurz_weiß.png';
 	import spenden_qr from '$lib/assets/qr-codes/hoffnungstage-spenden.jpg';
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 
@@ -12,158 +12,102 @@
 
 	import { faCalendarDays, faEnvelope, faMap } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
-	import HeroShot from '$lib/components/HeroShot.svelte';
-	import QrLogoEmbedding from '$lib/components/QrLogoEmbedding.svelte';
-	import { onDestroy, onMount } from 'svelte';
-	import { browser } from '$app/environment';
-
-	let mobileScreen = true;
-
-	onMount(() => {
-		if (browser) {
-			updateScreenWidth();
-			window.addEventListener('resize', updateScreenWidth);
-		}
-	});
-
-	onDestroy(() => {
-		if (browser) {
-			window.removeEventListener('resize', updateScreenWidth);
-		}
-	});
-
-	function updateScreenWidth() {
-		const md = 768;
-		if (window.innerWidth >= md) {
-			return (mobileScreen = false);
-		}
-		mobileScreen = true;
-	}
 </script>
 
-<!-- Hero Section -->
-<HeroShot
-	imgSrc={flyer_background}
-	bgPosition={'bg-[center_left_60%]'}
-	bgBrightness={'70'}
-	height={'h-dvh'}
+<main
+	class="min-h-screen bg-cover bg-fixed bg-center"
+	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background_blended})"
 >
-	<div class="absolute top-1/2 flex w-full -translate-y-1/2 justify-center text-center text-white">
-		<div class="flex flex-col items-center gap-4">
-			<h1 class="xs:text-5xl hyphens-manual text-3xl md:text-7xl xl:text-8xl">
-				<span class="title-serif">Hoffnungs</span>&shy;<span class="title-caveat">tage</span>
-			</h1>
-			<div
-				class="subtitle-generic xs:text-2xl flex flex-col gap-4 text-xl md:gap-8 md:text-4xl xl:text-5xl"
-			>
-				<p>
-					<Fa icon={faCalendarDays} class="mr-1 inline" alt="Datum" /> 08. - 11.06.2026
-				</p>
-				<p>
-					<Fa icon={faMap} class="mr-1 inline" alt="Ort" /> Forumswiese am KIT<br />& an der PH
-					Karlsruhe
-				</p>
-			</div>
+	<section class="screen">
+		<div class="absolute right-16 top-16 font-league font-semibold tracking-wide xl:text-6xl">
+			KARLSRUHE
 		</div>
-	</div>
-</HeroShot>
-
-<main class="main container mx-auto flex flex-col gap-8 md:gap-24" lang="de">
-	<!-- Über die Hoffnungtage -->
-	<Saos
-		animation={'slide-in-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
-		animation_out={'slide-out-bottom 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both'}
-	>
-		<section class="pad">
-			<h1 class="pb-4 text-center">Über die Hoffnungstage</h1>
-			<div class="grid gap-4 py-4 md:grid-cols-2">
-				<div>
-					<h3>Was erwartet dich?</h3>
-					<p class="hyphens-auto">
-						Die Hoffnungstage sind das Event im Sommersemester! Dich erwarten spannende Vorträge,
-						vielfältige Aktivitäten und die Möglichkeit, für ein paar Tage aus dem Studienalltag
-						auszubrechen.
-					</p>
-					<p class="hyphens-auto">
-						Die Hoffnungstage sind ein gemeinsames Studentenprojekt von <b>SfC</b> und <b>SMD</b>.
-						Wir möchten einen offenen Raum auf dem Campus schaffen, in dem Studierende innehalten,
-						Gemeinschaft erleben und sich mit Fragen nach Sinn, Glauben und Hoffnung beschäftigen
-						können.
-					</p>
-					<p class="hyphens-auto">
-						Im Zentrum steht die Hoffnung, die viele von uns im christlichen Glauben entdecken –
-						gleichzeitig gilt: <b>Du bist willkommen, egal wo du stehst.</b>
-					</p>
-					<p class="hyphens-auto">
-						Mitten im Campusalltag laden die Hoffnungstage dazu ein, kurz auszubrechen, ins Gespräch
-						zu kommen und neue Perspektiven mitzunehmen.
-					</p>
-				</div>
-				<img
-					src={flyer_front}
-					class="w-full object-cover max-md:order-first"
-					alt="Hoffnungstage vor Ort"
-				/>
-			</div>
-			<p>Wir wünschen uns, dass die Hoffnungstage ein Ort sind, an dem du:</p>
-			<ul class="list-disc pl-6">
-				<li>über die wirklich wichtigen Themen im Leben nachdenken kannst</li>
-				<li>neue Perspektiven auf Glaube und Hoffnung kennenlernst</li>
-				<li>Gemeinschaft erlebst und dich willkommen fühlst</li>
-			</ul>
-			<p class="hyphens-auto">
-				In Zentrum steht dabei die Hoffnung, die viele von uns im christlichen Glauben entdecken –
-				eine Hoffnung, die Identität geben und inneren Frieden schenken kann. Gleichzeitig ist uns
-				wichtig: <b>Du musst nichts glauben, um dabei zu sein.</b>
-			</p>
-			<p class="hyphens-auto">
-				Die Hoffnungstage sollen bewusst mitten auf dem Campus stattfinden – dort, wo Studierende
-				ohnedem unterwegs sind. So entsteht ein offener, einladender Raum, in dem man gerne stehen
-				bleibt, ins Gespräch kommt und für einen Moment aus dem Uni-Alltag aussteigen kann.
-			</p>
-			<p class="hyphens-auto">
-				Unser Ziel ist nicht nur ein einmaliges Event, sondern Begegnungen schaffen, die über diese
-				Tage hinaus wirken und echte Verbindungen entstehen lassen.
-			</p>
-		</section>
-	</Saos>
-
-	<!-- Programm Section -->
-	<section class="pad">
-		<h1 class="pb-4 text-center">Programm</h1>
-		<p class="text-center">Unser Programm wird hier in wenigen Wochen hier zu sehen sein.</p>
+		<div
+			class="font-roman py-6 text-5xl font-bold tracking-tighter sm:text-7xl md:text-8xl xl:text-[12rem]"
+		>
+			Hoffnungs<span class="title-italic">tage</span>
+		</div>
+		<h2 class="font-league">Christliche Hoffnung an der Uni neu entdecken.</h2>
+		<div class="absolute bottom-16 left-16 font-league font-semibold tracking-tighter xl:text-6xl">
+			08. - 11.06.2026
+		</div>
 	</section>
 
-	<!-- Wer wir sind -->
-	<section class="pad">
-		<h1 class="pb-4 text-center">Wer wir sind</h1>
-		<p class="pb-4 text-center">
+	<!-- Worauf hoffst du? -->
+	<section>
+		<h1 class="" style="font-family: 'times-new-roman', serif;">
+			Worauf <span class="title-italic">hoffst</span> du?
+		</h1>
+		<p>
+			Hoffentlich hab ich die Klausur bestanden. Hoffentlich reicht das Geld bis zum Ende des
+			Monats. Hoffentlich wird das Wetter morgen gut, damit wir an den Baggersee fahren können.
+			Hoffen tut doch eigentlich jeder von uns. Die Frage ist nur worauf? <br />
+		</p>
+		<p>
+			Als Christen hoffen wir auf Gott, der die Welt geschaffen hat. Doch ist das eine Hoffnung, die
+			trägt? Und ist das überhaupt noch zeitgemäß auf Gott zu hoffen? Bei den Hoffnungstagen gehen
+			wir diesen Fragen und vielen weiteren Fragen run um das Thema Hoffnung nach.
+		</p>
+		<p>
+			Dafür haben wir über 12 verschiedene Referenten eingeladen und freuen uns auf spannende
+			Vorträge, vielfältige Formate und allen voran auch gute Laune. Die Hoffnungstage werden
+			begleitet von lauter coolen Aktionen an PH und KIT. Freue dich auf Spikeball, Chillout-Area
+			und vieles mehr!
+		</p>
+
+		<b>
+			Bei uns ist jeder Willkommen, egal wo du stehst oder was du glaubst. Wir kommen wahnsinnig
+			gerne mit dir ins Gespräch und freuen uns riesig, wenn du mal vorbeischaust :)
+		</b>
+	</section>
+
+	<!-- Programm -->
+	<section class="pt-72">
+		<h1>Programm</h1>
+		<p>
+			Wir bereiten ein spannendes Programm bestehend aus verschiedenen Vorträgen vor. Stattfinden
+			werden die Hoffnungstage auf der Forumswiese am KIT und an der PH. Sobald wir nähere Details
+			haben, werdet ihr sie hier finden :).
+		</p>
+
+		<!-- TODO: Implement logic to use our SMD Backend Appointments for this! -> this makes editing them later way easier! -->
+	</section>
+
+	<!-- Über uns -->
+	<section class="pt-72">
+		<h1>Über uns</h1>
+		<p>
 			Die Hoffnungstage werden organisiert von den Hochschulgruppen <b>SfC</b> und <b>SMD</b>.
+			<br /> Wir sind Studierende aus verschiedenen Fachrichtungen, die gemeinsam unterwegs sind und
+			sich mit Fragen rund um Leben, Glauben und Alltag beschäftigen.
 		</p>
-		<p class="pb-4 text-center">
-			Wir sind Studierende aus verschiedenen Fachrichtungen, die gemeinsam unterwegs sind und sich
-			mit Fragen rund um Leben, Glauben und Alltag beschäftigen.
-		</p>
-		<div class="grid gap-4 py-4 md:grid-cols-2">
-			<div class="card">
+
+		<div class="grid gap-4 pt-4 text-left xl:grid-cols-2">
+			<div class="group-card">
 				<div class="flex items-center gap-4">
 					<div class="flex flex-grow flex-col gap-1">
 						<h3>SfC Karlsruhe</h3>
-						<p class="italic text-gray-500"><b>S</b>tudierende <b>f</b>ür <b>C</b>hristus</p>
+						<p class="italic text-gray-300"><b>S</b>tudierende <b>f</b>ür <b>C</b>hristus</p>
 					</div>
 					<img src={sfc_logo} alt="SfC Logo" class="h-20 w-20 object-contain" />
 				</div>
 				<p>SfC Karlsruhe ist eine überkonfessionelle, christliche Hochschulgruppe.</p>
 				<p class="hyphens-auto">
-					Wir sind Studierende aus allen Semestern und Fachrichtungen. Mit ca. 120 Studierenden sind
-					wir eine der größten Hochschulgruppen an den Karlsruher Hochschulen.
+					Wir sind eine überkonfessionelle, christliche Hochschulgruppe mit ca. 100 Studierenden aus
+					allen Karlsruher Hochschulen. Unser Herzschlag ist es, Studierende für ein Leben mit Jesus
+					zu begeistern und Gottes Liebe am Campus erlebbar zu machen. Neben unserem SfC-Abend am
+					Donnerstag gibt es regelmäßig gemeinsame Aktionen. Freu dich auf Spaß, Action und echte
+					Freundschaften. Egal, ob du Christ bist oder einfach Interesse am Glauben hast, du bist
+					herzlich willkommen!
 				</p>
 			</div>
-			<div class="card">
+			<div class="group-card">
 				<div class="flex items-center gap-4">
 					<div class="flex flex-grow flex-col gap-1">
 						<h3>SMD Karlsruhe</h3>
-						<p class="italic text-gray-500"><b>S</b>tudenten<b>m</b>ission in <b>D</b>eutschland</p>
+						<p class="italic text-gray-300">
+							<b>S</b>tudenten<b>m</b>ission in <b>D</b>eutschland
+						</p>
 					</div>
 					<img src={smd_logo} alt="SMD Logo" class="h-20 w-20 object-contain" />
 				</div>
@@ -178,71 +122,14 @@
 					Haufen auch wirklich bunt ist. Die eine große Gemeinsamkeit, nach der wir streben, ist
 					eine echte Beziehung zu Jesus Christus. Um in dieser Beziehung zu wachsen, tauschen wir
 					uns untereinunder über Glaubensfragen aus und sprechen mit unseren Kommilitonen über das,
-					was uns bewegt. Denken, Glauben und Erleben gehören für uns dabei zusammen.
+					was uns bewegt. <br /> Denken, Glauben und Erleben gehören für uns dabei zusammen.
 				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- Spenden Section -->
-	<section class="pad">
-		<h1 class="pb-4 text-center">Spenden</h1>
-		<p class="hyphens-auto pb-4 text-center">
-			Die Hoffnungstage sind für alle kostenlos. Damit das möglich ist, sind wir auf Unterstützung
-			angewiesen.
-		</p>
-		<div class="card flex flex-col gap-4 text-center">
-			<div class="flex flex-row gap-8">
-				<div class="flex-auto">
-					<h3>Bankverbindung</h3>
-					<div class="mt-4 flex flex-col gap-2">
-						<p>Kontoinhaber: <b>SMD e.V.</b></p>
-						<p>IBAN: <b>DE75 5206 0410 0000 8004 57</b></p>
-						<p>BIC: GENO DEF1 EK1<br />Evangelische Bank eG, 34117 Kassel</p>
-						<p>
-							Verwendungszweck: <b>Aktionstage 89404 HSG Karlsruhe</b>
-						</p>
-					</div>
-				</div>
-				<div class="flex-vert-center max-w-48 flex-1 max-md:hidden">
-					<img src={spenden_qr} alt="QR Code mit Kontodaten" />
-				</div>
-			</div>
-			<p class="italic max-md:hyphens-auto">
-				(Wenn du eine <b>Spendenbescheinigung</b> am Anfang des nächsten Jahres erhalten möchtest, gebe
-				bitte mit im Verwendungszweck deinen vollen Namen und deine vollständige Adresse mit an.)
-			</p>
-		</div>
-	</section>
-
-	<!-- Mitarbeit Section -->
-	<section class="pad">
-		<h1 class="pb-4 text-center">Mitarbeit</h1>
-		<p class="hyphens-auto pb-4">
-			Du bist engagiert und möchtest mitarbeiten? Tritt der WhatsApp Community im Bereich Mitarbeit
-			bei, und sei vor Ort dabei!
-		</p>
-		<div class="flex items-center justify-center gap-6">
-			<a
-				href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t"
-				class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
-			>
-				<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
-				WhatsApp Community
-			</a>
-			<a href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t" class="max-md:hidden">
-				<QrLogoEmbedding
-					qrImgSrc={whatsapp_qr_link}
-					logoImgSrc={whatsapp_qr_logo}
-					qrClass={'w-48'}
-					logoSizePercent={20}
-				/>
-			</a>
-		</div>
-	</section>
-
-	<!-- Kontakt Section -->
-	<section class="pad">
+	<!-- Kontakt -->
+	<section class="py-72">
 		<h1 class="pb-4 text-center">Kontakt</h1>
 		<p class="hyphens-auto pb-4 text-center">
 			Du hast Fragen oder willst mehr wissen? 👉 Schreib uns gerne:
@@ -250,7 +137,7 @@
 		<div class="flex flex-col items-center gap-4">
 			<a
 				href="mailto:leitung@aktionstage-ka.de"
-				class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
+				class="flex items-center gap-2 bg-indigo-500 px-4 py-2 text-white no-underline hover:underline"
 			>
 				<Fa icon={faEnvelope} />
 				leitung@aktionstage-ka.de
@@ -260,43 +147,21 @@
 </main>
 
 <style>
-	h1,
-	h2 {
-		@apply normal-case;
+	section {
+		@apply grid gap-3 px-8 text-center text-white md:px-28 md:text-lg lg:px-60 xl:text-xl 2xl:px-96;
+	}
+	.screen {
+		min-height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: white;
+		text-align: center;
+		padding: 2rem;
 	}
 
-	h3 {
-		@apply overflow-visible;
-	}
-
-	@keyframes -global-slide-in {
-		0% {
-			transform: translateY(200vh);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-
-	@keyframes -global-slide-in-bottom {
-		0% {
-			transform: translateY(30vh);
-			opacity: 0;
-		}
-		100% {
-			transform: translateY(0);
-			opacity: 1;
-		}
-	}
-
-	@keyframes -global-slide-out-bottom {
-		0% {
-			opacity: 1;
-		}
-		100% {
-			opacity: 0;
-		}
+	.group-card {
+		@apply rounded-lg bg-black bg-opacity-30 p-6;
 	}
 </style>

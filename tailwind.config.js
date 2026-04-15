@@ -54,12 +54,14 @@ const config = {
 			},
 			fontFamily: {
 				sans: ['roboto', 'sans-serif'],
-				mincho: ['Shippori Mincho B1', 'serif'],
-				caveat: ['Caveat Variable', 'cursive']
+				league: ['League Spartan Variable', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				caveat: ['Caveat Variable', 'cursive'],
+				roman: ['times-new-roman', 'serif']
 			},
 			screens: {
 				/* the point where the logos in the topbar would begin to shrink on too small mobile devices */
-				'xs': '380px',
+				xs: '380px'
 			}
 		}
 	}
