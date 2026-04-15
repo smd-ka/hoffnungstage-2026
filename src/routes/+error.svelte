@@ -4,7 +4,7 @@
 	import Fa from 'svelte-fa/src/fa.svelte';
 </script>
 
-<div class="flex flex-col items-center gap-4 p-4 text-center">
+<div class="flex flex-col items-center gap-4 bg-white p-4 text-center">
 	{#if $page.status === 404}
 		<h1>Oh, diese Unterseite existiert (noch) nicht.</h1>
 	{:else}
@@ -16,7 +16,7 @@
 		<pre>{$page.status}: {$page.error.message}</pre>
 		<a
 			href="mailto:webmaster@smd-karlsruhe.de"
-			class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
+			class="flex items-center gap-2 bg-orange-500 px-4 py-2 text-white no-underline hover:underline"
 		>
 			<Fa icon={faEnvelope} />
 			webmaster@smd-karlsruhe.de
@@ -24,7 +24,7 @@
 	{/if}
 	<a
 		href="/"
-		class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
+		class="flex items-center gap-2 bg-orange-500 px-4 py-2 text-white no-underline hover:underline"
 		>Hier gehts zurück zur Startseite</a
 	>
 </div>

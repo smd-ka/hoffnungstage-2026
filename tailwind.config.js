@@ -14,52 +14,18 @@ const config = {
 		},
 		extend: {
 			colors: {
-				border: 'hsl(var(--border) / <alpha-value>)',
-				input: 'hsl(var(--input) / <alpha-value>)',
-				ring: 'hsl(var(--ring) / <alpha-value>)',
-				background: 'hsl(var(--background) / <alpha-value>)',
-				foreground: 'hsl(var(--foreground) / <alpha-value>)',
-				'primary-text': '#212427',
-				primary: '#FC6431',
-				grey: '#323232',
-				secondary: {
-					DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
-					foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)'
-				},
-				destructive: {
-					DEFAULT: 'hsl(var(--destructive) / <alpha-value>)',
-					foreground: 'hsl(var(--destructive-foreground) / <alpha-value>)'
-				},
-				muted: {
-					DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
-					foreground: 'hsl(var(--muted-foreground) / <alpha-value>)'
-				},
-				accent: {
-					DEFAULT: 'hsl(var(--accent) / <alpha-value>)',
-					foreground: 'hsl(var(--accent-foreground) / <alpha-value>)'
-				},
-				popover: {
-					DEFAULT: 'hsl(var(--popover) / <alpha-value>)',
-					foreground: 'hsl(var(--popover-foreground) / <alpha-value>)'
-				},
-				card: {
-					DEFAULT: 'hsl(var(--card) / <alpha-value>)',
-					foreground: 'hsl(var(--card-foreground) / <alpha-value>)'
-				}
-			},
-			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				grey: '#323232'
 			},
 			fontFamily: {
 				sans: ['roboto', 'sans-serif'],
-				mincho: ['Shippori Mincho B1', 'serif'],
-				caveat: ['Caveat Variable', 'cursive']
+				league: ['League Spartan Variable', 'sans-serif'],
+				poppins: ['Poppins', 'sans-serif'],
+				caveat: ['Caveat Variable', 'cursive'],
+				roman: ['times-new-roman', 'serif']
 			},
 			screens: {
 				/* the point where the logos in the topbar would begin to shrink on too small mobile devices */
-				'xs': '380px',
+				xs: '380px'
 			}
 		}
 	}
