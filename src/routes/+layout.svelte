@@ -25,7 +25,7 @@
 			? '/'
 			: $page.url.pathname.replace(/^\/en/, '')
 		: `/en${$page.url.pathname === '/' ? '' : $page.url.pathname}`;
-	$: languageSwitchHref = `${switchedPath}${$page.url.search}${$page.url.hash}`;
+	$: languageSwitchHref = switchedPath;
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
 	onMount(() => {
