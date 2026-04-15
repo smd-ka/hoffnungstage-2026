@@ -13,6 +13,9 @@ const config = {
 			}
 		},
 		extend: {
+			colors: {
+				grey: '#323232'
+			},
 			fontFamily: {
 				sans: ['roboto', 'sans-serif'],
 				league: ['League Spartan Variable', 'sans-serif'],

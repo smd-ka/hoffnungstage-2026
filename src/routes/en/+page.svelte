@@ -69,7 +69,7 @@
 			them here :).
 		</p>
 		<p>
-			Of course english translations will be provided for all lectures and formats. We are really
+			Of course English translations will be provided for all lectures and formats. We are really
 			looking forward to welcoming especially our international students to the Days of Hope!
 		</p>
 

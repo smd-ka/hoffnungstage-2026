@@ -55,7 +55,7 @@
 		<div class="flex items-center justify-center gap-6">
 			<a
 				href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t"
-				class="flex items-center gap-2 bg-primary px-4 py-2 text-white no-underline hover:underline"
+				class="flex items-center gap-2 bg-orange-500 px-4 py-2 text-white no-underline hover:underline"
 			>
 				<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
 				WhatsApp Community

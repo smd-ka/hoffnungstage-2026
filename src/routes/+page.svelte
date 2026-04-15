@@ -46,7 +46,7 @@
 		<p>
 			Als Christen hoffen wir auf Gott, der die Welt geschaffen hat. Doch ist das eine Hoffnung, die
 			trägt? Und ist das überhaupt noch zeitgemäß auf Gott zu hoffen? Bei den Hoffnungstagen gehen
-			wir diesen Fragen und vielen weiteren Fragen run um das Thema Hoffnung nach.
+			wir diesen Fragen und vielen weiteren Fragen rund um das Thema Hoffnung nach.
 		</p>
 		<p>
 			Dafür haben wir über 12 verschiedene Referenten eingeladen und freuen uns auf spannende
@@ -56,7 +56,7 @@
 		</p>
 
 		<b>
-			Bei uns ist jeder Willkommen, egal wo du stehst oder was du glaubst. Wir kommen wahnsinnig
+			Bei uns ist jeder willkommen, egal wo du stehst oder was du glaubst. Wir kommen wahnsinnig
 			gerne mit dir ins Gespräch und freuen uns riesig, wenn du mal vorbeischaust :)
 		</b>
 	</section>

@@ -85,8 +85,6 @@
 				</div>
 			</div>
 		</div>
-
-		<div class="bg-green h1"></div>
 	</nav>
 
 	<!-- -------- begin content --------- -->
@@ -143,7 +141,7 @@
 					<div
 						class="flex max-md:flex-col max-md:items-end max-md:gap-1 md:items-center md:justify-end md:gap-6"
 					>
-						<!-- TODO: add Insta Account for the event! as soons as possible -->
+						<!-- TODO: add Insta Account for the event! as soon as possible -->
 						<!-- <a href="https://www.instagram.com/smd_karlsruhe/" class="flex items-center gap-2">
 							<img src={insta} alt="Instagram Logo" class="w-10" />
 						</a> -->
