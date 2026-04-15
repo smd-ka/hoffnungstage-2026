@@ -53,7 +53,7 @@
 			be part of it!
 		</p>
 		<p>
-			If you are an international christian and are passionate about helping, please feel free to
+			If you are an international Christian and are passionate about helping, please feel free to
 			also <a href="mailto:info@kings-cafe.de"> reach out </a> to our King's-Café team. They would love
 			to have you on board!
 		</p>
