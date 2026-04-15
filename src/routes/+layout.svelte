@@ -17,7 +17,7 @@
 	let scrollY: number;
 	const navbarHeight = 64;
 	let screenSize = 0;
-	$: onMainPage = $page.url.pathname === '/';
+	$: onMainPage = $page.url.pathname === '/' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
