@@ -19,6 +19,13 @@
 	let screenSize = 0;
 	$: onMainPage = $page.url.pathname === '/' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
+	$: isEnglish = $page.url.pathname === '/en' || $page.url.pathname.startsWith('/en/');
+	$: switchedPath = isEnglish
+		? $page.url.pathname === '/en'
+			? '/'
+			: $page.url.pathname.replace(/^\/en/, '')
+		: `/en${$page.url.pathname === '/' ? '' : $page.url.pathname}`;
+	$: languageSwitchHref = `${switchedPath}${$page.url.search}${$page.url.hash}`;
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
 	onMount(() => {
@@ -47,6 +54,20 @@
 					? 'opacity-0'
 					: 'opacity-100'}"
 			></div>
+
+			<a
+				href={languageSwitchHref}
+				class="static-fade-in absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-full {onMainPage &&
+				!scrolledBelowHeroShot
+					? ' bg-black/35 backdrop-blur-sm'
+					: ''} border border-white/60 px-3 py-1 font-semibold tracking-wider text-white"
+				aria-label={isEnglish ? 'Switch language to German' : 'Switch language to English'}
+			>
+				<span class:opacity-60={isEnglish}>DE</span>
+				<span class="px-1">|</span>
+				<span class:opacity-60={!isEnglish}>EN</span>
+			</a>
+
 			<div
 				class="relative flex w-full items-center justify-between {onMainPage &&
 				!scrolledBelowHeroShot

@@ -25,7 +25,7 @@
 			08. - 11.06.2026
 		</div>
 		<a
-			href="/helfen"
+			href="/help"
 			class="absolute bottom-[4.5rem] right-16 flex items-center gap-2 rounded-full bg-indigo-500 p-4 text-white no-underline hover:underline md:py-2"
 		>
 			<Fa icon={faHandHoldingHeart} />
