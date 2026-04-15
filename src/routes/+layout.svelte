@@ -57,7 +57,7 @@
 
 			<a
 				href={languageSwitchHref}
-				class="static-fade-in absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2 rounded-full {onMainPage &&
+				class="static-fade-in absolute top-1/2 z-20 -translate-y-1/2 rounded-full max-md:right-2 md:left-1/2 md:-translate-x-1/2 {onMainPage &&
 				!scrolledBelowHeroShot
 					? ' bg-black/35 backdrop-blur-sm'
 					: ''} border border-white/60 px-3 py-1 font-semibold tracking-wider text-white"
