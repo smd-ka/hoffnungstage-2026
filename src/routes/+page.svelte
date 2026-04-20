@@ -16,7 +16,7 @@
 			KARLSRUHE
 		</div>
 		<div
-			class="font-roman py-6 text-5xl font-bold tracking-tighter sm:text-7xl md:text-8xl xl:text-[12rem]"
+			class="py-6 font-roman text-5xl font-bold tracking-tighter sm:text-7xl md:text-8xl xl:text-[12rem]"
 		>
 			Hoffnungs<span class="title-italic">tage</span>
 		</div>
@@ -56,8 +56,8 @@
 		</p>
 
 		<b>
-			Bei uns ist jeder willkommen, egal wo du stehst oder was du glaubst. Wir kommen wahnsinnig
-			gerne mit dir ins Gespräch und freuen uns riesig, wenn du mal vorbeischaust :)
+			Bei uns ist jeder willkommen, egal wo du stehst oder was du glaubst. Wir kommen gerne mit dir
+			ins Gespräch und freuen uns, wenn du mal vorbeischaust :)
 		</b>
 	</section>
 
@@ -91,7 +91,6 @@
 					</div>
 					<img src={sfc_logo} alt="SfC Logo" class="h-20 w-20 object-contain" />
 				</div>
-				<p>SfC Karlsruhe ist eine überkonfessionelle, christliche Hochschulgruppe.</p>
 				<p class="hyphens-auto">
 					Wir sind eine überkonfessionelle, christliche Hochschulgruppe mit ca. 100 Studierenden aus
 					allen Karlsruher Hochschulen. Unser Herzschlag ist es, Studierende für ein Leben mit Jesus
@@ -111,18 +110,14 @@
 					</div>
 					<img src={smd_logo} alt="SMD Logo" class="h-20 w-20 object-contain" />
 				</div>
-				<p>
-					Wir als SMD Karlsruhe sind eine von ca. 80 über ganz Deutschland verteilte Gruppen, die
-					alle zusammen die
-					<a href="https://www.smd.org/hochschul-smd" target="_blank">Hochschul-SMD</a>
-					bilden.
-				</p>
 				<p class="hyphens-auto">
-					Studenten aller Hochschulen und gelegentlich auch Azubis sorgen dafür, dass dieser bunte
-					Haufen auch wirklich bunt ist. Die eine große Gemeinsamkeit, nach der wir streben, ist
-					eine echte Beziehung zu Jesus Christus. Um in dieser Beziehung zu wachsen, tauschen wir
-					uns untereinunder über Glaubensfragen aus und sprechen mit unseren Kommilitonen über das,
-					was uns bewegt. <br /> Denken, Glauben und Erleben gehören für uns dabei zusammen.
+					Die SMD ist eine christliche Studierendenbewegung, die an über 80 Hochschulorten in
+					Deutschland aktiv ist. In Karlsruhe sind wir mit ca. 30 Studierenden aus verschiedenen
+					Fachrichtungen aller Hochschulen und Gemeinden vertreten. Uns verbindet der gemeinsam
+					gelebte Glaube an Jesus Christus. Denken, Glauben und Erleben gehören für uns dabei
+					zusammen. <br />Wir treffen uns jeden zweiten Dienstag um 18:30 Uhr. Dich erwarten
+					spannende Vorträge, gute Gemeinschaft und leckeres Essen. Schau doch gerne einfach mal
+					vorbei, wir freuen uns auf dich!
 				</p>
 			</div>
 		</div>
