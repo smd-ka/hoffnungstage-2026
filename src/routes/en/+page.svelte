@@ -16,11 +16,11 @@
 			KARLSRUHE
 		</div>
 		<div
-			class="font-roman py-6 text-5xl font-bold tracking-tighter sm:text-7xl md:text-8xl xl:text-[12rem]"
+			class="py-6 font-roman text-5xl font-bold tracking-tighter sm:text-7xl md:text-8xl xl:text-[12rem]"
 		>
 			Days of <span class="title-italic">Hope</span>
 		</div>
-		<h2 class="font-league">Rediscover Christian hope at university.</h2>
+		<h2 class="font-league">Discover Christian Hope at University.</h2>
 		<div class="absolute bottom-16 left-16 font-league font-semibold tracking-tighter xl:text-6xl">
 			08. - 11.06.2026
 		</div>
@@ -39,24 +39,24 @@
 			What do you <span class="title-italic">hope</span> for?
 		</h1>
 		<p>
-			Hopefully I passed the exam. Hopefully the money lasts until the end of the month. Hopefully
-			the weather will be nice tomorrow so we can go to the lake. Everyone hopes for something. The
-			question is just what? <br />
+			Hopefully, I passed the exam. Hopefully, the money lasts until the end of the month.
+			Hopefully, the weather will be nice tomorrow so we can go to the lake. Everyone hopes for
+			something. The question is: "What do you hope for?" <br />
 		</p>
 		<p>
-			As Christians, we hope in God, who created the world. But is that a hope that sustains us? And
-			is it still relevant today to hope in God? At the Days of Hope, we explore these questions and
-			many more around the topic of hope.
+			As Christians, we put our hope in God, who created the world. But is that a hope that sustains
+			us? And is it still relevant today to put our hope in God? At the Days of Hope, we explore
+			these questions and many more around the topic of hope.
 		</p>
 		<p>
-			We have invited over 12 different speakers and look forward to exciting lectures, diverse
+			We have invited over 12 different speakers and look forward to exciting talks, various
 			formats, and above all, a great atmosphere. The Days of Hope will be accompanied by lots of
-			cool activities at PH and KIT. Look forward to spikeball, chill-out areas, and much more!
+			fun activities at PH and KIT. Look forward to spikeball, chill-out areas, and much more!
 		</p>
 
 		<b>
-			Everyone is welcome here, no matter where you stand or what you believe. We'd love to chat
-			with you and are really excited if you stop by :)
+			Everyone is welcome, no matter where you stand or what you believe. We'd love to chat with
+			you, see you there :)
 		</b>
 	</section>
 
@@ -64,13 +64,13 @@
 	<section class="pt-72">
 		<h1>Program</h1>
 		<p>
-			We are preparing an exciting program consisting of various lectures. The Days of Hope will
-			take place on the Forum meadow at KIT and at PH. As soon as we have more details, you'll find
-			them here :).
+			We are preparing an exciting program consisting of various talks. The Days of Hope will take
+			place on the Forumswiese at KIT and at PH. As soon as we have more details, you'll find them
+			here :).
 		</p>
 		<p>
-			Of course English translations will be provided for all lectures and formats. We are really
-			looking forward to welcoming especially our international students to the Days of Hope!
+			Of course English translations will be provided for all talks and formats. We are really
+			looking forward to welcoming you at the Days of Hope!
 		</p>
 
 		<!-- TODO: Implement logic to use our SMD Backend Appointments for this! -> this makes editing them later way easier! -->
@@ -114,17 +114,12 @@
 					<img src={smd_logo} alt="SMD Logo" class="h-20 w-20 object-contain" />
 				</div>
 				<p>
-					We at SMD Karlsruhe are one of approximately 80 groups distributed throughout Germany,
-					which together form the
-					<a href="https://www.smd.org/hochschul-smd" target="_blank">University SMD</a>
-					.
-				</p>
-				<p class="hyphens-auto">
-					Students from all universities and occasionally apprentices too, ensure that this colorful
-					group really is diverse. The one thing we all share and strive for is a genuine
-					relationship with Jesus Christ. To grow in this relationship, we exchange views on
-					questions of faith and talk with our fellow students about what moves us. <br /> Thinking,
-					believing, and experiencing go hand in hand for us.
+					SMD is a Christian student movement which is active at over 80 university locations in
+					Germany. In Karlsruhe, we are represented by around 30 students from different fields
+					across all universities and different christian denominations. What unites us is our
+					shared faith in Jesus Christ, lived out together. Thinking, believing, and experiencing
+					belong together for us. <br /> We meet every second Tuesday at 6:30 PM. You can expect engaging
+					talks, great fellowship, and good food. Feel free to drop by — we look forward to meeting you.
 				</p>
 			</div>
 		</div>
@@ -134,7 +129,7 @@
 	<section class="py-72">
 		<h1 class="pb-4 text-center">Contact</h1>
 		<p class="hyphens-auto pb-4 text-center">
-			Do you have questions or want to know more? 👉 Feel free to write to us:
+			Do you have questions or want to know more? 👉 Feel free to contact us:
 		</p>
 		<div class="flex flex-col items-center gap-4">
 			<a
