@@ -17,14 +17,14 @@
 	let scrollY: number;
 	const navbarHeight = 64;
 	let screenSize = 0;
-	$: onMainPage = $page.url.pathname === '/' || $page.url.pathname === '/en';
+	$: onMainPage = $page.url.pathname === '/de' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
-	$: isEnglish = $page.url.pathname === '/en' || $page.url.pathname.startsWith('/en/');
+	$: isEnglish = $page.url.pathname.startsWith('/en');
 	$: switchedPath = isEnglish
 		? $page.url.pathname === '/en'
-			? '/'
-			: $page.url.pathname.replace(/^\/en/, '')
-		: `/en${$page.url.pathname === '/' ? '' : $page.url.pathname}`;
+			? '/de'
+			: $page.url.pathname.replace(/^\/en/, '/de')
+		: $page.url.pathname.replace(/^\/de/, '/en');
 	$: languageSwitchHref = switchedPath;
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
@@ -77,7 +77,7 @@
 				<div>
 					<a class="flex justify-center gap-4 md:basis-full" href="/">
 						<p
-							class="font-roman static-fade-in text-2xl text-white delay-100 xs:text-3xl md:text-4xl"
+							class="static-fade-in font-roman text-2xl text-white delay-100 xs:text-3xl md:text-4xl"
 						>
 							<span>Hoffnungs</span><span class="title-italic">tage</span>
 						</p>
