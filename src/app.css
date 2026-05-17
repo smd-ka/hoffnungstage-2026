@@ -24,7 +24,7 @@
 		/* @apply bg-white; */
 	}
 
-	p > a {
+	p>a {
 		@apply underline hover:no-underline;
 	}
 
@@ -58,5 +58,9 @@
 
 	.fa {
 		@apply flex items-center gap-2;
+	}
+
+	.page-section {
+		@apply grid gap-3 px-8 text-center text-white md:px-28 md:text-lg lg:px-60 xl:text-xl 2xl:px-96;
 	}
 }
