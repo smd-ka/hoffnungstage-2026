@@ -1,15 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { getLanguageFromPathFallback, translatePath } from '$lib/language';
 
 	let className = '';
 	export { className as class };
 
-	$: isEnglish = $page.url.pathname.startsWith('/en');
-	$: switchedPath = isEnglish
-		? $page.url.pathname === '/en'
-			? '/de'
-			: $page.url.pathname.replace(/^\/en/, '/de')
-		: $page.url.pathname.replace(/^\/de/, '/en');
+	$: currentLanguage = getLanguageFromPathFallback($page.url.pathname);
+	$: switchedPath = translatePath($page.url.pathname, currentLanguage === 'de' ? 'en' : 'de');
+	$: isEnglish = currentLanguage === 'en';
 </script>
 
 <a
