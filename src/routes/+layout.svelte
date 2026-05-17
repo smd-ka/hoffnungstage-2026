@@ -31,10 +31,10 @@
 
 		window.addEventListener('resize', handleResize);
 
-		onDestroy(() => {
+		return () => {
 			window.removeEventListener('resize', handleResize);
 			screenSize = 0;
-		});
+		};
 	});
 </script>
 
