@@ -13,19 +13,13 @@
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
 	import { page } from '$app/stores';
 	import { onDestroy, onMount } from 'svelte';
+	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 
 	let scrollY: number;
 	const navbarHeight = 64;
 	let screenSize = 0;
 	$: onMainPage = $page.url.pathname === '/de' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
-	$: isEnglish = $page.url.pathname.startsWith('/en');
-	$: switchedPath = isEnglish
-		? $page.url.pathname === '/en'
-			? '/de'
-			: $page.url.pathname.replace(/^\/en/, '/de')
-		: $page.url.pathname.replace(/^\/de/, '/en');
-	$: languageSwitchHref = switchedPath;
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
 	onMount(() => {
@@ -55,18 +49,12 @@
 					: 'opacity-100'}"
 			></div>
 
-			<a
-				href={languageSwitchHref}
-				class="static-fade-in absolute top-1/2 z-20 -translate-y-1/2 rounded-full max-md:right-2 md:left-1/2 md:-translate-x-1/2 {onMainPage &&
+			<LanguageSwitcher
+				class="absolute top-1/2 z-20 -translate-y-1/2 max-md:right-2 md:left-1/2 md:-translate-x-1/2 {onMainPage &&
 				!scrolledBelowHeroShot
-					? ' bg-black/35 backdrop-blur-sm'
-					: ''} border border-white/60 px-3 py-1 font-semibold tracking-wider text-white"
-				aria-label={isEnglish ? 'Switch language to German' : 'Switch language to English'}
-			>
-				<span class:opacity-60={isEnglish}>DE</span>
-				<span class="px-1">|</span>
-				<span class:opacity-60={!isEnglish}>EN</span>
-			</a>
+					? 'bg-black/35 backdrop-blur-sm'
+					: ''}"
+			/>
 
 			<div
 				class="relative flex w-full items-center justify-between {onMainPage &&
