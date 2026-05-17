@@ -59,3 +59,40 @@ export function translatePath(path: string, targetLanguage: SupportedLanguage): 
 
     return `/${targetLanguage}${pathWithoutLanguage ? '/' + pathWithoutLanguage : ''}`;
 }
+
+/**
+ * Determine the best matching language from supported languages
+ * based on the Accept-Language header.
+ *
+ * @param acceptLanguage - The Accept-Language header value (e.g., "en-US,en;q=0.9,de;q=0.8")
+ * @returns The best matching supported language code
+ *
+ * @see https://en.wikipedia.org/wiki/IETF_language_tag
+ */
+export function getPreferredLanguage(acceptLanguage: string): SupportedLanguage {
+    // Parse the Accept-Language header to extract language preferences
+    // e.g., "en-US,en;q=0.9,de;q=0.8,de-DE;q=0.7"
+    const parsedLanguages: { code: string; q: number }[] = acceptLanguage
+        .split(',')
+        .map((lang: string) => {
+            const [code, qValue] = lang.trim().split(';q=');
+            return {
+                // ignore further informations
+                code: code.split('-')[0].toLowerCase(),
+                q: qValue ? parseFloat(qValue) : 1.0
+            };
+        })
+        // sorting here to ensure that find below gets highest q for an language
+        .sort((a, b) => b.q - a.q);
+
+    // Find the q values for supported languages
+    const supportedQLanguage = supportedLanguages
+        .map((code) => ({
+            code,
+            q: parsedLanguages.find((lang) => lang.code === code)?.q ?? 0
+        }))
+        .sort((a, b) => b.q - a.q);
+
+    // Return the highest preferred supported language, falling back to default
+    return supportedQLanguage[0]?.code ?? defaultLanguage;
+}
