@@ -8,7 +8,6 @@ export interface Speaker {
     gender: Gender;
     title?: string;
     affiliation?: string;
-    description?: string;
 }
 
 export interface Location {

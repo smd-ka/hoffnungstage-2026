@@ -51,7 +51,7 @@ export const speakers: Record<string, Speaker> = {
         slug: 'sabine-mickenbecker',
         name: 'Sabine Mickenbecker',
         gender: 'f',
-        description: 'Mutter der "Reallife Guys"'
+        title: 'Mutter der "Reallife Guys"'
     },
     'jannis-winkels': {
         slug: 'jannis-winkels',
@@ -67,7 +67,7 @@ export const speakers: Record<string, Speaker> = {
         slug: 'samuel-knospe',
         name: 'Samuel Knospe',
         gender: 'm',
-        description: 'Musiker'
+        title: 'Musiker'
     }
 };
 

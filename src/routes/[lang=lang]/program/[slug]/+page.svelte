@@ -193,9 +193,6 @@
 								{#if speaker.affiliation}
 									<p class="text-sm text-white/60">{speaker.affiliation}</p>
 								{/if}
-								{#if speaker.description}
-									<p class="mt-2 text-sm text-white/70">{speaker.description}</p>
-								{/if}
 							</div>
 						{/each}
 					</div>
