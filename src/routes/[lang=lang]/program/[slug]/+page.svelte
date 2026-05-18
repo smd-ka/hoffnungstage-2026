@@ -1,10 +1,17 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { faArrowLeft, faCalendar, faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
+	import {
+		faArrowLeft,
+		faCalendar,
+		faMapPin,
+		faUser,
+		faLanguage
+	} from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
+	import { languageNames } from '$lib/languageNames';
 	import {
 		getSpeakersForItem,
 		getLocationBySlug,
@@ -45,6 +52,14 @@
 			speakerLabelFemalePlural: {
 				de: 'Referentinnen',
 				en: 'Speakers'
+			},
+			originalLanguageLabel: {
+				de: 'Originalsprache',
+				en: 'Original Language'
+			},
+			availableTranslations: {
+				de: 'Übersetzungen verfügbar in',
+				en: 'translations available in'
 			}
 		},
 		lang as 'de' | 'en'
@@ -110,7 +125,28 @@
 							<span>{location.longDescription[lang]}</span>
 						</div>
 					{/if}
+
+					<!-- Language Info -->
+					<div class="flex items-center gap-2">
+						<Fa icon={faLanguage} />
+						<span class="lang-name">
+							{languageNames[item.originalIn][lang]}
+						</span>
+					</div>
 				</div>
+
+				<!-- Available Translations -->
+				{#if item.translatedTo.length > 0}
+					<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
+						<span>{tr.availableTranslations}:</span>
+						{#each item.translatedTo as targetLang, index}
+							{#if index > 0}|{/if}
+							<span class="lang-name" title={languageNames[targetLang][lang]}>
+								{languageNames[targetLang][targetLang]}
+							</span>
+						{/each}
+					</div>
+				{/if}
 			</header>
 
 			<!-- Description Section -->
@@ -161,3 +197,12 @@
 		</div>
 	</div>
 </main>
+
+<style>
+	.lang-name {
+		@apply pb-0.5 transition-colors;
+	}
+	.lang-name[title] {
+		@apply border-b border-dotted;
+	}
+</style>
