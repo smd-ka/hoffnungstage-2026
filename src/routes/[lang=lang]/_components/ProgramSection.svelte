@@ -42,6 +42,10 @@
 		{tr.languageNote}
 	</p>
 
+	<div class="max-lg:hidden">
+		<ProgramCalendar />
+	</div>
+
 	<div class="mb-4">
 		<a
 			href="/{lang}/program#program-list"
@@ -51,9 +55,5 @@
 			<span class="lg:hidden">{tr.toProgram}</span>
 			<span class="max-lg:hidden">{tr.toProgramList}</span>
 		</a>
-	</div>
-
-	<div class="max-lg:hidden">
-		<ProgramCalendar />
 	</div>
 </section>
