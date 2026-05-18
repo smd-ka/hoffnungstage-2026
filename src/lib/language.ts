@@ -4,7 +4,14 @@ import { derived } from 'svelte/store';
 // format: IETF BCP 47 (https://en.wikipedia.org/wiki/IETF_language_tag)
 // for now, we only support languages without further differentiation
 // this lists all languages our engine supports (could be in theory the full ISO 639-1 list)
-export type SupportedLanguage = 'de' | 'en';
+export type SupportedLanguage =
+    | 'de' // German
+    | 'en' // English
+    | 'es' // Spanish
+    | 'fr' // French
+    | 'tr' // Turkish
+    | 'zh' // Chinese
+    ;
 
 // this lists all languages our webpage is fully translated in
 export const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
