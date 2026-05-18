@@ -16,6 +16,10 @@
 				de: 'Zum Programm',
 				en: 'To Program'
 			},
+			toProgramList: {
+				de: 'Zur vollständigen Programmliste',
+				en: 'To Full Program List'
+			},
 			paragraph: {
 				de: 'Wir bereiten ein spannendes Programm bestehend aus verschiedenen Vorträgen vor. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
 				en: 'We are preparing an exciting program consisting of various talks. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
@@ -38,13 +42,14 @@
 		{tr.languageNote}
 	</p>
 
-	<div class="mb-4 lg:hidden">
+	<div class="mb-4">
 		<a
-			href="/{lang}/program"
+			href="/{lang}/program#program-list"
 			class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-500"
 		>
 			<Fa icon={faCalendar} />
-			{tr.toProgram}
+			<span class="lg:hidden">{tr.toProgram}</span>
+			<span class="max-lg:hidden">{tr.toProgramList}</span>
 		</a>
 	</div>
 

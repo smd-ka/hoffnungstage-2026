@@ -59,7 +59,7 @@
 	<p class="max-lg:hidden">
 		{tr.preferList}
 	</p>
-	<div class="mx-auto max-w-6xl px-4">
+	<div id="program-list" class="mx-auto max-w-6xl px-4">
 		<ProgramList />
 	</div>
 </main>
