@@ -7,6 +7,8 @@
 	import whatsapp_qr_link from '$lib/assets/qr-codes/whatsapp_group.png';
 	import whatsapp_qr_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_Green_RGB_2026.svg';
 	import background from '$lib/assets/pages/home/helfen/background.jpg';
+	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+	import Fa from 'svelte-fa';
 
 	$: lang = $page.params.lang;
 
@@ -118,13 +120,16 @@
 			{tr.participateIntro2}
 		</p>
 		<div class="flex items-center justify-center gap-6">
-			<a
-				href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t"
-				class="flex items-center gap-2 bg-orange-500 px-4 py-2 text-white no-underline hover:underline"
-			>
-				<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
-				{tr.whatsapp}
-			</a>
+			<div class="flex flex-col items-stretch justify-center gap-6">
+				<a class="button" href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t">
+					<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
+					{tr.whatsapp}
+				</a>
+				<a class="button" href="mailto:info@kings-cafe.de">
+					<Fa icon={faEnvelope} />
+					King's-Café Team
+				</a>
+			</div>
 			<a href="https://chat.whatsapp.com/GeBqJQIljsd7fg4ShoNprX?mode=gi_t" class="max-md:hidden">
 				<QrLogoEmbedding
 					qrImgSrc={whatsapp_qr_link}
@@ -140,5 +145,8 @@
 <style>
 	section {
 		@apply grid gap-3 px-8 text-center text-white md:px-28 md:text-lg lg:px-60 xl:text-xl 2xl:px-96;
+	}
+	.button {
+		@apply flex items-center justify-center gap-2 bg-orange-500 px-4 py-2 text-white no-underline hover:underline;
 	}
 </style>
