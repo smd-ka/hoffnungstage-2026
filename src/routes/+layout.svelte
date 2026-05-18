@@ -99,7 +99,7 @@
 					: 'opacity-100'}"
 			>
 				<div>
-					<a class="flex justify-center gap-4 md:basis-full" href="/">
+					<a class="flex justify-center gap-4 md:basis-full" href="/{lang}">
 						<p
 							class="static-fade-in font-roman text-2xl text-white delay-100 xs:text-3xl md:text-4xl"
 						>
