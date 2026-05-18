@@ -14,12 +14,48 @@
 	import { page } from '$app/stores';
 	import { onDestroy, onMount } from 'svelte';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
+	import { createTranslator } from '$lib/language';
 
 	let scrollY: number;
 	const navbarHeight = 64;
 	let screenSize = 0;
 	$: onMainPage = $page.url.pathname === '/de' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
+
+	$: lang = $page.params.lang;
+	$: tr = createTranslator(
+		{
+			title: {
+				de: 'Hoffnungs<span class="title-italic">tage</span>',
+				en: 'Days of <span class="title-italic">Hope</span>'
+			},
+			organizedBy: {
+				de: 'Veranstaltet von',
+				en: 'Organized by'
+			},
+			supportedBy: {
+				de: 'Mit Unterstützung von',
+				en: 'Supported by'
+			},
+			cafeDescription: {
+				de: 'Internationales Studierendencafé',
+				en: 'International Student Café'
+			},
+			cafeUrl: {
+				de: 'https://kings-cafe.de/',
+				en: 'https://kings-cafe.de/en'
+			},
+			imprint: {
+				de: 'Impressum',
+				en: 'Legal Notice (in German)'
+			},
+			privacy: {
+				de: 'Datenschutz',
+				en: 'Privacy Policy (in German)'
+			}
+		},
+		lang as 'de' | 'en'
+	);
 
 	// Retrieve and update the height of the header image for the navbar background (transparent/grey)
 	onMount(() => {
@@ -67,7 +103,7 @@
 						<p
 							class="static-fade-in font-roman text-2xl text-white delay-100 xs:text-3xl md:text-4xl"
 						>
-							<span>Hoffnungs</span><span class="title-italic">tage</span>
+							{@html tr.title}
 						</p>
 					</a>
 				</div>
@@ -88,7 +124,7 @@
 			<div class="container mx-auto px-4 py-20 xl:px-40">
 				<div class="grid justify-center gap-20 md:grid-cols-2">
 					<section class="flex flex-col gap-4">
-						<h2 class="text-xl uppercase text-orange-500">Veranstaltet von</h2>
+						<h2 class="text-xl uppercase text-orange-500">{tr.organizedBy}</h2>
 						<div class="grid gap-8">
 							<a
 								href="https://sfc-karlsruhe.de/"
@@ -106,14 +142,12 @@
 
 					<div class="flex flex-col gap-10">
 						<section class="underline-a flex flex-col gap-3">
-							<h2 class="text-xl uppercase text-orange-500">Mit Unterstützung von</h2>
+							<h2 class="text-xl uppercase text-orange-500">{tr.supportedBy}</h2>
 							<a href="https://lkg-karlsruhe.de/ec-karlsruhe/" target="_blank"
 								>EC - Entschieden für Christus</a
 							>
 							<a href="https://evalka.de/" target="_blank">Evangelische Allianz Karlsruhe</a>
-							<a href="https://kings-cafe.de" target="_blank"
-								>King's-Café – Internationales Studierendencafé</a
-							>
+							<a href={tr.cafeUrl} target="_blank">King's-Café – {tr.cafeDescription}</a>
 						</section>
 					</div>
 				</div>
@@ -122,8 +156,8 @@
 					class="mt-16 grid grid-cols-[1fr_auto] border-t-[1px] border-[#BEBEBE] py-3 max-md:flex-col"
 				>
 					<div class="underline-a flex flex-wrap pt-1 max-md:flex-col max-md:gap-1 md:gap-8">
-						<a href="https://smd-karlsruhe.de/imprint">Impressum</a>
-						<a href="https://smd-karlsruhe.de/privacy">Datenschutz</a>
+						<a href="https://smd-karlsruhe.de/imprint">{tr.imprint}</a>
+						<a href="https://smd-karlsruhe.de/privacy">{tr.privacy}</a>
 					</div>
 
 					<div
