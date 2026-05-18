@@ -76,11 +76,11 @@ export const locations: Record<string, Location> = {
         slug: 'kit-forum-meadow',
         shortName: t(
             'KIT – Forumswiese',
-            'KIT – Forum Meadow'
+            'KIT – Forumswiese',
         ),
         longDescription: t(
             'KIT – Forumswiese',
-            'KIT – Forum Meadow'
+            'KIT – Forumswiese',
         ),
         icon: '📍'
     },
