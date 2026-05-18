@@ -79,8 +79,8 @@ export const locations: Record<string, Location> = {
             'KIT – Forumswiese',
         ),
         longDescription: t(
-            'KIT – Forumswiese',
-            'KIT – Forumswiese',
+            'KIT – Forumswiese vor dem Audimax (Gebäude 30.95)',
+            'KIT – Forumswiese in front of the Audimax lecture hall (building 30.95)',
         ),
         icon: '📍'
     },
