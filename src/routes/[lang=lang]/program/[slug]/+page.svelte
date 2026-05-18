@@ -57,7 +57,11 @@
 				de: 'Originalsprache',
 				en: 'Original Language'
 			},
-			availableTranslations: {
+			availableTranslationsSingular: {
+				de: 'Übersetzung verfügbar in',
+				en: 'translation available in'
+			},
+			availableTranslationsPlural: {
 				de: 'Übersetzungen verfügbar in',
 				en: 'translations available in'
 			}
@@ -138,7 +142,11 @@
 				<!-- Available Translations -->
 				{#if item.translatedTo.length > 0}
 					<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
-						<span>{tr.availableTranslations}:</span>
+						<span>
+							{item.translatedTo.length === 1
+								? tr.availableTranslationsSingular
+								: tr.availableTranslationsPlural}:
+						</span>
 						{#each item.translatedTo as targetLang, index}
 							{#if index > 0}|{/if}
 							<span class="lang-name" title={languageNames[targetLang][lang]}>
