@@ -1,0 +1,57 @@
+import type { ProgramItem, ProgramDay, Speaker, Location } from './types';
+import { speakers, locations, programDays } from './data';
+import type { SupportedLanguage } from '$lib/language';
+
+export function getLocale(language: SupportedLanguage): string {
+    switch (language) {
+        case 'de':
+            return 'de-DE';
+        case 'en':
+            return 'en-US';
+    }
+}
+
+export function getProgramItemBySlug(slug: string): ProgramItem | undefined {
+    for (const day of programDays) {
+        const item = day.items.find((item) => item.slug === slug);
+        if (item) return item;
+    }
+    return undefined;
+}
+
+export function getDayForItem(slug: string): ProgramDay | undefined {
+    return programDays.find((day) => day.items.some((item) => item.slug === slug));
+}
+
+export function getSpeakerBySlug(slug: string): Speaker | undefined {
+    return speakers[slug];
+}
+
+export function getSpeakersForItem(item: ProgramItem): Speaker[] {
+    return (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean);
+}
+
+export function getLocationBySlug(slug: string): Location | undefined {
+    return locations[slug];
+}
+
+export function getTitle(item: ProgramItem, language: SupportedLanguage): string {
+    const title = item.title[language];
+    if (item.highlightSpeaker && item.speakerIds && item.speakerIds.length > 0) {
+        const speakerNames = item.speakerIds.map((id) => speakers[id]?.name).filter(Boolean).join(', ');
+        if (speakerNames) {
+            return `${speakerNames}: ${title}`;
+        }
+    }
+    return title;
+}
+
+export function formatDateForDisplay(dateString: string, language: SupportedLanguage): string {
+    const date = new Date(dateString + 'T00:00:00');
+    return date.toLocaleDateString(getLocale(language), { day: 'numeric', month: 'long' });
+}
+
+export function getDayName(dateString: string, language: SupportedLanguage): string {
+    const date = new Date(dateString + 'T00:00:00');
+    return date.toLocaleDateString(getLocale(language), { weekday: 'long' });
+}

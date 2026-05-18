@@ -6,6 +6,12 @@ import { derived } from 'svelte/store';
 export type SupportedLanguage = 'de' | 'en';
 
 export const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
+
+/**
+ * A type for texts that can be translated into multiple supported languages.
+ * Maps each SupportedLanguage to its corresponding string.
+ */
+export type TranslatedText = Record<SupportedLanguage, string>;
 export const defaultLanguage: SupportedLanguage = 'de';
 
 /**
