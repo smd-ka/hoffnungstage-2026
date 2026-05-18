@@ -33,20 +33,22 @@
 	);
 </script>
 
-<section class="page-section pt-72">
+<section class="page-section flex flex-col gap-10 pt-72">
 	<h1>{tr.title}</h1>
-	<p>
-		{tr.paragraph}
-	</p>
-	<p class="pb-8">
-		{tr.languageNote}
-	</p>
+	<div class="flex flex-col gap-4">
+		<p>
+			{tr.paragraph}
+		</p>
+		<p>
+			{tr.languageNote}
+		</p>
+	</div>
 
 	<div class="max-lg:hidden">
 		<ProgramCalendar />
 	</div>
 
-	<div class="mb-4">
+	<div>
 		<a
 			href="/{lang}/program#program-list"
 			class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-500"
