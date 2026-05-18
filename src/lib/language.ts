@@ -1,9 +1,17 @@
+import { page } from '$app/stores';
+import { derived } from 'svelte/store';
+
 // format: IETF BCP 47 (https://en.wikipedia.org/wiki/IETF_language_tag)
 // for now, we only support languages without further differentiation
 export type SupportedLanguage = 'de' | 'en';
 
 export const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
 export const defaultLanguage: SupportedLanguage = 'de';
+
+/**
+ * Reactive store for the current language.
+ */
+export const currentLanguage = derived(page, ($page) => $page.params.lang as SupportedLanguage);
 
 /**
  * Get the active language from the current path.
@@ -95,4 +103,27 @@ export function getPreferredLanguage(acceptLanguage: string): SupportedLanguage 
 
     // Return the highest preferred supported language, falling back to default
     return supportedQLanguage[0]?.code ?? defaultLanguage;
+}
+
+/**
+ * Create a translator for a given translation map.
+ * Returns an object with the same keys as the input, but with values for the specified language.
+ *
+ * @example
+ * $: tr = createTranslator({
+ *     title: { de: 'Titel', en: 'Title' },
+ *     subtitle: { de: 'Untertitel', en: 'Subtitle' }
+ * }, 'de');
+ * tr.title // 'Titel'
+ */
+export function createTranslator<
+    V,
+    T extends Record<PropertyKey, Partial<Record<SupportedLanguage, V>>>,
+    D extends SupportedLanguage
+>(translations: T, lang: D): { [K in keyof T]: NonNullable<T[K][D]> } {
+    const result: { [K in keyof T]: NonNullable<T[K][D]> } = {} as never;
+    for (const key in translations) {
+        result[key] = translations[key][lang]!;
+    }
+    return result;
 }
