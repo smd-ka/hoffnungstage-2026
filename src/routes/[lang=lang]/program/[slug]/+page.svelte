@@ -188,10 +188,10 @@
 							<div class="rounded-lg bg-white/5 p-4">
 								<h3 class="font-semibold text-white">{speaker.name}</h3>
 								{#if speaker.title}
-									<p class="text-sm text-white/60">{speaker.title}</p>
+									<p class="text-sm text-white/60">{speaker.title[lang]}</p>
 								{/if}
 								{#if speaker.affiliation}
-									<p class="text-sm text-white/60">{speaker.affiliation}</p>
+									<p class="text-sm text-white/60">{speaker.affiliation[lang]}</p>
 								{/if}
 							</div>
 						{/each}

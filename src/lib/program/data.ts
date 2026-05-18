@@ -10,7 +10,10 @@ export const speakers: Record<string, Speaker> = {
         slug: 'michael-sternkopf',
         name: 'Michael Sternkopf',
         gender: 'm',
-        title: 'Ehemalischer Fußballprofi beim FC Bayern München',
+        title: t(
+            'Ehemalischer Fußballprofi beim FC Bayern München',
+            'Former Football Professional at FC Bayern Munich'
+        ),
     },
     'carsten-feichtinger': {
         slug: 'carsten-feichtinger',
@@ -21,7 +24,10 @@ export const speakers: Record<string, Speaker> = {
         slug: 'steffen-beck',
         name: 'Steffen Beck',
         gender: 'm',
-        title: 'Pastor'
+        title: t(
+            'Pastor',
+            'Pastor'
+        )
     },
     'lukas-reppert': {
         slug: 'lukas-reppert',
@@ -32,8 +38,15 @@ export const speakers: Record<string, Speaker> = {
         slug: 'matthias-clausen',
         name: 'Prof. Dr. Matthias Clausen',
         gender: 'm',
-        title: 'Professor',
-        affiliation: 'Ev. Hochschule Tabor (Marburg) & Institut für Glaube und Wissenschaft (IGUW)'
+        title: t(
+            'Professor',
+            'Professor'
+        ),
+        affiliation: t(
+            'Ev. Hochschule Tabor (Marburg) & Institut für Glaube und Wissenschaft (IGUW)',
+            // no official translation for uni & institute given
+            'Ev. Hochschule Tabor (Marburg) & Institut für Glaube und Wissenschaft (IGUW)',
+        )
     },
     'rebekka-meussling': {
         slug: 'rebekka-meussling',
@@ -44,14 +57,23 @@ export const speakers: Record<string, Speaker> = {
         slug: 'thomas-schimmel',
         name: 'Prof. Dr. Thomas Schimmel',
         gender: 'm',
-        title: 'Professor & habilitierter Physiker',
-        affiliation: 'KIT – Institut für Nanotechnologie'
+        title: t(
+            'Professor & habilitierter Physiker',
+            'Professor & Habilitated Physicist'
+        ),
+        affiliation: t(
+            'KIT – Institut für Nanotechnologie',
+            'KIT – Institute of Nanotechnology'
+        )
     },
     'sabine-mickenbecker': {
         slug: 'sabine-mickenbecker',
         name: 'Sabine Mickenbecker',
         gender: 'f',
-        title: 'Mutter der "Reallife Guys"'
+        title: t(
+            'Mutter der "Reallife Guys"',
+            'Mother of the "Reallife Guys"'
+        )
     },
     'jannis-winkels': {
         slug: 'jannis-winkels',
@@ -67,7 +89,10 @@ export const speakers: Record<string, Speaker> = {
         slug: 'samuel-knospe',
         name: 'Samuel Knospe',
         gender: 'm',
-        title: 'Musiker'
+        title: t(
+            'Musiker',
+            'Musician'
+        )
     }
 };
 

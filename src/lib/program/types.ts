@@ -6,8 +6,8 @@ export interface Speaker {
     slug: string;
     name: string;
     gender: Gender;
-    title?: string;
-    affiliation?: string;
+    title?: TranslatedText;
+    affiliation?: TranslatedText;
 }
 
 export interface Location {
