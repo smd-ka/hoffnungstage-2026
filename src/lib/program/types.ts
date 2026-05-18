@@ -1,4 +1,4 @@
-import type { TranslatedText } from '$lib/language';
+import type { SupportedLanguage, TranslatedText } from '$lib/language';
 
 export type Gender = 'm' | 'f';
 
@@ -25,6 +25,8 @@ export interface ProgramItem {
     date: string; // Format: YYYY-MM-DD
     startTime: string; // Format: HH:MM
     endTime?: string; // Format: HH:MM
+    originalIn: SupportedLanguage
+    translatedTo: SupportedLanguage[]
     locationSlug: string;
     speakerIds?: string[];
     isHighlight?: boolean;

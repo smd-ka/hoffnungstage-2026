@@ -114,6 +114,8 @@ export const programDays: ProgramDay[] = [
                     behind your relationships,
                     and have the opportunity to get your personal questions answered!`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-08',
                 startTime: '13:00',
                 endTime: '14:00',
@@ -133,6 +135,8 @@ export const programDays: ProgramDay[] = [
                     Show it at the Open Stage on the Creative Afternoon
                     and inspire your fellow students with your passion!`
                 ),
+                originalIn: "de",
+                translatedTo: [],
                 date: '2026-06-08',
                 startTime: '15:45',
                 endTime: '17:00',
@@ -162,6 +166,8 @@ export const programDays: ProgramDay[] = [
                     and where he finds happiness,
                     you will learn in this lecture!`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-08',
                 startTime: '19:00',
                 endTime: '20:30',
@@ -197,6 +203,8 @@ export const programDays: ProgramDay[] = [
                     you will gain valuable insights into how they deal with full schedules
                     and performance under pressure.`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-09',
                 startTime: '13:00',
                 endTime: '14:00',
@@ -224,6 +232,8 @@ export const programDays: ProgramDay[] = [
                     and talks about his personal experiences with it.
                     What can you draw new hope from in times of doubt?`
                 ),
+                originalIn: "de",
+                translatedTo: [],
                 date: '2026-06-09',
                 startTime: '15:45',
                 endTime: '17:00',
@@ -268,6 +278,8 @@ export const programDays: ProgramDay[] = [
                     Married, three children.
                     He likes: good questions, black coffee, and computers that don't crash.)`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-09',
                 startTime: '19:00',
                 endTime: '20:30',
@@ -308,6 +320,8 @@ export const programDays: ProgramDay[] = [
                     Rebekka Meussling shares as a Christian her own approach to hope
                     and why she herself, in view of many circumstances, can be optimistic.`
                 ),
+                originalIn: "de",
+                translatedTo: [],
                 date: '2026-06-10',
                 startTime: '15:45',
                 endTime: '17:00',
@@ -338,6 +352,8 @@ export const programDays: ProgramDay[] = [
                     as rigorous science and trust-based faith
                     are provided by Prof. Dr. Thomas Schimmel from KIT.`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-10',
                 startTime: '19:00',
                 endTime: '20:30',
@@ -370,6 +386,8 @@ export const programDays: ProgramDay[] = [
                     wearing a priestly garment.*
                     *2. Samuel 6, 14*`
                 ),
+                originalIn: "de",
+                translatedTo: [],
                 date: '2026-06-10',
                 startTime: '22:00',
                 locationSlug: 'kit-forum-meadow'
@@ -415,6 +433,8 @@ export const programDays: ProgramDay[] = [
                     what has brought her comfort in life
                     and how great suffering can be processed very personally.`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-11',
                 startTime: '14:00',
                 endTime: '15:30',
@@ -457,6 +477,8 @@ export const programDays: ProgramDay[] = [
                     and provide insights into their own approach to the crises of our time,
                     and how one can still be a bearer of hope.`
                 ),
+                originalIn: "de",
+                translatedTo: ["en", "es", "fr", "tr", "zh"],
                 date: '2026-06-11',
                 startTime: '18:00',
                 endTime: '19:00',
@@ -486,6 +508,8 @@ export const programDays: ProgramDay[] = [
                     "For no other foundation can anyone lay than that which is laid, which is Jesus Christ."
                     (Romans 6:11)`
                 ),
+                originalIn: "de",
+                translatedTo: [],
                 date: '2026-06-11',
                 startTime: '19:00',
                 endTime: '20:30',
