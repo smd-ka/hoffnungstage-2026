@@ -162,14 +162,14 @@ export const programDays: ProgramDay[] = [
                 slug: 'open-mic',
                 title: t('Open Mic', 'Open Mic'),
                 description: t(
-                    `Du hast ein Hobby, ein Talent
-                    oder stehst einfach gerne im Rampenlicht?
-                    Zeig es auf der Open Stage am Kreativnachmittag
-                    und begeistere deine Kommilitonen mit deiner Leidenschaft!`,
-                    `Do you have a hobby, a talent,
-                    or do you just like being in the spotlight?
-                    Show it at the Open Stage on the Creative Afternoon
-                    and inspire your fellow students with your passion!`
+                    `Erlebe einen Nachmittag voller Kreativität, Überraschungen und echter Leidenschaft:
+                    Unterschiedliche Menschen präsentieren ihre Talente
+                    und zeigen, was sie selbst geschaffen haben
+                    – sei es Musik, Poetry oder andere künstlerische Fertigkeiten und Projekte.`,
+                    `Experience an afternoon full of creativity, surprises, and true passion:
+                    different people showcase their talents
+                    and present what they have created themselves
+                    – whether music, poetry, or other artistic skills and projects.`
                 ),
                 originalIn: "de",
                 translatedTo: [],
