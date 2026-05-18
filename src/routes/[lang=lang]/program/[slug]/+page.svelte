@@ -26,6 +26,10 @@
 				de: 'Zurück zum Programm',
 				en: 'Back to Program'
 			},
+			openEnd: {
+				de: 'Open End',
+				en: 'Open End'
+			},
 			speakerLabelMaleSingular: {
 				de: 'Referent',
 				en: 'Speaker'
@@ -92,11 +96,11 @@
 					<!-- Date & Time -->
 					<div class="flex items-center gap-2">
 						<Fa icon={faCalendar} />
-						<span
-							>{formatDateForDisplay(item.date, lang)} • {item.startTime}{item.endTime
-								? ` – ${item.endTime}`
-								: ''}</span
-						>
+						<span>
+							{formatDateForDisplay(item.date, lang)}
+							•
+							{item.startTime} – {item.endTime ?? tr.openEnd}
+						</span>
 					</div>
 
 					<!-- Location -->
