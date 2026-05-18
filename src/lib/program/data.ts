@@ -94,7 +94,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'being-human-together',
                 title: t(
                     'Talkrunde: Miteinander Mensch sein – Wie gelingen Beziehungen?',
-                    'Panel Discussion: Being Human Together – How Can Relationships Succeed?'
+                    'Panel Discussion: Doing Life Together – How Do Relationships Thrive?'
                 ),
                 description: t(
                     `In einer Welt, in der Kommunikation zunehmend nur noch digital abläuft,
@@ -142,7 +142,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'what-truly-makes-me-happy',
                 title: t(
                     'Was macht mich wirklich glücklich? – Ein ehemaliger Bayernprofi erzählt',
-                    'What Really Makes Me Happy? – A Former Bayern Pro Shares'
+                    'What Really Makes Me Happy? – A Former Bayern Munich Professional Shares His Story'
                 ),
                 description: t(
                     `Du fragst dich, wie ein wirklich erfülltes Leben aussieht?
@@ -179,7 +179,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'stressful-phases',
                 title: t(
                     'Talkrunde: Wie gehe ich mit stressigen Phasen um?',
-                    'Panel Discussion: How Do I Deal with Stressful Phases?'
+                    'Panel Discussion: How Do I Cope With Stressful Times?'
                 ),
                 description: t(
                     `Eine Frage, die uns Studenten besonders betrifft:
@@ -208,7 +208,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'living-with-hope',
                 title: t(
                     'Hoffnungsvoll leben – Eine Frage der Herzenshaltung?',
-                    'Living with Hope – A Matter of Heart Attitude?'
+                    'Living with Hope – A Question of the Heart'
                 ),
                 description: t(
                     `Stimmt das?
@@ -234,7 +234,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'god-of-the-bible',
                 title: t(
                     'Angenommen es gibt einen Gott, warum ausgerechnet der Gott der Bibel?',
-                    'Assuming There Is a God, Why Specifically the God of the Bible?'
+                    'Assuming There Is a God, Why the God of the Bible of All Gods?'
                 ),
                 description: t(
                     `Kein bisschen selbstverständlich: dass es einen Gott gibt.
@@ -284,7 +284,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'hope-remains',
                 title: t(
                     'Wo bleibt die Hoffnung? – Leben in einer Welt voller Unsicherheit',
-                    'Where Has Hope Gone? – Living in a World Full of Uncertainty'
+                    'Where Is Hope to Be Found? – Living in a World Full of Uncertainty'
                 ),
                 description: t(
                     `Es sind schon turbulente Zeiten,
@@ -383,7 +383,7 @@ export const programDays: ProgramDay[] = [
                 slug: 'what-sustains-when-everything-breaks',
                 title: t(
                     'Was trägt wenn alles zerbricht? – Mein Umgang mit Leid',
-                    'What Sustains When Everything Breaks? – My Approach to Suffering'
+                    'What Sustains Us When Everything Falls Apart? – My Approach to Suffering'
                 ),
                 description: t(
                     `Viele kennen die Geschichte der Reallife Guys,
