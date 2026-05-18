@@ -64,6 +64,10 @@
 			availableTranslationsPlural: {
 				de: 'Übersetzungen verfügbar in',
 				en: 'translations available in'
+			},
+			unavailableLanguageWarning: {
+				de: 'Hinweis: Dieser Programmpunkt findet leider nicht auf Deutsch statt.',
+				en: 'Note: This program item is unfortunately not available in English.'
 			}
 		},
 		lang as 'de' | 'en'
@@ -82,6 +86,9 @@
 	}
 
 	$: speakerLabel = getSpeakerLabel(speakers.map((s) => s.gender));
+
+	// Check if current language is not available
+	$: isCurrentLangUnavailable = item.originalIn !== lang && !item.translatedTo.includes(lang);
 </script>
 
 <svelte:head>
@@ -154,6 +161,9 @@
 							</span>
 						{/each}
 					</div>
+				{/if}
+				{#if isCurrentLangUnavailable}
+					<p class="mt-4 text-sm italic text-amber-400">{tr.unavailableLanguageWarning}</p>
 				{/if}
 			</header>
 
