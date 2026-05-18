@@ -19,8 +19,9 @@ export const speakers: Record<string, Speaker> = {
     },
     'steffen-beck': {
         slug: 'steffen-beck',
-        name: 'Pastor Steffen Beck',
-        gender: 'm'
+        name: 'Steffen Beck',
+        gender: 'm',
+        title: 'Pastor'
     },
     'lukas-reppert': {
         slug: 'lukas-reppert',
