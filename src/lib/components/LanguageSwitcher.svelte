@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { getLanguageFromPathFallback, translatePath } from '$lib/language';
 
@@ -8,17 +9,22 @@
 	$: currentLanguage = getLanguageFromPathFallback($page.url.pathname);
 	$: switchedPath = translatePath($page.url.pathname, currentLanguage === 'de' ? 'en' : 'de');
 	$: isEnglish = currentLanguage === 'en';
+
+	function handleLanguageSwitch() {
+		goto(switchedPath, { noScroll: true });
+	}
 </script>
 
-<a
-	href={switchedPath}
+<button
+	on:click={handleLanguageSwitch}
+	type="button"
 	class="static-fade-in rounded-full border border-white/60 px-3 py-1 font-semibold tracking-wider text-white {className}"
 	aria-label={isEnglish ? 'Switch language to German' : 'Switch language to English'}
 >
 	<span class:opacity-60={isEnglish}>DE</span>
 	<span class="px-1">|</span>
 	<span class:opacity-60={!isEnglish}>EN</span>
-</a>
+</button>
 
 <style>
 	.static-fade-in {
