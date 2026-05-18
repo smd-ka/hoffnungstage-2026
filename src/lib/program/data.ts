@@ -74,14 +74,26 @@ export const speakers: Record<string, Speaker> = {
 export const locations: Record<string, Location> = {
     'kit-forum-meadow': {
         slug: 'kit-forum-meadow',
-        shortName: t('KIT – Forumswiese', 'KIT – Forum Meadow'),
-        longDescription: t('KIT – Forumswiese', 'KIT – Forum Meadow'),
+        shortName: t(
+            'KIT – Forumswiese',
+            'KIT – Forum Meadow'
+        ),
+        longDescription: t(
+            'KIT – Forumswiese',
+            'KIT – Forum Meadow'
+        ),
         icon: '📍'
     },
     'ph-plaza': {
         slug: 'ph-plaza',
-        shortName: t('PH – vor der Cafeteria', 'PH – in front of the cafeteria'),
-        longDescription: t('PH (Vorplatz an der Cafeteria Bismarckstraße)', 'PH (Square in front of the cafeteria on Bismarckstraße)'),
+        shortName: t(
+            'PH – vor der Cafeteria',
+            'PH – in front of the cafeteria'
+        ),
+        longDescription: t(
+            'PH (Vorplatz an der Cafeteria Bismarckstraße)',
+            'PH (Square in front of the cafeteria on Bismarckstraße)'
+        ),
         icon: '📍'
     }
 };
