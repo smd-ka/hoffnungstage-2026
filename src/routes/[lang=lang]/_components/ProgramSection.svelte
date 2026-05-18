@@ -16,11 +16,11 @@
 				de: 'Zum Programm',
 				en: 'To Program'
 			},
-			paragraph1: {
+			paragraph: {
 				de: 'Wir bereiten ein spannendes Programm bestehend aus verschiedenen Vorträgen vor. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
 				en: 'We are preparing an exciting program consisting of various talks. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
 			},
-			paragraph2: {
+			languageNote: {
 				de: 'Für alle Vorträge und Formate werden auch englische Übersetzungen angeboten.', // missing 2nd sentence on purpose
 				en: 'Of course English translations will be provided for all talks and formats. We are really looking forward to welcoming you at the Days of Hope!'
 			}
@@ -32,10 +32,10 @@
 <section class="page-section pt-72">
 	<h1>{tr.title}</h1>
 	<p>
-		{tr.paragraph1}
+		{tr.paragraph}
 	</p>
 	<p class="pb-8">
-		{tr.paragraph2}
+		{tr.languageNote}
 	</p>
 
 	<div class="mb-4 lg:hidden">
