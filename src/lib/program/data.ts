@@ -108,7 +108,6 @@ export const locations: Record<string, Location> = {
             'KIT – Forumswiese vor dem Audimax (Gebäude 30.95)',
             'KIT – Forumswiese in front of the Audimax lecture hall (building 30.95)',
         ),
-        icon: '📍'
     },
     'ph-plaza': {
         slug: 'ph-plaza',
@@ -120,7 +119,6 @@ export const locations: Record<string, Location> = {
             'PH – Vorplatz an der Cafeteria Bismarckstraße',
             'PH – Square in front of the cafeteria on Bismarckstraße'
         ),
-        icon: '📍'
     }
 };
 

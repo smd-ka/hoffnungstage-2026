@@ -14,7 +14,6 @@ export interface Location {
     slug: string;
     shortName: TranslatedText;
     longDescription: TranslatedText;
-    icon: string;
 }
 
 export interface ProgramItem {

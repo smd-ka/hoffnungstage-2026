@@ -9,7 +9,7 @@
 		getTitle
 	} from '$lib/program/helpers';
 	import type { ProgramItem } from '$lib/program/types';
-	import { faUser } from '@fortawesome/free-solid-svg-icons';
+	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
 	// Dynamically derive timeSlots from event data (start and end times)
@@ -71,7 +71,7 @@
 										</div>
 										{#if location}
 											<div class="mt-2 flex items-center gap-1 text-xs text-white/70">
-												<span>{location.icon}</span>
+												<span><Fa icon={faMapPin} /></span>
 												<span class="truncate">{location.shortName[lang]}</span>
 											</div>
 										{/if}
