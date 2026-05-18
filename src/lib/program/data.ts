@@ -91,8 +91,8 @@ export const locations: Record<string, Location> = {
             'PH – in front of the cafeteria'
         ),
         longDescription: t(
-            'PH (Vorplatz an der Cafeteria Bismarckstraße)',
-            'PH (Square in front of the cafeteria on Bismarckstraße)'
+            'PH – Vorplatz an der Cafeteria Bismarckstraße',
+            'PH – Square in front of the cafeteria on Bismarckstraße'
         ),
         icon: '📍'
     }
