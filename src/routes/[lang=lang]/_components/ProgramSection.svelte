@@ -21,8 +21,8 @@
 				en: 'We are preparing an exciting program consisting of various talks. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
 			},
 			languageNote: {
-				de: 'Für alle Vorträge und Formate werden auch englische Übersetzungen angeboten.', // missing 2nd sentence on purpose
-				en: 'Of course English translations will be provided for all talks and formats. We are really looking forward to welcoming you at the Days of Hope!'
+				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
+				en: 'Translations will be provided for talks and formats happening at KIT. You can find more detailed information on the page for each event item.'
 			}
 		},
 		lang as 'de' | 'en'

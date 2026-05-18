@@ -17,8 +17,8 @@
 				en: 'All events of Hoffnungstage from June 8 – 11, 2026 at a glance.'
 			},
 			languageNote: {
-				de: 'Für alle Vorträge und Formate werden auch englische Übersetzungen angeboten.',
-				en: 'English translations will be provided for all talks and formats.'
+				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
+				en: 'Translations will be provided for talks and formats happening at KIT. You can find more detailed information on the page for each event item.'
 			},
 			clickForContent: {
 				de: 'Klicke auf einen Programmpunkt für mehr Details.',
