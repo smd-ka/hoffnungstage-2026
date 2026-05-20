@@ -482,8 +482,8 @@ export const programDays: ProgramDay[] = [
             {
                 slug: 'hope-is-worth-it',
                 title: t(
-                    'Talkrunde: Warum sich Hoffnung heute noch lohnt',
-                    'Panel Discussion: Why Hope Is Still Worth It Today'
+                    'Talkrunde: Was bedeutet Hoffnung?',
+                    'Panel Discussion: What Does Hope Mean?'
                 ),
                 description: t(
                     `In einer Zeit großer Unsicherheiten
