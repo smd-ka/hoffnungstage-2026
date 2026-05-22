@@ -11,7 +11,7 @@ export const speakers: Record<string, Speaker> = {
         name: 'Michael Sternkopf',
         gender: 'm',
         title: t(
-            'Ehemalischer Fußballprofi beim FC Bayern München',
+            'Ehemaliger Fußballprofi beim FC Bayern München',
             'Former Football Professional at FC Bayern Munich'
         ),
     },
