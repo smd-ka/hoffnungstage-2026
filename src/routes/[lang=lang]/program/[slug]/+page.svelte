@@ -66,7 +66,8 @@
 				en: 'translations available in'
 			},
 			unavailableLanguageWarning: {
-				de: 'Hinweis: Dieser Programmpunkt findet leider nicht auf Deutsch statt.',
+				// special hint for German speakers intended as all non-German events are intended for internationals
+				de: 'Hinweis: Dieser Programmpunkt ist primär für unsere internationalen Kommilitonen gedacht.',
 				en: 'Note: This program item is unfortunately not available in English.'
 			}
 		},
