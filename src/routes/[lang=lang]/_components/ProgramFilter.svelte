@@ -4,7 +4,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
-	import type { ProgramFilterValue } from '$lib/program/types';
+	import { ProgramFilterValues, type ProgramFilterValue } from '$lib/program/types';
 
 	// can be used with bind:value from parent components.
 	export let value: ProgramFilterValue = 'mainProgram';
@@ -33,20 +33,13 @@
 		lang
 	);
 
-	const availableFilters: (ProgramFilterValue & keyof typeof tr)[] = [
-		'mainProgram',
-		'atKit',
-		'atPh',
-		'forInternationals'
-	];
-
 	function selectFilter(key: ProgramFilterValue) {
 		value = key;
 	}
 </script>
 
 <div class="flex flex-row flex-wrap justify-center gap-4">
-	{#each availableFilters as filter}
+	{#each ProgramFilterValues as filter}
 		<button
 			type="button"
 			on:click={() => selectFilter(filter)}
