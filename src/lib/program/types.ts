@@ -24,7 +24,7 @@ export interface Location {
     longDescription: TranslatedText;
 }
 
-export interface ProgramItem {
+export interface PartialProgramItem {
     slug: string;
     title: TranslatedText;
     description: TranslatedText;
@@ -38,7 +38,20 @@ export interface ProgramItem {
     highlightSpeaker?: boolean;
 }
 
-export interface ProgramDay {
+// additional values helpful to be precalculated
+export interface ProgramItem extends PartialProgramItem {
+    // forced ones
+    speakerIds: string[];
+    highlightSpeaker: boolean;
+    // new ones
+    forFilters: ProgramFilterValue[];
+}
+
+export interface PartialProgramDay {
     date: string; // Format: YYYY-MM-DD
+    items: PartialProgramItem[];
+}
+
+export interface ProgramDay extends PartialProgramDay {
     items: ProgramItem[];
 }

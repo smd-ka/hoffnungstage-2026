@@ -1,4 +1,4 @@
-import type { ProgramItem, ProgramDay, Speaker, Location, ProgramFilterValue } from './types';
+import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay } from './types';
 import { speakers, locations, programDays } from './data';
 import type { SupportedLanguage } from '$lib/language';
 
@@ -14,11 +14,25 @@ export function getLocale(language: SupportedLanguage): string {
 export function filterProgramDays(filter: ProgramFilterValue, days: ProgramDay[]): ProgramDay[] {
     return days.map((day) => ({
         ...day,
-        items: day.items.filter((item) => filterMatches(filter, item)),
+        items: day.items.filter((item) => item.forFilters.includes(filter)),
     }));
 }
 
-export function filterMatches(filter: ProgramFilterValue, item: ProgramItem): boolean {
+export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
+    return days.map((day) => ({
+        ...day,
+        items: day.items.map(item => ({
+            ...item,
+            // forced ones
+            speakerIds: item.speakerIds ?? [],
+            highlightSpeaker: item.highlightSpeaker ?? false,
+            // new ones
+            forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
+        })),
+    }));
+}
+
+function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
     switch (filter) {
         case 'mainProgram':
             return item.originalIn == 'de';
@@ -57,7 +71,7 @@ export function getLocationBySlug(slug: string): Location | undefined {
 
 export function getTitle(item: ProgramItem, language: SupportedLanguage): string {
     const title = item.title[language];
-    if (item.highlightSpeaker && item.speakerIds && item.speakerIds.length > 0) {
+    if (item.highlightSpeaker && item.speakerIds.length > 0) {
         const speakerNames = item.speakerIds.map((id) => speakers[id]?.name).filter(Boolean).join(', ');
         if (speakerNames) {
             return `${speakerNames}: ${title}`;

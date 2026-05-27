@@ -1,5 +1,6 @@
-import type { Speaker, Location, ProgramDay } from './types';
+import type { Speaker, Location, ProgramDay, PartialProgramDay } from './types';
 import type { TranslatedText } from '$lib/language';
+import { enhanceProgramDays } from './helpers';
 
 // Helper to create translated text
 const t = (de: string, en: string): TranslatedText => ({ de, en });
@@ -122,7 +123,7 @@ export const locations: Record<string, Location> = {
     }
 };
 
-export const programDays: ProgramDay[] = [
+export const programDays = enhanceProgramDays([
     {
         date: '2026-06-08',
         items: [
@@ -547,4 +548,4 @@ export const programDays: ProgramDay[] = [
             }
         ]
     }
-];
+]);
