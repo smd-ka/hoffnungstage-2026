@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { programDays } from '$lib/program/data';
 	import {
-		getLocationBySlug,
 		formatDateForDisplay,
 		getDayName,
 		getTitle,
@@ -56,7 +55,6 @@
 							{#if item}
 								{@const showSpeakers =
 									item.speakers.length > 0 && (item.speakers.length != 1 || !item.highlightSpeaker)}
-								{@const location = getLocationBySlug(item.locationSlug)}
 								<a
 									href="/{lang}/program/{item.slug}"
 									class="flex h-28 flex-col gap-2 rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
@@ -65,11 +63,11 @@
 										{getTitle(item, lang)}
 									</h3>
 									<div class="flex flex-col items-start justify-start gap-1">
-										{#if location}
+										{#if item.location}
 											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faMapPin} />
 												<span class="single-liner">
-													{location.shortName[lang]}
+													{item.location.shortName[lang]}
 												</span>
 											</div>
 										{/if}

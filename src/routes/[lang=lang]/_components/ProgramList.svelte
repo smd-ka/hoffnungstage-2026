@@ -3,7 +3,6 @@
 	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/data';
 	import {
-		getLocationBySlug,
 		getTitle,
 		getDayName,
 		formatDateForDisplay,
@@ -47,7 +46,6 @@
 			</div>
 
 			{#each day.items as item (item.slug)}
-				{@const location = getLocationBySlug(item.locationSlug)}
 				<a
 					href="/{lang}/program/{item.slug}"
 					class="block rounded-lg bg-indigo-600/90 p-4 transition-all hover:scale-[1.01] hover:bg-indigo-500"
@@ -68,10 +66,10 @@
 								<span>{item.startTime}{item.endTime ? ` - ${item.endTime}` : ''}</span>
 							</div>
 
-							{#if location}
+							{#if item.location}
 								<div class="flex items-center gap-1">
 									<Fa icon={faMapMarkerAlt} scale={0.8} />
-									<span>{location.shortName[lang]}</span>
+									<span>{item.location.shortName[lang]}</span>
 								</div>
 							{/if}
 

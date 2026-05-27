@@ -12,13 +12,12 @@
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
 	import { languageNames } from '$lib/languageNames';
-	import { getLocationBySlug, formatDateForDisplay, getTitle } from '$lib/program/helpers';
+	import { formatDateForDisplay, getTitle } from '$lib/program/helpers';
 	import type { Gender } from '$lib/program/types';
 
 	export let data: PageData;
 
 	$: item = data.item;
-	$: location = getLocationBySlug(item.locationSlug);
 	$: lang = $page.params.lang as 'de' | 'en';
 
 	$: tr = createTranslator(
@@ -125,10 +124,10 @@
 					</div>
 
 					<!-- Location -->
-					{#if location}
+					{#if item.location}
 						<div class="flex items-center gap-2">
 							<Fa icon={faMapPin} />
-							<span>{location.longDescription[lang]}</span>
+							<span>{item.location.longDescription[lang]}</span>
 						</div>
 					{/if}
 
