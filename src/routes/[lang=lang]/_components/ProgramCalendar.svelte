@@ -53,8 +53,7 @@
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}
-								{@const showSpeakers =
-									item.speakers.length > 0 && (item.speakers.length != 1 || !item.highlightSpeaker)}
+								{@const showSpeakers = item.speakers.length > 0 && !item.highlightSpeaker}
 								<a
 									href="/{lang}/program/{item.slug}"
 									class="flex h-28 flex-col gap-2 rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
