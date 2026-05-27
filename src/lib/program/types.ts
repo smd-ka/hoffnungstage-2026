@@ -2,7 +2,13 @@ import type { SupportedLanguage, TranslatedText } from '$lib/language';
 
 export type Gender = 'm' | 'f';
 
-export type ProgramFilterValue = 'mainProgram' | 'atKit' | 'atPh' | 'forInternationals';
+export const ProgramFilterValues = [
+    'mainProgram',
+    'atKit',
+    'atPh',
+    'forInternationals'
+] as const;
+export type ProgramFilterValue = typeof ProgramFilterValues[number];
 
 export interface Speaker {
     slug: string;
