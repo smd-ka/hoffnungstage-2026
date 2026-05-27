@@ -28,6 +28,7 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
             highlightSpeaker: item.highlightSpeaker ?? false,
             // new ones
             forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
+            speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
         })),
     }));
 }
@@ -55,14 +56,6 @@ export function getProgramItemBySlug(slug: string): ProgramItem | undefined {
 
 export function getDayForItem(slug: string): ProgramDay | undefined {
     return programDays.find((day) => day.items.some((item) => item.slug === slug));
-}
-
-export function getSpeakerBySlug(slug: string): Speaker | undefined {
-    return speakers[slug];
-}
-
-export function getSpeakersForItem(item: ProgramItem): Speaker[] {
-    return (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean);
 }
 
 export function getLocationBySlug(slug: string): Location | undefined {

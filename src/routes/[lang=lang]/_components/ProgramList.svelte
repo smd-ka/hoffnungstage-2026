@@ -3,7 +3,6 @@
 	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/data';
 	import {
-		getSpeakersForItem,
 		getLocationBySlug,
 		getTitle,
 		getDayName,
@@ -48,7 +47,6 @@
 			</div>
 
 			{#each day.items as item (item.slug)}
-				{@const itemSpeakers = getSpeakersForItem(item)}
 				{@const location = getLocationBySlug(item.locationSlug)}
 				<a
 					href="/{lang}/program/{item.slug}"
@@ -77,11 +75,11 @@
 								</div>
 							{/if}
 
-							{#if itemSpeakers.length > 0}
+							{#if item.speakers.length > 0}
 								<div class="flex items-center gap-1">
 									<Fa icon={faUser} scale={0.8} />
 									<span>
-										{itemSpeakers.map((s) => s.name).join(', ')}
+										{item.speakers.map((s) => s.name).join(', ')}
 									</span>
 								</div>
 							{/if}

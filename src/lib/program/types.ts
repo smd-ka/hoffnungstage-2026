@@ -45,6 +45,7 @@ export interface ProgramItem extends PartialProgramItem {
     highlightSpeaker: boolean;
     // new ones
     forFilters: ProgramFilterValue[];
+    speakers: Speaker[];
 }
 
 export interface PartialProgramDay {

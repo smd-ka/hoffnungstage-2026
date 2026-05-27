@@ -2,7 +2,6 @@
 	import { page } from '$app/stores';
 	import { programDays } from '$lib/program/data';
 	import {
-		getSpeakersForItem,
 		getLocationBySlug,
 		formatDateForDisplay,
 		getDayName,
@@ -55,9 +54,8 @@
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}
-								{@const itemSpeakers = getSpeakersForItem(item)}
 								{@const showSpeakers =
-									itemSpeakers.length > 0 && (itemSpeakers.length != 1 || !item.highlightSpeaker)}
+									item.speakers.length > 0 && (item.speakers.length != 1 || !item.highlightSpeaker)}
 								{@const location = getLocationBySlug(item.locationSlug)}
 								<a
 									href="/{lang}/program/{item.slug}"
@@ -79,7 +77,7 @@
 											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">
-													{itemSpeakers.map((s) => s.name).join(', ')}
+													{item.speakers.map((s) => s.name).join(', ')}
 												</span>
 											</div>
 										{/if}

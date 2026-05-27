@@ -12,18 +12,12 @@
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
 	import { languageNames } from '$lib/languageNames';
-	import {
-		getSpeakersForItem,
-		getLocationBySlug,
-		formatDateForDisplay,
-		getTitle
-	} from '$lib/program/helpers';
+	import { getLocationBySlug, formatDateForDisplay, getTitle } from '$lib/program/helpers';
 	import type { Gender } from '$lib/program/types';
 
 	export let data: PageData;
 
 	$: item = data.item;
-	$: speakers = getSpeakersForItem(item);
 	$: location = getLocationBySlug(item.locationSlug);
 	$: lang = $page.params.lang as 'de' | 'en';
 
@@ -86,7 +80,7 @@
 		return allFemale ? tr.speakerLabelFemalePlural : tr.speakerLabelMalePlural;
 	}
 
-	$: speakerLabel = getSpeakerLabel(speakers.map((s) => s.gender));
+	$: speakerLabel = getSpeakerLabel(item.speakers.map((s) => s.gender));
 
 	// Check if current language is not available
 	$: isCurrentLangUnavailable = item.originalIn !== lang && !item.translatedTo.includes(lang);
@@ -178,14 +172,14 @@
 			</section>
 
 			<!-- Speakers Section -->
-			{#if speakers.length > 0}
+			{#if item.speakers.length > 0}
 				<section class="border-t border-white/10 p-6 md:p-8">
 					<h2 class="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
 						<Fa icon={faUser} />
 						{speakerLabel}
 					</h2>
 					<div class="flex flex-wrap gap-4">
-						{#each speakers as speaker}
+						{#each item.speakers as speaker}
 							<div class="rounded-lg bg-white/5 p-4">
 								<h3 class="font-semibold text-white">{speaker.name}</h3>
 								{#if speaker.title}
