@@ -13,7 +13,7 @@ export function getLocale(language: SupportedLanguage): string {
 
 export function filterProgramDays(filter: ProgramFilterValue, days: ProgramDay[]): ProgramDay[] {
     return days.map((day) => ({
-        date: day.date,
+        ...day,
         items: day.items.filter((item) => filterMatches(filter, item)),
     }));
 }
