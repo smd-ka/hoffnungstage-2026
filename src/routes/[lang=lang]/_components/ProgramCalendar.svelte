@@ -57,30 +57,32 @@
 							{#if item}
 								{@const itemSpeakers = getSpeakersForItem(item)}
 								{@const location = getLocationBySlug(item.locationSlug)}
-								<div class="h-full">
-									<a
-										href="/{lang}/program/{item.slug}"
-										class="block h-full rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
-									>
-										<div class="mb-1 flex items-start justify-between gap-2">
-											<h3 class="text-sm font-semibold leading-tight">{getTitle(item, lang)}</h3>
-										</div>
+								<a
+									href="/{lang}/program/{item.slug}"
+									class="flex h-28 flex-col gap-2 rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
+								>
+									<h3 class="multi-liner shrink grow text-sm font-semibold leading-tight">
+										{getTitle(item, lang)}
+									</h3>
+									<div class="flex flex-col items-start justify-start gap-1">
 										{#if location}
-											<div class="mt-2 flex items-center gap-1 text-xs text-white/70">
-												<span><Fa icon={faMapPin} /></span>
-												<span class="truncate">{location.shortName[lang]}</span>
+											<div class="flex w-full items-center gap-1 text-xs text-white/70">
+												<Fa icon={faMapPin} />
+												<span class="single-liner">
+													{location.shortName[lang]}
+												</span>
 											</div>
 										{/if}
 										{#if itemSpeakers.length > 0}
-											<div class="mt-1 flex items-center gap-1 text-xs text-white/70">
+											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faUser} scale={0.7} />
-												<span class="truncate">
+												<span class="single-liner">
 													{itemSpeakers.map((s) => s.name).join(', ')}
 												</span>
 											</div>
 										{/if}
-									</a>
-								</div>
+									</div>
+								</a>
 							{/if}
 						</td>
 					{/each}
@@ -96,5 +98,14 @@
 		background: rgba(0, 0, 0, 0.3);
 		backdrop-filter: blur(10px);
 		border-radius: 0.75rem;
+	}
+	._text-overflow {
+		@apply h-full w-full overflow-hidden text-ellipsis;
+	}
+	.multi-liner {
+		@apply _text-overflow text-wrap;
+	}
+	.single-liner {
+		@apply _text-overflow text-nowrap;
 	}
 </style>
