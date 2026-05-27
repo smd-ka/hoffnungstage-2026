@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/data';
 	import {
 		getSpeakersForItem,
@@ -17,6 +18,21 @@
 	$: filteredDays = filterProgramDays(filter, programDays);
 
 	$: lang = $page.params.lang as 'de' | 'en';
+	$: tr = createTranslator(
+		{
+			noEvents: {
+				de: `
+				Es gibt leider kein Event für dich an diesem Tag.
+				Aber du kannst trotzdem gern vorbeischauen & unser Rahmenprogramm anschauen :)
+			`,
+				en: `
+				We sadly have no event for you that day.
+				But you can still come around & check out our venue :)
+			`
+			}
+		},
+		lang
+	);
 </script>
 
 <div class="program-list space-y-6">
@@ -72,6 +88,10 @@
 						</div>
 					</div>
 				</a>
+			{:else}
+				<p class="text-white text-center">
+					{tr.noEvents}
+				</p>
 			{/each}
 		</div>
 	{/each}
