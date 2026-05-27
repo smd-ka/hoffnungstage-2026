@@ -46,6 +46,7 @@ export interface ProgramItem extends PartialProgramItem {
     // new ones
     forFilters: ProgramFilterValue[];
     location: Location;
+    showSpeakersSeparate: boolean;
     speakers: Speaker[];
 }
 

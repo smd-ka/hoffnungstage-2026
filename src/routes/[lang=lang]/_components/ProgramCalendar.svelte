@@ -53,7 +53,6 @@
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}
-								{@const showSpeakers = item.speakers.length > 0 && !item.highlightSpeaker}
 								<a
 									href="/{lang}/program/{item.slug}"
 									class="flex h-28 flex-col gap-2 rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
@@ -70,7 +69,7 @@
 												</span>
 											</div>
 										{/if}
-										{#if showSpeakers}
+										{#if item.showSpeakersSeparate}
 											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">
