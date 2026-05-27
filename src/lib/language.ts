@@ -14,7 +14,7 @@ export type SupportedLanguage =
     ;
 
 // this lists all languages our webpage is fully translated in
-export const supportedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
+export const translatedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
 
 /**
  * A type for texts that can be translated into multiple supported languages.
@@ -43,7 +43,7 @@ export function getLanguageFromPath(path: string): SupportedLanguage | null {
     const segments = path.split('/').filter(Boolean);
     const firstSegment = segments[0] as SupportedLanguage;
 
-    if (!supportedLanguages.includes(firstSegment)) {
+    if (!translatedLanguages.includes(firstSegment)) {
         return null;
     }
 
@@ -109,7 +109,7 @@ export function getPreferredLanguage(acceptLanguage: string): SupportedLanguage 
         .sort((a, b) => b.q - a.q);
 
     // Find the q values for supported languages
-    const supportedQLanguage = supportedLanguages
+    const supportedQLanguage = translatedLanguages
         .map((code) => ({
             code,
             q: parsedLanguages.find((lang) => lang.code === code)?.q ?? 0

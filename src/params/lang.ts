@@ -1,6 +1,6 @@
-import { supportedLanguages } from '$lib/language';
+import { translatedLanguages } from '$lib/language';
 
 /** @param {string} param */
 export function match(param) {
-    return supportedLanguages.includes(/** @type {import('$lib/language').SupportedLanguage} */(param));
+    return translatedLanguages.includes(/** @type {import('$lib/language').SupportedLanguage} */(param));
 }
