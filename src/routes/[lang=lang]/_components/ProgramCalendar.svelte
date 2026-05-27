@@ -16,14 +16,8 @@
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
 
-	// Dynamically derive timeSlots from event data (start and end times)
-	$: allTimes = filteredDays.flatMap((day) =>
-		day.items.flatMap((item) => {
-			const times = [item.startTime];
-			if (item.endTime) times.push(item.endTime);
-			return times;
-		})
-	);
+	// Dynamically derive timeSlots from event data (start time only)
+	$: allTimes = filteredDays.flatMap((day) => day.items.map((item) => item.startTime));
 	$: timeSlots = [...new Set(allTimes)].sort();
 
 	$: lang = $page.params.lang as 'de' | 'en';
