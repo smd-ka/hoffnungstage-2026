@@ -14,19 +14,20 @@ export type SupportedLanguage =
     ;
 
 // this lists all languages our webpage is fully translated in
-export const translatedLanguages: readonly SupportedLanguage[] = ['de', 'en'];
+export const translatedLanguages = ['de', 'en'] as const;
+export type TranslatedLanguage = typeof translatedLanguages[number];
 
 /**
  * A type for texts that can be translated into multiple supported languages.
  * Maps each SupportedLanguage to its corresponding string.
  */
-export type TranslatedText = Record<SupportedLanguage, string>;
-export const defaultLanguage: SupportedLanguage = 'de';
+export type TranslatedText = Record<TranslatedLanguage, string>;
+export const defaultLanguage: TranslatedLanguage = 'de';
 
 /**
  * Reactive store for the current language.
  */
-export const currentLanguage = derived(page, ($page) => $page.params.lang as SupportedLanguage);
+export const currentLanguage = derived(page, ($page) => $page.params.lang as TranslatedLanguage);
 
 /**
  * Get the active language from the current path.
@@ -35,13 +36,13 @@ export const currentLanguage = derived(page, ($page) => $page.params.lang as Sup
  * @param path - The current URL path
  * @returns The language code ('de' or 'en'), or null if the path has no valid language prefix
  */
-export function getLanguageFromPath(path: string): SupportedLanguage | null {
+export function getLanguageFromPath(path: string): TranslatedLanguage | null {
     if (path === '/') {
         return null;
     }
 
     const segments = path.split('/').filter(Boolean);
-    const firstSegment = segments[0] as SupportedLanguage;
+    const firstSegment = segments[0] as TranslatedLanguage;
 
     if (!translatedLanguages.includes(firstSegment)) {
         return null;
@@ -58,7 +59,7 @@ export function getLanguageFromPath(path: string): SupportedLanguage | null {
  * @returns The language code ('de' or 'en')
  * @throws Error if the path is '/' (root path has no language prefix)
  */
-export function getLanguageFromPathFallback(path: string): SupportedLanguage {
+export function getLanguageFromPathFallback(path: string): TranslatedLanguage {
     const language = getLanguageFromPath(path);
     return language ?? defaultLanguage;
 }
@@ -72,7 +73,7 @@ export function getLanguageFromPathFallback(path: string): SupportedLanguage {
  * @returns The path with the target language prefix
  * @throws Error if the path is '/' (root path has no language prefix)
  */
-export function translatePath(path: string, targetLanguage: SupportedLanguage): string {
+export function translatePath(path: string, targetLanguage: TranslatedLanguage): string {
     if (path === '/') {
         throw new Error('Cannot translate root path "/" to another language');
     }
@@ -92,7 +93,7 @@ export function translatePath(path: string, targetLanguage: SupportedLanguage): 
  *
  * @see https://en.wikipedia.org/wiki/IETF_language_tag
  */
-export function getPreferredLanguage(acceptLanguage: string): SupportedLanguage {
+export function getPreferredLanguage(acceptLanguage: string): TranslatedLanguage {
     // Parse the Accept-Language header to extract language preferences
     // e.g., "en-US,en;q=0.9,de;q=0.8,de-DE;q=0.7"
     const parsedLanguages: { code: string; q: number }[] = acceptLanguage
@@ -133,8 +134,8 @@ export function getPreferredLanguage(acceptLanguage: string): SupportedLanguage 
  */
 export function createTranslator<
     V,
-    T extends Record<PropertyKey, Partial<Record<SupportedLanguage, V>>>,
-    D extends SupportedLanguage
+    T extends Record<PropertyKey, Partial<Record<TranslatedLanguage, V>>>,
+    D extends TranslatedLanguage
 >(translations: T, lang: D): { [K in keyof T]: NonNullable<T[K][D]> } {
     const result: { [K in keyof T]: NonNullable<T[K][D]> } = {} as never;
     for (const key in translations) {

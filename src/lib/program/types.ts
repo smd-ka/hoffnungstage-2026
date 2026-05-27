@@ -1,4 +1,4 @@
-import type { SupportedLanguage, TranslatedText } from '$lib/language';
+import type { SupportedLanguage, TranslatedLanguage, TranslatedText } from '$lib/language';
 
 export type Gender = 'm' | 'f';
 
@@ -31,7 +31,7 @@ export interface PartialProgramItem {
     date: string; // Format: YYYY-MM-DD
     startTime: string; // Format: HH:MM
     endTime?: string; // Format: HH:MM
-    originalIn: SupportedLanguage
+    originalIn: TranslatedLanguage
     translatedTo: SupportedLanguage[]
     locationSlug: string;
     speakerIds?: string[];

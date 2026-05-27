@@ -1,8 +1,8 @@
 import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay } from './types';
 import { speakers, locations, programDays } from './data';
-import type { SupportedLanguage } from '$lib/language';
+import type { TranslatedLanguage } from '$lib/language';
 
-export function getLocale(language: SupportedLanguage): string {
+export function getLocale(language: TranslatedLanguage): string {
     switch (language) {
         case 'de':
             return 'de-DE';
@@ -69,7 +69,7 @@ export function getLocationBySlug(slug: string): Location | undefined {
     return locations[slug];
 }
 
-export function getTitle(item: ProgramItem, language: SupportedLanguage): string {
+export function getTitle(item: ProgramItem, language: TranslatedLanguage): string {
     const title = item.title[language];
     if (item.highlightSpeaker && item.speakerIds.length > 0) {
         const speakerNames = item.speakerIds.map((id) => speakers[id]?.name).filter(Boolean).join(', ');
@@ -80,12 +80,12 @@ export function getTitle(item: ProgramItem, language: SupportedLanguage): string
     return title;
 }
 
-export function formatDateForDisplay(dateString: string, language: SupportedLanguage): string {
+export function formatDateForDisplay(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
     return date.toLocaleDateString(getLocale(language), { day: 'numeric', month: 'long' });
 }
 
-export function getDayName(dateString: string, language: SupportedLanguage): string {
+export function getDayName(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
     return date.toLocaleDateString(getLocale(language), { weekday: 'long' });
 }
