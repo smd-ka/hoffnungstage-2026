@@ -6,21 +6,25 @@
 		getLocationBySlug,
 		formatDateForDisplay,
 		getDayName,
-		getTitle
+		getTitle,
+		filterProgramDays
 	} from '$lib/program/helpers';
-	import type { ProgramItem } from '$lib/program/types';
+	import type { ProgramFilterValue, ProgramItem } from '$lib/program/types';
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
+	export let filter: ProgramFilterValue = 'mainProgram';
+	$: filteredDays = filterProgramDays(filter, programDays);
+
 	// Dynamically derive timeSlots from event data (start and end times)
-	const allTimes = programDays.flatMap((day) =>
+	$: allTimes = filteredDays.flatMap((day) =>
 		day.items.flatMap((item) => {
 			const times = [item.startTime];
 			if (item.endTime) times.push(item.endTime);
 			return times;
 		})
 	);
-	const timeSlots = [...new Set(allTimes)].sort();
+	$: timeSlots = [...new Set(allTimes)].sort();
 
 	$: lang = $page.params.lang as 'de' | 'en';
 
@@ -39,7 +43,7 @@
 		<thead>
 			<tr class="border-b border-white/20">
 				<th class="w-20 p-2 text-left text-sm font-normal text-white/70">Zeit</th>
-				{#each programDays as day}
+				{#each filteredDays as day}
 					<th class="p-2 text-center">
 						<div class="font-semibold">{getDayName(day.date, lang)}</div>
 						<div class="text-sm font-normal text-white/60">
@@ -53,7 +57,7 @@
 			{#each timeSlots as time}
 				<tr class="border-b border-white/10 align-top">
 					<td class="p-2 align-top text-sm text-white/70">{time}</td>
-					{#each programDays as day}
+					{#each filteredDays as day}
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}

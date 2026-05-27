@@ -6,16 +6,21 @@
 		getLocationBySlug,
 		getTitle,
 		getDayName,
-		formatDateForDisplay
+		formatDateForDisplay,
+		filterProgramDays
 	} from '$lib/program/helpers';
+	import type { ProgramFilterValue } from '$lib/program/types';
 	import { faUser, faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
+
+	export let filter: ProgramFilterValue = 'mainProgram';
+	$: filteredDays = filterProgramDays(filter, programDays);
 
 	$: lang = $page.params.lang as 'de' | 'en';
 </script>
 
 <div class="program-list space-y-6">
-	{#each programDays as day}
+	{#each filteredDays as day}
 		<div class="space-y-2">
 			<div class="flex items-center justify-center gap-6 border-b border-white/20 pb-2">
 				<h2 class="text-xl font-semibold text-white">

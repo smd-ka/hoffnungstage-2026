@@ -4,6 +4,8 @@
 	import ProgramCalendar from '../_components/ProgramCalendar.svelte';
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import ProgramList from '../_components/ProgramList.svelte';
+	import ProgramFilter from '../_components/ProgramFilter.svelte';
+	import type { ProgramFilterValue } from '$lib/program/types';
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
@@ -31,6 +33,8 @@
 		},
 		lang
 	);
+
+	let selectedFilter: ProgramFilterValue;
 </script>
 
 <svelte:head>
@@ -39,7 +43,7 @@
 </svelte:head>
 
 <main
-	class="flex min-h-screen flex-col gap-12 bg-cover bg-fixed bg-center pb-20 pt-8"
+	class="flex min-h-screen flex-col gap-12 bg-cover bg-fixed bg-center pb-20 pt-8 max-lg:gap-4"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
 >
 	<header class="flex flex-col gap-4 px-4">
@@ -53,14 +57,23 @@
 			{tr.clickForContent}
 		</p>
 	</header>
-	<div class="mx-auto max-w-6xl px-4 max-lg:hidden">
-		<ProgramCalendar />
+
+	<div class="flex flex-col gap-6">
+		<div class="mx-auto max-w-6xl px-4">
+			<ProgramFilter bind:value={selectedFilter} />
+		</div>
+		<div class="mx-auto max-w-6xl px-4 max-lg:hidden">
+			<ProgramCalendar filter={selectedFilter} />
+		</div>
 	</div>
-	<p class="max-lg:hidden">
-		{tr.preferList}
-	</p>
-	<div id="program-list" class="mx-auto max-w-6xl px-4">
-		<ProgramList />
+
+	<div class="flex flex-col gap-2">
+		<p class="max-lg:hidden">
+			{tr.preferList}
+		</p>
+		<div id="program-list" class="mx-auto max-w-6xl px-4">
+			<ProgramList filter={selectedFilter} />
+		</div>
 	</div>
 </main>
 

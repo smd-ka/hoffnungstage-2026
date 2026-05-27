@@ -1,4 +1,4 @@
-import type { ProgramItem, ProgramDay, Speaker, Location } from './types';
+import type { ProgramItem, ProgramDay, Speaker, Location, ProgramFilterValue } from './types';
 import { speakers, locations, programDays } from './data';
 import type { SupportedLanguage } from '$lib/language';
 
@@ -8,6 +8,26 @@ export function getLocale(language: SupportedLanguage): string {
             return 'de-DE';
         case 'en':
             return 'en-US';
+    }
+}
+
+export function filterProgramDays(filter: ProgramFilterValue, days: ProgramDay[]): ProgramDay[] {
+    return days.map((day) => ({
+        date: day.date,
+        items: day.items.filter((item) => filterMatches(filter, item)),
+    }));
+}
+
+export function filterMatches(filter: ProgramFilterValue, item: ProgramItem): boolean {
+    switch (filter) {
+        case 'mainProgram':
+            return item.originalIn == 'de';
+        case 'atKit':
+            return item.locationSlug == 'kit-forum-meadow';
+        case 'atPh':
+            return item.locationSlug == 'ph-plaza';
+        case 'forInternationals':
+            return item.originalIn != 'de' || item.translatedTo.length > 0;
     }
 }
 

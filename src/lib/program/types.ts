@@ -2,6 +2,8 @@ import type { SupportedLanguage, TranslatedText } from '$lib/language';
 
 export type Gender = 'm' | 'f';
 
+export type ProgramFilterValue = 'mainProgram' | 'atKit' | 'atPh' | 'forInternationals';
+
 export interface Speaker {
     slug: string;
     name: string;
