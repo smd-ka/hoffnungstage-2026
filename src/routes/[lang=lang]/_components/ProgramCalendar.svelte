@@ -56,6 +56,8 @@
 						<td class="p-1 align-top">
 							{#if item}
 								{@const itemSpeakers = getSpeakersForItem(item)}
+								{@const showSpeakers =
+									itemSpeakers.length > 0 && (itemSpeakers.length != 1 || !item.highlightSpeaker)}
 								{@const location = getLocationBySlug(item.locationSlug)}
 								<a
 									href="/{lang}/program/{item.slug}"
@@ -73,7 +75,7 @@
 												</span>
 											</div>
 										{/if}
-										{#if itemSpeakers.length > 0}
+										{#if showSpeakers}
 											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">
