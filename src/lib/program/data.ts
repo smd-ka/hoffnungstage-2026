@@ -156,7 +156,6 @@ export const programDays: ProgramDay[] = [
                 startTime: '13:00',
                 endTime: '14:00',
                 locationSlug: 'kit-forum-meadow',
-                isHighlight: true
             },
             {
                 slug: 'open-mic',
@@ -209,7 +208,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '20:30',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['michael-sternkopf'],
-                isHighlight: true,
                 highlightSpeaker: true
             }
         ]
@@ -246,7 +244,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '14:00',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert'],
-                isHighlight: true
             },
             {
                 slug: 'living-with-hope',
@@ -321,7 +318,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '20:30',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['matthias-clausen'],
-                isHighlight: true
             }
         ]
     },
@@ -395,7 +391,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '20:30',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['thomas-schimmel'],
-                isHighlight: true
             },
             {
                 slug: 'c-rave',
@@ -476,7 +471,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '15:30',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['sabine-mickenbecker'],
-                isHighlight: true,
                 highlightSpeaker: true
             },
             {
@@ -520,7 +514,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '19:00',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['jannis-winkels', 'gernot-elsner'],
-                isHighlight: true
             },
             {
                 slug: 'live-concert-samuel-knospe',
@@ -551,7 +544,6 @@ export const programDays: ProgramDay[] = [
                 endTime: '20:30',
                 locationSlug: 'kit-forum-meadow',
                 speakerIds: ['samuel-knospe'],
-                isHighlight: true
             }
         ]
     }

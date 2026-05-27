@@ -66,9 +66,7 @@
 								<div class="h-full">
 									<a
 										href="/{lang}/program/{item.slug}"
-										class="block h-full rounded-lg p-3 transition-all hover:scale-[1.02] {item.isHighlight
-											? 'bg-indigo-600/90 hover:bg-indigo-500'
-											: 'bg-white/10 hover:bg-white/20'}"
+										class="block h-full rounded-lg bg-indigo-600/50 p-3 transition-all hover:scale-[1.02] hover:bg-indigo-500"
 									>
 										<div class="mb-1 flex items-start justify-between gap-2">
 											<h3 class="text-sm font-semibold leading-tight">{getTitle(item, lang)}</h3>

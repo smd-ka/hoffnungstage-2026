@@ -29,7 +29,6 @@ export interface ProgramItem {
     translatedTo: SupportedLanguage[]
     locationSlug: string;
     speakerIds?: string[];
-    isHighlight?: boolean;
     highlightSpeaker?: boolean;
 }
 
