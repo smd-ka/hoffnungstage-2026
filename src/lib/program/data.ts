@@ -158,7 +158,7 @@ export const programDays = enhanceProgramDays([
 				slug: 'what-truly-makes-me-happy',
 				title: t(
 					'Was macht mich wirklich glücklich? – Ein ehemaliger Bayernprofi erzählt',
-					'What Really Makes Me Happy? – A Former Bayern Munich Professional Shares His Story'
+					'What Really Makes Me Happy? – A Former Bayern Munich Soccer Professional Shares His Story'
 				),
 				description: t(
 					`Du fragst dich, wie ein wirklich erfülltes Leben aussieht?
@@ -173,10 +173,8 @@ export const programDays = enhanceProgramDays([
                     How can you lead a successful life after university?
                     Does one need to make a career,
                     or are there other factors?
-                    These questions and more are answered by former Karlsruhe and FC Bayern football professional Michael Sternkopf.
-                    What has occupied him throughout his career
-                    and where he finds happiness,
-                    you will learn in this lecture!`
+                   Former Karlsruher and FC Bayern soccer professional Michael Sternkopf answers these questions and more. 
+                   In this talk, you'll learn what has driven him throughout his career and where he finds happiness!`
 				),
 				originalIn: 'de',
 				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
@@ -274,19 +272,19 @@ export const programDays = enhanceProgramDays([
                     (Als Redner unterwegs an Unis in ganz Deutschland.
                     Verheiratet, drei Kinder.
                     Er mag: gute Fragen, schwarzen Kaffee und nicht abstürzende Computer.)`,
-					`Not a bit obvious: that there is a God.
+					`It is by no means self-evident that a God exists.
                     Contested, doubted, also justifiable?
-                    But okay: Let's say hypothetically, he exists.
-                    Why this version specifically?
+                    Let's say hypothetically, he exists.
+                    Why would it be the christian God?
                     Just out of convenience because that's how we were socialized?
-                    What about the countless competing products?
+                    What about the gods from other religions?
 
                     So if God, why this one:
                     arguments and an invitation to discussion.
 
                     With Prof. Dr. Matthias Clausen,
-                    Ev. University of Applied Sciences Tabor (Marburg) and Institute for Faith and Science (IGUW).
-                    (Speaking at universities throughout Germany.
+                    Ev. Hochschule Tabor (Marburg) and Institut für Glaube und Wissenschaft (IGUW).
+                    A speaker at universities throughout Germany.
                     Married, three children.
                     He likes: good questions, black coffee, and computers that don't crash.)`
 				),
@@ -326,7 +324,7 @@ export const programDays = enhanceProgramDays([
                     and the economic situation.
                     Are there even areas in life
                     where hope is still worth pursuing?
-                    Or must we pick ourselves up
+                    Or must we pull ourselves together
                     and be satisfied with the current situation?
                     Rebekka Meussling shares as a Christian her own approach to hope
                     and why she herself, in view of many circumstances, can be optimistic.`
@@ -358,10 +356,8 @@ export const programDays = enhanceProgramDays([
                     and top researcher in nanotechnology
                     actually say about the topic of faith?
                     Is God not dead, as Nietzsche stated?
-                    Exciting insights from the interface
-                    between two such different areas of society
-                    as rigorous science and trust-based faith
-                    are provided by Prof. Dr. Thomas Schimmel from KIT.`
+                    Prof. Dr. Thomas Schimmel from KIT offers fascinating insights into the intersecting worlds 
+                    of rigorous science and faith-based belief - two very different domains.`
 				),
 				originalIn: 'de',
 				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
@@ -469,18 +465,17 @@ export const programDays = enhanceProgramDays([
                     Über diese Frage philosophieren Jannis Winkels und Gernot Elsner
                     und liefern Einblicke in ihren eigenen Umgang mit den Krisen dieser Zeit,
                     und wie man dennoch Hoffnungsträger sein kann.`,
-					`In a time of great uncertainties
-                    and many open questions,
+					`In a time of great uncertainty
+                    and many unanswered questions,
                     it is easy to lose hope.
-                    Especially the younger generation faces great challenges,
-                    from rapid climate change
+                    The younger generation in particular faces great challenges,
+                    ranging from rapid climate change
                     to new types of geopolitical conflicts.
-                    Is there even still reason for optimism
-                    in all these challenges?
-                    And how can one find hope for oneself, quite personally,
-                    after all?
-                    Jannis Winkels and Gernot Elsner philosophize about this question
-                    and provide insights into their own approach to the crises of our time,
+                    Is there any reason for optimism
+                    in the face of all these challenges?
+                    And how can one, on a personal level, perhaps still find hope?
+                    Jannis Winkels and Gernot Elsner reflect on this question
+                    and provide insights into how they themselves are dealing with the crises of our time,
                     and how one can still be a bearer of hope.`
 				),
 				originalIn: 'de',
@@ -504,11 +499,10 @@ export const programDays = enhanceProgramDays([
                     "Denn einen anderen Grund kann niemand legen
                     außer dem, der gelegt ist, welcher ist Jesus Christus."
                     (Römer 6, 11)`,
-					`Samuel Knospe combines in his music a concern:
-                    to connect people with the living God!
-                    Authentically, he combines musical styles
-                    with profound lyrics,
-                    that speak of a life with a real foundation.
+					`Samuel Knospes music is driven by one desire:
+                    To connect people with the living God!
+                    He authentically blends musical styles with profound lyrics
+                    that speak of a life built on a solid foundation.
 
                     "For no other foundation can anyone lay than that which is laid, which is Jesus Christ."
                     (Romans 6:11)`
