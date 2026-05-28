@@ -225,15 +225,17 @@ export const programDays = enhanceProgramDays([
                 description: t(
                     `Eine Frage, die uns Studenten besonders betrifft:
                     Wie gehe ich auf eine gesunde Weise mit Stress und Druck um?
-                    In einer Runde mit dem früheren Finanzvorstand eines großen Pharmakonzerns
-                    und Vater einer gehbeeinträchtigten Tochter, Carsten Feichtinger,
+                    In einer Runde mit einem Interim-Manager,
+                    der früher die Leitung des europäischen Controllings für einen amerikanischen Konzern innehatte,
+                    Carsten Feichtinger,
                     sowie Pastor Steffen Beck und Lukas Reppert
                     erhälst du wertvolle Einblicke in deren Umgang mit vollen Terminkalendern
                     und Performance unter Druck.`,
                     `A question that particularly affects us students:
                     How do I deal with stress and pressure in a healthy way?
-                    In a round with the former CFO of a large pharmaceutical company
-                    and father of a mobility-impaired daughter, Carsten Feichtinger,
+                    In a round with an interim manager,
+                    who previously held the leadership of European controlling for an American corporation,
+                    Carsten Feichtinger,
                     as well as Pastor Steffen Beck and Lukas Reppert,
                     you will gain valuable insights into how they deal with full schedules
                     and performance under pressure.`
