@@ -142,14 +142,14 @@ export const programDays = enhanceProgramDays([
                     In diesem Talk erhälst du spannende Einblicke in die Welt der Psychologie und Empathie,
                     die hinter deinen Beziehungen steckt,
                     und hast die Möglichkeit, deine persönlichen Fragen zu beantworten!`,
-                    `In a world where communication is increasingly happening digitally,
-                    it is often difficult to truly see our fellow human beings
-                    and enter into deeper relationships.
-                    Whether with fellow students, partners, or parents,
-                    we have forgotten how to recognize each other.
-                    In this talk, you'll get exciting insights into the world of psychology and empathy
-                    behind your relationships,
-                    and have the opportunity to get your personal questions answered!`
+                    `In a world where communication is increasingly taking place digitally,
+                    it is often difficult to truly see the people around us
+                    and form deeper relationships with them.
+                    Whether its with peers, partners, or parents,
+                    we have lost the ability to acknowledge one another.
+                    In this talk, you'll gain fascinating insights into the world of psychology and empathy
+                    that underlies your relationships,
+                    and you'll have the opportunity to get answers to your personal questions!`
                 ),
                 originalIn: "de",
                 translatedTo: ["en", "es", "fr", "tr", "zh"],
