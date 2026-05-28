@@ -60,20 +60,22 @@
 									<h3 class="multi-liner shrink grow text-sm font-semibold leading-tight">
 										{getTitle(item, lang)}
 									</h3>
+
 									<div class="flex flex-col items-start justify-start gap-1">
-										{#if item.location}
-											<div class="flex w-full items-center gap-1 text-xs text-white/70">
-												<Fa icon={faMapPin} />
-												<span class="single-liner">
-													{item.location.shortName[lang]}
-												</span>
-											</div>
-										{/if}
 										{#if item.showSpeakersSeparate}
 											<div class="flex w-full items-center gap-1 text-xs text-white/70">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">
 													{item.speakers.map((s) => s.name).join(', ')}
+												</span>
+											</div>
+										{/if}
+
+										{#if item.location}
+											<div class="flex w-full items-center gap-1 text-xs text-white/70">
+												<Fa icon={faMapPin} />
+												<span class="single-liner">
+													{item.location.shortName[lang]}
 												</span>
 											</div>
 										{/if}

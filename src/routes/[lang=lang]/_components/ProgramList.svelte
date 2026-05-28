@@ -66,19 +66,19 @@
 								<span>{item.startTime}{item.endTime ? ` - ${item.endTime}` : ''}</span>
 							</div>
 
-							{#if item.location}
-								<div class="flex items-center gap-1">
-									<Fa icon={faMapMarkerAlt} scale={0.8} />
-									<span>{item.location.shortName[lang]}</span>
-								</div>
-							{/if}
-
 							{#if item.speakers.length > 0}
 								<div class="flex items-center gap-1">
 									<Fa icon={faUser} scale={0.8} />
 									<span>
 										{item.speakers.map((s) => s.name).join(', ')}
 									</span>
+								</div>
+							{/if}
+
+							{#if item.location}
+								<div class="flex items-center gap-1">
+									<Fa icon={faMapMarkerAlt} scale={0.8} />
+									<span>{item.location.shortName[lang]}</span>
 								</div>
 							{/if}
 						</div>
