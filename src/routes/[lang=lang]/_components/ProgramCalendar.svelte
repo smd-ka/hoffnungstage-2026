@@ -61,9 +61,9 @@
 										{getTitle(item, lang)}
 									</h3>
 
-									<div class="flex flex-col items-start justify-start gap-1">
+									<div class="flex flex-col items-start justify-start gap-1 text-xs text-white/70">
 										{#if item.showSpeakersSeparate}
-											<div class="flex w-full items-center gap-1 text-xs text-white/70">
+											<div class="flex w-full items-center gap-1">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">
 													{item.speakers.map((s) => s.name).join(', ')}
@@ -72,7 +72,7 @@
 										{/if}
 
 										{#if item.location}
-											<div class="flex w-full items-center gap-1 text-xs text-white/70">
+											<div class="flex w-full items-center gap-1">
 												<Fa icon={faMapPin} />
 												<span class="single-liner">
 													{item.location.shortName[lang]}
