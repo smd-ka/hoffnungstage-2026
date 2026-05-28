@@ -16,7 +16,7 @@
 			},
 			description: {
 				de: 'Alle Veranstaltungen der Hoffnungstage vom 08. – 11. Juni 2026 auf einen Blick.',
-				en: 'All events of Hoffnungstage from June 8 – 11, 2026 at a glance.'
+				en: 'All events of the Days of Hope from June 8 – 11, 2026 at a glance.'
 			},
 			languageNote: {
 				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
