@@ -1,6 +1,3 @@
-<script lang="ts" context="module">
-</script>
-
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
