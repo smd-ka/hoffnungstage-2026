@@ -17,7 +17,7 @@
 	import { createTranslator } from '$lib/language';
 
 	let scrollY: number;
-	const navbarHeight = 64;
+	let navbarHeight: number = 64; // bound to navbar, default is most common, expected value
 	let screenSize = 0;
 	$: onMainPage = $page.url.pathname === '/de' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
@@ -76,7 +76,10 @@
 
 <svelte:window bind:scrollY />
 <main class="flex min-h-screen flex-col">
-	<nav class="fixed top-0 z-50 flex w-full flex-[0_1_auto] flex-col">
+	<nav
+		class="fixed top-0 z-50 flex w-full flex-[0_1_auto] flex-col"
+		bind:clientHeight={navbarHeight}
+	>
 		<div class="relative flex items-center justify-between gap-4 overflow-hidden px-4 py-3">
 			<div
 				class="static-fade-in pointer-events-none absolute inset-0 bg-gradient-to-r from-orange-400 from-20% via-pink-500 to-indigo-500 {onMainPage &&
