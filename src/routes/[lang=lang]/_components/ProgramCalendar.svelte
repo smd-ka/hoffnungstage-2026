@@ -3,6 +3,7 @@
 	import { programDays } from '$lib/program/data';
 	import {
 		formatDateForDisplay,
+		formatDuration,
 		getDayName,
 		getTitle,
 		filterProgramDays
@@ -61,7 +62,9 @@
 										{getTitle(item, lang)}
 									</h3>
 
-									<div class="flex flex-col items-start justify-start gap-1 text-xs text-white/70">
+									<div
+										class="flex w-full flex-col items-start justify-start gap-1 text-xs text-white/70"
+									>
 										{#if item.showSpeakersSeparate}
 											<div class="flex w-full items-center gap-1">
 												<Fa icon={faUser} scale={0.7} />
@@ -71,14 +74,19 @@
 											</div>
 										{/if}
 
-										{#if item.location}
-											<div class="flex w-full items-center gap-1">
-												<Fa icon={faMapPin} />
-												<span class="single-liner">
-													{item.location.shortName[lang]}
-												</span>
+										<div class="flex w-full justify-between gap-2">
+											{#if item.location}
+												<div class="flex items-center gap-1">
+													<Fa icon={faMapPin} />
+													<span class="single-liner">
+														{item.location.shortName[lang]}
+													</span>
+												</div>
+											{/if}
+											<div>
+												{formatDuration(item.duration, lang)}
 											</div>
-										{/if}
+										</div>
 									</div>
 								</a>
 							{/if}

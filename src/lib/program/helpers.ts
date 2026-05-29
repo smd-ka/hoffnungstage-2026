@@ -1,4 +1,4 @@
-import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay } from './types';
+import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
 import { speakers, locations, programDays } from './data';
 import type { TranslatedLanguage } from '$lib/language';
 
@@ -27,6 +27,7 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
             speakerIds: item.speakerIds ?? [],
             highlightSpeaker: item.highlightSpeaker ?? false,
             // new ones
+            duration: calculateDuration(item.startTime, item.endTime ?? null),
             forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
             location: locations[item.locationSlug],
             showSpeakersSeparate: (item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker,
@@ -45,6 +46,22 @@ function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): bo
             return item.locationSlug == 'ph-plaza';
         case 'forInternationals':
             return item.originalIn != 'de' || item.translatedTo.length > 0;
+    }
+}
+
+function calculateDuration(startTime: string, endTime: string | null): Duration | null {
+    if (endTime === null) return null;
+    // parse strings
+    const [startHours, startMinutes] = startTime.split(':').map(Number);
+    const [endHours, endMinutes] = endTime.split(':').map(Number);
+    const startMinutesTotal = startHours * 60 + startMinutes;
+    // calculate duration
+    const endMinutesTotal = endHours * 60 + endMinutes;
+    const durationMinutes = endMinutesTotal - startMinutesTotal;
+    // output
+    return {
+        hours: Math.floor(durationMinutes / 60),
+        minutes: durationMinutes % 60,
     }
 }
 
@@ -79,4 +96,27 @@ export function formatDateForDisplay(dateString: string, language: TranslatedLan
 export function getDayName(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
     return date.toLocaleDateString(getLocale(language), { weekday: 'long' });
+}
+
+const DURATION_HOUR_FORMAT_THRESHOLD = 2;
+// language parameter kept for future locale-aware formatting
+export function formatDuration(duration: Duration | null, language: TranslatedLanguage): string {
+    if (duration === null) return 'open end';
+
+    // shortcut to minutes only when below threshold
+    if (duration.hours < DURATION_HOUR_FORMAT_THRESHOLD)
+        duration = {
+            hours: 0,
+            minutes: duration.hours * 60 + duration.minutes,
+        }
+
+    const parts: string[] = [];
+    if (duration.hours > 0) {
+        parts.push(`${duration.hours}h`);
+    }
+    if (duration.minutes > 0 || duration.hours === 0) {
+        parts.push(`${duration.minutes}min`);
+    }
+
+    return parts.join(' ');
 }

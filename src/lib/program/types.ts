@@ -1,5 +1,12 @@
 import type { SupportedLanguage, TranslatedLanguage, TranslatedText } from '$lib/language';
 
+// compatible with Intl.DurationFormat, specified as required
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DurationFormat/format
+export interface Duration {
+    hours: number;
+    minutes: number;
+};
+
 export type Gender = 'm' | 'f';
 
 export const ProgramFilterValues = [
@@ -44,6 +51,7 @@ export interface ProgramItem extends PartialProgramItem {
     speakerIds: string[];
     highlightSpeaker: boolean;
     // new ones
+    duration: Duration | null;
     forFilters: ProgramFilterValue[];
     location: Location;
     showSpeakersSeparate: boolean;
