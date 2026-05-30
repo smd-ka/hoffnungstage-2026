@@ -14,14 +14,14 @@
 	html {
 		/* make overflow scrolling look better */
 		/* i.e. use same color as navbar & footer */
-		@apply bg-white;
+		@apply bg-grey;
 		scroll-behavior: smooth;
 	}
 
 	body {
 		@apply xl:text-lg;
 		/* revert overwritten background color */
-		/* @apply bg-white; */
+		@apply bg-white;
 	}
 
 	p>a {
