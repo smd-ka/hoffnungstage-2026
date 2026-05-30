@@ -43,7 +43,7 @@ export const programDays = enhanceProgramDays([
                 locationSlug: 'kit-forum-meadow'
             },
             {
-                slug: 'german-course',
+                slug: 'monday:german-course',
                 title: t('Deutschkurs', 'German Course'),
                 description: t(
                     `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
@@ -149,7 +149,7 @@ export const programDays = enhanceProgramDays([
                 speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert']
             },
             {
-                slug: 'german-course',
+                slug: 'tuesday:german-course',
                 title: t('Deutschkurs', 'German Course'),
                 description: t(
                     `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
@@ -246,7 +246,7 @@ export const programDays = enhanceProgramDays([
         date: '2026-06-10',
         items: [
             {
-                slug: 'german-course',
+                slug: 'wednesday:german-course',
                 title: t('Deutschkurs', 'German Course'),
                 description: t(
                     `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
