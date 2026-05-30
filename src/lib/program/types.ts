@@ -39,30 +39,30 @@ export interface PartialProgramItem {
     startTime: string; // Format: HH:MM
     endTime?: string; // Format: HH:MM
     originalIn: TranslatedLanguage
-    translatedTo: SupportedLanguage[]
+    translatedTo: readonly SupportedLanguage[]
     locationSlug: string;
-    speakerIds?: string[];
+    speakerIds?: readonly string[];
     highlightSpeaker?: boolean;
 }
 
 // additional values helpful to be precalculated
 export interface ProgramItem extends PartialProgramItem {
     // forced ones
-    speakerIds: string[];
+    speakerIds: readonly string[];
     highlightSpeaker: boolean;
     // new ones
     duration: Duration | null;
-    forFilters: ProgramFilterValue[];
+    forFilters: readonly ProgramFilterValue[];
     location: Location;
     showSpeakersSeparate: boolean;
-    speakers: Speaker[];
+    speakers: readonly Speaker[];
 }
 
 export interface PartialProgramDay {
     date: string; // Format: YYYY-MM-DD
-    items: PartialProgramItem[];
+    items: readonly PartialProgramItem[];
 }
 
 export interface ProgramDay extends PartialProgramDay {
-    items: ProgramItem[];
+    items: readonly ProgramItem[];
 }
