@@ -1,6 +1,8 @@
 import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
 import { speakers, locations, programDays } from './data';
 import type { TranslatedLanguage } from '$lib/language';
+import { get } from 'svelte/store';
+import { page } from '$app/stores';
 
 export function getLocale(language: TranslatedLanguage): string {
     switch (language) {
@@ -8,6 +10,16 @@ export function getLocale(language: TranslatedLanguage): string {
             return 'de-DE';
         case 'en':
             return 'en-US';
+    }
+}
+
+export function getDefaultProgramFilter(language?: TranslatedLanguage): ProgramFilterValue {
+    const lang = language ?? get(page).params.lang as TranslatedLanguage;
+    switch (lang) {
+        case 'de':
+            return 'mainProgram';
+        case 'en':
+            return 'forInternationals';
     }
 }
 

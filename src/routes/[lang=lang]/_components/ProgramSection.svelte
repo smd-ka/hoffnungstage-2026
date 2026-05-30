@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
+	import { getDefaultProgramFilter } from '$lib/program/helpers';
 	import ProgramCalendar from './ProgramCalendar.svelte';
 	import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
@@ -45,7 +46,7 @@
 	</div>
 
 	<div class="max-lg:hidden">
-		<ProgramCalendar />
+		<ProgramCalendar filter={getDefaultProgramFilter()} />
 	</div>
 
 	<div>

@@ -5,6 +5,7 @@
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import ProgramList from '../_components/ProgramList.svelte';
 	import ProgramFilter from '../_components/ProgramFilter.svelte';
+	import { getDefaultProgramFilter } from '$lib/program/helpers';
 	import type { ProgramFilterValue } from '$lib/program/types';
 
 	$: lang = $page.params.lang as 'de' | 'en';
@@ -34,7 +35,7 @@
 		lang
 	);
 
-	let selectedFilter: ProgramFilterValue;
+	let selectedFilter: ProgramFilterValue = getDefaultProgramFilter();
 	let calendarElement: HTMLElement;
 	let listElement: HTMLElement;
 </script>
