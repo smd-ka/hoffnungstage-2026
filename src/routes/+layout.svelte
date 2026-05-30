@@ -7,12 +7,11 @@
 
 	import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 	import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
-	import insta from '$lib/assets/logos/insta.svg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
 	import { page } from '$app/stores';
-	import { onDestroy, onMount } from 'svelte';
+	import { onMount } from 'svelte';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	import { createTranslator } from '$lib/language';
 
