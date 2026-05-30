@@ -7,6 +7,24 @@ import { enhanceProgramDays } from './helpers';
 // Helper to create translated text
 const t = (de: string, en: string): TranslatedText => ({ de, en });
 
+// common blocks
+const common = {
+    germanCourse: {
+        title: t('Deutschkurs', 'German Course'),
+        description: t(
+            `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+			Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
+			Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
+            `This free German course is for anyone who wants to learn German more intensively.
+			There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
+			You're more than welcome—no matter how good your German is.`
+        ),
+        originalIn: 'en',
+        translatedTo: [],
+        locationSlug: 'kit-forum-meadow'
+    },
+} as const;
+
 export const programDays = enhanceProgramDays([
     {
         date: '2026-06-08',
@@ -43,22 +61,11 @@ export const programDays = enhanceProgramDays([
                 locationSlug: 'kit-forum-meadow'
             },
             {
+                ...common.germanCourse,
                 slug: 'monday:german-course',
-                title: t('Deutschkurs', 'German Course'),
-                description: t(
-                    `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
-					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
-					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-                    `This free German course is for anyone who wants to learn German more intensively.
-					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
-					You're more than welcome—no matter how good your German is.`
-                ),
-                originalIn: 'en',
-                translatedTo: [],
                 date: '2026-06-08',
                 startTime: '15:35',
                 endTime: '16:50',
-                locationSlug: 'kit-forum-meadow'
             },
             {
                 slug: 'open-mic',
@@ -149,22 +156,11 @@ export const programDays = enhanceProgramDays([
                 speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert']
             },
             {
+                ...common.germanCourse,
                 slug: 'tuesday:german-course',
-                title: t('Deutschkurs', 'German Course'),
-                description: t(
-                    `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
-					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
-					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-                    `This free German course is for anyone who wants to learn German more intensively.
-					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
-					You're more than welcome—no matter how good your German is.`
-                ),
-                originalIn: 'en',
-                translatedTo: [],
                 date: '2026-06-09',
                 startTime: '15:35',
                 endTime: '16:50',
-                locationSlug: 'kit-forum-meadow'
             },
             {
                 slug: 'living-with-hope',
@@ -246,22 +242,11 @@ export const programDays = enhanceProgramDays([
         date: '2026-06-10',
         items: [
             {
+                ...common.germanCourse,
                 slug: 'wednesday:german-course',
-                title: t('Deutschkurs', 'German Course'),
-                description: t(
-                    `Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
-					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
-					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-                    `This free German course is for anyone who wants to learn German more intensively.
-					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
-					You're more than welcome—no matter how good your German is.`
-                ),
-                originalIn: 'en',
-                translatedTo: [],
                 date: '2026-06-10',
                 startTime: '15:35',
                 endTime: '16:50',
-                locationSlug: 'kit-forum-meadow'
             },
             {
                 slug: 'hope-remains',
