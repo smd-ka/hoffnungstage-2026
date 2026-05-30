@@ -135,6 +135,24 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow'
 			},
 			{
+				slug: 'german-course',
+				title: t('Deutschkurs', 'German Course'),
+				description: t(
+					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
+					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
+					`This German course is for anyone who wants to learn German more intensively.
+					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
+					You're more than welcome—no matter how good your German is.`
+				),
+				originalIn: 'en',
+				translatedTo: [],
+				date: '2026-06-08',
+				startTime: '15:35',
+				endTime: '16:50',
+				locationSlug: 'kit-forum-meadow'
+			},
+			{
 				slug: 'open-mic',
 				title: t('Open Mic', 'Open Mic'),
 				description: t(
@@ -223,6 +241,24 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert']
 			},
 			{
+				slug: 'german-course',
+				title: t('Deutschkurs', 'German Course'),
+				description: t(
+					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
+					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
+					`This German course is for anyone who wants to learn German more intensively.
+					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
+					You're more than welcome—no matter how good your German is.`
+				),
+				originalIn: 'en',
+				translatedTo: [],
+				date: '2026-06-09',
+				startTime: '15:35',
+				endTime: '16:50',
+				locationSlug: 'kit-forum-meadow'
+			},
+			{
 				slug: 'living-with-hope',
 				title: t(
 					'Hoffnungsvoll leben – Eine Frage der Herzenshaltung?',
@@ -301,6 +337,24 @@ export const programDays = enhanceProgramDays([
 	{
 		date: '2026-06-10',
 		items: [
+			{
+				slug: 'german-course',
+				title: t('Deutschkurs', 'German Course'),
+				description: t(
+					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
+					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
+					`This German course is for anyone who wants to learn German more intensively.
+					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
+					You're more than welcome—no matter how good your German is.`
+				),
+				originalIn: 'en',
+				translatedTo: [],
+				date: '2026-06-10',
+				startTime: '15:35',
+				endTime: '16:50',
+				locationSlug: 'kit-forum-meadow'
+			},
 			{
 				slug: 'hope-remains',
 				title: t(
