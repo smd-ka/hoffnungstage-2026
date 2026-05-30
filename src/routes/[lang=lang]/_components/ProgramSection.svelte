@@ -3,6 +3,7 @@
 	import { createTranslator } from '$lib/language';
 	import { getDefaultProgramFilter } from '$lib/program/helpers';
 	import ProgramCalendar from './ProgramCalendar.svelte';
+	import ProgramFilter from './ProgramFilter.svelte';
 	import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
@@ -32,6 +33,9 @@
 		},
 		lang as 'de' | 'en'
 	);
+
+	let selectedFilter = getDefaultProgramFilter();
+	let sectionElement: HTMLElement;
 </script>
 
 <section class="page-section flex flex-col gap-10 pt-72">
@@ -45,8 +49,9 @@
 		</p>
 	</div>
 
-	<div class="max-lg:hidden">
-		<ProgramCalendar filter={getDefaultProgramFilter()} />
+	<div bind:this={sectionElement} class="flex flex-col gap-4 max-lg:hidden">
+		<ProgramFilter bind:value={selectedFilter} jumpRef={sectionElement} />
+		<ProgramCalendar filter={selectedFilter} />
 	</div>
 
 	<div>
