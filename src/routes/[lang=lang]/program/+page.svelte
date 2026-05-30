@@ -35,6 +35,8 @@
 	);
 
 	let selectedFilter: ProgramFilterValue;
+	let calendarElement: HTMLElement;
+	let listElement: HTMLElement;
 </script>
 
 <svelte:head>
@@ -58,19 +60,22 @@
 		</p>
 	</header>
 
-	<div class="flex flex-col gap-6">
+	<div bind:this={calendarElement} class="flex flex-col gap-6 max-lg:hidden">
 		<div class="mx-auto max-w-6xl px-4">
-			<ProgramFilter bind:value={selectedFilter} />
+			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
 		</div>
 		<div class="mx-auto max-w-6xl px-4 max-lg:hidden">
 			<ProgramCalendar filter={selectedFilter} />
 		</div>
 	</div>
 
-	<div class="flex flex-col gap-2">
+	<div bind:this={listElement} class="flex flex-col gap-2">
 		<p class="max-lg:hidden">
 			{tr.preferList}
 		</p>
+		<div class="mx-auto max-w-6xl px-4">
+			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
+		</div>
 		<div id="program-list" class="mx-auto max-w-6xl px-4">
 			<ProgramList filter={selectedFilter} />
 		</div>
