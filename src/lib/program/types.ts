@@ -9,6 +9,11 @@ export interface Duration {
 
 export type Gender = 'm' | 'f';
 
+export type IntlTarget =
+    | 'primary'      // primarily intended for international students (and so not part of mainProgram)
+    | 'auto'          // automatic selection based on available languages
+    | 'not_intended'; // not intended/suited for international students
+
 export const ProgramFilterValues = [
     'mainProgram',
     'atKit',
@@ -40,6 +45,7 @@ export interface PartialProgramItem {
     endTime?: string; // Format: HH:MM
     originalIn: TranslatedLanguage
     translatedTo: readonly SupportedLanguage[]
+    intlTarget?: IntlTarget;
     locationSlug: string;
     speakerIds?: readonly string[];
     highlightSpeaker?: boolean;
@@ -48,6 +54,7 @@ export interface PartialProgramItem {
 // additional values helpful to be precalculated
 export interface ProgramItem extends PartialProgramItem {
     // forced ones
+    intlTarget: IntlTarget;
     speakerIds: readonly string[];
     highlightSpeaker: boolean;
     // new ones

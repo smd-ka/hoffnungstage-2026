@@ -38,6 +38,7 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
         items: day.items.map(item => ({
             ...item,
             // forced ones
+            intlTarget: item.intlTarget ?? 'auto',
             speakerIds: item.speakerIds ?? [],
             highlightSpeaker: item.highlightSpeaker ?? false,
             // new ones
@@ -53,13 +54,13 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
 function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
     switch (filter) {
         case 'mainProgram':
-            return item.originalIn == 'de';
+            return item.intlTarget != 'primary' && item.originalIn == 'de';
         case 'atKit':
             return item.locationSlug == 'kit-forum-meadow';
         case 'atPh':
             return item.locationSlug == 'ph-plaza';
         case 'forInternationals':
-            return item.originalIn != 'de' || item.translatedTo.length > 0;
+            return item.intlTarget != 'not_intended' && (item.intlTarget != 'primary' || item.originalIn != 'de' || item.translatedTo.length > 0);
     }
 }
 

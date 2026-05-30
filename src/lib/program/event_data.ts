@@ -20,6 +20,7 @@ const common = {
 		),
 		originalIn: 'en',
 		translatedTo: [],
+		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow'
 	},
 	shortTalks: {
@@ -40,6 +41,7 @@ const common = {
 		),
 		originalIn: 'de',
 		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
 	},
 } as const;
