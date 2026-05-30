@@ -1,5 +1,6 @@
 import { type ProgramItem, type ProgramDay, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
 import { speakers, locations } from './aux_data';
+import { assertUniqueSlugs } from './checks';
 import type { TranslatedLanguage } from '$lib/language';
 import { get } from 'svelte/store';
 import { page } from '$app/stores';
@@ -31,6 +32,7 @@ export function filterProgramDays(filter: ProgramFilterValue, days: ProgramDay[]
 }
 
 export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
+    assertUniqueSlugs(days.flatMap(day => day.items));
     return days.map((day) => ({
         ...day,
         items: day.items.map(item => ({
