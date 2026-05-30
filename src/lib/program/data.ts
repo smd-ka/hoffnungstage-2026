@@ -138,10 +138,10 @@ export const programDays = enhanceProgramDays([
 				slug: 'german-course',
 				title: t('Deutschkurs', 'German Course'),
 				description: t(
-					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
 					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
 					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-					`This German course is for anyone who wants to learn German more intensively.
+					`This free German course is for anyone who wants to learn German more intensively.
 					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
 					You're more than welcome—no matter how good your German is.`
 				),
@@ -244,10 +244,10 @@ export const programDays = enhanceProgramDays([
 				slug: 'german-course',
 				title: t('Deutschkurs', 'German Course'),
 				description: t(
-					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
 					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
 					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-					`This German course is for anyone who wants to learn German more intensively.
+					`This free German course is for anyone who wants to learn German more intensively.
 					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
 					You're more than welcome—no matter how good your German is.`
 				),
@@ -341,10 +341,10 @@ export const programDays = enhanceProgramDays([
 				slug: 'german-course',
 				title: t('Deutschkurs', 'German Course'),
 				description: t(
-					`Der Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
+					`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
 					Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
 					Du bist herzlich willkommen – egal, wie gut dein Deutsch ist.`,
-					`This German course is for anyone who wants to learn German more intensively.
+					`This free German course is for anyone who wants to learn German more intensively.
 					There, you can improve your vocabulary, grammar, and pronunciation using a familiar passage from the Bible.
 					You're more than welcome—no matter how good your German is.`
 				),
