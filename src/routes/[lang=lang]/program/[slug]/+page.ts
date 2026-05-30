@@ -1,4 +1,4 @@
-import { getProgramItemBySlug } from '$lib/program/helpers';
+import { getProgramItemBySlug } from '$lib/program/prog_helpers';
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 

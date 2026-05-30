@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
-	import { programDays } from '$lib/program/data';
+	import { programDays } from '$lib/program/event_data';
 	import {
 		getTitle,
 		getDayName,

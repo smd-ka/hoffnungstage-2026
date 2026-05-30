@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { programDays } from '$lib/program/data';
+	import { programDays } from '$lib/program/event_data';
 	import {
 		formatDateForDisplay,
 		formatDuration,

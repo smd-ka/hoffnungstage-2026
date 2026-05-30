@@ -1,5 +1,5 @@
-import { type ProgramItem, type ProgramDay, type Speaker, type Location, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
-import { speakers, locations, programDays } from './data';
+import { type ProgramItem, type ProgramDay, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
+import { speakers, locations } from './aux_data';
 import type { TranslatedLanguage } from '$lib/language';
 import { get } from 'svelte/store';
 import { page } from '$app/stores';
@@ -75,18 +75,6 @@ function calculateDuration(startTime: string, endTime: string | null): Duration 
         hours: Math.floor(durationMinutes / 60),
         minutes: durationMinutes % 60,
     }
-}
-
-export function getProgramItemBySlug(slug: string): ProgramItem | undefined {
-    for (const day of programDays) {
-        const item = day.items.find((item) => item.slug === slug);
-        if (item) return item;
-    }
-    return undefined;
-}
-
-export function getDayForItem(slug: string): ProgramDay | undefined {
-    return programDays.find((day) => day.items.some((item) => item.slug === slug));
 }
 
 export function getTitle(item: ProgramItem, language: TranslatedLanguage): string {
