@@ -23,6 +23,26 @@ const common = {
         translatedTo: [],
         locationSlug: 'kit-forum-meadow'
     },
+    shortTalks: {
+        title: t(
+            'Kurzvorträge: Leben und Überleben in Deutschland',
+            'Short Talks: Living and Getting By in Germany'
+        ),
+        description: t(
+            `In kurzen Vorträgen werden Tipps zum Leben und Überleben in Deutschland gegeben.
+            Das kann von „Wie trenne ich den Müll richtig?“, über „Was für Rechte habe ich als Mieter?",
+            bis hin zu „Warum brauche ich einen Hausarzt?", oder „Was für Tabus gibt es in Deutschland?"
+            alles sein.
+            Die genauen Themen sind noch in Planung, also bleibt gespannt!`,
+            `In short talks, you can learn about living and getting by in Germany.
+            Topics can range from "How do I sort my trash properly?" and "What rights do I have as a tenant?"
+            to "Why do I need a 'Hausarzt'?" or "What are some cultural taboos in Germany?"
+            The exact topics are still being planned, so stay tuned!`
+        ),
+        originalIn: 'de',
+        translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+        locationSlug: 'kit-forum-meadow',
+    },
 } as const;
 
 export const programDays = enhanceProgramDays([
@@ -86,6 +106,13 @@ export const programDays = enhanceProgramDays([
                 startTime: '15:45',
                 endTime: '17:00',
                 locationSlug: 'ph-plaza'
+            },
+            {
+                ...common.shortTalks,
+                slug: 'monday:short-talk-living-in-germany',
+                date: '2026-06-09',
+                startTime: '17:35',
+                endTime: '17:50',
             },
             {
                 slug: 'what-truly-makes-me-happy',
@@ -191,6 +218,13 @@ export const programDays = enhanceProgramDays([
                 speakerIds: ['lukas-reppert']
             },
             {
+                ...common.shortTalks,
+                slug: 'tuesday:short-talk-living-in-germany',
+                date: '2026-06-09',
+                startTime: '17:35',
+                endTime: '17:50',
+            },
+            {
                 slug: 'god-of-the-bible',
                 title: t(
                     'Angenommen es gibt einen Gott, warum ausgerechnet der Gott der Bibel?',
@@ -283,6 +317,13 @@ export const programDays = enhanceProgramDays([
                 endTime: '17:00',
                 locationSlug: 'ph-plaza',
                 speakerIds: ['rebekka-meussling']
+            },
+            {
+                ...common.shortTalks,
+                slug: 'wednesday:short-talk-living-in-germany',
+                date: '2026-06-09',
+                startTime: '17:35',
+                endTime: '17:50',
             },
             {
                 slug: 'science-and-faith',
