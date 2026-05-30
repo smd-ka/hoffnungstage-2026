@@ -20,7 +20,11 @@
 
 	body {
 		@apply xl:text-lg;
-		/* revert overwritten background color */
+		/* keep overflow scrolling background color because of position:fixed header */
+	}
+
+	body>* {
+		/* revert overflow scrolling background color */
 		@apply bg-white;
 	}
 
