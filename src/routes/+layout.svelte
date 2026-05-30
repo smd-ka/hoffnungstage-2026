@@ -12,6 +12,7 @@
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
 	import LanguageSwitcher from '$lib/components/LanguageSwitcher.svelte';
 	import { createTranslator } from '$lib/language';
 
@@ -20,6 +21,17 @@
 	let screenSize = 0;
 	$: onMainPage = $page.url.pathname === '/de' || $page.url.pathname === '/en';
 	$: scrolledBelowHeroShot = scrollY > screenSize - navbarHeight;
+
+	// fix scrolling to specific elements so those are not hidden by navbar
+	const updateScrollPadding = () => {
+		if (!browser) return;
+		// must be set on <html> / <body> because that is the scrolling container
+		document.documentElement.style.setProperty(
+			'scroll-padding-top',
+			`calc(${navbarHeight}px + 2rem)`
+		);
+	};
+	$: navbarHeight, updateScrollPadding();
 
 	$: lang = $page.params.lang;
 	$: tr = createTranslator(
