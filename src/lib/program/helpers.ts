@@ -60,7 +60,7 @@ function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): bo
         case 'atPh':
             return item.locationSlug == 'ph-plaza';
         case 'forInternationals':
-            return item.intlTarget != 'not_intended' && (item.intlTarget != 'primary' || item.originalIn != 'de' || item.translatedTo.length > 0);
+            return item.intlTarget != 'not_intended' && (item.intlTarget == 'primary' || item.originalIn != 'de' || item.translatedTo.length > 0);
     }
 }
 
