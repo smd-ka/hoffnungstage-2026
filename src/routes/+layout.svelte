@@ -157,9 +157,9 @@
 					<div class="flex flex-col gap-10">
 						<section class="underline-a flex flex-col gap-3">
 							<h2 class="text-xl uppercase text-orange-500">{tr.supportedBy}</h2>
-							<a href="https://lkg-karlsruhe.de/ec-karlsruhe/" target="_blank"
-								>EC - Entschieden für Christus</a
-							>
+							<a href="https://lkg-karlsruhe.de/ec-karlsruhe/" target="_blank">
+								EC - Entschieden für Christus
+							</a>
 							<a href="https://evalka.de/" target="_blank">Evangelische Allianz Karlsruhe</a>
 							<a href={tr.cafeUrl} target="_blank">King's-Café – {tr.cafeDescription}</a>
 						</section>
