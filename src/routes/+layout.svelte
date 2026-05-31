@@ -7,6 +7,10 @@
 
 	import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 	import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
+	import swd_ec_logo from '$lib/assets/logos/swd-ec-ka_logo.png';
+	import evalka_logo from '$lib/assets/logos/evalka_logo_text.svg';
+	import kings_cafe_logo from '$lib/assets/logos/kings-cafe_logo_white.png';
+	import hug_logo from '$lib/assets/logos/hug_logo_slogan.jpg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
@@ -48,13 +52,25 @@
 				de: 'Mit freundlicher Unterstützung von',
 				en: 'Supported by'
 			},
+			ecDescription: {
+				de: 'EC - Entschieden für Christus',
+				en: 'EC - Entschieden für Christus'
+			},
+			evalkaDescription: {
+				de: 'Evangelische Allianz Karlsruhe',
+				en: 'Evangelische Allianz Karlsruhe'
+			},
 			cafeDescription: {
-				de: 'Internationales Studierendencafé',
-				en: 'International Student Café'
+				de: "King's-Café – Internationales Studierendencafé",
+				en: "King's-Café – International Student Café"
 			},
 			cafeUrl: {
 				de: 'https://kings-cafe.de/',
 				en: 'https://kings-cafe.de/en'
+			},
+			hugDescription: {
+				de: 'Herrmann Ultraschall',
+				en: 'Herrmann Ultraschall'
 			},
 			imprint: {
 				de: 'Impressum',
@@ -157,11 +173,28 @@
 					<div class="flex flex-col gap-10">
 						<section class="underline-a flex flex-col gap-3">
 							<h2 class="text-xl uppercase text-orange-500">{tr.supportedBy}</h2>
-							<a href="https://lkg-karlsruhe.de/ec-karlsruhe/" target="_blank">
-								EC - Entschieden für Christus
-							</a>
-							<a href="https://evalka.de/" target="_blank">Evangelische Allianz Karlsruhe</a>
-							<a href={tr.cafeUrl} target="_blank">King's-Café – {tr.cafeDescription}</a>
+							<div class="support-logo-container">
+								<a href="https://evalka.de/" target="_blank" title={tr.evalkaDescription}>
+									<img src={evalka_logo} alt={tr.evalkaDescription} class="h-16" />
+								</a>
+								<a
+									href="https://lkg-karlsruhe.de/ec-karlsruhe/"
+									target="_blank"
+									title={tr.ecDescription}
+								>
+									<img src={swd_ec_logo} alt={tr.ecDescription} class="h-12" />
+								</a>
+								<a href={tr.cafeUrl} target="_blank" title={tr.cafeDescription}>
+									<img src={kings_cafe_logo} alt={tr.cafeDescription} class="h-16" />
+								</a>
+								<a
+									href="https://www.herrmannultraschall.com/"
+									target="_blank"
+									title={tr.hugDescription}
+								>
+									<img src={hug_logo} alt={tr.hugDescription} class="h-16" />
+								</a>
+							</div>
 						</section>
 					</div>
 				</div>
@@ -207,5 +240,10 @@
 
 	h2 {
 		padding-bottom: 0.6rem;
+	}
+
+	.support-logo-container {
+		@apply flex flex-wrap items-center justify-around gap-6;
+		max-width: 28rem;
 	}
 </style>
