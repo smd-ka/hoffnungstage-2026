@@ -35,7 +35,7 @@
 	<table class="w-full min-w-[800px] table-fixed border-collapse text-white">
 		<thead>
 			<tr class="border-b border-white/20">
-				<th class="w-20 p-2 text-left text-sm font-normal text-white/70">Zeit</th>
+				<th class="w-14 p-2 text-left text-sm font-normal text-white/70">Zeit</th>
 				{#each filteredDays as day}
 					<th class="p-2 text-center">
 						<div class="font-semibold">{getDayName(day.date, lang)}</div>
