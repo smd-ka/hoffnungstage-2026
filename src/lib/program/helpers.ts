@@ -2,17 +2,9 @@ import { type ProgramItem, type ProgramDay, type ProgramFilterValue, ProgramFilt
 import { speakers, locations } from './aux_data';
 import { assertUniqueSlugs } from './checks';
 import type { TranslatedLanguage } from '$lib/language';
+import { localeMap } from '$lib/languageNames';
 import { get } from 'svelte/store';
 import { page } from '$app/stores';
-
-export function getLocale(language: TranslatedLanguage): string {
-    switch (language) {
-        case 'de':
-            return 'de-DE';
-        case 'en':
-            return 'en-US';
-    }
-}
 
 export function getDefaultProgramFilter(language?: TranslatedLanguage): ProgramFilterValue {
     const lang = language ?? get(page).params.lang as TranslatedLanguage;
@@ -93,12 +85,12 @@ export function getTitle(item: ProgramItem, language: TranslatedLanguage): strin
 
 export function formatDateForDisplay(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
-    return date.toLocaleDateString(getLocale(language), { day: 'numeric', month: 'long' });
+    return date.toLocaleDateString(localeMap[language], { day: 'numeric', month: 'long' });
 }
 
 export function getDayName(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
-    return date.toLocaleDateString(getLocale(language), { weekday: 'long' });
+    return date.toLocaleDateString(localeMap[language], { weekday: 'long' });
 }
 
 const DURATION_HOUR_FORMAT_THRESHOLD = 2;

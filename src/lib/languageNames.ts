@@ -1,4 +1,12 @@
-import type { SupportedLanguage } from './language';
+import type { TranslatedLanguage, SupportedLanguage } from './language';
+
+/**
+ * Mapping of translated languages to their corresponding locale strings for date/time formatting.
+ */
+export const localeMap: Record<TranslatedLanguage, string> = {
+    de: 'de-DE',
+    en: 'en-US',
+};
 
 // requiring translated names for each website supportedLanguage & for their own
 export const languageNames: Record<SupportedLanguage, Partial<Record<SupportedLanguage, string>>> = {
