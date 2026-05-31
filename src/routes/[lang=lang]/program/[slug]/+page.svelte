@@ -68,18 +68,21 @@
 	);
 
 	// Get the appropriate speaker label based on speaker genders
-	function getSpeakerLabel(genders: Gender[]): string {
+	function getSpeakerLabel(genders: Gender[], t: typeof tr): string {
 		if (genders.length === 0) return '';
 		if (genders.length === 1) {
-			return genders[0] === 'f' ? tr.speakerLabelFemaleSingular : tr.speakerLabelMaleSingular;
+			return genders[0] === 'f' ? t.speakerLabelFemaleSingular : t.speakerLabelMaleSingular;
 		}
 		// For mixed genders, use male plural as default (correct for German)
 		// Check if all are female
 		const allFemale = genders.every((g) => g === 'f');
-		return allFemale ? tr.speakerLabelFemalePlural : tr.speakerLabelMalePlural;
+		return allFemale ? t.speakerLabelFemalePlural : t.speakerLabelMalePlural;
 	}
 
-	$: speakerLabel = getSpeakerLabel(item.speakers.map((s) => s.gender));
+	$: speakerLabel = getSpeakerLabel(
+		item.speakers.map((s) => s.gender),
+		tr
+	);
 
 	// Check if current language is not available
 	$: isCurrentLangUnavailable = item.originalIn !== lang && !item.translatedTo.includes(lang);
