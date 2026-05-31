@@ -55,7 +55,7 @@
 
 /* must be defined globally so it can be used in @apply */
 .side-padding {
-	@apply px-8 md:px-28 lg:px-60 2xl:px-96;
+	@apply px-4 sm:px-8 md:px-28 lg:px-60 2xl:px-96;
 }
 
 @layer components {
