@@ -9,6 +9,7 @@
 		filterProgramDays
 	} from '$lib/program/helpers';
 	import type { ProgramFilterValue } from '$lib/program/types';
+	import { languageFlags } from '$lib/languageNames';
 	import { faUser, faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
@@ -79,6 +80,20 @@
 								<div class="flex items-center gap-1">
 									<Fa icon={faMapMarkerAlt} scale={0.8} />
 									<span>{item.location.shortName[lang]}</span>
+								</div>
+							{/if}
+
+							{#if item.originalIn || item.translatedTo.length > 0}
+								<div class="flex items-center gap-1">
+									{#if item.originalIn}
+										<span>{languageFlags[item.originalIn]}</span>
+									{/if}
+									{#if item.translatedTo.length > 0}
+										<span>+</span>
+										{#each item.translatedTo as langCode}
+											<span>{languageFlags[langCode]}</span>
+										{/each}
+									{/if}
 								</div>
 							{/if}
 						</div>
