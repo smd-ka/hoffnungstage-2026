@@ -45,7 +45,7 @@
 				en: 'Organized by'
 			},
 			supportedBy: {
-				de: 'Mit Unterstützung von',
+				de: 'Mit freundlicher Unterstützung von',
 				en: 'Supported by'
 			},
 			cafeDescription: {
