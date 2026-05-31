@@ -46,7 +46,7 @@
 </svelte:head>
 
 <main
-	class="flex min-h-screen flex-col gap-12 bg-cover bg-fixed bg-center pb-20 pt-8 max-lg:gap-4"
+	class="side-padding flex min-h-screen flex-col gap-12 bg-cover bg-fixed bg-center pb-20 pt-8 max-lg:gap-4"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
 >
 	<header class="flex flex-col gap-4 px-4">
@@ -62,10 +62,10 @@
 	</header>
 
 	<div bind:this={calendarElement} class="flex flex-col gap-6 max-lg:hidden">
-		<div class="mx-auto max-w-6xl px-4">
+		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
 		</div>
-		<div class="mx-auto max-w-6xl px-4 max-lg:hidden">
+		<div class="mx-auto px-4 max-lg:hidden">
 			<ProgramCalendar filter={selectedFilter} />
 		</div>
 	</div>
@@ -74,10 +74,10 @@
 		<p class="max-lg:hidden">
 			{tr.preferList}
 		</p>
-		<div class="mx-auto max-w-6xl px-4">
+		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
 		</div>
-		<div id="program-list" class="mx-auto max-w-6xl px-4">
+		<div id="program-list" class="mx-auto px-4">
 			<ProgramList filter={selectedFilter} />
 		</div>
 	</div>
