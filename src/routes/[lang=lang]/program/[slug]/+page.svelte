@@ -134,7 +134,10 @@
 					<!-- Language Info -->
 					<div class="flex items-center gap-2">
 						<Fa icon={faLanguage} />
-						<span class="lang-name" title={languageNames[item.originalIn][lang]}>
+						<span
+							class="lang-name"
+							title={item.originalIn !== lang ? languageNames[item.originalIn][lang] : undefined}
+						>
 							{languageNames[item.originalIn][item.originalIn]}
 						</span>
 					</div>
@@ -150,7 +153,10 @@
 						</span>
 						{#each item.translatedTo as targetLang, index}
 							{#if index > 0}|{/if}
-							<span class="lang-name" title={languageNames[targetLang][lang]}>
+							<span
+								class="lang-name"
+								title={targetLang !== lang ? languageNames[targetLang][lang] : undefined}
+							>
 								{languageNames[targetLang][targetLang]}
 							</span>
 						{/each}
