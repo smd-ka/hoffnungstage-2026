@@ -134,8 +134,8 @@
 					<!-- Language Info -->
 					<div class="flex items-center gap-2">
 						<Fa icon={faLanguage} />
-						<span class="lang-name">
-							{languageNames[item.originalIn][lang]}
+						<span class="lang-name" title={languageNames[item.originalIn][lang]}>
+							{languageNames[item.originalIn][item.originalIn]}
 						</span>
 					</div>
 				</div>
