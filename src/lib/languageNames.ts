@@ -39,3 +39,15 @@ export const languageNames: Record<SupportedLanguage, Partial<Record<SupportedLa
         tr: 'Türkçe'
     }
 };
+
+/**
+ * Mapping of all supported languages to their corresponding flag Unicode emoji.
+ */
+export const languageFlags: Record<SupportedLanguage, string> = {
+    de: '🇩🇪',
+    en: '🇬🇧',
+    es: '🇪🇸',
+    fr: '🇫🇷',
+    tr: '🇹🇷',
+    zh: '🇨🇳'
+} as const;
