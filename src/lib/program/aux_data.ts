@@ -86,6 +86,10 @@ export const locations: Record<string, Location> = {
 		longDescription: t(
 			'KIT – Forumswiese vor dem Audimax (Gebäude 30.95)',
 			'KIT – Forumswiese in front of the Audimax lecture hall (building 30.95)'
+		),
+		sentenceEnd: t(
+			'am KIT auf der Forumswiese vor dem Audimax (Gebäude 30.95)',
+			'at KIT at the Forumswiese in front of the Audimax lecture hall (building 30.95)'
 		)
 	},
 	'ph-plaza': {
@@ -94,6 +98,10 @@ export const locations: Record<string, Location> = {
 		longDescription: t(
 			'PH – Vorplatz an der Cafeteria Bismarckstraße',
 			'PH – Square in front of the cafeteria on Bismarckstraße'
+		),
+		sentenceEnd: t(
+			'an der PH auf dem Vorplatz vor der Cafeteria Bismarckstraße',
+			'at PH at the square in front of the cafeteria on Bismarckstraße'
 		)
 	}
 };

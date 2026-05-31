@@ -34,6 +34,7 @@ export interface Location {
     slug: string;
     shortName: TranslatedText;
     longDescription: TranslatedText;
+    sentenceEnd: TranslatedText;
 }
 
 export interface PartialProgramItem {
