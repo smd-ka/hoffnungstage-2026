@@ -65,7 +65,7 @@
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
 		</div>
-		<div class="mx-auto px-4 max-lg:hidden">
+		<div class="mx-auto px-4">
 			<ProgramCalendar filter={selectedFilter} />
 		</div>
 	</div>
