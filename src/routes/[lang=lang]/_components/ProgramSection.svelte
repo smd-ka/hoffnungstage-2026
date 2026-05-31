@@ -38,7 +38,7 @@
 	let sectionElement: HTMLElement;
 </script>
 
-<section class="page-section flex flex-col gap-10 pt-72">
+<section class="page-section flex flex-col gap-10">
 	<h1>{tr.title}</h1>
 	<div class="flex flex-col gap-4">
 		<p>

@@ -21,7 +21,7 @@
 	);
 </script>
 
-<section class="page-section py-72">
+<section class="page-section">
 	<h1 class="pb-4 text-center">{tr.title}</h1>
 	<p class="hyphens-auto pb-4 text-center">
 		{tr.intro}

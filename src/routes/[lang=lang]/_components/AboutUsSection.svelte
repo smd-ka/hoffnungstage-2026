@@ -47,7 +47,7 @@
 	);
 </script>
 
-<section class="page-section pt-72">
+<section class="page-section">
 	<h1>{tr.title}</h1>
 	<p>
 		{@html tr.intro}
