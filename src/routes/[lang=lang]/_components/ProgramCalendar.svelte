@@ -22,7 +22,7 @@
 	$: lang = $page.params.lang as 'de' | 'en';
 
 	// Build grid data for each day
-	function getItemForTimeSlot(dayItems: ProgramItem[], time: string): ProgramItem | null {
+	function getItemForTimeSlot(dayItems: readonly ProgramItem[], time: string): ProgramItem | null {
 		const matchingItem = dayItems.find((item) => item.startTime === time);
 		if (matchingItem) {
 			return matchingItem;
