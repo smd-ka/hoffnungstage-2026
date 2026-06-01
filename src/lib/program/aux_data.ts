@@ -90,7 +90,22 @@ export const locations: Record<string, Location> = {
 		sentenceEnd: t(
 			'am KIT auf der Forumswiese vor dem Audimax (Gebäude 30.95)',
 			'at KIT at the Forumswiese in front of the Audimax lecture hall (building 30.95)'
-		)
+		),
+		marker: {
+			center: { lat: 49.0116683, lon: 8.415337875 },
+			description: t(
+				'Hier findest du uns im großen Zelt',
+				'Here you find us in a large tent.'
+			),
+			polygon: [
+				[8.4152412, 49.0118096],
+				[8.4155849, 49.011634],
+				[8.4154209, 49.0115219],
+				[8.4151048, 49.0117077],
+				[8.4152412, 49.0118096]
+			],
+			recZoom: 15,
+		}
 	},
 	'ph-plaza': {
 		slug: 'ph-plaza',
@@ -102,6 +117,16 @@ export const locations: Record<string, Location> = {
 		sentenceEnd: t(
 			'an der PH auf dem Vorplatz vor der Cafeteria Bismarckstraße',
 			'at PH at the square in front of the cafeteria on Bismarckstraße'
-		)
+		),
+		marker: {
+			center: { lat: 49.013380, lon: 8.392723 },
+			polygon: [
+				[8.392659, 49.013336],
+				[8.392836, 49.013336],
+				[8.392836, 49.013435],
+				[8.392659, 49.013435]
+			],
+			recZoom: 17,
+		}
 	}
 };
