@@ -6,6 +6,7 @@
 	import InternationalAreaSection from './_components/InternationalAreaSection.svelte';
 	import AboutUsSection from './_components/AboutUsSection.svelte';
 	import ContactSection from './_components/ContactSection.svelte';
+	import LocationSection from './_components/LocationSection.svelte';
 </script>
 
 <main
@@ -17,6 +18,7 @@
 		<HopeSection />
 		<ProgramSection />
 		<InternationalAreaSection />
+		<LocationSection />
 		<AboutUsSection />
 		<ContactSection />
 	</div>
