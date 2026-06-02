@@ -130,9 +130,9 @@
 	});
 </script>
 
-<div class="flex flex-col gap-3">
+<div class="flex flex-col gap-4">
 	<!-- Controls: date selection (horizontal chips) -->
-	<div class="flex flex-1 justify-center gap-2 overflow-x-auto py-1 lg:hidden">
+	<div class="flex justify-center gap-2 overflow-x-auto lg:hidden">
 		{#each filteredDays as day}
 			<button
 				on:click={() => toggleDate(day.date)}
