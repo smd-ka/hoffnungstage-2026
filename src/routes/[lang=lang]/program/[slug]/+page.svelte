@@ -94,7 +94,7 @@
 </svelte:head>
 
 <main
-	class="min-h-screen bg-cover bg-fixed bg-center pb-20"
+	class="page-background-fixed min-h-screen bg-cover bg-center pb-20"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url({background_blended});"
 >
 	<div class="mx-auto max-w-4xl px-4 pt-8">
