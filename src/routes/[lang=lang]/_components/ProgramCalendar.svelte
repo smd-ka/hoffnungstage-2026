@@ -132,21 +132,19 @@
 
 <div class="flex flex-col gap-3">
 	<!-- Controls: date selection (horizontal chips) -->
-	<div class="flex items-center gap-2 lg:hidden">
-		<div class="flex flex-1 justify-center gap-2 overflow-x-auto py-1">
-			{#each filteredDays as day}
-				<button
-					on:click={() => toggleDate(day.date)}
-					aria-pressed={selectedDates.has(day.date)}
-					class={`whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium transition-colors ${
-						selectedDates.has(day.date) ? 'bg-indigo-600 text-white' : 'bg-white/5 text-white/70'
-					}`}
-				>
-					<div class="leading-tight">{getDayName(day.date, lang)}</div>
-					<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
-				</button>
-			{/each}
-		</div>
+	<div class="flex flex-1 justify-center gap-2 overflow-x-auto py-1 lg:hidden">
+		{#each filteredDays as day}
+			<button
+				on:click={() => toggleDate(day.date)}
+				aria-pressed={selectedDates.has(day.date)}
+				class={`whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+					selectedDates.has(day.date) ? 'bg-indigo-600 text-white' : 'bg-white/5 text-white/70'
+				}`}
+			>
+				<div class="leading-tight">{getDayName(day.date, lang)}</div>
+				<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
+			</button>
+		{/each}
 	</div>
 
 	<table class="w-full table-fixed border-collapse text-white lg:min-w-[800px]">
