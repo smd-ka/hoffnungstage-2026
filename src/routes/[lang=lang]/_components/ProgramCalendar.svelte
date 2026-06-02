@@ -8,7 +8,8 @@
 		formatDuration,
 		getDayName,
 		getTitle,
-		filterProgramDays
+		filterProgramDays,
+		getShortDayName
 	} from '$lib/program/helpers';
 	import type { ProgramFilterValue, ProgramItem } from '$lib/program/types';
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -141,7 +142,10 @@
 					selectedDates.has(day.date) ? 'bg-indigo-600 text-white' : 'bg-white/5 text-white/70'
 				}`}
 			>
-				<div class="leading-tight">{getDayName(day.date, lang)}</div>
+				<div class="leading-tight">
+					<span class="md:hidden">{getShortDayName(day.date, lang)}</span>
+					<span class="max-md:hidden">{getDayName(day.date, lang)}</span>
+				</div>
 				<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
 			</button>
 		{/each}

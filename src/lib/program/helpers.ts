@@ -93,6 +93,11 @@ export function getDayName(dateString: string, language: TranslatedLanguage): st
     return date.toLocaleDateString(localeMap[language], { weekday: 'long' });
 }
 
+export function getShortDayName(dateString: string, language: TranslatedLanguage): string {
+    const date = new Date(dateString + 'T00:00:00');
+    return date.toLocaleDateString(localeMap[language], { weekday: 'short' });
+}
+
 const DURATION_HOUR_FORMAT_THRESHOLD = 2;
 // language parameter kept for future locale-aware formatting
 export function formatDuration(duration: Duration | null, language: TranslatedLanguage): string {
