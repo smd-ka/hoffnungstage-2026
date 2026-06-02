@@ -23,8 +23,8 @@
 				en: '<b>S</b>tudents <b>f</b>or <b>C</b>hrist'
 			},
 			sfcDescription: {
-				de: 'Wir sind eine überkonfessionelle, christliche Hochschulgruppe mit ca. 100 Studierenden aus allen Karlsruher Hochschulen. Unser Herzschlag ist es, Studierende für ein Leben mit Jesus zu begeistern und Gottes Liebe am Campus erlebbar zu machen. Neben unserem SfC-Abend am Donnerstag gibt es regelmäßig gemeinsame Aktionen. Freu dich auf Spaß, Action und echte Freundschaften. Egal, ob du Christ bist oder einfach Interesse am Glauben hast, du bist herzlich willkommen!',
-				en: "We are an interdenominational, Christian student group with approximately 100 students from all Karlsruhe universities. Our passion is to inspire students for a life with Jesus and to make God's love tangible on campus. In addition to our SfC evening on Thursdays, there are regular joint activities. Look forward to fun, action, and genuine friendships. Whether you're a Christian or just interested in faith, you are warmly welcome!"
+				de: 'Wir sind eine überkonfessionelle, christliche Hochschulgruppe mit ca. 100 Studierenden aus allen Karlsruher Hochschulen. Unser Herzschlag ist es, Studierende für ein Leben mit Jesus zu begeistern und Gottes Liebe am Campus erlebbar zu machen. Neben unserem SfC-Abend am Donnerstag gibt es regelmäßig gemeinsame Aktionen. Freu dich auf Spaß, Action und echte Freundschaften. Egal woher du kommst, oder was du glaubst, du bist herzlich willkommen!',
+				en: "We are an interdenominational, Christian student group with approximately 100 students from all Karlsruhe universities. Our passion is to inspire students for a life with Jesus and to make God's love tangible on campus. In addition to our SfC evening on Thursdays, there are regular joint activities. Look forward to fun, action, and genuine friendships. No matter where you come from or what you believe, you are warmly welcome!"
 			},
 			// SMD section
 			smdName: { de: 'SMD Karlsruhe', en: 'SMD Karlsruhe' },
