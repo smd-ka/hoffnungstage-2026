@@ -415,8 +415,6 @@ export const programDays = enhanceProgramDays([
 					wearing a priestly garment.*
 					*2. Samuel 6, 14*`
 				),
-				originalIn: 'de',
-				translatedTo: [],
 				startTime: '22:00',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: [], // speakers not listed publicly
@@ -529,8 +527,6 @@ export const programDays = enhanceProgramDays([
 					"For no other foundation can anyone lay than that which is laid, which is Jesus Christ."
 					(Romans 6:11)`
 				),
-				originalIn: 'de',
-				translatedTo: [],
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',

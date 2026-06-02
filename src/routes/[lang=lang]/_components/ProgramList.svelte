@@ -67,7 +67,7 @@
 								<span>{item.startTime}{item.endTime ? ` - ${item.endTime}` : ''}</span>
 							</div>
 
-							{#if item.speakers.length > 0}
+							{#if 'speakers' in item && item.speakers.length > 0}
 								<div class="flex items-center gap-1">
 									<Fa icon={faUser} scale={0.8} />
 									<span>
@@ -83,7 +83,7 @@
 								</div>
 							{/if}
 
-							{#if item.originalIn || item.translatedTo.length > 0}
+							{#if 'originalIn' in item && (item.originalIn || item.translatedTo.length > 0)}
 								<div class="flex items-center gap-1">
 									{#if item.originalIn}
 										<span>{languageFlags[item.originalIn]}</span>

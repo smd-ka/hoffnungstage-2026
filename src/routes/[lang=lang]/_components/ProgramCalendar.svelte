@@ -133,7 +133,7 @@
 									<div
 										class="flex w-full flex-col items-start justify-start gap-1 text-xs text-white/70"
 									>
-										{#if item.showSpeakersSeparate}
+										{#if 'speakers' in item && item.showSpeakersSeparate}
 											<div class="flex w-full items-center gap-1">
 												<Fa icon={faUser} scale={0.7} />
 												<span class="single-liner">

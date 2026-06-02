@@ -14,6 +14,7 @@
 	import { languageNames } from '$lib/languageNames';
 	import { formatDateForDisplay, getTitle } from '$lib/program/helpers';
 	import type { Gender } from '$lib/program/types';
+	import type { ProgramItem } from '$lib/program/prog_types';
 
 	export let data: PageData;
 
@@ -68,7 +69,9 @@
 	);
 
 	// Get the appropriate speaker label based on speaker genders
-	function getSpeakerLabel(genders: Gender[], t: typeof tr): string {
+	function getSpeakerLabel(item: ProgramItem, t: typeof tr): string {
+		if (!('speakers' in item)) return '';
+		const genders = item.speakers.map((s) => s.gender);
 		if (genders.length === 0) return '';
 		if (genders.length === 1) {
 			return genders[0] === 'f' ? t.speakerLabelFemaleSingular : t.speakerLabelMaleSingular;
@@ -79,13 +82,11 @@
 		return allFemale ? t.speakerLabelFemalePlural : t.speakerLabelMalePlural;
 	}
 
-	$: speakerLabel = getSpeakerLabel(
-		item.speakers.map((s) => s.gender),
-		tr
-	);
+	$: speakerLabel = getSpeakerLabel(item, tr);
 
 	// Check if current language is not available
-	$: isCurrentLangUnavailable = item.originalIn !== lang && !item.translatedTo.includes(lang);
+	$: isCurrentLangUnavailable =
+		'originalIn' in item && item.originalIn !== lang && !item.translatedTo.includes(lang);
 </script>
 
 <svelte:head>
@@ -135,19 +136,21 @@
 					{/if}
 
 					<!-- Language Info -->
-					<div class="flex items-center gap-2">
-						<Fa icon={faLanguage} />
-						<span
-							class="lang-name"
-							title={item.originalIn !== lang ? languageNames[item.originalIn][lang] : undefined}
-						>
-							{languageNames[item.originalIn][item.originalIn]}
-						</span>
-					</div>
+					{#if 'originalIn' in item}
+						<div class="flex items-center gap-2">
+							<Fa icon={faLanguage} />
+							<span
+								class="lang-name"
+								title={item.originalIn !== lang ? languageNames[item.originalIn][lang] : undefined}
+							>
+								{languageNames[item.originalIn][item.originalIn]}
+							</span>
+						</div>
+					{/if}
 				</div>
 
 				<!-- Available Translations -->
-				{#if item.translatedTo.length > 0}
+				{#if 'originalIn' in item && item.translatedTo.length > 0}
 					<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
 						<span>
 							{item.translatedTo.length === 1
@@ -180,7 +183,7 @@
 			</section>
 
 			<!-- Speakers Section -->
-			{#if item.speakers.length > 0}
+			{#if 'speakers' in item && item.speakers.length > 0}
 				<section class="border-t border-white/10 p-6 md:p-8">
 					<h2 class="mb-4 flex items-center gap-2 text-lg font-semibold text-white">
 						<Fa icon={faUser} />

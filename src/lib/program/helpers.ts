@@ -1,4 +1,15 @@
-import { type ProgramItem, type ProgramDay, type PartialProgramItem, type PartialProgramDay } from './prog_types';
+import {
+    type ProgramItem,
+    type ProgramDay,
+    type PartialProgramItem,
+    type PartialProgramDay,
+    type _AbsMainParams,
+    type _CalcMainParams,
+    type _AbsIntlParams,
+    type _CalcIntlParams,
+    type _AbsSpeakerParams,
+    type _CalcSpeakerParams
+} from './prog_types';
 import { type ProgramFilterValue, ProgramFilterValues, type Duration } from './types';
 import { speakers, locations } from './aux_data';
 import { assertUniqueSlugs } from './checks';
@@ -33,32 +44,104 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
 }
 
 function enhanceProgramItem(day: PartialProgramDay, item: PartialProgramItem): ProgramItem {
+    switch (item.type) {
+        case 'concert':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+                ..._enhanceSpeakerParams(item),
+            };
+        case 'movie':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+                ..._enhanceIntlParams(item),
+            };
+        case 'panel':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+                ..._enhanceIntlParams(item),
+                ..._enhanceSpeakerParams(item),
+            };
+        case 'sport':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+            };
+        case 'talk':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+                ..._enhanceIntlParams(item),
+                ..._enhanceSpeakerParams(item),
+            };
+        case 'workshop':
+            return {
+                ...item,
+                ..._enhanceMainParams(item, day),
+                ..._enhanceIntlParams(item),
+            };
+    }
+}
+
+function _enhanceMainParams(item: PartialProgramItem & _AbsMainParams, day: PartialProgramDay): _CalcMainParams {
     return {
         ...item,
-        // forced ones
-        intlTarget: item.intlTarget ?? 'auto',
-        speakerIds: item.speakerIds ?? [],
-        showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
-        highlightSpeaker: item.highlightSpeaker ?? false,
-        // new ones
         date: day.date,
         duration: calculateDuration(item.startTime, item.endTime ?? null),
         forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
         location: locations[item.locationSlug],
-        speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
-    }
+    };
 }
 
-function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
+function _enhanceIntlParams(item: PartialProgramItem & _AbsIntlParams): _CalcIntlParams {
+    return {
+        ...item,
+        intlTarget: item.intlTarget ?? 'auto',
+    };
+}
+
+function _enhanceSpeakerParams(item: PartialProgramItem & _AbsSpeakerParams): _CalcSpeakerParams {
+    return {
+        ...item,
+        speakerIds: item.speakerIds ?? [],
+        speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
+        showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
+        highlightSpeaker: item.highlightSpeaker ?? false,
+    };
+}
+
+export function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
+    // TODO add filter value for sports
+    if (item.type === 'sport') return false;
     switch (filter) {
         case 'mainProgram':
-            return item.intlTarget != 'primary' && item.originalIn == 'de';
+            return (
+                item.type === 'concert' ||
+                item.type === 'movie' ||
+                (
+                    (item.type === 'panel' || item.type === 'talk') &&
+                    item.intlTarget !== 'primary' &&
+                    item.originalIn === 'de'
+                )
+            );
         case 'atKit':
             return item.locationSlug == 'kit-forum-meadow';
         case 'atPh':
             return item.locationSlug == 'ph-plaza';
         case 'forInternationals':
-            return item.intlTarget != 'not_intended' && (item.intlTarget == 'primary' || item.originalIn != 'de' || item.translatedTo.length > 0);
+            return (
+                !('originalIn' in item) ||
+                (
+                    item.intlTarget !== 'not_intended' &&
+                    (
+                        item.intlTarget === 'primary' ||
+                        item.originalIn !== 'de' ||
+                        item.translatedTo.length > 0
+                    )
+                )
+            );
     }
 }
 
@@ -80,7 +163,7 @@ function calculateDuration(startTime: string, endTime: string | null): Duration 
 
 export function getTitle(item: ProgramItem, language: TranslatedLanguage): string {
     const title = item.title[language];
-    if (item.highlightSpeaker && item.speakerIds.length > 0) {
+    if ("highlightSpeaker" in item && item.highlightSpeaker && item.speakerIds.length > 0) {
         const speakerNames = item.speakerIds.map((id) => speakers[id]?.name).filter(Boolean).join(', ');
         if (speakerNames) {
             return `${speakerNames}: ${title}`;

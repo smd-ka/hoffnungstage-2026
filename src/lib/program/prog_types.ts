@@ -10,47 +10,67 @@ export type EventType =
     | 'workshop'; // e.g. German course, but also other workshops
 
 
-// abstract items //
+// abstract params //
 
-interface AbstractPartialProgramItem {
+// HINT: when attempting to type match with "in", use non-optional attributes!
+//   otherwise those may be missing even if that type is existing.
+//   use e.g.:  "originalIn" in item  ->  _AbsIntlParams
+//   NOT e.g.:  "intlTarget" in item  (because that is optional)
+
+export interface _AbsMainParams {
+    // technical
     type: EventType;
     slug: string;
+    // descriptive
     title: TranslatedText;
     description: TranslatedText;
+    // timing
     startTime: string; // Format: HH:MM
     endTime?: string; // Format: HH:MM
+    // location
+    locationSlug: string;
+}
+
+export interface _AbsIntlParams {
     originalIn: TranslatedLanguage
     translatedTo: readonly SupportedLanguage[]
     intlTarget?: IntlTarget;
-    locationSlug: string;
-    speakerIds?: readonly string[];
-    showSpeakersSeparate?: boolean;
+}
+
+export interface _AbsSpeakerParams {
+    speakerIds: readonly string[];
+    // display params
     highlightSpeaker?: boolean;
+    showSpeakersSeparate?: boolean;
 }
 
-interface ConcertPartialProgramItem extends AbstractPartialProgramItem {
-    type: 'concert';
-}
 
-interface MoviePartialProgramItem extends AbstractPartialProgramItem {
-    type: 'movie';
-}
+// abstract items //
 
-interface PanelPartialProgramItem extends AbstractPartialProgramItem {
-    type: 'panel';
-}
+type ConcertPartialProgramItem = { type: 'concert'; }
+    & _AbsMainParams
+    & _AbsSpeakerParams
 
-interface SportPartialProgramItem extends AbstractPartialProgramItem {
-    type: 'sport';
-}
+type MoviePartialProgramItem = { type: 'movie'; }
+    & _AbsMainParams
+    & _AbsIntlParams
 
-interface TalkPartialProgramItem extends AbstractPartialProgramItem {
-    type: 'talk';
-}
+type PanelPartialProgramItem = { type: 'panel'; }
+    & _AbsMainParams
+    & _AbsIntlParams
+    & _AbsSpeakerParams
 
-interface WorkshopPartialProgramItem extends AbstractPartialProgramItem {
-    type: 'workshop';
-}
+type SportPartialProgramItem = { type: 'sport'; }
+    & _AbsMainParams
+
+type TalkPartialProgramItem = { type: 'talk'; }
+    & _AbsMainParams
+    & _AbsIntlParams
+    & _AbsSpeakerParams
+
+type WorkshopPartialProgramItem = { type: 'workshop'; }
+    & _AbsMainParams
+    & _AbsIntlParams
 
 export type PartialProgramItem =
     | ConcertPartialProgramItem
@@ -61,45 +81,57 @@ export type PartialProgramItem =
     | WorkshopPartialProgramItem;
 
 
-// "full" items //
+// derived params //
 
-interface AbstractProgramItem extends AbstractPartialProgramItem {
-    // forced ones
-    intlTarget: IntlTarget;
-    speakerIds: readonly string[];
-    showSpeakersSeparate: boolean;
-    highlightSpeaker: boolean;
-    // new ones
+export interface _CalcMainParams {
+    // technical
+    forFilters: readonly ProgramFilterValue[];
+    // timing
     date: string; // Format: YYYY-MM-DD
     duration: Duration | null;
-    forFilters: readonly ProgramFilterValue[];
+    // location
     location: Location;
+}
+
+export interface _CalcIntlParams {
+    intlTarget: IntlTarget;
+}
+
+export interface _CalcSpeakerParams {
+    speakerIds: readonly string[];
     speakers: readonly Speaker[];
+    // display params
+    highlightSpeaker: boolean;
+    showSpeakersSeparate: boolean;
 }
 
-interface ConcertProgramItem extends AbstractProgramItem {
-    type: 'concert';
-}
 
-interface MovieProgramItem extends AbstractProgramItem {
-    type: 'movie';
-}
+// derived items //
 
-interface PanelProgramItem extends AbstractProgramItem {
-    type: 'panel';
-}
+type ConcertProgramItem = ConcertPartialProgramItem
+    & _CalcMainParams
+    & _CalcSpeakerParams
 
-interface SportProgramItem extends AbstractProgramItem {
-    type: 'sport';
-}
+type MovieProgramItem = MoviePartialProgramItem
+    & _CalcMainParams
+    & _CalcIntlParams
 
-interface TalkProgramItem extends AbstractProgramItem {
-    type: 'talk';
-}
+type PanelProgramItem = PanelPartialProgramItem
+    & _CalcMainParams
+    & _CalcIntlParams
+    & _CalcSpeakerParams
 
-interface WorkshopProgramItem extends AbstractProgramItem {
-    type: 'workshop';
-}
+type SportProgramItem = SportPartialProgramItem
+    & _CalcMainParams
+
+type TalkProgramItem = TalkPartialProgramItem
+    & _CalcMainParams
+    & _CalcIntlParams
+    & _CalcSpeakerParams
+
+type WorkshopProgramItem = WorkshopPartialProgramItem
+    & _CalcMainParams
+    & _CalcIntlParams
 
 export type ProgramItem =
     | ConcertProgramItem
