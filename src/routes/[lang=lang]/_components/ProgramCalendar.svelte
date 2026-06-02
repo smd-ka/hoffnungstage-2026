@@ -14,7 +14,7 @@
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
-	const mobileSelectionLimit = 2;
+	const mobileSelectionLimit = 1;
 	const tabletSelectionLimit = 3;
 	let isBelowMd = false;
 	let isAtLeastLg = false;
