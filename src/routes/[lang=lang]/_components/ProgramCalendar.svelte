@@ -130,9 +130,9 @@
 	});
 </script>
 
-<!-- Controls: date selection (horizontal chips) -->
-<div class="mb-3 lg:hidden">
-	<div class="flex items-center gap-2">
+<div class="flex flex-col gap-3">
+	<!-- Controls: date selection (horizontal chips) -->
+	<div class="flex items-center gap-2 lg:hidden">
 		<div class="flex flex-1 justify-center gap-2 overflow-x-auto py-1">
 			{#each filteredDays as day}
 				<button
@@ -148,9 +148,7 @@
 			{/each}
 		</div>
 	</div>
-</div>
 
-<div class="overflow-x-auto">
 	<table class="w-full table-fixed border-collapse text-white lg:min-w-[800px]">
 		<thead>
 			<tr class="border-b border-white/20">
