@@ -77,7 +77,6 @@ export const programDays = enhanceProgramDays([
 					and you'll have the opportunity to get answers to your personal questions!`
 				),
 				...common.stageTranslated,
-				date: '2026-06-08',
 				startTime: '13:00',
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow'
@@ -85,7 +84,6 @@ export const programDays = enhanceProgramDays([
 			{
 				...common.germanCourse,
 				slug: 'monday:german-course',
-				date: '2026-06-08',
 				startTime: '15:35',
 				endTime: '16:50',
 			},
@@ -104,7 +102,6 @@ export const programDays = enhanceProgramDays([
 				),
 				originalIn: 'de',
 				translatedTo: [],
-				date: '2026-06-08',
 				startTime: '15:45',
 				endTime: '17:00',
 				locationSlug: 'ph-plaza'
@@ -113,7 +110,6 @@ export const programDays = enhanceProgramDays([
 				...common.shortTalks,
 				slug: 'monday:short-talk-living-in-germany',
 				...common.stageTranslated,
-				date: '2026-06-09',
 				startTime: '17:35',
 				endTime: '17:50',
 			},
@@ -140,7 +136,6 @@ export const programDays = enhanceProgramDays([
 					In this talk, you'll learn what has driven him throughout his career and where he finds happiness!`
 				),
 				...common.stageTranslated,
-				date: '2026-06-08',
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
@@ -177,7 +172,6 @@ export const programDays = enhanceProgramDays([
 					and performance under pressure.`
 				),
 				...common.stageTranslated,
-				date: '2026-06-09',
 				startTime: '13:00',
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow',
@@ -186,7 +180,6 @@ export const programDays = enhanceProgramDays([
 			{
 				...common.germanCourse,
 				slug: 'tuesday:german-course',
-				date: '2026-06-09',
 				startTime: '15:35',
 				endTime: '16:50',
 			},
@@ -212,7 +205,6 @@ export const programDays = enhanceProgramDays([
 				),
 				originalIn: 'de',
 				translatedTo: [],
-				date: '2026-06-09',
 				startTime: '15:45',
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
@@ -235,7 +227,6 @@ export const programDays = enhanceProgramDays([
 				),
 				...common.stageTranslated,
 				intlTarget: 'primary',
-				date: '2026-06-09',
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
@@ -279,7 +270,6 @@ export const programDays = enhanceProgramDays([
 					He likes: good questions, black coffee, and computers that don't crash.)`
 				),
 				...common.stageTranslated,
-				date: '2026-06-09',
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
@@ -293,7 +283,6 @@ export const programDays = enhanceProgramDays([
 			{
 				...common.germanCourse,
 				slug: 'wednesday:german-course',
-				date: '2026-06-10',
 				startTime: '15:35',
 				endTime: '16:50',
 			},
@@ -327,7 +316,6 @@ export const programDays = enhanceProgramDays([
 				),
 				originalIn: 'de',
 				translatedTo: [],
-				date: '2026-06-10',
 				startTime: '15:45',
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
@@ -352,7 +340,6 @@ export const programDays = enhanceProgramDays([
 				),
 				...common.stageTranslated,
 				intlTarget: 'primary',
-				date: '2026-06-10',
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
@@ -380,7 +367,6 @@ export const programDays = enhanceProgramDays([
 					of rigorous science and faith-based belief - two very different domains.`
 				),
 				...common.stageTranslated,
-				date: '2026-06-10',
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
@@ -413,7 +399,6 @@ export const programDays = enhanceProgramDays([
 				),
 				originalIn: 'de',
 				translatedTo: [],
-				date: '2026-06-10',
 				startTime: '22:00',
 				locationSlug: 'kit-forum-meadow'
 			}
@@ -459,7 +444,6 @@ export const programDays = enhanceProgramDays([
 					and how great suffering can be processed very personally.`
 				),
 				...common.stageTranslated,
-				date: '2026-06-11',
 				startTime: '14:00',
 				endTime: '15:30',
 				locationSlug: 'kit-forum-meadow',
@@ -497,7 +481,6 @@ export const programDays = enhanceProgramDays([
 					and how one can still be a bearer of hope.`
 				),
 				...common.stageTranslated,
-				date: '2026-06-11',
 				startTime: '18:00',
 				endTime: '19:00',
 				locationSlug: 'kit-forum-meadow',
@@ -526,7 +509,6 @@ export const programDays = enhanceProgramDays([
 				),
 				originalIn: 'de',
 				translatedTo: [],
-				date: '2026-06-11',
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',

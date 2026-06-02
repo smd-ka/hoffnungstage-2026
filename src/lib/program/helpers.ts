@@ -35,6 +35,7 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
             showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
             highlightSpeaker: item.highlightSpeaker ?? false,
             // new ones
+            date: day.date,
             duration: calculateDuration(item.startTime, item.endTime ?? null),
             forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
             location: locations[item.locationSlug],

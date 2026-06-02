@@ -41,7 +41,6 @@ export interface PartialProgramItem {
     slug: string;
     title: TranslatedText;
     description: TranslatedText;
-    date: string; // Format: YYYY-MM-DD
     startTime: string; // Format: HH:MM
     endTime?: string; // Format: HH:MM
     originalIn: TranslatedLanguage
@@ -61,6 +60,7 @@ export interface ProgramItem extends PartialProgramItem {
     showSpeakersSeparate: boolean;
     highlightSpeaker: boolean;
     // new ones
+    date: string; // Format: YYYY-MM-DD
     duration: Duration | null;
     forFilters: readonly ProgramFilterValue[];
     location: Location;
