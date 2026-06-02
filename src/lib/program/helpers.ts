@@ -32,12 +32,12 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
             // forced ones
             intlTarget: item.intlTarget ?? 'auto',
             speakerIds: item.speakerIds ?? [],
+            showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
             highlightSpeaker: item.highlightSpeaker ?? false,
             // new ones
             duration: calculateDuration(item.startTime, item.endTime ?? null),
             forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
             location: locations[item.locationSlug],
-            showSpeakersSeparate: (item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker,
             speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
         })),
     }));

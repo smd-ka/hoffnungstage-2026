@@ -536,7 +536,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['samuel-knospe']
+				speakerIds: ['samuel-knospe'],
+				showSpeakersSeparate: false,
 			}
 		]
 	}

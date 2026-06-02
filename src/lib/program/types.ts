@@ -49,6 +49,7 @@ export interface PartialProgramItem {
     intlTarget?: IntlTarget;
     locationSlug: string;
     speakerIds?: readonly string[];
+    showSpeakersSeparate?: boolean;
     highlightSpeaker?: boolean;
 }
 
@@ -57,12 +58,12 @@ export interface ProgramItem extends PartialProgramItem {
     // forced ones
     intlTarget: IntlTarget;
     speakerIds: readonly string[];
+    showSpeakersSeparate: boolean;
     highlightSpeaker: boolean;
     // new ones
     duration: Duration | null;
     forFilters: readonly ProgramFilterValue[];
     location: Location;
-    showSpeakersSeparate: boolean;
     speakers: readonly Speaker[];
 }
 
