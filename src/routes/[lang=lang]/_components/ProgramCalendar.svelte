@@ -150,12 +150,6 @@
 	</div>
 </div>
 
-{#if visibleDays.length === 0}
-	<div class="mb-3 text-sm text-white/60">
-		No days selected — tap "Select all" to show the calendar.
-	</div>
-{/if}
-
 <div class="overflow-x-auto">
 	<table class="w-full table-fixed border-collapse text-white lg:min-w-[800px]">
 		<thead>
