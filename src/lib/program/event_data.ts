@@ -82,7 +82,8 @@ export const programDays = enhanceProgramDays([
 				...common.stageTranslated,
 				startTime: '13:00',
 				endTime: '14:00',
-				locationSlug: 'kit-forum-meadow'
+				locationSlug: 'kit-forum-meadow',
+				speakerIds: ['heike-seewald', 'ute-meiswinkel', 'jonathan-egger']
 			},
 			{
 				...common.germanCourse,

@@ -6,6 +6,24 @@ const t = (de: string, en: string): TranslatedText => ({ de, en });
 
 // Speaker registry - maps speaker slug to speaker information
 export const speakers: Record<string, Speaker> = {
+	'heike-seewald': {
+		slug: 'heike-seewald',
+		name: 'Heike Seewald',
+		gender: 'f',
+		// TODO title & affiliation
+	},
+	'ute-meiswinkel': {
+		slug: 'ute-meiswinkel',
+		name: 'Dr. med. Ute Meiswinkel',
+		gender: 'f',
+		// TODO title & affiliation
+	},
+	'jonathan-egger': {
+		slug: 'jonathan-egger',
+		name: 'Jonathan Egger',
+		gender: 'm',
+		// TODO title & affiliation
+	},
 	'michael-sternkopf': {
 		slug: 'michael-sternkopf',
 		name: 'Michael Sternkopf',
