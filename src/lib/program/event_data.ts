@@ -25,19 +25,19 @@ const common = {
 	},
 	shortTalks: {
 		title: t(
-			'Kurzvorträge: Leben und Überleben in Deutschland',
-			'Short Talks: Living and Getting By in Germany'
+			'Kurzvortrag: Leben und Überleben in Deutschland',
+			'Short Talk: Living and Getting By in Germany'
 		),
 		description: t(
 			`In kurzen Vorträgen werden Tipps zum Leben und Überleben in Deutschland gegeben.
 			Das kann von „Wie trenne ich den Müll richtig?“, über „Was für Rechte habe ich als Mieter?",
 			bis hin zu „Warum brauche ich einen Hausarzt?", oder „Was für Tabus gibt es in Deutschland?"
 			alles sein.
-			Die genauen Themen sind noch in Planung, also bleibt gespannt!`,
+			Das genaue Thema ist noch in Planung, also bleibt gespannt!`,
 			`In short talks, you can learn about living and getting by in Germany.
 			Topics can range from "How do I sort my trash properly?" and "What rights do I have as a tenant?"
 			to "Why do I need a 'Hausarzt'?" or "What are some cultural taboos in Germany?"
-			The exact topics are still being planned, so stay tuned!`
+			The exact topic is still being planned, so stay tuned!`
 		),
 		originalIn: 'de',
 		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
