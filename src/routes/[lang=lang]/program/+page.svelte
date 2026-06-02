@@ -27,6 +27,14 @@
 				de: 'Klicke auf einen Programmpunkt für mehr Details.',
 				en: 'Click on an event for more details.'
 			},
+			toProgramList: {
+				de: 'Wenn du das Programm als Liste sehen möchtest, klicke',
+				en: 'If you prefer to see the program as a list, click'
+			},
+			cliickHere: {
+				de: 'hier',
+				en: 'here'
+			},
 			preferList: {
 				de: 'Alternativ findest du hier alle Veranstaltungen aufgelistet:',
 				en: 'Alternatively, you can find all events listed here:'
@@ -58,6 +66,14 @@
 		</p>
 		<p>
 			{tr.clickForContent}
+			{tr.toProgramList}
+
+			<a
+				href="/{lang}/program#program-list"
+				class="inline-flex text-white transition-colors hover:text-indigo-500"
+			>
+				{tr.cliickHere}
+			</a>
 		</p>
 	</header>
 
