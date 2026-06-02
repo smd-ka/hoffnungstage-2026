@@ -219,11 +219,27 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['lukas-reppert']
 			},
 			{
-				...common.shortTalks,
 				slug: 'tuesday:short-talk-living-in-germany',
+				title: t('Kurzvortrag: Mietrecht in Deutschland', 'Short Talk: Tenancy Law in Germany'),
+				description: t(
+					`Fast jeder Student in Deutschland wohnt als Mieter. Aber was für Rechte habe ich als Mieter eigentlich?
+					Und was für Pflichten? Das wird uns Fynn in seinem Kurzvortrag erzählen.
+
+					Nach dem Vortrag gibt es wie immer viel Raum für Gemeinschaft und Gespräche
+					mit Snacks und Getränken. Und die Möglichkeit weiter über Mieten und Mietrecht zu reden.`,
+					`Nearly every student in Germany lives as a renter. But what rights and duty do I have as a renter?
+					Fynn will explain this in his short talk.
+
+					As always, there will be plenty of time for socialising and conversations,
+					with snacks and drinks provided — and the chance to continue discussing the topic of rent.`
+				),
+				originalIn: 'de',
+				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				intlTarget: 'primary',
 				date: '2026-06-09',
 				startTime: '17:35',
 				endTime: '17:50',
+				locationSlug: 'kit-forum-meadow',
 			},
 			{
 				slug: 'god-of-the-bible',
@@ -320,11 +336,29 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['rebekka-meussling']
 			},
 			{
-				...common.shortTalks,
 				slug: 'wednesday:short-talk-living-in-germany',
-				date: '2026-06-09',
+				title: t('Kurzvortrag: Tabus in Deutschland', 'Short Talk: Taboos in Germany'),
+				description: t(
+					`Tabus sind kulturelle Gesetze, die manche Handlungen in einer Gesellschaft verbieten.
+					In diesem Kurzvortrag wird uns Harald von Begegnungen mit Internationalen erzählen,
+					bei denen Tabus sichtbar wurden.
+
+					Nach dem Vortrag gibt es wie immer viel Raum für Gemeinschaft und Gespräche
+					mit Snacks und Getränken. Und die Möglichkeit weiter über Tabus zu reden.`,
+					`Taboos are cultural norms that prohibit certain actions within a society.
+					In this short talk, Harald will share stories of his encounters with internationals
+					where taboos became visible.
+
+					As always, there will be plenty of time for fellowship and conversation,
+					with snacks and drinks provided — and the chance to continue discussing taboos.`
+				),
+				originalIn: 'de',
+				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				intlTarget: 'primary',
+				date: '2026-06-10',
 				startTime: '17:35',
 				endTime: '17:50',
+				locationSlug: 'kit-forum-meadow',
 			},
 			{
 				slug: 'science-and-faith',
