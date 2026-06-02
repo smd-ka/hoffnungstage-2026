@@ -8,6 +8,10 @@ const t = (de: string, en: string): TranslatedText => ({ de, en });
 
 // common blocks
 const common = {
+	stageTranslated: {
+		originalIn: 'de',
+		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+	},
 	germanCourse: {
 		title: t('Deutschkurs', 'German Course'),
 		description: t(
@@ -39,8 +43,6 @@ const common = {
 			to "Why do I need a 'Hausarzt'?" or "What are some cultural taboos in Germany?"
 			The exact topic is still being planned, so stay tuned!`
 		),
-		originalIn: 'de',
-		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
 	},
@@ -74,8 +76,7 @@ export const programDays = enhanceProgramDays([
 					that underlies your relationships,
 					and you'll have the opportunity to get answers to your personal questions!`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-08',
 				startTime: '13:00',
 				endTime: '14:00',
@@ -111,6 +112,7 @@ export const programDays = enhanceProgramDays([
 			{
 				...common.shortTalks,
 				slug: 'monday:short-talk-living-in-germany',
+				...common.stageTranslated,
 				date: '2026-06-09',
 				startTime: '17:35',
 				endTime: '17:50',
@@ -137,8 +139,7 @@ export const programDays = enhanceProgramDays([
 					Former Karlsruher and FC Bayern soccer professional Michael Sternkopf answers these questions and more.
 					In this talk, you'll learn what has driven him throughout his career and where he finds happiness!`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-08',
 				startTime: '19:00',
 				endTime: '20:30',
@@ -175,8 +176,7 @@ export const programDays = enhanceProgramDays([
 					you will gain valuable insights into how they deal with full schedules
 					and performance under pressure.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-09',
 				startTime: '13:00',
 				endTime: '14:00',
@@ -233,8 +233,7 @@ export const programDays = enhanceProgramDays([
 					As always, there will be plenty of time for socialising and conversations,
 					with snacks and drinks provided — and the chance to continue discussing the topic of rent.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				intlTarget: 'primary',
 				date: '2026-06-09',
 				startTime: '17:35',
@@ -279,8 +278,7 @@ export const programDays = enhanceProgramDays([
 					Married, three children.
 					He likes: good questions, black coffee, and computers that don't crash.)`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-09',
 				startTime: '19:00',
 				endTime: '20:30',
@@ -352,8 +350,7 @@ export const programDays = enhanceProgramDays([
 					As always, there will be plenty of time for fellowship and conversation,
 					with snacks and drinks provided — and the chance to continue discussing taboos.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				intlTarget: 'primary',
 				date: '2026-06-10',
 				startTime: '17:35',
@@ -382,8 +379,7 @@ export const programDays = enhanceProgramDays([
 					Prof. Dr. Thomas Schimmel from KIT offers fascinating insights into the intersecting worlds
 					of rigorous science and faith-based belief - two very different domains.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-10',
 				startTime: '19:00',
 				endTime: '20:30',
@@ -462,8 +458,7 @@ export const programDays = enhanceProgramDays([
 					what has brought her comfort in life
 					and how great suffering can be processed very personally.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-11',
 				startTime: '14:00',
 				endTime: '15:30',
@@ -501,8 +496,7 @@ export const programDays = enhanceProgramDays([
 					and provide insights into how they themselves are dealing with the crises of our time,
 					and how one can still be a bearer of hope.`
 				),
-				originalIn: 'de',
-				translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+				...common.stageTranslated,
 				date: '2026-06-11',
 				startTime: '18:00',
 				endTime: '19:00',
