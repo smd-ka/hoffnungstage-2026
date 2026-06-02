@@ -13,6 +13,7 @@ const common = {
 		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
 	},
 	germanCourse: {
+		type: "workshop",
 		title: t('Deutschkurs', 'German Course'),
 		description: t(
 			`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
@@ -28,6 +29,7 @@ const common = {
 		locationSlug: 'kit-forum-meadow'
 	},
 	shortTalks: {
+		type: "talk",
 		title: t(
 			'Kurzvortrag: Leben und Überleben in Deutschland',
 			'Short Talk: Living and Getting By in Germany'
@@ -53,6 +55,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-08',
 		items: [
 			{
+				type: "panel",
 				slug: 'being-human-together',
 				title: t(
 					'Talkrunde: Miteinander Mensch sein – Wie gelingen Beziehungen?',
@@ -88,6 +91,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '16:50',
 			},
 			{
+				type: "talk",
 				slug: 'open-mic',
 				title: t('Open Mic', 'Open Mic'),
 				description: t(
@@ -114,6 +118,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:50',
 			},
 			{
+				type: "talk",
 				slug: 'what-truly-makes-me-happy',
 				title: t(
 					'Was macht mich wirklich glücklich? – Ein ehemaliger Bayernprofi erzählt',
@@ -148,6 +153,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-09',
 		items: [
 			{
+				type: "panel",
 				slug: 'stressful-phases',
 				title: t(
 					'Talkrunde: Wie gehe ich mit stressigen Phasen um?',
@@ -184,6 +190,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '16:50',
 			},
 			{
+				type: "talk",
 				slug: 'living-with-hope',
 				title: t(
 					'Hoffnungsvoll leben – Eine Frage der Herzenshaltung?',
@@ -211,6 +218,7 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['lukas-reppert']
 			},
 			{
+				type: "talk",
 				slug: 'tuesday:short-talk-living-in-germany',
 				title: t('Kurzvortrag: Mietrecht in Deutschland', 'Short Talk: Tenancy Law in Germany'),
 				description: t(
@@ -232,6 +240,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 			},
 			{
+				type: "talk",
 				slug: 'god-of-the-bible',
 				title: t(
 					'Angenommen es gibt einen Gott, warum ausgerechnet der Gott der Bibel?',
@@ -287,6 +296,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '16:50',
 			},
 			{
+				type: "talk",
 				slug: 'hope-remains',
 				title: t(
 					'Wo bleibt die Hoffnung? – Leben in einer Welt voller Unsicherheit',
@@ -322,6 +332,7 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['rebekka-meussling']
 			},
 			{
+				type: "talk",
 				slug: 'wednesday:short-talk-living-in-germany',
 				title: t('Kurzvortrag: Tabus in Deutschland', 'Short Talk: Taboos in Germany'),
 				description: t(
@@ -345,6 +356,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 			},
 			{
+				type: "talk",
 				slug: 'science-and-faith',
 				title: t(
 					'Naturwissenschaft und Glaube – (k)ein Widerspruch?',
@@ -373,6 +385,7 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['thomas-schimmel']
 			},
 			{
+				type: "concert",
 				slug: 'c-rave',
 				title: t('[C]Rave', '[C]Rave'),
 				description: t(
@@ -408,6 +421,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-11',
 		items: [
 			{
+				type: "talk",
 				slug: 'what-sustains-when-everything-breaks',
 				title: t(
 					'Was trägt wenn alles zerbricht? – Mein Umgang mit Leid',
@@ -451,6 +465,7 @@ export const programDays = enhanceProgramDays([
 				highlightSpeaker: true
 			},
 			{
+				type: "panel",
 				slug: 'hope-is-worth-it',
 				title: t('Talkrunde: Was bedeutet Hoffnung?', 'Panel Discussion: What Does Hope Mean?'),
 				description: t(
@@ -487,6 +502,7 @@ export const programDays = enhanceProgramDays([
 				speakerIds: ['jannis-winkels', 'gernot-elsner']
 			},
 			{
+				type: "concert",
 				slug: 'live-concert-samuel-knospe',
 				title: t('Live Konzert mit Samuel Knospe', 'Live Concert with Samuel Knospe'),
 				description: t(
