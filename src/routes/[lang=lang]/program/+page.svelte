@@ -46,7 +46,7 @@
 </svelte:head>
 
 <main
-	class="side-padding flex min-h-screen flex-col gap-12 bg-cover bg-fixed bg-center pb-20 pt-8 max-lg:gap-4"
+	class="page-background-fixed side-padding flex min-h-screen flex-col gap-12 bg-cover bg-center pb-20 pt-8 max-lg:gap-4"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
 >
 	<header class="flex flex-col gap-4 px-4">

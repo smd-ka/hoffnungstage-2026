@@ -9,7 +9,7 @@
 </script>
 
 <main
-	class="min-h-screen bg-cover bg-fixed bg-center"
+	class="page-background-fixed min-h-screen bg-cover bg-center"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background_blended})"
 >
 	<Hero />

@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+.page-background-fixed {
+	background-attachment: fixed;
+}
+
+@supports (-webkit-touch-callout: none) {
+	.page-background-fixed {
+		background-attachment: scroll;
+	}
+}
+
 .flex-vert-center {
 	@apply flex items-center justify-center;
 }
@@ -23,17 +33,17 @@
 		/* keep overflow scrolling background color because of position:fixed header */
 	}
 
-	body>* {
+	body > * {
 		/* revert overflow scrolling background color */
 		@apply bg-white;
 	}
 
-	p>a {
+	p > a {
 		@apply underline hover:no-underline;
 	}
 
 	h1 {
-		@apply font-roman py-6 text-4xl font-bold tracking-tighter md:text-5xl xl:text-7xl;
+		@apply py-6 font-roman text-4xl font-bold tracking-tighter md:text-5xl xl:text-7xl;
 	}
 
 	h2 {
