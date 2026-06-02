@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/event_data';
@@ -13,12 +14,73 @@
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
+	const mobileSelectionLimit = 2;
+	const tabletSelectionLimit = 3;
+	let isBelowMd = false;
+	let isAtLeastLg = false;
+	let selectedDateOrder: string[] = [];
+
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
 
 	// Dynamically derive timeSlots from event data (start time only)
 	$: allTimes = filteredDays.flatMap((day) => day.items.map((item) => item.startTime));
 	$: timeSlots = [...new Set(allTimes)].sort();
+
+	// Date selection: allow limiting which days are shown (helps calendar fit)
+	let selectedDates: Set<string> = new Set();
+
+	function syncSelectedDates(nextOrder: string[]) {
+		selectedDateOrder = nextOrder;
+		selectedDates = new Set(nextOrder);
+	}
+
+	function getSelectionLimit() {
+		if (isAtLeastLg) {
+			return Number.POSITIVE_INFINITY;
+		}
+
+		return isBelowMd ? mobileSelectionLimit : tabletSelectionLimit;
+	}
+
+	function normalizeSelection(nextOrder: string[]) {
+		const availableDates = new Set(filteredDays.map((day) => day.date));
+		let normalized = nextOrder.filter((date) => availableDates.has(date));
+		const selectionLimit = getSelectionLimit();
+
+		if (normalized.length > selectionLimit) {
+			normalized = normalized.slice(-selectionLimit);
+		}
+
+		return normalized;
+	}
+
+	$: if (filteredDays) {
+		const ids = filteredDays.map((d) => d.date);
+		if (selectedDateOrder.length === 0) {
+			syncSelectedDates(ids.slice(0, getSelectionLimit()));
+		} else {
+			syncSelectedDates(normalizeSelection(selectedDateOrder));
+		}
+	}
+
+	function toggleDate(date: string) {
+		if (selectedDates.has(date)) {
+			syncSelectedDates(selectedDateOrder.filter((selectedDate) => selectedDate !== date));
+			return;
+		}
+
+		if (selectedDateOrder.length >= getSelectionLimit()) {
+			syncSelectedDates([...selectedDateOrder.slice(1), date]);
+			return;
+		}
+
+		syncSelectedDates([...selectedDateOrder, date]);
+	}
+
+	$: visibleDays = isAtLeastLg
+		? filteredDays
+		: filteredDays.filter((d) => selectedDates.has(d.date));
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
@@ -39,14 +101,67 @@
 		}
 		return null;
 	}
+
+	onMount(() => {
+		const mobileQuery = window.matchMedia('(max-width: 767px)');
+		const lgQuery = window.matchMedia('(min-width: 1024px)');
+
+		const updateViewportState = () => {
+			const nextIsBelowMd = mobileQuery.matches;
+			const nextIsAtLeastLg = lgQuery.matches;
+
+			if (nextIsBelowMd !== isBelowMd) {
+				isBelowMd = nextIsBelowMd;
+				syncSelectedDates(normalizeSelection(selectedDateOrder));
+			}
+
+			isBelowMd = nextIsBelowMd;
+			isAtLeastLg = nextIsAtLeastLg;
+		};
+
+		updateViewportState();
+		mobileQuery.addEventListener('change', updateViewportState);
+		lgQuery.addEventListener('change', updateViewportState);
+
+		return () => {
+			mobileQuery.removeEventListener('change', updateViewportState);
+			lgQuery.removeEventListener('change', updateViewportState);
+		};
+	});
 </script>
 
+<!-- Controls: date selection (horizontal chips) -->
+<div class="mb-3 lg:hidden">
+	<div class="flex items-center gap-2">
+		<div class="flex flex-1 justify-center gap-2 overflow-x-auto py-1">
+			{#each filteredDays as day}
+				<button
+					on:click={() => toggleDate(day.date)}
+					aria-pressed={selectedDates.has(day.date)}
+					class={`whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium transition-colors ${
+						selectedDates.has(day.date) ? 'bg-indigo-600 text-white' : 'bg-white/5 text-white/70'
+					}`}
+				>
+					<div class="leading-tight">{getDayName(day.date, lang)}</div>
+					<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
+				</button>
+			{/each}
+		</div>
+	</div>
+</div>
+
+{#if visibleDays.length === 0}
+	<div class="mb-3 text-sm text-white/60">
+		No days selected — tap "Select all" to show the calendar.
+	</div>
+{/if}
+
 <div class="overflow-x-auto">
-	<table class="w-full min-w-[800px] table-fixed border-collapse text-white">
+	<table class="w-full table-fixed border-collapse text-white lg:min-w-[800px]">
 		<thead>
 			<tr class="border-b border-white/20">
 				<th class="w-14 p-2 text-left text-sm font-normal text-white/70">{tr.time}</th>
-				{#each filteredDays as day}
+				{#each visibleDays as day}
 					<th class="p-2 text-center">
 						<div class="font-semibold">{getDayName(day.date, lang)}</div>
 						<div class="text-sm font-normal text-white/60">
@@ -60,7 +175,7 @@
 			{#each timeSlots as time}
 				<tr class="border-b border-white/10 align-top">
 					<td class="p-2 align-top text-sm text-white/70">{time}</td>
-					{#each filteredDays as day}
+					{#each visibleDays as day}
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}

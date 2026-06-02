@@ -23,8 +23,8 @@
 				en: 'To Full Program List'
 			},
 			paragraph: {
-				de: 'Wir bereiten ein spannendes Programm bestehend aus verschiedenen Vorträgen vor. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
-				en: 'We are preparing an exciting program consisting of various talks. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
+				de: 'Wir haben ein spannendes Programm bestehend aus verschiedenen Vorträgen, Musik und Rahmenprogramm vorbereitet. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
+				en: 'We prepared an exciting program consisting of various talks, music and side programs. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
 			},
 			languageNote: {
 				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
@@ -38,7 +38,7 @@
 	let sectionElement: HTMLElement;
 </script>
 
-<section class="page-section flex flex-col gap-10">
+<section class="page-section flex flex-col gap-10 md:px-8">
 	<h1>{tr.title}</h1>
 	<div class="flex flex-col gap-4">
 		<p>
@@ -49,7 +49,7 @@
 		</p>
 	</div>
 
-	<div bind:this={sectionElement} class="flex flex-col gap-4 max-lg:hidden">
+	<div bind:this={sectionElement} class="flex flex-col gap-4">
 		<ProgramFilter bind:value={selectedFilter} jumpRef={sectionElement} />
 		<ProgramCalendar filter={selectedFilter} />
 	</div>
@@ -60,7 +60,7 @@
 			class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-500"
 		>
 			<Fa icon={faCalendar} />
-			<span class="lg:hidden">{tr.toProgram}</span>
+			<span>{tr.toProgram}</span>
 			<span class="max-lg:hidden">{tr.toProgramList}</span>
 		</a>
 	</div>
