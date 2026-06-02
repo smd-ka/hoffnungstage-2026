@@ -1,7 +1,7 @@
 // helpers depending on event_data.ts
 // extracted into own file breaking circular dependency
 
-import { type ProgramItem, type ProgramDay } from './types';
+import type { ProgramDay, ProgramItem } from './prog_types';
 import { programDays } from './event_data';
 
 export function getProgramItemBySlug(slug: string): ProgramItem | undefined {

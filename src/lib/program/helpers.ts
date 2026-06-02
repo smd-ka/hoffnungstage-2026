@@ -1,4 +1,5 @@
-import { type ProgramItem, type ProgramDay, type ProgramFilterValue, ProgramFilterValues, type PartialProgramItem, type PartialProgramDay, type Duration } from './types';
+import { type ProgramItem, type ProgramDay, type PartialProgramItem, type PartialProgramDay } from './prog_types';
+import { type ProgramFilterValue, ProgramFilterValues, type Duration } from './types';
 import { speakers, locations } from './aux_data';
 import { assertUniqueSlugs } from './checks';
 import type { TranslatedLanguage } from '$lib/language';

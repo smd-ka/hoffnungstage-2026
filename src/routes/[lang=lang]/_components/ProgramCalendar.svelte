@@ -10,7 +10,8 @@
 		filterProgramDays,
 		getShortDayName
 	} from '$lib/program/helpers';
-	import type { ProgramFilterValue, ProgramItem } from '$lib/program/types';
+	import type { ProgramItem } from '$lib/program/prog_types';
+	import type { ProgramFilterValue } from '$lib/program/types';
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
