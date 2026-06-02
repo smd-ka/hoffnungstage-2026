@@ -61,7 +61,7 @@
 		</p>
 	</header>
 
-	<div bind:this={calendarElement} class="flex flex-col gap-6 max-lg:hidden">
+	<div bind:this={calendarElement} class="flex flex-col gap-6">
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
 		</div>
@@ -71,7 +71,7 @@
 	</div>
 
 	<div bind:this={listElement} class="flex flex-col gap-2">
-		<p class="max-lg:hidden">
+		<p>
 			{tr.preferList}
 		</p>
 		<div class="mx-auto px-4">

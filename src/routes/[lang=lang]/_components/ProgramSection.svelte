@@ -60,7 +60,6 @@
 			class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-500"
 		>
 			<Fa icon={faCalendar} />
-			<span>{tr.toProgram}</span>
 			<span class="max-lg:hidden">{tr.toProgramList}</span>
 		</a>
 	</div>
