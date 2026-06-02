@@ -36,18 +36,15 @@
 		selectedDates = new Set(nextOrder);
 	}
 
-	function getSelectionLimit() {
-		if (isAtLeastLg) {
-			return Number.POSITIVE_INFINITY;
-		}
-
-		return isBelowMd ? mobileSelectionLimit : tabletSelectionLimit;
-	}
+	$: selectionLimit = isAtLeastLg
+		? Number.POSITIVE_INFINITY
+		: isBelowMd
+		? mobileSelectionLimit
+		: tabletSelectionLimit;
 
 	function normalizeSelection(nextOrder: string[]) {
 		const availableDates = new Set(filteredDays.map((day) => day.date));
 		let normalized = nextOrder.filter((date) => availableDates.has(date));
-		const selectionLimit = getSelectionLimit();
 
 		if (normalized.length > selectionLimit) {
 			normalized = normalized.slice(-selectionLimit);
@@ -59,7 +56,7 @@
 	$: if (filteredDays) {
 		const ids = filteredDays.map((d) => d.date);
 		if (selectedDateOrder.length === 0) {
-			syncSelectedDates(ids.slice(0, getSelectionLimit()));
+			syncSelectedDates(ids.slice(0, selectionLimit));
 		} else {
 			syncSelectedDates(normalizeSelection(selectedDateOrder));
 		}
@@ -71,7 +68,7 @@
 			return;
 		}
 
-		if (selectedDateOrder.length >= getSelectionLimit()) {
+		if (selectedDateOrder.length >= selectionLimit) {
 			syncSelectedDates([...selectedDateOrder.slice(1), date]);
 			return;
 		}
