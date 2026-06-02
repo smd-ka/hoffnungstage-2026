@@ -47,6 +47,7 @@ const common = {
 		),
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
+		speakerIds: [], // not known yet
 	},
 } as const;
 
@@ -109,7 +110,8 @@ export const programDays = enhanceProgramDays([
 				translatedTo: [],
 				startTime: '15:45',
 				endTime: '17:00',
-				locationSlug: 'ph-plaza'
+				locationSlug: 'ph-plaza',
+				speakerIds: [], // speakers not listed publicly
 			},
 			{
 				...common.shortTalks,
@@ -239,6 +241,7 @@ export const programDays = enhanceProgramDays([
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
+				speakerIds: [], // TODO wait for confirmation
 			},
 			{
 				type: "talk",
@@ -355,6 +358,7 @@ export const programDays = enhanceProgramDays([
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
+				speakerIds: [], // TODO wait for confirmation
 			},
 			{
 				type: "talk",
@@ -414,7 +418,8 @@ export const programDays = enhanceProgramDays([
 				originalIn: 'de',
 				translatedTo: [],
 				startTime: '22:00',
-				locationSlug: 'kit-forum-meadow'
+				locationSlug: 'kit-forum-meadow',
+				speakerIds: [], // speakers not listed publicly
 			}
 		]
 	},
