@@ -28,21 +28,25 @@ export function enhanceProgramDays(days: PartialProgramDay[]): ProgramDay[] {
     assertUniqueSlugs(days.flatMap(day => day.items));
     return days.map((day) => ({
         ...day,
-        items: day.items.map(item => ({
-            ...item,
-            // forced ones
-            intlTarget: item.intlTarget ?? 'auto',
-            speakerIds: item.speakerIds ?? [],
-            showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
-            highlightSpeaker: item.highlightSpeaker ?? false,
-            // new ones
-            date: day.date,
-            duration: calculateDuration(item.startTime, item.endTime ?? null),
-            forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
-            location: locations[item.locationSlug],
-            speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
-        })),
+        items: day.items.map(item => enhanceProgramItem(day, item)),
     }));
+}
+
+function enhanceProgramItem(day: PartialProgramDay, item: PartialProgramItem): ProgramItem {
+    return {
+        ...item,
+        // forced ones
+        intlTarget: item.intlTarget ?? 'auto',
+        speakerIds: item.speakerIds ?? [],
+        showSpeakersSeparate: item.showSpeakersSeparate ?? ((item.speakerIds?.length ?? 0) > 0 && !item.highlightSpeaker),
+        highlightSpeaker: item.highlightSpeaker ?? false,
+        // new ones
+        date: day.date,
+        duration: calculateDuration(item.startTime, item.endTime ?? null),
+        forFilters: ProgramFilterValues.filter(val => filterMatches(val, item)),
+        location: locations[item.locationSlug],
+        speakers: (item.speakerIds ?? []).map((id) => speakers[id]).filter(Boolean),
+    }
 }
 
 function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
