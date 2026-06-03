@@ -19,22 +19,17 @@
 	const tabletSelectionLimit = 3;
 	let isBelowMd = false;
 	let isAtLeastLg = false;
+
+	// Date selection: allow limiting which days are shown (helps calendar fit)
 	let selectedDateOrder: string[] = [];
 
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
+	$: availableDates = new Set(filteredDays.map((day) => day.date));
 
 	// Dynamically derive timeSlots from event data (start time only)
 	$: allTimes = filteredDays.flatMap((day) => day.items.map((item) => item.startTime));
 	$: timeSlots = [...new Set(allTimes)].sort();
-
-	// Date selection: allow limiting which days are shown (helps calendar fit)
-	let selectedDates: Set<string> = new Set();
-
-	function syncSelectedDates(nextOrder: string[]) {
-		selectedDateOrder = nextOrder;
-		selectedDates = new Set(nextOrder);
-	}
 
 	$: selectionLimit = isAtLeastLg
 		? Number.POSITIVE_INFINITY
@@ -42,32 +37,26 @@
 		? mobileSelectionLimit
 		: tabletSelectionLimit;
 
-	function normalizeSelection(nextOrder: string[]) {
-		const availableDates = new Set(filteredDays.map((day) => day.date));
-		return nextOrder.filter((date) => availableDates.has(date)).slice(-selectionLimit);
-	}
+	// forces normalization
+	$: selectedDateOrder =
+		selectedDateOrder.length === 0
+			? filteredDays.map((d) => d.date).slice(0, selectionLimit)
+			: selectedDateOrder.filter((date) => availableDates.has(date)).slice(-selectionLimit);
 
-	$: if (filteredDays) {
-		const ids = filteredDays.map((d) => d.date);
-		if (selectedDateOrder.length === 0) {
-			syncSelectedDates(ids.slice(0, selectionLimit));
-		} else {
-			syncSelectedDates(normalizeSelection(selectedDateOrder));
-		}
-	}
+	$: selectedDates = new Set(selectedDateOrder);
 
 	function toggleDate(date: string) {
 		if (selectedDates.has(date)) {
-			syncSelectedDates(selectedDateOrder.filter((selectedDate) => selectedDate !== date));
+			selectedDateOrder = selectedDateOrder.filter((selectedDate) => selectedDate !== date);
 			return;
 		}
 
 		if (selectedDateOrder.length >= selectionLimit) {
-			syncSelectedDates([...selectedDateOrder.slice(1), date]);
+			selectedDateOrder = [...selectedDateOrder.slice(1), date];
 			return;
 		}
 
-		syncSelectedDates([...selectedDateOrder, date]);
+		selectedDateOrder = [...selectedDateOrder, date];
 	}
 
 	$: visibleDays = isAtLeastLg
@@ -99,16 +88,8 @@
 		const lgQuery = window.matchMedia('(min-width: 1024px)');
 
 		const updateViewportState = () => {
-			const nextIsBelowMd = mobileQuery.matches;
-			const nextIsAtLeastLg = lgQuery.matches;
-
-			if (nextIsBelowMd !== isBelowMd) {
-				isBelowMd = nextIsBelowMd;
-				syncSelectedDates(normalizeSelection(selectedDateOrder));
-			}
-
-			isBelowMd = nextIsBelowMd;
-			isAtLeastLg = nextIsAtLeastLg;
+			isBelowMd = mobileQuery.matches;
+			isAtLeastLg = lgQuery.matches;
 		};
 
 		updateViewportState();
