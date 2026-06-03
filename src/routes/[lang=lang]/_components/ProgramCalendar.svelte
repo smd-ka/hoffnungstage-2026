@@ -7,18 +7,56 @@
 		formatDuration,
 		getDayName,
 		getTitle,
-		filterProgramDays
+		filterProgramDays,
+		getShortDayName
 	} from '$lib/program/helpers';
 	import type { ProgramFilterValue, ProgramItem } from '$lib/program/types';
 	import { faMapPin, faUser } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
+	const mobileSelectionLimit = 1;
+	const tabletSelectionLimit = 3;
+	let clientWidth: number; // bound to window.innerWidth
+	$: isBelowMd = clientWidth < 768;
+	$: isAtLeastLg = 1024 <= clientWidth;
+
+	// Date selection: allow limiting which days are shown (helps calendar fit)
+	let selectedDateOrder: string[] = [];
+
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
+	$: availableDates = new Set(filteredDays.map((day) => day.date));
+
+	$: selectionLimit = isAtLeastLg
+		? Number.POSITIVE_INFINITY
+		: isBelowMd
+		? mobileSelectionLimit
+		: tabletSelectionLimit;
+
+	// forces normalization
+	$: selectedDateOrder =
+		selectedDateOrder.length === 0
+			? filteredDays.map((d) => d.date).slice(0, selectionLimit)
+			: selectedDateOrder.filter((date) => availableDates.has(date)).slice(-selectionLimit);
+
+	$: selectedDates = new Set(selectedDateOrder);
+
+	function toggleDate(date: string) {
+		selectedDateOrder = selectedDates.has(date)
+			? // remove when selected
+			  selectedDateOrder.filter((selectedDate) => selectedDate !== date)
+			: // add when not selected (triggers normalization)
+			  [...selectedDateOrder, date];
+	}
+
+	$: visibleDays = isAtLeastLg
+		? filteredDays
+		: filteredDays.filter((d) => selectedDates.has(d.date));
 
 	// Dynamically derive timeSlots from event data (start time only)
-	$: allTimes = filteredDays.flatMap((day) => day.items.map((item) => item.startTime));
-	$: timeSlots = [...new Set(allTimes)].sort();
+	$: timeSlots = [
+		...new Set(visibleDays.flatMap((day) => day.items.map((item) => item.startTime)))
+	].sort();
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
@@ -41,12 +79,31 @@
 	}
 </script>
 
-<div class="overflow-x-auto">
-	<table class="w-full min-w-[800px] table-fixed border-collapse text-white">
+<svelte:window bind:innerWidth={clientWidth} />
+
+<div class="flex flex-col gap-4">
+	<!-- Controls: date selection (horizontal chips) -->
+	<div class="horizontal-chips lg:hidden">
+		{#each filteredDays as day}
+			<button
+				on:click={() => toggleDate(day.date)}
+				aria-pressed={selectedDates.has(day.date)}
+				class="whitespace-nowrap text-sm font-medium"
+			>
+				<div class="leading-tight">
+					<span class="min-[420px]:hidden">{getShortDayName(day.date, lang)}</span>
+					<span class="max-[420px]:hidden">{getDayName(day.date, lang)}</span>
+				</div>
+				<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
+			</button>
+		{/each}
+	</div>
+
+	<table class="w-full table-fixed border-collapse text-white lg:min-w-[800px]">
 		<thead>
 			<tr class="border-b border-white/20">
 				<th class="w-14 p-2 text-left text-sm font-normal text-white/70">{tr.time}</th>
-				{#each filteredDays as day}
+				{#each visibleDays as day}
 					<th class="p-2 text-center">
 						<div class="font-semibold">{getDayName(day.date, lang)}</div>
 						<div class="text-sm font-normal text-white/60">
@@ -60,7 +117,7 @@
 			{#each timeSlots as time}
 				<tr class="border-b border-white/10 align-top">
 					<td class="p-2 align-top text-sm text-white/70">{time}</td>
-					{#each filteredDays as day}
+					{#each visibleDays as day}
 						{@const item = getItemForTimeSlot(day.items, time)}
 						<td class="p-1 align-top">
 							{#if item}

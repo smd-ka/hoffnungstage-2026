@@ -82,4 +82,33 @@
 	.page-section {
 		@apply side-padding grid gap-3 px-8 text-center text-white md:text-lg xl:text-xl;
 	}
+
+
+	/* horizontal chips (no wrap, attached) */
+	/* e.g.: ( alpha | beta | gamma ) */
+
+	.horizontal-chips {
+		@apply flex justify-center gap-1 overflow-x-auto;
+	}
+
+	.horizontal-chips button {
+		@apply px-2 py-1 transition-colors;
+	}
+
+	.horizontal-chips button:nth-of-type(1) {
+		@apply rounded-l-full pl-4;
+	}
+
+	.horizontal-chips button:nth-last-of-type(1) {
+		@apply rounded-r-full pr-4;
+	}
+
+	.horizontal-chips button[aria-pressed="true"] {
+		@apply bg-indigo-600 text-white;
+	}
+
+	.horizontal-chips button[aria-pressed="false"] {
+		@apply bg-white/5 text-white/70;
+	}
+
 }
