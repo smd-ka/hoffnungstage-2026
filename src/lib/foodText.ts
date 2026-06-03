@@ -1,0 +1,29 @@
+import type { TranslatedLanguage } from "./language"
+import type { FreeFood } from "./program/types"
+
+
+type TranslatedFoodText = Record<FreeFood, Record<TranslatedLanguage, string>>;
+
+// this function is required in TypeScript so:
+// - that TranslatedFoodText typing is enforced in the definition
+//   (you cannot left out a language or food)
+// - while the used literals are correctly derived to enforce correct usage
+//   (you cannot access a non-existent text type)
+function defineData<T extends Record<string, TranslatedFoodText>>(data: T): T {
+	return data;
+}
+
+const empty = { none: { de: "", en: "" } } as const;
+
+export const FoodText = defineData({
+	name: {
+		...empty,
+		lunch: { de: "Mittagessen", en: "lunch" },
+		waffles: { de: "Waffeln", en: "waffles" },
+	},
+	articleFree: {
+		...empty,
+		lunch: { de: "ein kostenloses Mittagessen", en: "free lunch" },
+		waffles: { de: "kostenlose Waffeln", en: "free waffles" },
+	},
+} as const);

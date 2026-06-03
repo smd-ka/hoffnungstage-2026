@@ -15,6 +15,7 @@
 	import { formatDateForDisplay, getTitle } from '$lib/program/helpers';
 	import type { ProgramItem } from '$lib/program/prog_types';
 	import LanguageSpan from '../../_components/LanguageSpan.svelte';
+	import { FoodText } from '$lib/foodText';
 
 	export let data: PageData;
 
@@ -64,22 +65,6 @@
 				de: 'Hinweis: Dieser Programmpunkt ist primär für unsere internationalen Kommilitonen gedacht.',
 				en: 'Note: This program item is unfortunately not available in English.'
 			},
-			lunchFoodShort: {
-				de: 'Mittagessen',
-				en: 'lunch'
-			},
-			wafflesFoodShort: {
-				de: 'Waffeln',
-				en: 'waffles'
-			},
-			lunchFoodName: {
-				de: 'ein kostenloses Mittagessen',
-				en: 'free lunch'
-			},
-			wafflesFoodName: {
-				de: 'kostenlose Waffeln',
-				en: 'free waffles'
-			},
 			foodFree: {
 				de: 'kostenlos',
 				en: 'for free'
@@ -111,14 +96,6 @@
 	}
 
 	$: speakerLabel = getSpeakerLabel(item, tr);
-	$: foodShort =
-		'food' in item && item.food !== 'none'
-			? tr[item.food === 'lunch' ? 'lunchFoodShort' : 'wafflesFoodShort']
-			: null;
-	$: foodName =
-		'food' in item && item.food !== 'none'
-			? tr[item.food === 'lunch' ? 'lunchFoodName' : 'wafflesFoodName']
-			: null;
 
 	// Check if current language is not available
 	$: isCurrentLangUnavailable =
@@ -184,7 +161,7 @@
 						<div class="flex items-center gap-2">
 							<Fa icon={faUtensils} />
 							<span title={tr.foodFree}>
-								{foodShort}
+								{FoodText.name[item.food][lang]}
 							</span>
 						</div>
 					{/if}
@@ -216,7 +193,7 @@
 						<p>{paragraph}</p>
 					{/each}
 					{#if 'food' in item && item.food !== 'none'}
-						<p>{tr['foodTextPre']}{foodName}{tr['foodTextPost']}</p>
+						<p>{tr['foodTextPre']}{FoodText.articleFree[item.food][lang]}{tr['foodTextPost']}</p>
 					{/if}
 				</div>
 			</section>
