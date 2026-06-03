@@ -5,7 +5,8 @@
 		faCalendar,
 		faMapPin,
 		faUser,
-		faLanguage
+		faLanguage,
+		faUtensils
 	} from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
@@ -63,9 +64,37 @@
 				// special hint for German speakers intended as all non-German events are intended for internationals
 				de: 'Hinweis: Dieser Programmpunkt ist primär für unsere internationalen Kommilitonen gedacht.',
 				en: 'Note: This program item is unfortunately not available in English.'
+			},
+			lunchFoodShort: {
+				de: 'Mittagessen',
+				en: 'lunch'
+			},
+			wafflesFoodShort: {
+				de: 'Waffeln',
+				en: 'waffles'
+			},
+			lunchFoodName: {
+				de: 'ein kostenloses Mittagessen',
+				en: 'free lunch'
+			},
+			wafflesFoodName: {
+				de: 'kostenlose Waffeln',
+				en: 'free waffles'
+			},
+			foodFree: {
+				de: 'kostenlos',
+				en: 'for free'
+			},
+			foodTextPre: {
+				de: 'Während dem Vortrag geben wir ',
+				en: 'During the talk you can enjoy our '
+			},
+			foodTextPost: {
+				de: ' aus.',
+				en: '.'
 			}
 		},
-		lang as 'de' | 'en'
+		lang
 	);
 
 	// Get the appropriate speaker label based on speaker genders
@@ -83,6 +112,14 @@
 	}
 
 	$: speakerLabel = getSpeakerLabel(item, tr);
+	$: foodShort =
+		'food' in item && item.food !== 'none'
+			? tr[item.food === 'lunch' ? 'lunchFoodShort' : 'wafflesFoodShort']
+			: null;
+	$: foodName =
+		'food' in item && item.food !== 'none'
+			? tr[item.food === 'lunch' ? 'lunchFoodName' : 'wafflesFoodName']
+			: null;
 
 	// Check if current language is not available
 	$: isCurrentLangUnavailable =
@@ -147,6 +184,16 @@
 							</span>
 						</div>
 					{/if}
+
+					<!-- Food -->
+					{#if 'food' in item && item.food !== 'none'}
+						<div class="flex items-center gap-2">
+							<Fa icon={faUtensils} />
+							<span title={tr.foodFree}>
+								{foodShort}
+							</span>
+						</div>
+					{/if}
 				</div>
 
 				<!-- Available Translations -->
@@ -179,6 +226,9 @@
 					{#each item.description[lang].split('\n\n') as paragraph}
 						<p>{paragraph}</p>
 					{/each}
+					{#if 'food' in item && item.food !== 'none'}
+						<p>{tr['foodTextPre']}{foodName}{tr['foodTextPost']}</p>
+					{/if}
 				</div>
 			</section>
 
@@ -223,7 +273,7 @@
 	.lang-name {
 		@apply pb-0.5 transition-colors;
 	}
-	.lang-name[title] {
+	span[title] {
 		@apply border-b border-dotted;
 	}
 </style>
