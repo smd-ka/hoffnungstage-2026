@@ -83,14 +83,12 @@
 
 <div class="flex flex-col gap-4">
 	<!-- Controls: date selection (horizontal chips) -->
-	<div class="flex justify-center gap-2 overflow-x-auto lg:hidden">
+	<div class="horizontal-chips lg:hidden">
 		{#each filteredDays as day}
 			<button
 				on:click={() => toggleDate(day.date)}
 				aria-pressed={selectedDates.has(day.date)}
-				class={`whitespace-nowrap rounded-full px-3 py-1 text-sm font-medium transition-colors ${
-					selectedDates.has(day.date) ? 'bg-indigo-600 text-white' : 'bg-white/5 text-white/70'
-				}`}
+				class="whitespace-nowrap text-sm font-medium"
 			>
 				<div class="leading-tight">
 					<span class="md:hidden">{getShortDayName(day.date, lang)}</span>
