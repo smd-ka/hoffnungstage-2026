@@ -27,11 +27,6 @@
 	$: filteredDays = filterProgramDays(filter, programDays);
 	$: availableDates = new Set(filteredDays.map((day) => day.date));
 
-	// Dynamically derive timeSlots from event data (start time only)
-	$: timeSlots = [
-		...new Set(filteredDays.flatMap((day) => day.items.map((item) => item.startTime)))
-	].sort();
-
 	$: selectionLimit = isAtLeastLg
 		? Number.POSITIVE_INFINITY
 		: isBelowMd
@@ -57,6 +52,11 @@
 	$: visibleDays = isAtLeastLg
 		? filteredDays
 		: filteredDays.filter((d) => selectedDates.has(d.date));
+
+	// Dynamically derive timeSlots from event data (start time only)
+	$: timeSlots = [
+		...new Set(visibleDays.flatMap((day) => day.items.map((item) => item.startTime)))
+	].sort();
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
