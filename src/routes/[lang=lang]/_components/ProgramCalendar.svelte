@@ -28,8 +28,9 @@
 	$: availableDates = new Set(filteredDays.map((day) => day.date));
 
 	// Dynamically derive timeSlots from event data (start time only)
-	$: allTimes = filteredDays.flatMap((day) => day.items.map((item) => item.startTime));
-	$: timeSlots = [...new Set(allTimes)].sort();
+	$: timeSlots = [
+		...new Set(filteredDays.flatMap((day) => day.items.map((item) => item.startTime)))
+	].sort();
 
 	$: selectionLimit = isAtLeastLg
 		? Number.POSITIVE_INFINITY
