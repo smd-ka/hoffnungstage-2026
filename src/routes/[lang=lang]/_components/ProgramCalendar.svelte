@@ -46,17 +46,11 @@
 	$: selectedDates = new Set(selectedDateOrder);
 
 	function toggleDate(date: string) {
-		if (selectedDates.has(date)) {
-			selectedDateOrder = selectedDateOrder.filter((selectedDate) => selectedDate !== date);
-			return;
-		}
-
-		if (selectedDateOrder.length >= selectionLimit) {
-			selectedDateOrder = [...selectedDateOrder.slice(1), date];
-			return;
-		}
-
-		selectedDateOrder = [...selectedDateOrder, date];
+		selectedDateOrder = selectedDates.has(date)
+			? // remove when selected
+			  selectedDateOrder.filter((selectedDate) => selectedDate !== date)
+			: // add when not selected (triggers normalization)
+			  [...selectedDateOrder, date];
 	}
 
 	$: visibleDays = isAtLeastLg
