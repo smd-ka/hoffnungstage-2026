@@ -73,7 +73,7 @@
 				class="inline-flex text-white transition-colors hover:text-indigo-500"
 			>
 				{tr.clickHere}
-			</a>
+			</a>.
 		</p>
 	</header>
 
