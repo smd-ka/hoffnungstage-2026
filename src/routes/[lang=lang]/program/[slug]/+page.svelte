@@ -175,9 +175,9 @@
 
 			<!-- Description Section -->
 			<section class="p-6 md:p-8">
-				<div class="prose prose-invert prose-lg max-w-none">
+				<div class="prose prose-invert prose-lg flex flex-col gap-4 text-white">
 					{#each item.description[lang].split('\n\n') as paragraph}
-						<p class="mb-4 text-white/90">{paragraph}</p>
+						<p>{paragraph}</p>
 					{/each}
 				</div>
 			</section>
