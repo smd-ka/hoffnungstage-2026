@@ -44,13 +44,7 @@
 
 	function normalizeSelection(nextOrder: string[]) {
 		const availableDates = new Set(filteredDays.map((day) => day.date));
-		let normalized = nextOrder.filter((date) => availableDates.has(date));
-
-		if (normalized.length > selectionLimit) {
-			normalized = normalized.slice(-selectionLimit);
-		}
-
-		return normalized;
+		return nextOrder.filter((date) => availableDates.has(date)).slice(-selectionLimit);
 	}
 
 	$: if (filteredDays) {
