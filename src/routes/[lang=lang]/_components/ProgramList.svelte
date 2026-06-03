@@ -10,9 +10,9 @@
 	} from '$lib/program/helpers';
 	import type { ProgramFilterValue } from '$lib/program/types';
 	import { languageFlags } from '$lib/languageNames';
-	import { faUser, faClock, faMapMarkerAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
+	import { faUser, faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
-	import { FoodText } from '$lib/foodText';
+	import { FoodEmoji, FoodText } from '$lib/foodText';
 
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
@@ -90,7 +90,7 @@
 
 							{#if 'food' in item && item.food !== 'none'}
 								<div class="flex items-center gap-1">
-									<Fa icon={faUtensils} scale={0.8} />
+									<span>{FoodEmoji[item.food]}</span>
 									<span title={tr.foodFree}>
 										{FoodText.nameFree[item.food][lang]}
 									</span>
