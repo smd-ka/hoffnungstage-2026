@@ -26,6 +26,10 @@
 				de: 'Wir haben ein spannendes Programm bestehend aus verschiedenen Vorträgen, Musik und Rahmenprogramm vorbereitet. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
 				en: 'We prepared an exciting program consisting of various talks, music and side programs. The Days of Hope will take place on the Forumswiese at KIT and at PH.'
 			},
+			food: {
+				de: 'Während den meisten Veranstaltungen bieten wir kostenlos Snacks & Getränke an. An vielen Vorträgen geben wir eine warme Mahlzeit am KIT bzw. Waffeln an der PH aus, diese Programmpunkte sind entsprechend markiert.',
+				en: 'During most events we serve snacks & drinks for free. At many talks, we serve a hot meal at KIT or waffles at the PH; these events are marked accordingly.'
+			},
 			languageNote: {
 				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
 				en: 'Translations will be provided for talks and formats happening at KIT. You can find more detailed information on the page for each event item.'
@@ -43,6 +47,9 @@
 	<div class="flex flex-col gap-4">
 		<p>
 			{tr.paragraph}
+		</p>
+		<p>
+			{tr.food}
 		</p>
 		<p>
 			{tr.languageNote}
