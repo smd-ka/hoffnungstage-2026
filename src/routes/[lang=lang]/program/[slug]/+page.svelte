@@ -12,10 +12,9 @@
 	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
-	import { languageNames } from '$lib/languageNames';
 	import { formatDateForDisplay, getTitle } from '$lib/program/helpers';
-	import type { Gender } from '$lib/program/types';
 	import type { ProgramItem } from '$lib/program/prog_types';
+	import LanguageSpan from '../../_components/LanguageSpan.svelte';
 
 	export let data: PageData;
 
@@ -176,12 +175,7 @@
 					{#if 'originalIn' in item}
 						<div class="flex items-center gap-2">
 							<Fa icon={faLanguage} />
-							<span
-								class="lang-name"
-								title={item.originalIn !== lang ? languageNames[item.originalIn][lang] : undefined}
-							>
-								{languageNames[item.originalIn][item.originalIn]}
-							</span>
+							<LanguageSpan language={item.originalIn} />
 						</div>
 					{/if}
 
@@ -206,12 +200,7 @@
 						</span>
 						{#each item.translatedTo as targetLang, index}
 							{#if index > 0}|{/if}
-							<span
-								class="lang-name"
-								title={targetLang !== lang ? languageNames[targetLang][lang] : undefined}
-							>
-								{languageNames[targetLang][targetLang]}
-							</span>
+							<LanguageSpan language={targetLang} />
 						{/each}
 					</div>
 				{/if}
