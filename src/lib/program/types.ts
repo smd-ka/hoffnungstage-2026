@@ -1,3 +1,4 @@
+import maplibregl from 'maplibre-gl';
 import type { SupportedLanguage, TranslatedLanguage, TranslatedText } from '$lib/language';
 
 // compatible with Intl.DurationFormat, specified as required
@@ -30,11 +31,21 @@ export interface Speaker {
     affiliation?: TranslatedText;
 }
 
+export interface MarkerInfo {
+    center: maplibregl.LngLatLike;
+    description?: TranslatedText;
+    polygon?: maplibregl.LngLatLike[],
+    // only recommended values for displaying
+    recZoom: number;
+    //recBounds?: maplibregl.LngLatBoundsLike;
+};
+
 export interface Location {
     slug: string;
     shortName: TranslatedText;
     longDescription: TranslatedText;
     sentenceEnd: TranslatedText;
+    marker?: MarkerInfo;
 }
 
 export interface PartialProgramItem {
