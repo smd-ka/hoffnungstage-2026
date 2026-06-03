@@ -270,9 +270,6 @@
 </main>
 
 <style>
-	.lang-name {
-		@apply pb-0.5 transition-colors;
-	}
 	span[title] {
 		@apply border-b border-dotted;
 	}
