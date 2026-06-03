@@ -74,14 +74,23 @@
 	}
 
 
-	/* horizontal chips (no wrap) */
+	/* horizontal chips (no wrap, attached) */
+	/* e.g.: ( alpha | beta | gamma ) */
 
 	.horizontal-chips {
 		@apply flex justify-center gap-1 overflow-x-auto;
 	}
 
 	.horizontal-chips button {
-		@apply rounded-full px-3 py-1 transition-colors;
+		@apply px-2 py-1 transition-colors;
+	}
+
+	.horizontal-chips button:nth-of-type(1) {
+		@apply rounded-l-full pl-4;
+	}
+
+	.horizontal-chips button:nth-last-of-type(1) {
+		@apply rounded-r-full pr-4;
 	}
 
 	.horizontal-chips button[aria-pressed="true"] {
