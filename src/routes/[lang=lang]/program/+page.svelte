@@ -31,7 +31,7 @@
 				de: 'Wenn du das Programm als Liste sehen möchtest, klicke',
 				en: 'If you prefer to see the program as a list, click'
 			},
-			cliickHere: {
+			clickHere: {
 				de: 'hier',
 				en: 'here'
 			},
@@ -72,7 +72,7 @@
 				href="/{lang}/program#program-list"
 				class="inline-flex text-white transition-colors hover:text-indigo-500"
 			>
-				{tr.cliickHere}
+				{tr.clickHere}
 			</a>
 		</p>
 	</header>
