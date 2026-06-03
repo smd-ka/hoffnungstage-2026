@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/event_data';
@@ -17,8 +16,9 @@
 
 	const mobileSelectionLimit = 1;
 	const tabletSelectionLimit = 3;
-	let isBelowMd = false;
-	let isAtLeastLg = false;
+	let clientWidth: number; // bound to window.innerWidth
+	$: isBelowMd = clientWidth < 768;
+	$: isAtLeastLg = 1024 <= clientWidth;
 
 	// Date selection: allow limiting which days are shown (helps calendar fit)
 	let selectedDateOrder: string[] = [];
@@ -76,26 +76,9 @@
 		}
 		return null;
 	}
-
-	onMount(() => {
-		const mobileQuery = window.matchMedia('(max-width: 767px)');
-		const lgQuery = window.matchMedia('(min-width: 1024px)');
-
-		const updateViewportState = () => {
-			isBelowMd = mobileQuery.matches;
-			isAtLeastLg = lgQuery.matches;
-		};
-
-		updateViewportState();
-		mobileQuery.addEventListener('change', updateViewportState);
-		lgQuery.addEventListener('change', updateViewportState);
-
-		return () => {
-			mobileQuery.removeEventListener('change', updateViewportState);
-			lgQuery.removeEventListener('change', updateViewportState);
-		};
-	});
 </script>
+
+<svelte:window bind:innerWidth={clientWidth} />
 
 <div class="flex flex-col gap-4">
 	<!-- Controls: date selection (horizontal chips) -->
