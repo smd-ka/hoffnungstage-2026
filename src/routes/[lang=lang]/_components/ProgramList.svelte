@@ -10,8 +10,9 @@
 	} from '$lib/program/helpers';
 	import type { ProgramFilterValue } from '$lib/program/types';
 	import { languageFlags } from '$lib/languageNames';
-	import { faUser, faClock, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+	import { faUser, faClock, faMapMarkerAlt, faUtensils } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
+	import { FoodText } from '$lib/foodText';
 
 	export let filter: ProgramFilterValue = 'mainProgram';
 	$: filteredDays = filterProgramDays(filter, programDays);
@@ -28,6 +29,10 @@
 				We sadly have no event for you that day.
 				But you can still come around & check out our venue :)
 			`
+			},
+			foodFree: {
+				de: 'kostenlos',
+				en: 'for free'
 			}
 		},
 		lang
@@ -80,6 +85,15 @@
 								<div class="flex items-center gap-1">
 									<Fa icon={faMapMarkerAlt} scale={0.8} />
 									<span>{item.location.shortName[lang]}</span>
+								</div>
+							{/if}
+
+							{#if 'food' in item && item.food !== 'none'}
+								<div class="flex items-center gap-1">
+									<Fa icon={faUtensils} scale={0.8} />
+									<span title={tr.foodFree}>
+										{FoodText.nameFree[item.food][lang]}
+									</span>
 								</div>
 							{/if}
 

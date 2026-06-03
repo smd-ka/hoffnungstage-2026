@@ -21,6 +21,11 @@ export const FoodText = defineData({
 		lunch: { de: "Mittagessen", en: "lunch" },
 		waffles: { de: "Waffeln", en: "waffles" },
 	},
+	nameFree: {
+		...empty,
+		lunch: { de: "kostenloses Mittagessen", en: "free lunch" },
+		waffles: { de: "kostenlose Waffeln", en: "free waffles" },
+	},
 	articleFree: {
 		...empty,
 		lunch: { de: "ein kostenloses Mittagessen", en: "free lunch" },
