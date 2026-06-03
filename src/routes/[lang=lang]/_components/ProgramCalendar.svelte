@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { FoodEmoji } from '$lib/foodText';
 	import { createTranslator } from '$lib/language';
 	import { programDays } from '$lib/program/event_data';
 	import {
@@ -150,6 +151,9 @@
 														{item.location.shortName[lang]}
 													</span>
 												</div>
+											{/if}
+											{#if 'food' in item && item.food !== 'none'}
+												<div>{FoodEmoji[item.food]}</div>
 											{/if}
 											<div>
 												{formatDuration(item.duration, lang)}

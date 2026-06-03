@@ -32,3 +32,9 @@ export const FoodText = defineData({
 		waffles: { de: "kostenlose Waffeln", en: "free waffles" },
 	},
 } as const);
+
+export const FoodEmoji: Record<FreeFood, string> = {
+	none: "",
+	lunch: "🍲",
+	waffles: "🧇",
+};
