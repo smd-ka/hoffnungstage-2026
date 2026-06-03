@@ -91,8 +91,8 @@
 				class="whitespace-nowrap text-sm font-medium"
 			>
 				<div class="leading-tight">
-					<span class="md:hidden">{getShortDayName(day.date, lang)}</span>
-					<span class="max-md:hidden">{getDayName(day.date, lang)}</span>
+					<span class="min-[420px]:hidden">{getShortDayName(day.date, lang)}</span>
+					<span class="max-[420px]:hidden">{getDayName(day.date, lang)}</span>
 				</div>
 				<div class="text-xs">{formatDateForDisplay(day.date, lang)}</div>
 			</button>
