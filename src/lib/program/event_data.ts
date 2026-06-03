@@ -48,6 +48,7 @@ const common = {
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
 		speakerIds: [], // not known yet
+		food: 'none',
 	},
 } as const;
 
@@ -84,7 +85,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '13:00',
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['heike-seewald', 'ute-meiswinkel', 'jonathan-egger']
+				speakerIds: ['heike-seewald', 'ute-meiswinkel', 'jonathan-egger'],
+				food: 'lunch',
 			},
 			{
 				...common.germanCourse,
@@ -112,6 +114,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
 				speakerIds: [], // speakers not listed publicly
+				food: 'waffles',
 			},
 			{
 				...common.shortTalks,
@@ -148,7 +151,8 @@ export const programDays = enhanceProgramDays([
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['michael-sternkopf'],
-				highlightSpeaker: true
+				highlightSpeaker: true,
+				food: 'none',
 			}
 		]
 	},
@@ -184,7 +188,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '13:00',
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert']
+				speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert'],
+				food: 'lunch',
 			},
 			{
 				...common.germanCourse,
@@ -218,7 +223,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '15:45',
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
-				speakerIds: ['lukas-reppert']
+				speakerIds: ['lukas-reppert'],
+				food: 'waffles',
 			},
 			{
 				type: "talk",
@@ -242,6 +248,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: [], // TODO wait for confirmation
+				food: 'none',
 			},
 			{
 				type: "talk",
@@ -286,7 +293,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['matthias-clausen']
+				speakerIds: ['matthias-clausen'],
+				food: 'none',
 			}
 		]
 	},
@@ -333,7 +341,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '15:45',
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
-				speakerIds: ['rebekka-meussling']
+				speakerIds: ['rebekka-meussling'],
+				food: 'waffles',
 			},
 			{
 				type: "talk",
@@ -359,6 +368,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: [], // TODO wait for confirmation
+				food: 'none',
 			},
 			{
 				type: "talk",
@@ -387,7 +397,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '19:00',
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['thomas-schimmel']
+				speakerIds: ['thomas-schimmel'],
+				food: 'none',
 			},
 			{
 				type: "concert",
@@ -466,7 +477,8 @@ export const programDays = enhanceProgramDays([
 				endTime: '15:30',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['sabine-mickenbecker'],
-				highlightSpeaker: true
+				highlightSpeaker: true,
+				food: 'lunch',
 			},
 			{
 				type: "panel",
@@ -503,7 +515,8 @@ export const programDays = enhanceProgramDays([
 				startTime: '18:00',
 				endTime: '19:00',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: ['jannis-winkels', 'gernot-elsner']
+				speakerIds: ['jannis-winkels', 'gernot-elsner'],
+				food: 'lunch',
 			},
 			{
 				type: "concert",

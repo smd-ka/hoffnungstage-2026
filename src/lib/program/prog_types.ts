@@ -1,5 +1,5 @@
 import type { SupportedLanguage, TranslatedLanguage, TranslatedText } from '$lib/language';
-import type { Duration, IntlTarget, Location, ProgramFilterValue, Speaker } from './types';
+import type { Duration, FreeFood, IntlTarget, Location, ProgramFilterValue, Speaker } from './types';
 
 export type EventType =
     | 'concert' // convert / rave
@@ -31,6 +31,10 @@ export interface _AbsMainParams {
     locationSlug: string;
 }
 
+export interface _AbsFoodParams {
+    food: FreeFood
+}
+
 export interface _AbsIntlParams {
     originalIn: TranslatedLanguage
     translatedTo: readonly SupportedLanguage[]
@@ -57,6 +61,7 @@ type MoviePartialProgramItem = { type: 'movie'; }
 
 type PanelPartialProgramItem = { type: 'panel'; }
     & _AbsMainParams
+    & _AbsFoodParams
     & _AbsIntlParams
     & _AbsSpeakerParams
 
@@ -65,6 +70,7 @@ type SportPartialProgramItem = { type: 'sport'; }
 
 type TalkPartialProgramItem = { type: 'talk'; }
     & _AbsMainParams
+    & _AbsFoodParams
     & _AbsIntlParams
     & _AbsSpeakerParams
 

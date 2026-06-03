@@ -8,6 +8,8 @@ export interface Duration {
     minutes: number;
 };
 
+export type FreeFood = 'none' | 'waffles' | 'lunch';
+
 export type Gender = 'm' | 'f';
 
 export type IntlTarget =
