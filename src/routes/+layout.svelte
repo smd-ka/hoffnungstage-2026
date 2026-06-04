@@ -11,6 +11,7 @@
 	import evalka_logo from '$lib/assets/logos/evalka_logo_text.svg';
 	import kings_cafe_logo from '$lib/assets/logos/kings-cafe_logo_white.png';
 	import hug_logo from '$lib/assets/logos/hug_logo_slogan.jpg';
+	import streamlingo_logo from '$lib/assets/logos/Streamlingo_white.svg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa/src/fa.svelte';
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
@@ -71,6 +72,14 @@
 			hugDescription: {
 				de: 'Herrmann Ultraschall',
 				en: 'Herrmann Ultraschall'
+			},
+			streamlingoDescription: {
+				de: 'streamlingo — KI-Übersetzung für Kirchen',
+				en: 'streamlingo — AI Translation for Churches'
+			},
+			streamlingoUrl: {
+				de: 'https://streamlingo.net/de',
+				en: 'https://streamlingo.net/'
 			},
 			imprint: {
 				de: 'Impressum',
@@ -193,6 +202,9 @@
 									title={tr.hugDescription}
 								>
 									<img src={hug_logo} alt={tr.hugDescription} class="h-16" />
+								</a>
+								<a href={tr.streamlingoUrl} target="_blank" title={tr.streamlingoDescription}>
+									<img src={streamlingo_logo} alt={tr.streamlingoDescription} class="h-16" />
 								</a>
 							</div>
 						</section>
