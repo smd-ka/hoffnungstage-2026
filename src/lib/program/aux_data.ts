@@ -93,6 +93,19 @@ export const speakers: Record<string, Speaker> = {
 		name: 'Samuel Knospe',
 		gender: 'm',
 		title: t('Musiker', 'Musician')
+	},
+	'fynn-muzzulini': {
+		slug: 'fynn-muzzulini',
+		name: 'Fynn Muzzulini',
+		gender: 'm',
+		title: t('Student', 'Student'),
+		affiliation: t('SMD Karlsruhe', 'SMD Karlsruhe')
+	},
+	'harald-rosskopf': {
+		slug: 'harald-rosskopf',
+		name: 'Dipl.-Inform. Harald Roßkopf',
+		gender: 'm',
+		affiliation: t("King's-Café", "King's-Café")
 	}
 };
 

@@ -247,7 +247,7 @@ export const programDays = enhanceProgramDays([
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: [], // TODO wait for confirmation
+				speakerIds: ['fynn-muzzulini'],
 				food: 'none',
 			},
 			{
@@ -367,7 +367,7 @@ export const programDays = enhanceProgramDays([
 				startTime: '17:35',
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: [], // TODO wait for confirmation
+				speakerIds: ['harald-rosskopf'],
 				food: 'none',
 			},
 			{
