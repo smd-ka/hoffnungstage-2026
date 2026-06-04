@@ -229,15 +229,15 @@ export const programDays = enhanceProgramDays([
 			{
 				type: "talk",
 				slug: 'tuesday:short-talk-living-in-germany',
-				title: t('Kurzvortrag: Mietrecht in Deutschland', 'Short Talk: Tenancy Law in Germany'),
+				title: t('Kurzvortrag: Mieten in Deutschland', 'Short Talk: Tenancy in Germany'),
 				description: t(
-					`Fast jeder Student in Deutschland wohnt als Mieter. Aber was für Rechte habe ich als Mieter eigentlich?
-					Und was für Pflichten? Das wird uns Fynn in seinem Kurzvortrag erzählen.
+					`Fast jeder Student in Deutschland wohnt als Mieter. Aber was muss man beim Mieten beachten?
+					Fynn wird uns in seinem Kurzvortrag das erzählen. Wir werden uns von der Wohnungssuche bis zum Verlassen der Wohnung alles anschauen.
 
-					Nach dem Vortrag gibt es wie immer viel Raum für Gemeinschaft und Gespräche
-					mit Snacks und Getränken. Und die Möglichkeit weiter über Mieten und Mietrecht zu reden.`,
-					`Nearly every student in Germany lives as a renter. But what rights and duty do I have as a renter?
-					Fynn will explain this in his short talk.
+					Nach dem Vortrag gibt es wie immer viel Raum für Gemeinschaft und Gespräche mit Snacks und Getränken.
+					Und die Möglichkeit weiter über Mieten zu reden.`,
+					`Nearly every student in Germany rents an apartment. But what should you keep in mind when renting?
+					Fynn will explain this in his short talk. We will cover everything, from finding an apartment to moving out.
 
 					As always, there will be plenty of time for socialising and conversations,
 					with snacks and drinks provided — and the chance to continue discussing the topic of rent.`
