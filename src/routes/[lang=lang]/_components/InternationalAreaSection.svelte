@@ -8,12 +8,12 @@
 	$: tr = createTranslator(
 		{
 			title: {
-				de: 'Internationale Area',
+				de: 'International Area',
 				en: 'International Area'
 			},
 			desc: {
 				de: `
-					Die internationale Area ist der Ort der Hoffnungstage,
+					Die International Area ist der Ort der Hoffnungstage,
 					wo deutsche und internationale Studenten sich begegnen.
 					Ob beim kostenlosen Snack und Tee in gemütlicher Café-Atmosphäre oder beim Sport,
 					einfach Gemeinschaft haben und genießen.
@@ -32,7 +32,7 @@
 				`
 			},
 			locationStart: {
-				de: 'Die internationale Area wird sich im Zelt ',
+				de: 'Die International Area wird sich im Zelt ',
 				en: 'The International Area will be located in our tent '
 			},
 			locationDesc: locations['kit-forum-meadow'].sentenceEnd,
