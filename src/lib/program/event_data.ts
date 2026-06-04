@@ -14,7 +14,7 @@ const common = {
 	},
 	germanCourse: {
 		type: "workshop",
-		title: t('Deutschkurs', 'German Course'),
+		title: t('Deutschkurs mit Bibeltext', 'German Course with Bible'),
 		description: t(
 			`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
 			Dort kannst du anhand eines bekannten Textes aus der Bibel Wortschatz, Grammatik & Aussprache verbessern.
