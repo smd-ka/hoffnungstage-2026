@@ -16,35 +16,14 @@
 				en: 'Program'
 			},
 			description: {
-				de: 'Alle Veranstaltungen der Hoffnungstage vom 08. – 11. Juni 2026 auf einen Blick.',
+				de: ' Alle Veranstaltungen der Hoffnungstage vom 08. – 11. Juni 2026 auf einen Blick.',
 				en: 'All events of the Days of Hope from June 8 – 11, 2026 at a glance.'
-			},
-			languageNote: {
-				de: 'Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten. Genauere Infos findest du auf der Seite des jeweiligen Programmpunktes.',
-				en: 'Translations will be provided for talks and formats happening at KIT. You can find more detailed information on the page for each event item.'
-			},
-			clickForContent: {
-				de: 'Klicke auf einen Programmpunkt für mehr Details.',
-				en: 'Click on an event for more details.'
-			},
-			toProgramList: {
-				de: 'Wenn du das Programm als Liste sehen möchtest, klicke',
-				en: 'If you prefer to see the program as a list, click'
-			},
-			clickHere: {
-				de: 'hier',
-				en: 'here'
-			},
-			preferList: {
-				de: 'Alternativ findest du hier alle Veranstaltungen aufgelistet:',
-				en: 'Alternatively, you can find all events listed here:'
 			}
 		},
 		lang
 	);
 
 	let selectedFilter: ProgramFilterValue = getDefaultProgramFilter();
-	let calendarElement: HTMLElement;
 	let listElement: HTMLElement;
 </script>
 
@@ -57,39 +36,12 @@
 	class="page-background-fixed side-padding flex min-h-screen flex-col gap-12 bg-cover bg-center pb-20 pt-8 max-lg:gap-4"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
 >
-	<header class="flex flex-col gap-4 px-4">
-		<h1 class="font-roman text-4xl font-bold lg:text-5xl">{tr.title}</h1>
-		<p>
-			{tr.description}
-			<br />
-			{tr.languageNote}
-		</p>
-		<p>
-			{tr.clickForContent}
-			{tr.toProgramList}
-
-			<a
-				href="/{lang}/program#program-list"
-				class="inline-flex text-white transition-colors hover:text-indigo-500"
-			>
-				{tr.clickHere}
-			</a>.
-		</p>
+	<header class="flex flex-col px-4">
+		<h1 class="pb-2 font-roman text-5xl font-bold md:text-6xl lg:text-7xl">{tr.title}</h1>
+		<h2 class="pt-0 text-lg italic text-white/80">{tr.description}</h2>
 	</header>
 
-	<div bind:this={calendarElement} class="flex flex-col gap-6">
-		<div class="mx-auto px-4">
-			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
-		</div>
-		<div class="mx-auto px-4">
-			<ProgramCalendar filter={selectedFilter} />
-		</div>
-	</div>
-
 	<div bind:this={listElement} class="flex flex-col gap-2">
-		<p>
-			{tr.preferList}
-		</p>
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
 		</div>
