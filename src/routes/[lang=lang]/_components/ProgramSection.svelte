@@ -15,12 +15,12 @@
 				en: 'Program'
 			},
 			toProgram: {
-				de: 'Zum Programm',
-				en: 'To Program'
+				de: 'Programm entdecken',
+				en: 'Discover the Events'
 			},
 			toProgramList: {
-				de: 'Programmübersicht entdecken',
-				en: 'Discover the Program'
+				de: 'Mehr Details zum Programm entdecken',
+				en: 'Discover more about the Events'
 			},
 			paragraph: {
 				de: 'Wir haben ein spannendes Programm bestehend aus verschiedenen Vorträgen, Musik und Rahmenprogramm vorbereitet. Stattfinden werden die Hoffnungstage auf der Forumswiese am KIT und an der PH.',
@@ -67,7 +67,8 @@
 			class="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-6 py-3 text-white transition-colors hover:bg-indigo-500"
 		>
 			<Fa icon={faCalendar} />
-			<span>{tr.toProgramList}</span>
+			<span class="max-md:hidden">{tr.toProgramList}</span>
+			<span class="md:hidden">{tr.toProgram}</span>
 		</a>
 	</div>
 </section>
