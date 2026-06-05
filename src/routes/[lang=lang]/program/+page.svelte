@@ -9,6 +9,8 @@
 	import background_img1 from '$lib/assets/pages/program/program_bg1.jpg';
 	import background_img2 from '$lib/assets/pages/program/program_bg2.jpg';
 	import background_img3 from '$lib/assets/pages/program/program_bg3.jpg';
+	import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+	import Fa from 'svelte-fa';
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
@@ -67,9 +69,16 @@
 </svelte:head>
 
 <main
-	class="page-background-fixed flex min-h-screen flex-col gap-12 bg-cover bg-center pb-20 pt-8 max-lg:gap-4"
+	class="page-background-fixed relative flex min-h-screen flex-col gap-12 bg-cover bg-center pb-20 pt-8 max-lg:gap-4"
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
 >
+	<a
+		href={`/${lang}`}
+		class="absolute left-0 top-0 z-30 flex items-center gap-2 self-start px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+	>
+		<Fa icon={faArrowLeft} />
+		Zurück zur Startseite
+	</a>
 	<div class="absolute inset-0 z-10 overflow-hidden">
 		<div
 			class="absolute left-[3%] top-[6rem] h-96 w-2/5 -translate-x-16 transform bg-cover bg-center"
@@ -107,6 +116,15 @@
 		<div id="program-list" class="mx-auto px-4">
 			<ProgramList filter={selectedFilter} />
 		</div>
+	</div>
+
+	<div class="flex justify-center">
+		<a
+			href={`/${lang}`}
+			class="mb-4 self-start rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+		>
+			Zurück zur Startseite
+		</a>
 	</div>
 </main>
 
