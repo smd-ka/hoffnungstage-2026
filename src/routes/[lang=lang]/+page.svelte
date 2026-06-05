@@ -14,7 +14,7 @@
 	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background_blended})"
 >
 	<Hero />
-	<div class="flex flex-col gap-72 pb-72">
+	<div class="flex flex-col gap-52 pb-72">
 		<HopeSection />
 		<ProgramSection />
 		<InternationalAreaSection />
