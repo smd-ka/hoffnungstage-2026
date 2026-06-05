@@ -32,16 +32,16 @@ const common = {
 		type: "talk",
 		title: t('Kurzvortrag: Knigge - Gute Sitten', 'Short Talk: Knigge - Good manners'),
 		description: t(
-			`In jeder Kultur gibt es ungeschriebene Gesetze und Regeln. 
-			In diesem Vortrag geht es um die Frage, welche Verhaltensweisen in Deutschland 
+			`In jeder Kultur gibt es ungeschriebene Gesetze und Regeln.
+			In diesem Vortrag geht es um die Frage, welche Verhaltensweisen in Deutschland
 			als gut betrachtet werden und was man besser lassen sollte.`,
-			`Every culture has its unwritten rules. This presentation deals with 
-			the question of which behaviour is seen positive 
+			`Every culture has its unwritten rules. This presentation deals with
+			the question of which behavior is seen positive
 			in Germany and what should be avoided.`
 		),
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
-		speakerIds: ['aaron'], // not known yet
+		speakerIds: ['aaron'],
 		food: 'none',
 	},
 } as const;
