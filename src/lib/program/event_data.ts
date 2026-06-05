@@ -27,6 +27,21 @@ const common = {
 		translatedTo: [],
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow'
+	},
+	supportingProgram: {
+		type: 'sport',
+		title: t('Rahmenprogramm (Start)', 'Supporting Program (start)'),
+		description: t(
+			`Unser Rahmenprogramm hat ab spätestens 12 Uhr geöffnet. Ihr könnt jederzeit gerne zum Volleyball spielen, 
+			ne Runde Menschenkicker zocken oder auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch 
+			täglich für euch geöffnet, dort könnt ihr auch gerne Gesellschaftsspiele einfach ausleihen ♠️`,
+			`Our activities area opens at 12:00 PM at the latest. Feel free to stop by anytime to play volleyball, 
+			have a game of human foosball, or try ladder golf. Our chill lounge is also open daily, 
+			and you’re welcome to borrow board games there ♠️`
+		),
+		startTime: '12:00',
+		endTime: '18:00',
+		locationSlug: 'kit-forum-meadow'
 	}
 } as const;
 
@@ -34,6 +49,10 @@ export const programDays = enhanceProgramDays([
 	{
 		date: '2026-06-08',
 		items: [
+			{
+				slug: 'monday:supporting-program',
+				...common.supportingProgram
+			},
 			{
 				type: 'panel',
 				slug: 'being-human-together',
@@ -177,6 +196,10 @@ export const programDays = enhanceProgramDays([
 	{
 		date: '2026-06-09',
 		items: [
+			{
+				slug: 'tuesday:supporting-program',
+				...common.supportingProgram
+			},
 			{
 				type: 'panel',
 				slug: 'stressful-phases',
@@ -331,6 +354,10 @@ export const programDays = enhanceProgramDays([
 	{
 		date: '2026-06-10',
 		items: [
+			{
+				slug: 'wednesday:supporting-program',
+				...common.supportingProgram
+			},
 			{
 				...common.germanCourse,
 				slug: 'wednesday:german-course',
@@ -492,6 +519,10 @@ export const programDays = enhanceProgramDays([
 	{
 		date: '2026-06-11',
 		items: [
+			{
+				slug: 'thursday:supporting-program',
+				...common.supportingProgram
+			},
 			{
 				type: 'talk',
 				slug: 'what-sustains-when-everything-breaks',
