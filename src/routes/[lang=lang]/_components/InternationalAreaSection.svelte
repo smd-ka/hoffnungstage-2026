@@ -32,10 +32,8 @@
 				`
 			},
 			translation: {
-				de: `Alle Veranstaltungen am KIT werden auch übersetzt. Neben den angegeben Sprachen sind durch 
-				Streamlingo vielleicht Muttersprache mit dabei ist. `,
-				en: `All events at the KIT will also be translated. In addition to the specified languages, 
-				Streamlingo may also translate to other languages. `
+				de: 'Alle Veranstaltungen am KIT werden auch übersetzt. Neben den angegebenen Sprachen sind über Streamlingo möglicherweise weitere Sprachen verfügbar.',
+				en: 'All events at KIT will also be translated. In addition to the specified languages, more languages may be available via Streamlingo.'
 			},
 			locationStart: {
 				de: 'Die International Area wird sich im Zelt ',

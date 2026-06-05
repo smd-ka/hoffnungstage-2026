@@ -78,8 +78,8 @@
 				en: '.'
 			},
 			moreLanguages: {
-				de: 'Weitere Sprachen vielleicht über Streamlingo verfügbar',
-				en: 'More languages may be available via Streamlingo'
+				de: 'Weitere Sprachen sind möglicherweise über Streamlingo verfügbar.',
+				en: 'More languages may be available via Streamlingo.'
 			}
 		},
 		lang
