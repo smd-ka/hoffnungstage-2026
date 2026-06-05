@@ -28,22 +28,6 @@ const common = {
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow'
 	},
-	shortTalks: {
-		type: "talk",
-		title: t('Kurzvortrag: Knigge - Gute Sitten', 'Short Talk: Knigge - Good manners'),
-		description: t(
-			`In jeder Kultur gibt es ungeschriebene Gesetze und Regeln.
-			In diesem Vortrag geht es um die Frage, welche Verhaltensweisen in Deutschland
-			als gut betrachtet werden und was man besser lassen sollte.`,
-			`Every culture has its unwritten rules. This presentation deals with
-			the question of which behavior is seen positive
-			in Germany and what should be avoided.`
-		),
-		intlTarget: 'primary',
-		locationSlug: 'kit-forum-meadow',
-		speakerIds: ['aaron'],
-		food: 'none',
-	},
 } as const;
 
 export const programDays = enhanceProgramDays([
@@ -111,11 +95,24 @@ export const programDays = enhanceProgramDays([
 				food: 'waffles',
 			},
 			{
-				...common.shortTalks,
+				type: "talk",
 				slug: 'monday:short-talk-living-in-germany',
+				title: t('Kurzvortrag: Knigge - Gute Sitten', 'Short Talk: Knigge - Good manners'),
+				description: t(
+					`In jeder Kultur gibt es ungeschriebene Gesetze und Regeln.
+					In diesem Vortrag geht es um die Frage, welche Verhaltensweisen in Deutschland
+					als gut betrachtet werden und was man besser lassen sollte.`,
+					`Every culture has its unwritten rules. This presentation deals with
+					the question of which behavior is seen positive
+					in Germany and what should be avoided.`
+				),
 				...common.stageTranslated,
 				startTime: '17:35',
 				endTime: '17:50',
+				intlTarget: 'primary',
+				locationSlug: 'kit-forum-meadow',
+				speakerIds: ['aaron'],
+				food: 'none',
 			},
 			{
 				type: "talk",
