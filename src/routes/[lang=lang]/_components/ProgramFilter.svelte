@@ -18,6 +18,10 @@
 				de: 'Hauptprogramm',
 				en: 'Main Program'
 			},
+			supportingProgram: {
+				de: 'Rahmenprogramm',
+				en: 'Supporting Program'
+			},
 			atKit: {
 				de: 'am KIT',
 				en: 'at KIT'
@@ -48,7 +52,7 @@
 		<button
 			type="button"
 			on:click={() => selectFilter(filter)}
-			class="rounded-full px-4 py-2 text-sm font-medium transition-all
+			class="rounded-full px-4 py-2 text-xs font-medium transition-all sm:text-sm
 				{value === filter
 				? 'bg-indigo-600 text-white shadow-md'
 				: 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'}"

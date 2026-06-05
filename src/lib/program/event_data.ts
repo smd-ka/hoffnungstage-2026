@@ -10,10 +10,10 @@ const t = (de: string, en: string): TranslatedText => ({ de, en });
 const common = {
 	stageTranslated: {
 		originalIn: 'de',
-		translatedTo: ['en', 'es', 'fr', 'tr', 'zh'],
+		translatedTo: ['en', 'es', 'fr', 'tr', 'zh']
 	},
 	germanCourse: {
-		type: "workshop",
+		type: 'workshop',
 		title: t('Deutschkurs mit Bibeltext', 'German Course with Bible'),
 		description: t(
 			`Der kostenlose Deutschkurs ist für alle, die intensiver Deutsch lernen wollen.
@@ -27,7 +27,7 @@ const common = {
 		translatedTo: [],
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow'
-	},
+	}
 } as const;
 
 export const programDays = enhanceProgramDays([
@@ -35,7 +35,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-08',
 		items: [
 			{
-				type: "panel",
+				type: 'panel',
 				slug: 'being-human-together',
 				title: t(
 					'Talkrunde: Miteinander Mensch sein – Wie gelingen Beziehungen?',
@@ -64,16 +64,43 @@ export const programDays = enhanceProgramDays([
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['heike-seewald', 'ute-meiswinkel', 'jonathan-egger'],
-				food: 'lunch',
+				food: 'lunch'
+			},
+			{
+				type: 'sport',
+				slug: 'volleyball',
+				title: t('Volleyball Nachmittag', 'Volleyball Afternoon'),
+				description: t(
+					`Lust ne Runde zu beachen? Dann komm auf der Forumswiese vorbei und spiel mit uns Volleyball!`,
+					`Fancy a game of volleyball? Then come to the Forumwiese to play volleyball with us!`
+				),
+				startTime: '14:30',
+				endTime: '18:00',
+				locationSlug: 'kit-forum-meadow'
+			},
+			{
+				type: 'workshop',
+				slug: 'board-games',
+				title: t('Gesellschaftsspiele', 'Board Games'),
+				description: t(
+					`Du spielst auch gerne Brettspiele? Dann komm auf der Forumswiese vorbei und spiel mit uns!`,
+					`Do you also enjoy board games? Then come to the Forumwiese and play with us!`
+				),
+				startTime: '15:30',
+				endTime: '17:30',
+				locationSlug: 'kit-forum-meadow',
+				originalIn: 'de',
+				translatedTo: ['en'],
+				intlTarget: 'not_intended' // makes int. calendar too messy and it's not a talk
 			},
 			{
 				...common.germanCourse,
 				slug: 'monday:german-course',
 				startTime: '15:35',
-				endTime: '16:50',
+				endTime: '16:50'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'open-mic',
 				title: t('Open Mic', 'Open Mic'),
 				description: t(
@@ -92,10 +119,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
 				speakerIds: [], // speakers not listed publicly
-				food: 'waffles',
+				food: 'waffles'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'monday:short-talk-living-in-germany',
 				title: t('Kurzvortrag: Knigge - Gute Sitten', 'Short Talk: Knigge - Good manners'),
 				description: t(
@@ -112,10 +139,10 @@ export const programDays = enhanceProgramDays([
 				intlTarget: 'primary',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['aaron'],
-				food: 'none',
+				food: 'none'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'what-truly-makes-me-happy',
 				title: t(
 					'Was macht mich wirklich glücklich? – Ein ehemaliger Bayernprofi erzählt',
@@ -143,7 +170,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['michael-sternkopf'],
 				highlightSpeaker: true,
-				food: 'none',
+				food: 'none'
 			}
 		]
 	},
@@ -151,7 +178,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-09',
 		items: [
 			{
-				type: "panel",
+				type: 'panel',
 				slug: 'stressful-phases',
 				title: t(
 					'Talkrunde: Wie gehe ich mit stressigen Phasen um?',
@@ -180,16 +207,28 @@ export const programDays = enhanceProgramDays([
 				endTime: '14:00',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['carsten-feichtinger', 'steffen-beck', 'lukas-reppert'],
-				food: 'lunch',
+				food: 'lunch'
+			},
+			{
+				type: 'sport',
+				slug: 'bubblesoccer',
+				title: t('Bubblesoccer', 'Bubble Soccer'),
+				description: t(
+					`Bock in ner riesige aufblasbaren Kugel Fußball zu spielen? Box dich durch die anderen Spieler und hab Spaß dabei!`,
+					`Fancy playing soccer in a giant inflatable bubble? Bounce around the other players and have fun doing it!`
+				),
+				startTime: '14:30',
+				endTime: '18:00',
+				locationSlug: 'kit-forum-meadow'
 			},
 			{
 				...common.germanCourse,
 				slug: 'tuesday:german-course',
 				startTime: '15:35',
-				endTime: '16:50',
+				endTime: '16:50'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'living-with-hope',
 				title: t(
 					'Hoffnungsvoll leben – Eine Frage der Herzenshaltung?',
@@ -215,10 +254,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
 				speakerIds: ['lukas-reppert'],
-				food: 'waffles',
+				food: 'waffles'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'tuesday:short-talk-living-in-germany',
 				title: t('Kurzvortrag: Mieten in Deutschland', 'Short Talk: Tenancy in Germany'),
 				description: t(
@@ -239,10 +278,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['fynn-muzzulini'],
-				food: 'none',
+				food: 'none'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'god-of-the-bible',
 				title: t(
 					'Angenommen es gibt einen Gott, warum ausgerechnet der Gott der Bibel?',
@@ -285,7 +324,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['matthias-clausen'],
-				food: 'none',
+				food: 'none'
 			}
 		]
 	},
@@ -296,10 +335,10 @@ export const programDays = enhanceProgramDays([
 				...common.germanCourse,
 				slug: 'wednesday:german-course',
 				startTime: '15:35',
-				endTime: '16:50',
+				endTime: '16:50'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'hope-remains',
 				title: t(
 					'Wo bleibt die Hoffnung? – Leben in einer Welt voller Unsicherheit',
@@ -333,10 +372,37 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:00',
 				locationSlug: 'ph-plaza',
 				speakerIds: ['rebekka-meussling'],
-				food: 'waffles',
+				food: 'waffles'
 			},
 			{
-				type: "talk",
+				type: 'sport',
+				slug: 'spikeball',
+				title: t('Spikeball', 'Spikeball'),
+				description: t(
+					`Wir richten ein Spikeballturnier auf der Forumswiese aus! Du hast Lust dabei zu sein? Dann komm vorbei und spiel mit uns!`,
+					`We're hosting a Spikeball tournament on the Forumwiese! Want to be part of it? Then come by and play with us!`
+				),
+				startTime: '14:30',
+				endTime: '17:30',
+				locationSlug: 'kit-forum-meadow'
+			},
+			{
+				type: 'workshop',
+				slug: 'juggling',
+				title: t('Workshop: Jonglieren', 'Workshop: Juggling'),
+				description: t(
+					`In diesem Workshop lernst du die Grundlagen des Jonglierens. Es ist einfacher als du denkst und macht super viel Spaß! Komm vorbei und probier es aus!`,
+					`In this workshop, you'll learn the basics of juggling. It's easier than you think and a lot of fun! Come by and give it a try!`
+				),
+				startTime: '15:45',
+				endTime: '17:15',
+				locationSlug: 'kit-forum-meadow',
+				originalIn: 'de',
+				translatedTo: [],
+				intlTarget: 'not_intended' // makes int. calendar too messy and it's not a talk
+			},
+			{
+				type: 'talk',
 				slug: 'wednesday:short-talk-living-in-germany',
 				title: t('Kurzvortrag: Tabus in Deutschland', 'Short Talk: Taboos in Germany'),
 				description: t(
@@ -359,10 +425,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:50',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['harald-rosskopf'],
-				food: 'none',
+				food: 'none'
 			},
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'science-and-faith',
 				title: t(
 					'Naturwissenschaft und Glaube – (k)ein Widerspruch?',
@@ -389,10 +455,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['thomas-schimmel'],
-				food: 'none',
+				food: 'none'
 			},
 			{
-				type: "concert",
+				type: 'concert',
 				slug: 'c-rave',
 				title: t('[C]Rave', '[C]Rave'),
 				description: t(
@@ -419,7 +485,7 @@ export const programDays = enhanceProgramDays([
 				),
 				startTime: '22:00',
 				locationSlug: 'kit-forum-meadow',
-				speakerIds: [], // speakers not listed publicly
+				speakerIds: [] // speakers not listed publicly
 			}
 		]
 	},
@@ -427,7 +493,7 @@ export const programDays = enhanceProgramDays([
 		date: '2026-06-11',
 		items: [
 			{
-				type: "talk",
+				type: 'talk',
 				slug: 'what-sustains-when-everything-breaks',
 				title: t(
 					'Was trägt wenn alles zerbricht? – Mein Umgang mit Leid',
@@ -469,7 +535,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['sabine-mickenbecker'],
 				highlightSpeaker: true,
-				food: 'lunch',
+				food: 'lunch'
 			},
 			{
 				type: 'movie',
@@ -486,7 +552,8 @@ export const programDays = enhanceProgramDays([
 					gehen noch einmal gemeinsam auf zwei große Reisen. 
 					Doch selbst kurz vor seinem Tod ist Philipp noch voller Lebensfreude 
 					und Hoffnung und verliert den Glauben an Gott nicht.`,
-					`The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel, 
+					`Translation only via subtitles unfortunately! 
+					The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel, 
 					‘The Real Life Guys’. At the height of his success, Philipp was diagnosed with cancer. 
 					His friends stood by him during the final months of his life and went on two big trips together one last time. 
 					Yet even shortly before his death, Philipp remained full of joie de vivre and hope, and never lost his faith in God.`
@@ -495,10 +562,11 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:15',
 				locationSlug: 'kit-forum-meadow',
 				originalIn: 'de',
-				translatedTo: ['en']
+				translatedTo: ['en'],
+				intlTarget: 'not_intended' // makes int. calendar too messy and subtitles are only in English
 			},
 			{
-				type: "panel",
+				type: 'panel',
 				slug: 'hope-is-worth-it',
 				title: t('Talkrunde: Was bedeutet Hoffnung?', 'Panel Discussion: What Does Hope Mean?'),
 				description: t(
@@ -533,10 +601,10 @@ export const programDays = enhanceProgramDays([
 				endTime: '19:00',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['jannis-winkels', 'gernot-elsner'],
-				food: 'lunch',
+				food: 'lunch'
 			},
 			{
-				type: "concert",
+				type: 'concert',
 				slug: 'live-concert-samuel-knospe',
 				title: t('Live Konzert mit Samuel Knospe', 'Live Concert with Samuel Knospe'),
 				description: t(
@@ -561,7 +629,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '20:30',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['samuel-knospe'],
-				showSpeakersSeparate: false,
+				showSpeakersSeparate: false
 			}
 		]
 	}

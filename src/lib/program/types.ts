@@ -19,6 +19,7 @@ export type IntlTarget =
 
 export const ProgramFilterValues = [
     'mainProgram',
+    'supportingProgram',
     'atKit',
     'atPh',
     'forInternationals'

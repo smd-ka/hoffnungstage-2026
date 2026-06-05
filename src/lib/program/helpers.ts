@@ -113,8 +113,6 @@ function _enhanceSpeakerParams(item: PartialProgramItem & _AbsSpeakerParams): _C
 }
 
 export function filterMatches(filter: ProgramFilterValue, item: PartialProgramItem): boolean {
-    // TODO add filter value for sports
-    if (item.type === 'sport') return false;
     switch (filter) {
         case 'mainProgram':
             return (
@@ -126,21 +124,25 @@ export function filterMatches(filter: ProgramFilterValue, item: PartialProgramIt
                     item.originalIn === 'de'
                 )
             );
+        case 'supportingProgram':
+            if (item.type === 'sport') return true;
+            return (
+                item.type === 'workshop'  &&
+                item.intlTarget !== 'primary' &&
+                item.originalIn === 'de'
+            )
         case 'atKit':
             return item.locationSlug == 'kit-forum-meadow';
         case 'atPh':
             return item.locationSlug == 'ph-plaza';
         case 'forInternationals':
+            if (item.type === 'sport') return false;
+            if (!('originalIn' in item)) return true;
+            if (item.intlTarget === 'not_intended') return false;
             return (
-                !('originalIn' in item) ||
-                (
-                    item.intlTarget !== 'not_intended' &&
-                    (
-                        item.intlTarget === 'primary' ||
-                        item.originalIn !== 'de' ||
-                        item.translatedTo.length > 0
-                    )
-                )
+                item.intlTarget === 'primary' ||
+                item.originalIn !== 'de' ||
+                item.translatedTo.length > 0
             );
     }
 }
