@@ -42,21 +42,23 @@
 	let sectionElement: HTMLElement;
 </script>
 
-<section class="page-section flex flex-col gap-10 md:px-8 lg:px-60 2xl:px-96">
-	<h1>{tr.title}</h1>
-	<div class="flex flex-col gap-4">
-		<p>
-			{tr.paragraph}
-		</p>
-		<p>
-			{tr.food}
-		</p>
-		<p>
-			{tr.languageNote}
-		</p>
+<section class="xl:text-xl; grid gap-10 px-8 text-center text-white md:text-lg">
+	<div class="side-padding">
+		<h1>{tr.title}</h1>
+		<div class="flex flex-col gap-4">
+			<p>
+				{tr.paragraph}
+			</p>
+			<p>
+				{tr.food}
+			</p>
+			<p>
+				{tr.languageNote}
+			</p>
+		</div>
 	</div>
 
-	<div bind:this={sectionElement} class="flex flex-col gap-4">
+	<div bind:this={sectionElement} class=" flex flex-col gap-4 md:px-8 lg:px-20 xl:px-36 2xl:px-72">
 		<ProgramFilter bind:value={selectedFilter} jumpRef={sectionElement} />
 		<ProgramCalendar filter={selectedFilter} />
 	</div>

@@ -111,10 +111,7 @@
 	<meta name="description" content={item.description[lang].slice(0, 160)} />
 </svelte:head>
 
-<main
-	class="page-background-fixed min-h-screen bg-cover bg-center pb-20"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url({background_blended});"
->
+<main class="pb-20">
 	<div class="mx-auto max-w-4xl px-4 pt-8">
 		<!-- Back Link -->
 		<a

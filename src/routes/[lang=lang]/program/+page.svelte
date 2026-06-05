@@ -68,10 +68,7 @@
 	<meta name="description" content={tr.subtitle} />
 </svelte:head>
 
-<main
-	class="page-background-fixed relative flex min-h-screen flex-col gap-12 bg-cover bg-center pb-20 pt-8 max-lg:gap-4"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({background_blended})"
->
+<main class=" relative flex flex-col gap-12 pb-20 pt-8 max-lg:gap-4">
 	<a
 		href={`/${lang}`}
 		class="absolute left-0 top-0 z-30 flex items-center gap-2 self-start px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"

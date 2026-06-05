@@ -9,10 +9,7 @@
 	import LocationSection from './_components/LocationSection.svelte';
 </script>
 
-<main
-	class="page-background-fixed min-h-screen bg-cover bg-center"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background_blended})"
->
+<main>
 	<Hero />
 	<div class="flex flex-col gap-52 pb-72">
 		<HopeSection />
