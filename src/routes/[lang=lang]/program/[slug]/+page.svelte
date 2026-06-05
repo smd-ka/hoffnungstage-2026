@@ -63,7 +63,7 @@
 			unavailableLanguageWarning: {
 				// special hint for German speakers intended as all non-German events are intended for internationals
 				de: 'Hinweis: Dieser Programmpunkt ist primär für unsere internationalen Kommilitonen gedacht.',
-				en: 'Note: This program item is unfortunately not available in English.'
+				en: 'Note: This program item will not be translated and is therefore unfortunately not available in English.'
 			},
 			foodFree: {
 				de: 'kostenlos',
@@ -76,6 +76,10 @@
 			foodTextPost: {
 				de: ' aus.',
 				en: '.'
+			},
+			moreLanguages: {
+				de: 'Weitere Sprachen vielleicht über Streamlingo verfügbar',
+				en: 'More languages may be available via Streamlingo'
 			}
 		},
 		lang
@@ -169,7 +173,7 @@
 
 				<!-- Available Translations -->
 				{#if 'originalIn' in item && item.translatedTo.length > 0}
-					<div class="mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
+					<div class="mb-1 mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
 						<span>
 							{item.translatedTo.length === 1
 								? tr.availableTranslationsSingular
@@ -180,6 +184,7 @@
 							<LanguageSpan language={targetLang} />
 						{/each}
 					</div>
+					<p class="text-sm text-white/80">{tr.moreLanguages}</p>
 				{/if}
 				{#if isCurrentLangUnavailable}
 					<p class="mt-4 text-sm italic text-amber-400">{tr.unavailableLanguageWarning}</p>

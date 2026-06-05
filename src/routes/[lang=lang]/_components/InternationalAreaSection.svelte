@@ -31,6 +31,12 @@
 					– we can speak both.
 				`
 			},
+			translation: {
+				de: `Alle Veranstaltungen am KIT werden auch übersetzt. Neben den angegeben Sprachen sind durch 
+				Streamlingo vielleicht Muttersprache mit dabei ist. `,
+				en: `All events at the KIT will also be translated. In addition to the specified languages, 
+				Streamlingo may also translate to other languages. `
+			},
 			locationStart: {
 				de: 'Die International Area wird sich im Zelt ',
 				en: 'The International Area will be located in our tent '
@@ -51,6 +57,9 @@
 	</h1>
 	<p>
 		{tr.desc}
+	</p>
+	<p>
+		{tr.translation}
 	</p>
 	<p>
 		{tr.locationStart}{tr.locationDesc}{tr.locationEnd}
