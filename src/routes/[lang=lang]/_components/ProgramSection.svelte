@@ -42,7 +42,7 @@
 	let sectionElement: HTMLElement;
 </script>
 
-<section class="page-section flex flex-col gap-10 md:px-8">
+<section class="page-section flex flex-col gap-10 md:px-8 lg:px-60 2xl:px-96">
 	<h1>{tr.title}</h1>
 	<div class="flex flex-col gap-4">
 		<p>
