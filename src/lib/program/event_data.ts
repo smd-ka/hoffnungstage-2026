@@ -472,6 +472,32 @@ export const programDays = enhanceProgramDays([
 				food: 'lunch',
 			},
 			{
+				type: 'movie',
+				slug: 'movie-real-life-guys',
+				title: t(
+					'Filmvorstellung: Philipp Mickenbecker - Real Life',
+					'Movie Show: Philipp Mickenbecker - Real Life'
+				),
+				description: t(
+					`Die Zwillinge Philipp und Johannes Mickenbecker wurden durch ihren YouTube-Kanal 
+					"The Real Life Guys" mit ihren Do-it-yourself-Projekten bekannt. 
+					Auf dem Höhepunkt seines Erfolgs erfährt Philipp dann von seiner Krebsdiagnose. 
+					Seine Freunde begleiten ihn während der letzten Monate seines Lebens und 
+					gehen noch einmal gemeinsam auf zwei große Reisen. 
+					Doch selbst kurz vor seinem Tod ist Philipp noch voller Lebensfreude 
+					und Hoffnung und verliert den Glauben an Gott nicht.`,
+					`The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel, 
+					‘The Real Life Guys’. At the height of his success, Philipp was diagnosed with cancer. 
+					His friends stood by him during the final months of his life and went on two big trips together one last time. 
+					Yet even shortly before his death, Philipp remained full of joie de vivre and hope, and never lost his faith in God.`
+				),
+				startTime: '15:45',
+				endTime: '17:15',
+				locationSlug: 'kit-forum-meadow',
+				originalIn: 'de',
+				translatedTo: ['en']
+			},
+			{
 				type: "panel",
 				slug: 'hope-is-worth-it',
 				title: t('Talkrunde: Was bedeutet Hoffnung?', 'Panel Discussion: What Does Hope Mean?'),
