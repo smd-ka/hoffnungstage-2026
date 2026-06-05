@@ -30,24 +30,18 @@ const common = {
 	},
 	shortTalks: {
 		type: "talk",
-		title: t(
-			'Kurzvortrag: Leben und Überleben in Deutschland',
-			'Short Talk: Living and Getting By in Germany'
-		),
+		title: t('Kurzvortrag: Knigge - Gute Sitten', 'Short Talk: Knigge - Good manners'),
 		description: t(
-			`In kurzen Vorträgen werden Tipps zum Leben und Überleben in Deutschland gegeben.
-			Das kann von „Wie trenne ich den Müll richtig?“, über „Was für Rechte habe ich als Mieter?",
-			bis hin zu „Warum brauche ich einen Hausarzt?", oder „Was für Tabus gibt es in Deutschland?"
-			alles sein.
-			Das genaue Thema ist noch in Planung, also bleibt gespannt!`,
-			`In short talks, you can learn about living and getting by in Germany.
-			Topics can range from "How do I sort my trash properly?" and "What rights do I have as a tenant?"
-			to "Why do I need a 'Hausarzt'?" or "What are some cultural taboos in Germany?"
-			The exact topic is still being planned, so stay tuned!`
+			`In jeder Kultur gibt es ungeschriebene Gesetze und Regeln. 
+			In diesem Vortrag geht es um die Frage, welche Verhaltensweisen in Deutschland 
+			als gut betrachtet werden und was man besser lassen sollte.`,
+			`Every culture has its unwritten rules. This presentation deals with 
+			the question of which behaviour is seen positive 
+			in Germany and what should be avoided.`
 		),
 		intlTarget: 'primary',
 		locationSlug: 'kit-forum-meadow',
-		speakerIds: [], // not known yet
+		speakerIds: ['aaron'], // not known yet
 		food: 'none',
 	},
 } as const;
