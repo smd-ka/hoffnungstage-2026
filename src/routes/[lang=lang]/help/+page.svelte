@@ -74,10 +74,7 @@
 	);
 </script>
 
-<main
-	class="page-background-fixed min-h-screen bg-cover bg-center text-white"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background})"
->
+<main class="text-white">
 	<!-- Donate Section -->
 	<section>
 		<h1 class="pb-4 text-center">{tr.donateTitle}</h1>

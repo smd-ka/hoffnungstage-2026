@@ -1,5 +1,4 @@
 <script lang="ts">
-	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import Hero from './_components/Hero.svelte';
 	import HopeSection from './_components/HopeSection.svelte';
 	import ProgramSection from './_components/ProgramSection.svelte';
@@ -9,12 +8,9 @@
 	import LocationSection from './_components/LocationSection.svelte';
 </script>
 
-<main
-	class="page-background-fixed min-h-screen bg-cover bg-center"
-	style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url({background_blended})"
->
+<main>
 	<Hero />
-	<div class="flex flex-col gap-72 pb-72">
+	<div class="flex flex-col gap-52 pb-72">
 		<HopeSection />
 		<ProgramSection />
 		<InternationalAreaSection />

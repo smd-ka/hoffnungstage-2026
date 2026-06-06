@@ -2,16 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.page-background-fixed {
-	background-attachment: fixed;
-}
-
-@supports (-webkit-touch-callout: none) {
-	.page-background-fixed {
-		background-attachment: scroll;
-	}
-}
-
 .flex-vert-center {
 	@apply flex items-center justify-center;
 }
@@ -31,6 +21,23 @@
 	body {
 		@apply xl:text-lg;
 		/* keep overflow scrolling background color because of position:fixed header */
+	}
+
+	body::before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		z-index: -1;
+		/* darken the background image with a semi-opaque black gradient */
+		background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+			url('$lib/assets/pages/home/background_blended.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-blend-mode: normal;
 	}
 
 	body > * {
@@ -83,7 +90,6 @@
 		@apply side-padding grid gap-3 px-8 text-center text-white md:text-lg xl:text-xl;
 	}
 
-
 	/* horizontal chips (no wrap, attached) */
 	/* e.g.: ( alpha | beta | gamma ) */
 
@@ -103,12 +109,11 @@
 		@apply rounded-r-full pr-4;
 	}
 
-	.horizontal-chips button[aria-pressed="true"] {
+	.horizontal-chips button[aria-pressed='true'] {
 		@apply bg-indigo-600 text-white;
 	}
 
-	.horizontal-chips button[aria-pressed="false"] {
+	.horizontal-chips button[aria-pressed='false'] {
 		@apply bg-white/5 text-white/70;
 	}
-
 }

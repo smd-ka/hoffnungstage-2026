@@ -13,8 +13,8 @@
 				en: 'Contact'
 			},
 			intro: {
-				de: 'Du hast Fragen oder willst mehr wissen? 👉 Schreib uns gerne:',
-				en: 'Do you have questions or want to know more? 👉 Feel free to contact us:'
+				de: 'Du hast Anregungen, Fragen oder Kritik? 👉 Schreib uns gerne:',
+				en: 'Do you have suggestions, questions or feedback? 👉 Feel free to contact us:'
 			}
 		},
 		lang as 'de' | 'en'
