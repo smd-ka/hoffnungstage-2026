@@ -20,7 +20,7 @@
 				en: 'Program'
 			},
 			subtitle: {
-				de: ' Alle Veranstaltungen der Hoffnungstage vom 08. – 11. Juni 2026 auf einen Blick.',
+				de: 'Alle Veranstaltungen der Hoffnungstage vom 08. – 11. Juni 2026 auf einen Blick.',
 				en: 'All events of the Days of Hope from June 8 – 11, 2026 at a glance.'
 			},
 			programDescription: {
@@ -54,6 +54,10 @@
 				We’ve also put together a special program just for you international students. From Monday through Wednesday, 
 				there are German classes using the Bible at 3:45 p.m. Each day, these are followed by short 
 				presentations on German culture at 5:45 p.m. `
+			},
+			backToHome: {
+				de: 'Zurück zur Startseite',
+				en: 'Back to Home'
 			}
 		},
 		lang
@@ -74,7 +78,7 @@
 		class="absolute left-0 top-0 z-30 flex items-center gap-2 self-start px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
 	>
 		<Fa icon={faArrowLeft} />
-		Zurück zur Startseite
+		{tr.backToHome}
 	</a>
 	<div class="absolute inset-0 z-10 overflow-hidden">
 		<div
@@ -120,7 +124,7 @@
 			href={`/${lang}`}
 			class="mb-4 self-start rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
 		>
-			Zurück zur Startseite
+			{tr.backToHome}
 		</a>
 	</div>
 </main>

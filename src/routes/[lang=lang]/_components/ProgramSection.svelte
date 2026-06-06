@@ -31,7 +31,7 @@
 				en: 'We’ve got you covered when it comes to food and drinks. Most events offer free snacks and drinks. On Monday, Tuesday and Thursday, there’s even lunch at KIT, and there are always waffles at the PH. Come along and join us ☺️.'
 			},
 			languageNote: {
-				de: 'Hier im Kalender findest du alle Veranstaltungen der Hoffnungstage vom 08. bis 11. Juni 2026 auf einen Blick. Um mehr zu einer Veranstaltung zu erfahren, klicke einfach darauf. Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten 🇬🇧, näheres findest du auf der Seite des jeweiligen Programmpunktes .',
+				de: 'Hier im Kalender findest du alle Veranstaltungen der Hoffnungstage vom 08. bis 11. Juni 2026 auf einen Blick. Um mehr zu einer Veranstaltung zu erfahren, klicke einfach darauf. Für Vorträge und Formate am KIT werden auch mehrere Übersetzungen angeboten 🇬🇧, näheres findest du auf der Seite des jeweiligen Programmpunktes.',
 				en: 'Here in the calendar, you can see all the events taking place during the Days of Hope from 8 to 11 June 2026 at a glance. To find out more about an event, simply click on it. Several translations are also available for talks and sessions at KIT 🇬🇧; you can find more details on the page for each event.'
 			}
 		},
@@ -42,7 +42,7 @@
 	let sectionElement: HTMLElement;
 </script>
 
-<section class="xl:text-xl; grid gap-10 px-8 text-center text-white md:text-lg">
+<section class="grid gap-10 px-8 text-center text-white md:text-lg xl:text-xl">
 	<div class="side-padding">
 		<h1>{tr.title}</h1>
 		<div class="flex flex-col gap-4">

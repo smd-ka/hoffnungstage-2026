@@ -1,5 +1,4 @@
 <script lang="ts">
-	import background_blended from '$lib/assets/pages/home/background_blended.jpg';
 	import Hero from './_components/Hero.svelte';
 	import HopeSection from './_components/HopeSection.svelte';
 	import ProgramSection from './_components/ProgramSection.svelte';

@@ -40,10 +40,6 @@
 		background-blend-mode: normal;
 	}
 
-	body {
-		padding-bottom: 2000px;
-	}
-
 	body > * {
 		/* revert overflow scrolling background color */
 		@apply bg-white;
