@@ -11,7 +11,7 @@
 		{
 			title: {
 				de: 'Wo du uns findest',
-				en: 'Where you will find us'
+				en: 'Where you find us'
 			},
 			description: {
 				de: 'Die Hoffnungstage finden auf der Forumswiese am KIT und an der PH vor der Cafeteria statt.',
