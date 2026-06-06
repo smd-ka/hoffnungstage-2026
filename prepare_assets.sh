@@ -12,7 +12,7 @@ TARGET_DIR="$PWD/static/maplibre"
 # for basemap-assets
 BASEMAPS_ASSETS_ZIP="https://github.com/protomaps/basemaps-assets/archive/refs/heads/main.zip"
 # for tiles
-PROTOMAPS_BUILD="https://build.protomaps.com/20260530.pmtiles"
+PROTOMAPS_BUILD="https://build.protomaps.com/20260605.pmtiles"
 TILES_NAME="karlsruhe.pmtiles"
 TILES_BBOX="8.016586,48.853195,8.895493,49.158359" # same bbox as used throughout this project
 # pmtiles binary
