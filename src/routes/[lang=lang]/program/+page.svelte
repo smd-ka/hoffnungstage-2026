@@ -11,6 +11,7 @@
 	import background_img3 from '$lib/assets/pages/program/program_bg3.jpg';
 	import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
+	import ProgramCalendar from '../_components/ProgramCalendar.svelte';
 
 	$: lang = $page.params.lang as 'de' | 'en';
 	$: tr = createTranslator(
@@ -58,12 +59,21 @@
 			backToHome: {
 				de: 'Zurück zur Startseite',
 				en: 'Back to Home'
+			},
+			linkToList: {
+				de: 'Dir hilft eine Übersicht in Listenform mehr? Dann findest du hier die Programmübersicht als Liste',
+				en: 'Would you prefer an overview in list form? Then you can find the program overview as a list here'
+			},
+			programList: {
+				de: 'Programmübersicht als Liste',
+				en: 'Program Overview as List'
 			}
 		},
 		lang
 	);
 
 	let selectedFilter: ProgramFilterValue = getDefaultProgramFilter();
+	let calendarElement: HTMLElement;
 	let listElement: HTMLElement;
 </script>
 
@@ -82,16 +92,12 @@
 	</a>
 	<div class="absolute inset-0 z-10 overflow-hidden">
 		<div
-			class="absolute left-[3%] top-[6rem] h-96 w-2/5 -translate-x-16 transform bg-cover bg-center"
+			class="absolute left-[5%] top-[12rem] h-96 w-3/4 -translate-x-16 transform bg-cover bg-center md:w-2/5"
 			style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url({background_img1});"
 		></div>
 		<div
-			class="absolute right-[15%] top-[25rem] h-96 w-2/5 translate-x-16 transform bg-cover bg-center"
+			class="absolute right-[15%] top-[30rem] h-80 w-3/4 translate-x-16 transform bg-cover bg-center md:w-2/5"
 			style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url({background_img2});"
-		></div>
-		<div
-			class="absolute left-[10%] top-[40rem] h-96 w-1/3 -translate-x-8 transform bg-cover bg-center"
-			style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url({background_img3});"
 		></div>
 	</div>
 
@@ -107,14 +113,35 @@
 			<p>{tr.programDescription}</p>
 			<p>{tr.supportingProgramDescription}</p>
 			<p>{tr.internationalProgramDescription}</p>
+			<a href={`/${lang}/program#program-list`} class="text-indigo-400 underline">
+				{tr.linkToList}
+			</a>
 		</div>
 	</section>
 
-	<div bind:this={listElement} class="side-padding z-20 flex flex-col gap-2">
+	<div bind:this={calendarElement} class="side-padding z-20 flex flex-col gap-6">
+		<div class="mx-auto px-4">
+			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={calendarElement} />
+		</div>
+		<div class="mx-auto px-4">
+			<ProgramCalendar filter={selectedFilter} />
+		</div>
+	</div>
+
+	<img
+		src={background_img3}
+		alt=""
+		aria-hidden="true"
+		class="h-64 object-cover object-center"
+		style="filter: brightness(50%);"
+	/>
+
+	<div id="program-list" bind:this={listElement} class="side-padding z-20 flex flex-col gap-2">
+		<h2 class="side-padding z-20 px-4 text-3xl font-bold">{tr.programList}</h2>
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
 		</div>
-		<div id="program-list" class="mx-auto px-4">
+		<div class="mx-auto px-4">
 			<ProgramList filter={selectedFilter} />
 		</div>
 	</div>
@@ -122,7 +149,8 @@
 	<div class="flex justify-center">
 		<a
 			href={`/${lang}`}
-			class="mb-4 self-start rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+			class="relative z-30 mb-4 rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+			aria-label={tr.backToHome}
 		>
 			{tr.backToHome}
 		</a>

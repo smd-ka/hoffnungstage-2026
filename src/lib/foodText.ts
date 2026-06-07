@@ -20,16 +20,19 @@ export const FoodText = defineData({
 		...empty,
 		lunch: { de: "Mittagessen", en: "lunch" },
 		waffles: { de: "Waffeln", en: "waffles" },
+		'ice-cream': { de: "Eis", en: "ice cream" },
 	},
 	nameFree: {
 		...empty,
 		lunch: { de: "kostenloses Mittagessen", en: "free lunch" },
 		waffles: { de: "kostenlose Waffeln", en: "free waffles" },
+		'ice-cream': { de: "kostenloses Eis", en: "free ice cream" },
 	},
 	articleFree: {
 		...empty,
 		lunch: { de: "ein kostenloses Mittagessen", en: "free lunch" },
 		waffles: { de: "kostenlose Waffeln", en: "free waffles" },
+		'ice-cream': { de: "ein kostenloses Eis von Black Forest Ice Cream", en: "free ice cream" },
 	},
 } as const);
 
@@ -37,4 +40,5 @@ export const FoodEmoji: Record<FreeFood, string> = {
 	none: "",
 	lunch: "🍲",
 	waffles: "🧇",
+	'ice-cream': "🍦",
 };
