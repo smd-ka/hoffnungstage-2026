@@ -60,6 +60,10 @@
 				de: 'Zurück zur Startseite',
 				en: 'Back to Home'
 			},
+			linkToList: {
+				de: 'Dir hilft eine Übersicht in Listenform mehr? Dann findest du hier die Programmübersicht als Liste',
+				en: 'Would you prefer an overview in list form? Then you can find the program overview as a list here'
+			},
 			programList: {
 				de: 'Programmübersicht als Liste',
 				en: 'Program Overview as List'
@@ -109,6 +113,9 @@
 			<p>{tr.programDescription}</p>
 			<p>{tr.supportingProgramDescription}</p>
 			<p>{tr.internationalProgramDescription}</p>
+			<a href={`/${lang}/program#program-list`} class="text-indigo-400 underline">
+				{tr.linkToList}
+			</a>
 		</div>
 	</section>
 
@@ -128,13 +135,12 @@
 		style="filter: brightness(50%);"
 	/>
 
-	<h1 class="side-padding z-20 px-4 text-3xl font-bold">{tr.programList}</h1>
-
-	<div bind:this={listElement} class="side-padding z-20 flex flex-col gap-2">
+	<div id="program-list" bind:this={listElement} class="side-padding z-20 flex flex-col gap-2">
+		<h1 class="side-padding z-20 px-4 text-3xl font-bold">{tr.programList}</h1>
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
 		</div>
-		<div id="program-list" class="mx-auto px-4">
+		<div class="mx-auto px-4">
 			<ProgramList filter={selectedFilter} />
 		</div>
 	</div>
