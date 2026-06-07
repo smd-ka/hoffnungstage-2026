@@ -130,8 +130,9 @@
 
 	<img
 		src={background_img3}
-		alt="Background"
-		class=" h-64 object-cover object-center"
+		alt=""
+		aria-hidden="true"
+		class="h-64 object-cover object-center"
 		style="filter: brightness(50%);"
 	/>
 
