@@ -136,7 +136,7 @@
 	/>
 
 	<div id="program-list" bind:this={listElement} class="side-padding z-20 flex flex-col gap-2">
-		<h1 class="side-padding z-20 px-4 text-3xl font-bold">{tr.programList}</h1>
+		<h2 class="side-padding z-20 px-4 text-3xl font-bold">{tr.programList}</h2>
 		<div class="mx-auto px-4">
 			<ProgramFilter bind:value={selectedFilter} bind:jumpRef={listElement} />
 		</div>
