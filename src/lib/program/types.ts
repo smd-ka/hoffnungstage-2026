@@ -8,7 +8,7 @@ export interface Duration {
     minutes: number;
 };
 
-export type FreeFood = 'none' | 'waffles' | 'lunch';
+export type FreeFood = 'none' | 'waffles' | 'lunch' | 'ice-cream';
 
 export type Gender = 'm' | 'f';
 

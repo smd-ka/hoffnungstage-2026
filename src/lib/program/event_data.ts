@@ -566,7 +566,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['sabine-mickenbecker'],
 				highlightSpeaker: true,
-				food: 'lunch'
+				food: 'ice-cream'
 			},
 			{
 				type: 'movie',
