@@ -148,7 +148,8 @@
 	<div class="flex justify-center">
 		<a
 			href={`/${lang}`}
-			class="mb-4 self-start rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+			class="relative z-30 mb-4 rounded-full border border-white/30 px-4 py-2 text-sm font-medium text-gray-300 transition hover:border-white/50 hover:text-white"
+			aria-label={tr.backToHome}
 		>
 			{tr.backToHome}
 		</a>
