@@ -99,6 +99,7 @@ function _enhanceIntlParams(item: PartialProgramItem & _AbsIntlParams): _CalcInt
     return {
         ...item,
         intlTarget: item.intlTarget ?? 'auto',
+        isStreamlingoTranslated: item.type === 'panel' || item.type === 'talk'
     };
 }
 
@@ -127,7 +128,7 @@ export function filterMatches(filter: ProgramFilterValue, item: PartialProgramIt
         case 'supportingProgram':
             if (item.type === 'sport') return true;
             return (
-                item.type === 'workshop'  &&
+                item.type === 'workshop' &&
                 item.intlTarget !== 'primary' &&
                 item.originalIn === 'de'
             )

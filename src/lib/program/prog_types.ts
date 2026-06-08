@@ -101,6 +101,7 @@ export interface _CalcMainParams {
 
 export interface _CalcIntlParams {
     intlTarget: IntlTarget;
+    isStreamlingoTranslated: boolean;
 }
 
 export interface _CalcSpeakerParams {

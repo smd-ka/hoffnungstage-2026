@@ -77,9 +77,9 @@
 				de: ' aus.',
 				en: '.'
 			},
-			moreLanguages: {
-				de: 'Es sind weitere Sprachen über Streamlingo verfügbar',
-				en: 'There are more languages available via Streamlingo'
+			moreLangsViaStreamlingo: {
+				de: 'Es sind weitere Sprachen über Streamlingo verfügbar.',
+				en: 'There are more languages available via Streamlingo.'
 			}
 		},
 		lang
@@ -181,7 +181,9 @@
 							<LanguageSpan language={targetLang} />
 						{/each}
 					</div>
-					<p class="text-sm text-white/80">{tr.moreLanguages}</p>
+					{#if item.isStreamlingoTranslated}
+						<p class="text-sm text-white/80">{tr.moreLangsViaStreamlingo}</p>
+					{/if}
 				{/if}
 				{#if isCurrentLangUnavailable}
 					<p class="mt-4 text-sm italic text-amber-400">{tr.unavailableLanguageWarning}</p>
