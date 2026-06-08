@@ -592,7 +592,7 @@ export const programDays = enhanceProgramDays([
 				endTime: '17:00',
 				locationSlug: 'kit-forum-meadow',
 				originalIn: 'de',
-				translatedTo: ['en'],
+				translatedTo: [],
 				intlTarget: 'auto' // decision of International to show that in Int.-calendar with subtitles
 			},
 			{
