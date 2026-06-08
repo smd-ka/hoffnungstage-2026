@@ -593,7 +593,7 @@ export const programDays = enhanceProgramDays([
 				locationSlug: 'kit-forum-meadow',
 				originalIn: 'de',
 				translatedTo: ['en'],
-				intlTarget: 'not_intended' // makes int. calendar too messy and subtitles are only in English
+				intlTarget: 'auto' // decision of International to show that in Int.-calendar with subtitles
 			},
 			{
 				type: 'panel',
