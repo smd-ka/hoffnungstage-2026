@@ -85,7 +85,6 @@
 					und scanne den QR Code, der während dem Event ausgehängt wird.
 				`,
 				en: `
-					There are more languages available via Streamlingo.
 					More languages are available as requested.
 					The translations are provided via Streamlingo.
 					Have your phone & headphones ready,
