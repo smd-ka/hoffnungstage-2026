@@ -78,8 +78,19 @@
 				en: '.'
 			},
 			moreLangsViaStreamlingo: {
-				de: 'Es sind weitere Sprachen über Streamlingo verfügbar.',
-				en: 'There are more languages available via Streamlingo.'
+				de: `
+					Bei Bedarf sind weitere Sprachen verfügbar.
+					Die Übersetzung wird über Streamlingo bereitgestellt.
+					Halte dafür dein Handy & deine Kopfhörer bereit
+					und scanne den QR Code, der während dem Event ausgehängt wird.
+				`,
+				en: `
+					There are more languages available via Streamlingo.
+					More languages are available as requested.
+					The translations are provided via Streamlingo.
+					Have your phone & headphones ready,
+					and scan the QR code provided during the event.
+				`
 			}
 		},
 		lang
@@ -125,12 +136,12 @@
 		<!-- Header Card -->
 		<article class="overflow-hidden rounded-2xl bg-white/10 backdrop-blur-md">
 			<!-- Title Section -->
-			<header class="border-b border-white/10 p-6 md:p-8">
+			<header class="border-b border-white/10 p-6 text-white/80 md:p-8">
 				<h1 class="mb-4 font-roman text-3xl font-bold leading-tight text-white md:text-4xl">
 					{getTitle(item, lang)}
 				</h1>
 
-				<div class="flex flex-wrap gap-4 text-sm text-white/80">
+				<div class="flex flex-wrap gap-4 text-sm">
 					<!-- Date & Time -->
 					<div class="flex items-center gap-2">
 						<Fa icon={faCalendar} />
@@ -170,7 +181,7 @@
 
 				<!-- Available Translations -->
 				{#if 'originalIn' in item && item.translatedTo.length > 0}
-					<div class="mb-1 mt-4 flex flex-wrap items-center gap-2 text-sm text-white/80">
+					<div class="mb-1 mt-4 flex flex-wrap items-center gap-2 text-sm">
 						<span>
 							{item.translatedTo.length === 1
 								? tr.availableTranslationsSingular
@@ -182,7 +193,7 @@
 						{/each}
 					</div>
 					{#if item.isStreamlingoTranslated}
-						<p class="text-sm text-white/80">{tr.moreLangsViaStreamlingo}</p>
+						<p class="text-sm">{tr.moreLangsViaStreamlingo}</p>
 					{/if}
 				{/if}
 				{#if isCurrentLangUnavailable}
