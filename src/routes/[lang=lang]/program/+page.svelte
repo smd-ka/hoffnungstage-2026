@@ -25,35 +25,35 @@
 				en: 'All events of the Days of Hope from June 8 – 11, 2026 at a glance.'
 			},
 			programDescription: {
-				de: `Das Programm ist total vielfältig: Wir haben über 12 verschiedene Referenten eingeladen, 
+				de: `Das Programm ist total vielfältig: Wir haben über 12 verschiedene Referenten eingeladen,
 					die zu ganz vielen unterschiedlichen Hoffnungsthemen Vorträge und Diskussionen halten.
-					Natürlich darf auch die Kunst und Musik nicht zu kurz kommen; 
+					Natürlich darf auch die Kunst und Musik nicht zu kurz kommen;
 					beim Open Mic, Konzertabend und auch [C]Rave kannst du deine Zeit so richtig genießen.`,
-				en: `The program is amazing: We’ve invited over 12 different speakers to give talks 
+				en: `The program is amazing: We’ve invited over 12 different speakers to give talks
 					and lead discussions on a wide range of topics related to Christian hope.
-					Of course, art and music play a vital role in this; you can really enjoy yourself 
+					Of course, art and music play a vital role in this; you can really enjoy yourself
 					at the open mic, concert night, and [C]Rave.`
 			},
 			supportingProgramDescription: {
-				de: `Jeden Tag haben wir ein spannendes Rahmenprogramm für euch dabei. 
-					Ihr könnt immer einfach für Volleyball, eine Runde Menschenkicker oder 
-					auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch täglich für 
-					euch geöffnet, wo man ideal dem stressigen Unialltag für das ein 
+				de: `Jeden Tag haben wir ein spannendes Rahmenprogramm für euch dabei.
+					Ihr könnt immer einfach für Volleyball, eine Runde Menschenkicker oder
+					auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch täglich für
+					euch geöffnet, wo man ideal dem stressigen Unialltag für das ein
 					oder andere Stündchen entfliehen kann 😎.`,
 
-				en: `Every day, we have an exciting lineup of activities (support program) planned for you. 
-					Feel free to drop by anytime for a game of volleyball, a round of human foosball, 
-					or ladder golf. Our chill lounge is also open daily, offering the perfect spot to 
+				en: `Every day, we have an exciting lineup of activities (support program) planned for you.
+					Feel free to drop by anytime for a game of volleyball, a round of human foosball,
+					or ladder golf. Our chill lounge is also open daily, offering the perfect spot to
 					escape the stress of everyday uni life for an hour or two 😎.`
 			},
 			internationalProgramDescription: {
-				de: `Wir haben ein Herz für internationale Studierende. Wir bieten für alle Veranstaltungen am KIT Übersetzung an. 
-			Außerdem haben wir ein extra Programm für euch Internationale vorbereitet. Von Montag bis Mittwoch gibt es Deutschkurse 
+				de: `Wir haben ein Herz für internationale Studierende. Wir bieten für alle Veranstaltungen am KIT Übersetzung an.
+			Außerdem haben wir ein extra Programm für euch Internationale vorbereitet. Von Montag bis Mittwoch gibt es Deutschkurse
 			mit der Bibel jeweils um 15:45. Danach gibt es kleine Präsentationen über die deutsche Kultur um 17:45.`,
 
-				en: `We care deeply about international students. We provide translation services for all events at KIT. 
-				We’ve also put together a special program just for you international students. From Monday through Wednesday, 
-				there are German classes using the Bible at 3:45 p.m. Each day, these are followed by short 
+				en: `We care deeply about international students. We provide translation services for all events at KIT.
+				We’ve also put together a special program just for you international students. From Monday through Wednesday,
+				there are German classes using the Bible at 3:45 p.m. Each day, these are followed by short
 				presentations on German culture at 5:45 p.m. `
 			},
 			backToHome: {
