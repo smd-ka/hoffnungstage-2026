@@ -32,11 +32,11 @@ const common = {
 		type: 'sport',
 		title: t('Rahmenprogramm (Start)', 'Supporting Program (start)'),
 		description: t(
-			`Unser Rahmenprogramm hat ab spätestens 12 Uhr geöffnet. Ihr könnt jederzeit gerne zum Volleyball spielen, 
-			ne Runde Menschenkicker zocken oder auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch 
+			`Unser Rahmenprogramm hat ab spätestens 12 Uhr geöffnet. Ihr könnt jederzeit gerne zum Volleyball spielen,
+			ne Runde Menschenkicker zocken oder auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch
 			täglich für euch geöffnet, dort könnt ihr auch gerne Gesellschaftsspiele einfach ausleihen ♠️`,
-			`Our activities area opens at 12:00 PM at the latest. Feel free to stop by anytime to play volleyball, 
-			have a game of human foosball, or try ladder golf. Our chill lounge is also open daily, 
+			`Our activities area opens at 12:00 PM at the latest. Feel free to stop by anytime to play volleyball,
+			have a game of human foosball, or try ladder golf. Our chill lounge is also open daily,
 			and you’re welcome to borrow board games there ♠️`
 		),
 		startTime: '12:00',
@@ -576,17 +576,17 @@ export const programDays = enhanceProgramDays([
 					'Movie Show: Philipp Mickenbecker - Real Life'
 				),
 				description: t(
-					`Die Zwillinge Philipp und Johannes Mickenbecker wurden durch ihren YouTube-Kanal 
-					"The Real Life Guys" mit ihren Do-it-yourself-Projekten bekannt. 
-					Auf dem Höhepunkt seines Erfolgs erfährt Philipp dann von seiner Krebsdiagnose. 
-					Seine Freunde begleiten ihn während der letzten Monate seines Lebens und 
-					gehen noch einmal gemeinsam auf zwei große Reisen. 
-					Doch selbst kurz vor seinem Tod ist Philipp noch voller Lebensfreude 
+					`Die Zwillinge Philipp und Johannes Mickenbecker wurden durch ihren YouTube-Kanal
+					"The Real Life Guys" mit ihren Do-it-yourself-Projekten bekannt.
+					Auf dem Höhepunkt seines Erfolgs erfährt Philipp dann von seiner Krebsdiagnose.
+					Seine Freunde begleiten ihn während der letzten Monate seines Lebens und
+					gehen noch einmal gemeinsam auf zwei große Reisen.
+					Doch selbst kurz vor seinem Tod ist Philipp noch voller Lebensfreude
 					und Hoffnung und verliert den Glauben an Gott nicht.`,
-					`Translation only via subtitles unfortunately! 
-					The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel, 
-					‘The Real Life Guys’. At the height of his success, Philipp was diagnosed with cancer. 
-					His friends stood by him during the final months of his life and went on two big trips together one last time. 
+					`Translation only via subtitles unfortunately!
+					The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel,
+					‘The Real Life Guys’. At the height of his success, Philipp was diagnosed with cancer.
+					His friends stood by him during the final months of his life and went on two big trips together one last time.
 					Yet even shortly before his death, Philipp remained full of joie de vivre and hope, and never lost his faith in God.`
 				),
 				startTime: '15:45',
