@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { createTranslator } from '$lib/language';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa/src/fa.svelte';
+	import Fa from 'svelte-fa';
 
 	$: lang = $page.params.lang;
 

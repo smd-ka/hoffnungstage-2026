@@ -13,7 +13,7 @@
 	import hug_logo from '$lib/assets/logos/hug_logo_slogan.jpg';
 	import streamlingo_logo from '$lib/assets/logos/Streamlingo_white.svg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
-	import Fa from 'svelte-fa/src/fa.svelte';
+	import Fa from 'svelte-fa';
 	import '/node_modules/flag-icons/css/flag-icons.min.css';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
