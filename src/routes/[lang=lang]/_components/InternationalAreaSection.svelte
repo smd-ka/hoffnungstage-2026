@@ -31,6 +31,10 @@
 					– we can speak both.
 				`
 			},
+			openingHours: {
+				de: 'In der International Area sind wir für euch von 11:20 a.m. bis ca. 22 Uhr da.',
+				en: 'In the International Area we will be there for you starting at 11:20 (a.m.) until around 22:00 (10 p.m.)'
+			},
 			translation: {
 				de: 'Alle Veranstaltungen am KIT werden auch übersetzt. Neben den angegebenen Sprachen sind über Streamlingo möglicherweise weitere Sprachen verfügbar.',
 				en: 'All events at KIT will also be translated. In addition to the specified languages, more languages may be available via Streamlingo.'
@@ -55,6 +59,7 @@
 	</h1>
 	<p>
 		{tr.desc}
+		{tr.openingHours}
 	</p>
 	<p>
 		{tr.translation}
