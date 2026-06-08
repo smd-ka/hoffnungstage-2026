@@ -562,7 +562,7 @@ export const programDays = enhanceProgramDays([
 				),
 				...common.stageTranslated,
 				startTime: '14:00',
-				endTime: '15:30',
+				endTime: '15:00',
 				locationSlug: 'kit-forum-meadow',
 				speakerIds: ['sabine-mickenbecker'],
 				highlightSpeaker: true,
@@ -589,8 +589,8 @@ export const programDays = enhanceProgramDays([
 					His friends stood by him during the final months of his life and went on two big trips together one last time.
 					Yet even shortly before his death, Philipp remained full of joie de vivre and hope, and never lost his faith in God.`
 				),
-				startTime: '15:45',
-				endTime: '17:15',
+				startTime: '15:00',
+				endTime: '17:00',
 				locationSlug: 'kit-forum-meadow',
 				originalIn: 'de',
 				translatedTo: ['en'],
