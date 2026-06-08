@@ -33,7 +33,7 @@ const common = {
 		title: t('Rahmenprogramm (Start)', 'Supporting Program (start)'),
 		description: t(
 			`Unser Rahmenprogramm hat ab spätestens 12 Uhr geöffnet. Ihr könnt jederzeit gerne zum Volleyball spielen,
-			ne Runde Menschenkicker zocken oder auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch
+			ne Runde Menschenkicker zocken oder auch zum Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch
 			täglich für euch geöffnet, dort könnt ihr auch gerne Gesellschaftsspiele einfach ausleihen ♠️`,
 			`Our activities area opens at 12:00 PM at the latest. Feel free to stop by anytime to play volleyball,
 			have a game of human foosball, or try ladder golf. Our chill lounge is also open daily,

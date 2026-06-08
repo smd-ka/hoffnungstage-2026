@@ -37,7 +37,7 @@
 			supportingProgramDescription: {
 				de: `Jeden Tag haben wir ein spannendes Rahmenprogramm für euch dabei.
 					Ihr könnt immer einfach für Volleyball, eine Runde Menschenkicker oder
-					auch Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch täglich für
+					auch zum Leitergolf vorbeikommen. Unsere Chill-Lounge hat auch täglich für
 					euch geöffnet, wo man ideal dem stressigen Unialltag für das ein
 					oder andere Stündchen entfliehen kann 😎.`,
 
