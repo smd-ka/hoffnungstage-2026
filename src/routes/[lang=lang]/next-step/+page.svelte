@@ -174,7 +174,7 @@
 		<p class="text-lg">
 			{tr.whatsappNote}
 		</p>
-		<a class="button" href="https://chat.whatsapp.com/LhYduQiTlka25vWqnYomJz">
+		<a class="button" href={whatsAppGroup}>
 			<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
 			{tr.whatsappButton}
 		</a>

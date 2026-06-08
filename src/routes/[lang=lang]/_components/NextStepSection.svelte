@@ -43,7 +43,7 @@
 		{tr.introEnd}
 	</p>
 	<div class="flex justify-center">
-		<a class="button" href="https://chat.whatsapp.com/LhYduQiTlka25vWqnYomJz">
+		<a class="button" href="/{lang}/next-step">
 			{tr.buttonText}
 		</a>
 	</div>
