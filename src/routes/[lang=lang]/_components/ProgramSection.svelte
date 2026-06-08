@@ -44,15 +44,17 @@
 				de: `
 					Auch für das leibliche Wohl ist gesorgt.
 					Bei den meisten Veranstaltungen gibt es kostenlose Snacks und Getränke.
-					Montag, Dienstag und Donnerstag gibt es am KIT sogar Mittagessen,
-					an der PH gibt es immer Waffeln.
+					Am KIT gibt es Montag und Dienstag sogar Mittagessen
+					und am Donnerstag ein Abendessen,
+					An der PH gibt es immer Waffeln.
 					Komm vorbei und genieße mit uns ☺️.
 				`,
 				en: `
 					We’ve got you covered when it comes to food and drinks.
 					Most events offer free snacks and drinks.
-					On Monday, Tuesday and Thursday, there’s even lunch at KIT,
-					and there are always waffles at the PH.
+					At KIT there’s even lunch on Monday and Tuesday,
+					and a meal on Thursday at evening.
+					At PH there are always waffles.
 					Come along and join us ☺️.
 				`
 			},
