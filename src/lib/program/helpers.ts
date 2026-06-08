@@ -99,7 +99,7 @@ function _enhanceIntlParams(item: PartialProgramItem & _AbsIntlParams): _CalcInt
     return {
         ...item,
         intlTarget: item.intlTarget ?? 'auto',
-        isStreamlingoTranslated: item.type === 'panel' || item.type === 'talk'
+        translationType: (item.type === 'panel' || item.type === 'talk') ? 'Streamlingo' : item.type === 'movie' ? 'subtitles' : 'unknown',
     };
 }
 

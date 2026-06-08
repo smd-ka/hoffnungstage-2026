@@ -60,6 +60,10 @@
 				de: 'Übersetzungen verfügbar in',
 				en: 'translations available in'
 			},
+			availableSubtitlesIn: {
+				de: 'Untertitel verfügbar in',
+				en: 'subtitles available in'
+			},
 			unavailableLanguageWarning: {
 				// special hint for German speakers intended as all non-German events are intended for internationals
 				de: 'Hinweis: Dieser Programmpunkt ist primär für unsere internationalen Kommilitonen gedacht.',
@@ -182,7 +186,9 @@
 				{#if 'originalIn' in item && item.translatedTo.length > 0}
 					<div class="mb-1 mt-4 flex flex-wrap items-center gap-2 text-sm">
 						<span>
-							{item.translatedTo.length === 1
+							{item.translationType === 'subtitles'
+								? tr.availableSubtitlesIn
+								: item.translatedTo.length === 1
 								? tr.availableTranslationsSingular
 								: tr.availableTranslationsPlural}:
 						</span>
@@ -191,7 +197,7 @@
 							<LanguageSpan language={targetLang} />
 						{/each}
 					</div>
-					{#if item.isStreamlingoTranslated}
+					{#if item.translationType === 'Streamlingo'}
 						<p class="text-sm">{tr.moreLangsViaStreamlingo}</p>
 					{/if}
 				{/if}

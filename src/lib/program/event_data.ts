@@ -583,8 +583,7 @@ export const programDays = enhanceProgramDays([
 					gehen noch einmal gemeinsam auf zwei große Reisen.
 					Doch selbst kurz vor seinem Tod ist Philipp noch voller Lebensfreude
 					und Hoffnung und verliert den Glauben an Gott nicht.`,
-					`Translation only via subtitles unfortunately!
-					The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel,
+					`The twins Philipp and Johannes Mickenbecker became famous for their DIY projects through their YouTube channel,
 					‘The Real Life Guys’. At the height of his success, Philipp was diagnosed with cancer.
 					His friends stood by him during the final months of his life and went on two big trips together one last time.
 					Yet even shortly before his death, Philipp remained full of joie de vivre and hope, and never lost his faith in God.`
