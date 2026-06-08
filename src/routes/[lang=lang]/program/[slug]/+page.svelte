@@ -74,8 +74,8 @@
 				en: 'for free'
 			},
 			foodTextPre: {
-				de: 'Während dem Vortrag geben wir ',
-				en: 'During the talk you can enjoy our '
+				de: 'Vor dem Vortrag geben wir ',
+				en: 'Before the talk we’ll be serving '
 			},
 			foodTextPost: {
 				de: ' aus.',
