@@ -35,10 +35,17 @@
 		? mobileSelectionLimit
 		: tabletSelectionLimit;
 
+	const today = new Date().toISOString().split('T')[0];
+	$: lastDay = filteredDays.slice(-1)[0].date;
 	// forces normalization
 	$: selectedDateOrder =
 		selectedDateOrder.length === 0
-			? filteredDays.map((d) => d.date).slice(0, selectionLimit)
+			? filteredDays
+					.map((d) => d.date)
+					.filter((date) => date >= today || lastDay < today)
+					.slice(0, selectionLimit)
+					// reversed so that first available date (today) stays when selectionLimit is reduced again
+					.reverse()
 			: selectedDateOrder.filter((date) => availableDates.has(date)).slice(-selectionLimit);
 
 	$: selectedDates = new Set(selectedDateOrder);
