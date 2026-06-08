@@ -32,7 +32,7 @@
 				`
 			},
 			openingHours: {
-				de: 'In der International Area sind wir für euch von 11:20 a.m. bis ca. 22 Uhr da.',
+				de: 'In der International Area sind wir für euch von 11:20 Uhr bis ca. 22 Uhr da.',
 				en: 'In the International Area we will be there for you starting at 11:20 (a.m.) until around 22:00 (10 p.m.).'
 			},
 			translation: {
