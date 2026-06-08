@@ -6,7 +6,6 @@
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 	import whatsapp_qr_link from '$lib/assets/qr-codes/whatsapp_group.png';
 	import whatsapp_qr_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_Green_RGB_2026.svg';
-	import background from '$lib/assets/pages/home/helfen/background.jpg';
 	import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 
