@@ -122,14 +122,20 @@
 			{#each nextStepEvents || [] as event}
 				<a class="event-card flex flex-row items-center gap-2" href={event.href}>
 					<div class="flex grow flex-col gap-1">
-						<div class="flex flex-wrap items-baseline gap-2 gap-y-0 font-bold md:text-lg">
-							<span>{formatDateWithDayName(event.date, lang)}</span>
-							<span class="text-indigo-300">•</span>
-							{#if 'startTime' in event}
-								<span>{event.startTime}</span>
-								<span class="text-indigo-300">•</span>
-							{/if}
-							<span>{event.title[lang]}</span>
+						<div
+							class="flex flex-col flex-wrap items-baseline gap-2 gap-y-0 font-bold md:flex-row md:flex-nowrap md:text-lg"
+						>
+							<div class="flex items-baseline gap-2">
+								<span>{formatDateWithDayName(event.date, lang)}</span>
+								{#if 'startTime' in event}
+									<span class="text-indigo-300">•</span>
+									<span>{event.startTime}</span>
+								{/if}
+							</div>
+							<span class="text-indigo-300 max-md:hidden">•</span>
+							<div class="flex items-baseline gap-2">
+								{event.title[lang]}
+							</div>
 						</div>
 						<div class="text-white/70">
 							{#each event.description[lang].split('\n\n') as paragraph}
