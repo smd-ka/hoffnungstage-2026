@@ -138,7 +138,11 @@
 								<span class="text-sm text-white/60">({tr.withFood})</span>
 							{/if}
 						</div>
-						<p class="text-white/70">{event.description[lang]}</p>
+						<div class="text-white/70">
+							{#each event.description[lang].split('\n\n') as paragraph}
+								<p>{paragraph}</p>
+							{/each}
+						</div>
 						{#if event.location !== undefined}
 							<p class="flex flex-row items-center gap-2">
 								<span class="font-bold">{tr.location}:</span>
