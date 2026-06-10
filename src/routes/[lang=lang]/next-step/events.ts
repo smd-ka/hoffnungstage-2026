@@ -133,7 +133,7 @@ export const nextStepGroups: NextStepGroup[][] = [
 		},
 		{
 			logo: kings_cafe_logo,
-			title: { de: 'Internationales Café', en: 'International Café' },
+			title: { de: 'Internationales Studentencafé', en: 'International Student Café' },
 			description: {
 				de: `
 					Komm vorbei in das King’s Café, jeden Sonntag um 19 Uhr.
