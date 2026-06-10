@@ -121,8 +121,10 @@
 						<div class="flex flex-wrap items-baseline gap-2 text-lg font-bold">
 							<span>{formatDateWithDayName(event.date, lang)}</span>
 							<span class="text-indigo-300">•</span>
-							<span>{event.startTime}</span>
-							<span class="text-indigo-300">•</span>
+							{#if 'startTime' in event}
+								<span>{event.startTime}</span>
+								<span class="text-indigo-300">•</span>
+							{/if}
 							<span>{event.title[lang]}</span>
 							{#if event.withFood}
 								<span class="text-sm text-white/60">({tr.withFood})</span>

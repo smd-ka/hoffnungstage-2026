@@ -5,7 +5,7 @@ export interface NextStepEvent {
 	title: TranslatedText;
 	description: TranslatedText;
 	date: string; // Format: YYYY-MM-DD
-	startTime: string; // Format: HH:MM
+	startTime?: string; // Format: HH:MM
 	group?: string
 	href?: string;
 	location?: TranslatedText;
