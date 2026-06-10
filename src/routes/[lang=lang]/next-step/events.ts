@@ -168,6 +168,16 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		startTime: '19:00',
 		languages: ["de"],
 	},
+	{
+		// TODO link to SMD Calender event when that exists
+		title: {
+			de: "Wanderung unter Sternen",
+			en: "Stargazing Hike"
+		},
+		description: kcMoreInfoFollow,
+		date: '2026-08-08',
+		languages: ["de", "en"],
+	},
 ];
 
 export const nextStepGroups: NextStepGroup[][] = [
