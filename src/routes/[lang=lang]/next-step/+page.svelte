@@ -67,6 +67,10 @@
 				de: 'mit Essen',
 				en: 'with food'
 			},
+			location: {
+				de: 'Ort',
+				en: 'Location'
+			},
 			whatsappNote: {
 				de: 'Für kurzfristige Updates schaue in unsere WhatsApp Gruppe:',
 				en: 'For last-minute updates, check our WhatsApp group:'
@@ -131,6 +135,20 @@
 							{/if}
 						</div>
 						<p class="text-white/70">{event.description[lang]}</p>
+						{#if 'location' in event}
+							<p>
+								<span class="font-bold">{tr.location}</span>:
+								{#if 'locationHref' in event}
+									<a href={event.locationHref}>
+										{event.location[lang]}
+									</a>
+								{:else}
+									<span>
+										{event.location[lang]}
+									</span>
+								{/if}
+							</p>
+						{/if}
 					</div>
 					{#if event.href !== undefined}
 						<Fa icon={faArrowUpRightFromSquare} />
