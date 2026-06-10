@@ -46,15 +46,34 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		eventId: "574ql11y0skg500",
 	},
 	{
-		title: sameText('Why the Gospel Matters'),
+		title: {
+			de: 'SfC offener Abend: "Why the Gospel Matters"',
+			en: 'SfC Open Evening: "Why the Gospel Matters"'
+		},
 		description: {
-			de: 'offener Abend beim SfC im Egon-Eiermann-Hörsaal (Geb. 20.40) am KIT',
-			en: 'open evening at SfC at the Egon-Eiermann-Hörsaal (Building 20.40) at KIT'
+			de: `
+				Worum geht es im christlichen Glauben wirklich
+				und ist das Evangelium heute überhaupt noch relevant?
+				Gemeinsam wollen wir entdecken, warum die Botschaft von Jesus bis heute Hoffnung, Orientierung und Veränderung schenken kann.
+
+				Ablauf: 18 Uhr gemeinsames Essen, 18:30 Vortrag
+			`,
+			en: `
+				What is the Christian faith really about,
+				and is the Gospel still relevant today?
+				Together we explore why Jesus’ message can still offer hope, guidance, and transformation today.
+
+				Schedule: 18:00 (6:00 p.m.) dinner together, 18:30 (6:30 p.m.) talk
+			`
 		},
 		date: '2026-06-18',
 		startTime: '18:00',
 		group: "SfC Karlsruhe",
 		href: 'https://sfc-karlsruhe.de/sfc-abend/',
+		location: {
+			de: "KIT Egon-Eiermann-Hörsaal (Geb. 20.40)",
+			en: "KIT Egon-Eiermann-Hörsaal (Building 20.40)"
+		},
 		withFood: true
 	},
 	{
