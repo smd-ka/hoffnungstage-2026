@@ -134,6 +134,21 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		languages: ["de", "en"],
 	},
 	{
+		title: {
+			de: 'Internationales Bring-and-Share Abendessen',
+			en: 'International Bring and Share Dinner'
+		},
+		description: {
+			de: 'Internationales Abendessen gefolgt von einem SfC Abend zum Thema "Weltweite Kirche".',
+			en: 'International dinner followed by a talk on the topic "Worldwide Church".'
+		},
+		date: '2026-07-09',
+		startTime: '19:00',
+		location: sameText("ICF Bannwaldallee 14"),
+		group: "SfC Karlsruhe",
+		languages: ["de", "en"],
+	},
+	{
 		title: sameText('Cinema & Deep Talk'),
 		description: {
 			de: '"The Chosen" mit Popcorn',
