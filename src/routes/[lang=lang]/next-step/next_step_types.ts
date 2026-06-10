@@ -46,7 +46,7 @@ async function lookupEventData(data: NextStepRemoteEvent): Promise<NextStepLocal
 	return {
 		title: {
 			de: item.title,
-			en: item.title_en,
+			en: item.title_en || item.title,
 		},
 		description: joinTexts(
 			"\n\n",
@@ -54,7 +54,7 @@ async function lookupEventData(data: NextStepRemoteEvent): Promise<NextStepLocal
 				data.extraDescription ?? null,
 				{
 					de: item.description,
-					en: item.description_en,
+					en: item.description_en || item.description,
 				},
 			]
 		),
