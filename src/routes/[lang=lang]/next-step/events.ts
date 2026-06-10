@@ -158,7 +158,10 @@ export const nextStepGroups: NextStepGroup[][] = [
 				de: 'Unser offener Abend findet jeden Donnerstag um 20 Uhr statt, meistens in der ICF ARCHE.',
 				en: 'Our open evening takes place every Thursday at 20:00 (8:00 p.m.), usually at ICF ARCHE.'
 			},
-			href: sameText("https://sfc-karlsruhe.de/"),
+			href: {
+				de: 'https://sfc-karlsruhe.de/',
+				en: 'https://sfc-karlsruhe.de/en'
+			},
 		},
 		{
 			logo: smd_ka_logo,

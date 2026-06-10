@@ -49,6 +49,10 @@
 				de: 'Veranstaltet von',
 				en: 'Organized by'
 			},
+			sfcUrl: {
+				de: 'https://sfc-karlsruhe.de/',
+				en: 'https://sfc-karlsruhe.de/en'
+			},
 			supportedBy: {
 				de: 'Mit freundlicher Unterstützung von',
 				en: 'Supported by'
@@ -165,11 +169,7 @@
 					<section class="flex flex-col gap-4">
 						<h2 class="text-xl uppercase text-orange-500">{tr.organizedBy}</h2>
 						<div class="grid gap-8">
-							<a
-								href="https://sfc-karlsruhe.de/"
-								class="flex items-center gap-4 text-3xl"
-								target="_blank"
-							>
+							<a href={tr.sfcUrl} class="flex items-center gap-4 text-3xl" target="_blank">
 								<img src={sfc_logo} alt="SfC Logo" class="h-16" />
 								<p class="font-poppins">Karlsruhe</p>
 							</a>
