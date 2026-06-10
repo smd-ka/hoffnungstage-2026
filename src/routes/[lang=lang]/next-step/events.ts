@@ -1,13 +1,9 @@
-import { translatedLanguages, type TranslatedText } from '$lib/language';
+import { sameText, type TranslatedText } from '$lib/language';
 import type { NextStepEvent, NextStepGroup } from './next_step_types';
 import kings_cafe_logo from '$lib/assets/logos/kings-cafe_logo_white.png';
 import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
 import swd_ec_logo from '$lib/assets/logos/swd-ec-ka_logo.png';
-
-function sameText(text: string): TranslatedText {
-	return translatedLanguages.reduce((acc, cur) => ({ ...acc, [cur]: text }), {} as TranslatedText);
-}
 
 // sorted by date
 export const nextStepEvents: NextStepEvent[] = [

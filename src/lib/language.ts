@@ -143,3 +143,7 @@ export function createTranslator<
     }
     return result;
 }
+
+export function sameText(text: string): TranslatedText {
+    return translatedLanguages.reduce((acc, cur) => ({ ...acc, [cur]: text }), {} as TranslatedText);
+}
