@@ -5,9 +5,9 @@ import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
 import swd_ec_logo from '$lib/assets/logos/swd-ec-ka_logo.png';
 
-const moreInfoFollow: TranslatedText = {
-	de: "Weitere Infos folgen hier.",
-	en: "More information will follow here."
+const kcMoreInfoFollow: TranslatedText = {
+	de: "Insbesondere gerichtet an internationale Studierende. Nähere Infos & Anmeldung sonntags im King’s Café.",
+	en: "Specifically aimed at international students. For more information and registration, visit the King’s Café on Sundays."
 }
 
 const kcExtraDescription = {
@@ -97,7 +97,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			de: "Wanderung mit Käsereiführung",
 			en: "hike with guided tour in a cheese dairy"
 		},
-		description: moreInfoFollow,
+		description: kcMoreInfoFollow,
 		date: '2026-06-27',
 		languages: ["de", "en"],
 	},
