@@ -14,7 +14,6 @@ export interface NextStepLocalEvent {
 	href?: string;
 	location?: TranslatedText;
 	locationHref?: string;
-	withFood?: boolean;
 }
 
 export interface NextStepRemoteEvent {

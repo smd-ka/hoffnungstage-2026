@@ -74,7 +74,6 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			de: "KIT Egon-Eiermann-Hörsaal (Geb. 20.40)",
 			en: "KIT Egon-Eiermann-Hörsaal (Building 20.40)"
 		},
-		withFood: true
 	},
 	{
 		// German Course 2026-06-21

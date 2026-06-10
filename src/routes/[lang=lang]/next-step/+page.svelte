@@ -67,10 +67,6 @@
 				de: 'Verbinde dich mit christlichen Studierenden bei SfC, SMD und EC.',
 				en: 'Connect with Christian students at SfC, SMD and EC.'
 			},
-			withFood: {
-				de: 'mit Essen',
-				en: 'with food'
-			},
 			location: {
 				de: 'Ort',
 				en: 'Location'
@@ -134,9 +130,6 @@
 								<span class="text-indigo-300">•</span>
 							{/if}
 							<span>{event.title[lang]}</span>
-							{#if event.withFood}
-								<span class="text-sm text-white/60">({tr.withFood})</span>
-							{/if}
 						</div>
 						<div class="text-white/70">
 							{#each event.description[lang].split('\n\n') as paragraph}
