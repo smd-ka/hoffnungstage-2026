@@ -5,8 +5,33 @@ import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
 import swd_ec_logo from '$lib/assets/logos/swd-ec-ka_logo.png';
 
+const moreInfoFollow: TranslatedText = {
+	de: "Weitere Infos folgen hier.",
+	en: "More information will follow here."
+}
+
+const kcExtraDescription = {
+	de: `
+		Das King's Café ist ein Treffpunkt für deutsche und internationale Studenten.
+		Hier kannst du mit Deutschen in Kontakt kommen und dein Deutsch verbessern, egal, wie gut dein Deutsch ist – wir können auch Englisch.
+`,
+	en: `
+		The King's Café is a meeting place for German and international students.
+		Here you can get in touch with Germans and improve your German, no matter how good your German is – we can also speak English.
+	`,
+};
+
 // sorted by date
 export const nextStepEventsDefs: NextStepEvent[] = [
+	{
+		// German Course 2026-06-14
+		eventId: "u24ot83p60s3566",
+	},
+	{
+		// King’s Café 2026-06-14
+		eventId: "y00kor06e7d0l78",
+		extraDescription: kcExtraDescription,
+	},
 	{
 		title: sameText('Story Night'),
 		description: {
@@ -17,16 +42,8 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		startTime: '19:00'
 	},
 	{
-		title: { de: '"Hoffnung — Heute, nicht erst Morgen"', en: '"Hope — Today, Not Just Tomorrow"' },
-		description: {
-			de: 'SMD-Abend in der KIT Mensa im [kœri]werk',
-			en: 'SMD-Evening at the KIT Mensa im [kœri]werk'
-		},
-		date: '2026-06-16',
-		startTime: '18:30',
-		group: "SMD Karlsruhe",
-		href: 'https://smd-karlsruhe.de/events/kalender/574ql11y0skg500',
-		withFood: true
+		// SMD-Abend 2026-06-16
+		eventId: "574ql11y0skg500",
 	},
 	{
 		title: sameText('Why the Gospel Matters'),
@@ -41,6 +58,33 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		withFood: true
 	},
 	{
+		// German Course 2026-06-21
+		eventId: "4833syi9r5f3409",
+	},
+	{
+		// King’s Café 2026-06-21
+		eventId: "g8zjje0b2k4cz6z",
+		extraDescription: kcExtraDescription,
+	},
+	{
+		// TODO link to SMD Calender event when that exists
+		title: {
+			de: "Wanderung mit Käsereiführung",
+			en: "hike with guided tour in a cheese dairy"
+		},
+		description: moreInfoFollow,
+		date: '2026-06-27',
+	},
+	{
+		// German Course 2026-06-28
+		eventId: "225f8l8675656h9",
+	},
+	{
+		// King’s Café 2026-06-28
+		eventId: "61xttp7s31hooe7",
+		extraDescription: kcExtraDescription,
+	},
+	{
 		title: sameText('Doubt & Discussion'),
 		description: {
 			de: 'Offene Fragerunde bei Pizza im Park',
@@ -48,6 +92,15 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		},
 		date: '2026-07-01',
 		startTime: '19:00'
+	},
+	{
+		// German Course 2026-07-05
+		eventId: "j50578yd5k6jw07",
+	},
+	{
+		// King’s Café 2026-07-05
+		eventId: "gwnaqhgfw8wx4k3",
+		extraDescription: kcExtraDescription,
 	},
 	{
 		title: sameText('Cinema & Deep Talk'),
