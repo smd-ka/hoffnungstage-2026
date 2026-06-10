@@ -5,7 +5,7 @@
 	import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
-	import { formatDateForDisplay } from '$lib/program/helpers';
+	import { formatDateWithDayName } from '$lib/program/helpers';
 
 	$: lang = $page.params.lang as TranslatedLanguage;
 
@@ -119,7 +119,7 @@
 				<a class="event-card flex flex-row items-center gap-2" href={event.href}>
 					<div class="flex grow flex-col gap-1">
 						<div class="flex flex-wrap items-baseline gap-2 text-lg font-bold">
-							<span>{formatDateForDisplay(event.date, lang)}</span>
+							<span>{formatDateWithDayName(event.date, lang)}</span>
 							<span class="text-indigo-300">•</span>
 							<span>{event.startTime}</span>
 							<span class="text-indigo-300">•</span>

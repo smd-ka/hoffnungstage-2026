@@ -175,6 +175,11 @@ export function getTitle(item: ProgramItem, language: TranslatedLanguage): strin
     return title;
 }
 
+export function formatDateWithDayName(dateString: string, language: TranslatedLanguage): string {
+    const date = new Date(dateString + 'T00:00:00');
+    return date.toLocaleDateString(localeMap[language], { day: 'numeric', month: 'long', weekday: 'long' });
+}
+
 export function formatDateForDisplay(dateString: string, language: TranslatedLanguage): string {
     const date = new Date(dateString + 'T00:00:00');
     return date.toLocaleDateString(localeMap[language], { day: 'numeric', month: 'long' });
