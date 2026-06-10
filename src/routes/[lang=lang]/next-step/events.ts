@@ -1,12 +1,12 @@
+import { enhanceEvents, type NextStepEvent, type NextStepGroup } from './next_step_types';
 import { sameText, type TranslatedText } from '$lib/language';
-import type { NextStepEvent, NextStepGroup } from './next_step_types';
 import kings_cafe_logo from '$lib/assets/logos/kings-cafe_logo_white.png';
 import smd_ka_logo from '$lib/assets/logos/smd-ka_modified.svg';
 import sfc_logo from '$lib/assets/logos/sfc_green_pastel.png';
 import swd_ec_logo from '$lib/assets/logos/swd-ec-ka_logo.png';
 
 // sorted by date
-export const nextStepEvents: NextStepEvent[] = [
+export const nextStepEventsDefs: NextStepEvent[] = [
 	{
 		title: sameText('Story Night'),
 		description: {

@@ -144,6 +144,11 @@ export function createTranslator<
     return result;
 }
 
+export function joinTexts(separator: string, texts: (TranslatedText | null)[]): TranslatedText {
+    const textsFiltered = texts.filter(t => t !== null);
+    return translatedLanguages.reduce((acc, cur) => ({ ...acc, [cur]: textsFiltered.map(t => t[cur]).join(separator) }), {} as TranslatedText);
+}
+
 export function sameText(text: string): TranslatedText {
     return translatedLanguages.reduce((acc, cur) => ({ ...acc, [cur]: text }), {} as TranslatedText);
 }

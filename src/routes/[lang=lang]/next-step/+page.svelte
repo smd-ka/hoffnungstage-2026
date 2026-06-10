@@ -1,11 +1,15 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createTranslator, type TranslatedLanguage } from '$lib/language';
-	import { nextStepEvents, nextStepGroups } from './events';
+	import { nextStepGroups } from './events';
 	import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 	import { formatDateWithDayName } from '$lib/program/helpers';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
+	$: nextStepEvents = data.nextStepEvents;
 
 	$: lang = $page.params.lang as TranslatedLanguage;
 
@@ -119,7 +123,7 @@
 			<a href={whatsAppGroup}>{tr.datesNoteWhatsApp}</a>.
 		</p>
 		<div class="flex w-full flex-col gap-4">
-			{#each nextStepEvents as event}
+			{#each nextStepEvents || [] as event}
 				<a class="event-card flex flex-row items-center gap-2" href={event.href}>
 					<div class="flex grow flex-col gap-1">
 						<div class="flex flex-wrap items-baseline gap-2 gap-y-0 text-lg font-bold">
