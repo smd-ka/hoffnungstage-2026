@@ -139,13 +139,14 @@
 							{/if}
 						</div>
 						<p class="text-white/70">{event.description[lang]}</p>
-						{#if 'location' in event}
-							<p>
-								<span class="font-bold">{tr.location}</span>:
-								{#if 'locationHref' in event}
+						{#if event.location !== undefined}
+							<p class="flex flex-row items-center gap-2">
+								<span class="font-bold">{tr.location}:</span>
+								{#if event.locationHref !== undefined}
 									<a href={event.locationHref}>
 										{event.location[lang]}
 									</a>
+									<Fa icon={faArrowUpRightFromSquare} scale="0.8" />
 								{:else}
 									<span>
 										{event.location[lang]}
