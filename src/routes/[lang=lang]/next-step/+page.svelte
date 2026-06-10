@@ -118,7 +118,7 @@
 			{#each nextStepEvents as event}
 				<a class="event-card flex flex-row items-center gap-2" href={event.href}>
 					<div class="flex grow flex-col gap-1">
-						<div class="flex flex-wrap items-baseline gap-2 text-lg font-bold">
+						<div class="flex flex-wrap items-baseline gap-2 gap-y-0 text-lg font-bold">
 							<span>{formatDateWithDayName(event.date, lang)}</span>
 							<span class="text-indigo-300">•</span>
 							{#if 'startTime' in event}
