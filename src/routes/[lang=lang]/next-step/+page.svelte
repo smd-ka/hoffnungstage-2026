@@ -24,7 +24,7 @@
 					Hast du noch offene Fragen?
 					Haben dir die Vorträge gefallen
 					und du möchtest noch mehr über die Hoffnung erfahren,
-					von denen unsere Referenten erzählt haben?
+					von der unsere Referenten erzählt haben?
 				`,
 				en: `
 					Do you still have open questions?
