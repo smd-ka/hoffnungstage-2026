@@ -6,6 +6,7 @@
 	import Fa from 'svelte-fa';
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 	import { formatDateWithDayName } from '$lib/program/helpers';
+	import LanguageSpan from '../_components/LanguageSpan.svelte';
 
 	import type { PageData } from './$types';
 	export let data: PageData;
@@ -66,6 +67,14 @@
 			hochschulgruppenNote: {
 				de: 'Verbinde dich mit christlichen Studierenden bei SfC, SMD und EC.',
 				en: 'Connect with Christian students at SfC, SMD and EC.'
+			},
+			languagesSingular: {
+				de: 'Sprache',
+				en: 'Language'
+			},
+			languagesPlural: {
+				de: 'Sprachen',
+				en: 'Languages'
 			},
 			location: {
 				de: 'Ort',
@@ -142,21 +151,41 @@
 								<p>{paragraph}</p>
 							{/each}
 						</div>
-						{#if event.location !== undefined}
+						<div
+							class="flex flex-col items-baseline gap-x-0 gap-y-2 md:flex-row md:justify-between"
+						>
+							<!--
+								those elements are always rendered, even when empty
+								so that the objects align as expected
+								(desktop: first left, second right, all space in between)
+							-->
 							<p class="flex flex-row items-center gap-2">
-								<span class="font-bold">{tr.location}:</span>
-								{#if event.locationHref !== undefined}
-									<a href={event.locationHref}>
-										{event.location[lang]}
-									</a>
-									<Fa icon={faArrowUpRightFromSquare} scale="0.8" />
-								{:else}
-									<span>
-										{event.location[lang]}
-									</span>
+								{#if event.location !== undefined}
+									<span class="font-bold">{tr.location}:</span>
+									{#if event.locationHref !== undefined}
+										<a href={event.locationHref}>
+											{event.location[lang]}
+										</a>
+										<Fa icon={faArrowUpRightFromSquare} scale="0.8" />
+									{:else}
+										<span>
+											{event.location[lang]}
+										</span>
+									{/if}
 								{/if}
 							</p>
-						{/if}
+							<p class="flex flex-row items-baseline gap-2">
+								{#if event.languages.length > 0}
+									<span class="font-bold">
+										{event.languages.length === 1 ? tr.languagesSingular : tr.languagesPlural}:
+									</span>
+									{#each event.languages as language, index}
+										{#if index > 0}|{/if}
+										<LanguageSpan {language} />
+									{/each}
+								{/if}
+							</p>
+						</div>
 					</div>
 					{#if event.href !== undefined}
 						<Fa icon={faArrowUpRightFromSquare} />

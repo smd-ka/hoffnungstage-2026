@@ -1,4 +1,4 @@
-import { joinTexts, sameText, type TranslatedText } from '$lib/language';
+import { joinTexts, sameText, type SupportedLanguage, type TranslatedText } from '$lib/language';
 import { pb } from '$lib/pocketbase';
 
 const LOCALE_BCP = 'en-u-ca-iso8601';
@@ -12,6 +12,7 @@ export interface NextStepLocalEvent {
 	startTime?: string; // Format: HH:MM
 	group?: string
 	href?: string;
+	languages: readonly SupportedLanguage[];
 	location?: TranslatedText;
 	locationHref?: string;
 }
@@ -19,6 +20,7 @@ export interface NextStepLocalEvent {
 export interface NextStepRemoteEvent {
 	eventId: string;
 	extraDescription?: TranslatedText;
+	languages: readonly SupportedLanguage[];
 }
 
 export type NextStepEvent = NextStepLocalEvent | NextStepRemoteEvent;
@@ -62,6 +64,7 @@ async function lookupEventData(data: NextStepRemoteEvent): Promise<NextStepLocal
 		startTime: timeFmt.format(dateTime),
 		group: isKingsCafe ? "King’s Café" : "SMD Karlsruhe",
 		href: `https://smd-karlsruhe.de/events/kalender/${item.id}`,
+		languages: data.languages,
 		location: sameText(item.location),
 		locationHref: item.location_url,
 	};

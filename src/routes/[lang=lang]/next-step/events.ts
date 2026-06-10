@@ -26,11 +26,13 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 	{
 		// German Course 2026-06-14
 		eventId: "u24ot83p60s3566",
+		languages: [],
 	},
 	{
 		// King’s Café 2026-06-14
 		eventId: "y00kor06e7d0l78",
 		extraDescription: kcExtraDescription,
+		languages: ["de", "en"],
 	},
 	{
 		title: sameText('Story Night'),
@@ -39,11 +41,13 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			en: 'BBQ, Lake & Life Stories with Jesus'
 		},
 		date: '2026-06-15',
-		startTime: '19:00'
+		startTime: '19:00',
+		languages: ["de"],
 	},
 	{
 		// SMD-Abend 2026-06-16
 		eventId: "574ql11y0skg500",
+		languages: ["de", "en"],
 	},
 	{
 		title: {
@@ -70,6 +74,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		startTime: '18:00',
 		group: "SfC Karlsruhe",
 		href: 'https://sfc-karlsruhe.de/sfc-abend/',
+		languages: ["de", "en"],
 		location: {
 			de: "KIT Egon-Eiermann-Hörsaal (Geb. 20.40)",
 			en: "KIT Egon-Eiermann-Hörsaal (Building 20.40)"
@@ -78,11 +83,13 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 	{
 		// German Course 2026-06-21
 		eventId: "4833syi9r5f3409",
+		languages: [],
 	},
 	{
 		// King’s Café 2026-06-21
 		eventId: "g8zjje0b2k4cz6z",
 		extraDescription: kcExtraDescription,
+		languages: ["de", "en"],
 	},
 	{
 		// TODO link to SMD Calender event when that exists
@@ -92,15 +99,18 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		},
 		description: moreInfoFollow,
 		date: '2026-06-27',
+		languages: ["de", "en"],
 	},
 	{
 		// German Course 2026-06-28
 		eventId: "225f8l8675656h9",
+		languages: [],
 	},
 	{
 		// King’s Café 2026-06-28
 		eventId: "61xttp7s31hooe7",
 		extraDescription: kcExtraDescription,
+		languages: ["de", "en"],
 	},
 	{
 		title: sameText('Doubt & Discussion'),
@@ -109,16 +119,19 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			en: 'Open Q&A Session with Pizza in the Park'
 		},
 		date: '2026-07-01',
-		startTime: '19:00'
+		startTime: '19:00',
+		languages: ["de"],
 	},
 	{
 		// German Course 2026-07-05
 		eventId: "j50578yd5k6jw07",
+		languages: [],
 	},
 	{
 		// King’s Café 2026-07-05
 		eventId: "gwnaqhgfw8wx4k3",
 		extraDescription: kcExtraDescription,
+		languages: ["de", "en"],
 	},
 	{
 		title: sameText('Cinema & Deep Talk'),
@@ -127,7 +140,8 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			en: '"The Chosen" with Popcorn'
 		},
 		date: '2026-07-17',
-		startTime: '19:00'
+		startTime: '19:00',
+		languages: ["de"],
 	},
 	{
 		title: sameText('Try Jesus'),
@@ -136,7 +150,8 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			en: 'How can I pray, read the Bible and encounter God?'
 		},
 		date: '2026-07-29',
-		startTime: '19:00'
+		startTime: '19:00',
+		languages: ["de"],
 	},
 ];
 
