@@ -9,6 +9,7 @@ export interface NextStepEvent {
 	group?: string
 	href?: string;
 	location?: TranslatedText;
+	locationHref?: string;
 	withFood?: boolean;
 }
 
