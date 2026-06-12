@@ -287,31 +287,33 @@
 	<section class="page-section">
 		<h2>{tr.hochschulgruppenTitle}</h2>
 		<p>{tr.hochschulgruppenNote}</p>
-		{#each nextStepGroups as groupRow}
-			<div class="flex w-full flex-col gap-4 text-left md:flex-row">
-				{#each groupRow as group}
-					<a
-						class="event-card flex basis-full flex-col gap-2"
-						href={typeof group.href === 'object' ? group.href[lang] : group.href}
-					>
-						{#if group.logo !== undefined && group.logo_replaces_title}
-							<!-- div required for img auto-resize to work -->
-							<div class="flex h-12 items-center">
-								<img class="max-w-100% max-h-12" src={group.logo} alt={group.title[lang]} />
-							</div>
-						{:else}
-							<div class="flex flex-row items-center gap-4">
-								{#if group.logo !== undefined}
+		<div class="flex w-full flex-col gap-4">
+			{#each nextStepGroups as groupRow}
+				<div class="flex w-full flex-col gap-4 text-left md:flex-row">
+					{#each groupRow as group}
+						<a
+							class="event-card flex basis-full flex-col gap-2"
+							href={typeof group.href === 'object' ? group.href[lang] : group.href}
+						>
+							{#if group.logo !== undefined && group.logo_replaces_title}
+								<!-- div required for img auto-resize to work -->
+								<div class="flex h-12 items-center">
 									<img class="max-w-100% max-h-12" src={group.logo} alt={group.title[lang]} />
-								{/if}
-								<h3 class="grow font-semibold">{group.title[lang]}</h3>
-							</div>
-						{/if}
-						<p class="text-base text-white/70">{group.description[lang]}</p>
-					</a>
-				{/each}
-			</div>
-		{/each}
+								</div>
+							{:else}
+								<div class="flex flex-row items-center gap-4">
+									{#if group.logo !== undefined}
+										<img class="max-w-100% max-h-12" src={group.logo} alt={group.title[lang]} />
+									{/if}
+									<h3 class="grow font-semibold">{group.title[lang]}</h3>
+								</div>
+							{/if}
+							<p class="text-base text-white/70">{group.description[lang]}</p>
+						</a>
+					{/each}
+				</div>
+			{/each}
+		</div>
 	</section>
 
 	<!-- WhatsApp -->
