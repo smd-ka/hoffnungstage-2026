@@ -37,7 +37,10 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		targetGroup: "internationals",
 	},
 	{
-		title: sameText('Story Night'),
+		title: {
+			de: "„Story Night“ – Was ist deine Geschichte?",
+			en: "„Story Night“ – What’s your story?"
+		},
 		description: {
 			de: 'Grillen, See & Lebensgeschichten mit Jesus',
 			en: 'BBQ, Lake & Life Stories with Jesus'
@@ -123,10 +126,29 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		targetGroup: "internationals",
 	},
 	{
-		title: sameText('Doubt & Discussion'),
+		title: {
+			de: '„Doubt & Discussion“ – Ehrlich fragen',
+			en: '“Doubt & Discussion” – Ask Honestly'
+		},
 		description: {
-			de: 'Offene Fragerunde bei Pizza im Park',
-			en: 'Open Q&A Session with Pizza in the Park'
+			de: `
+				Hier gibt es keine Tabus.
+				Du hast Fragen, die dich schon lange beschäftigen?
+				Schreib sie einfach anonym auf einen Zettel.
+				Zuerst besprechen wir allgemeine Fragen gemeinsam in der großen Runde.
+				Danach nehmen wir uns in vertraulichen Kleingruppen Zeit für deine ganz persönlichen Fragen
+				– völlig ohne Druck.
+				Dazu gibt es jede Menge Pizza im Park!
+			`,
+			en: `
+				There are no taboos here.
+				Do you have questions that have been on your mind for a long time?
+				Just write them down anonymously on a piece of paper.
+				First, we’ll discuss general questions together as a group.
+				After that, we’ll take time in small, private groups to address your personal questions
+				– completely without pressure.
+				And there’s plenty of pizza in the park!
+			`
 		},
 		date: '2026-07-01',
 		startTime: '19:00',
@@ -158,15 +180,31 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-07-09',
 		startTime: '19:00',
 		location: sameText("ICF Bannwaldallee 14"),
+		locationHref: 'https://maps.app.goo.gl/ucV4Gc2ruDTBfHZR7',
 		group: "SfC Karlsruhe",
 		languages: ["de", "en"],
 		targetGroup: "both",
 	},
 	{
-		title: sameText('Cinema & Deep Talk'),
+		title: {
+			de: "„Cinema & Deep Talk“ – Warum glauben Menschen heute noch?",
+			en: "“Cinema & Deep Talk” – Why do people still believe today?"
+		},
 		description: {
-			de: '"The Chosen" mit Popcorn',
-			en: '"The Chosen" with Popcorn'
+			de: `
+				Wir starten in den Abend mit einem gemütlichen Bar-Feeling, guten Snacks und Drinks.
+				Gemeinsam schauen wir einen packenden Filmausschnitt (z. B. aus The Chosen)
+				oder hören einen kurzen, knackigen Impuls zum Thema Glauben im 21. Jahrhundert.
+				Im Anschluss ist in Kleingruppen viel Raum
+				für deine Gedanken, deine Kritik und deine Fragen.
+			`,
+			en: `
+				We’ll kick off the evening with a cozy bar atmosphere, tasty snacks, and drinks.
+				Together, we’ll watch a gripping film clip (e.g., from The Chosen)
+				or listen to a short, snappy talk on the topic of faith in the 21st century.
+				Afterward, in small groups, there will be plenty of time
+				for your thoughts, your feedback, and your questions.
+			`
 		},
 		date: '2026-07-17',
 		startTime: '19:00',
@@ -174,10 +212,31 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		targetGroup: "germans",
 	},
 	{
-		title: sameText('Try Jesus'),
+		title: {
+			de: "„Try Jesus“ – Praktisches Erleben",
+			en: "“Try Jesus” – Practical Experience"
+		},
 		description: {
-			de: 'Wie kann ich beten, Bibel lesen und dabei Gott begegnen?',
-			en: 'How can I pray, read the Bible and encounter God?'
+			de: `
+				Glauben kann man nicht nur diskutieren, man kann ihn auch ausprobieren.
+				Wir beginnen mit einem leckeren Vesper im „Bring & Share“-Style
+				(jeder bringt eine Kleinigkeit mit).
+				Danach öffnen wir verschiedene Stationen,
+				die du ganz frei und in Ruhe für dich testen kannst:
+				Probier Gebet aus, genieße die Stille, nimm dir Zeit zur Reflexion
+				oder lies einen Bibeltext ganz unvoreingenommen für dich selbst.
+				Zum Abschluss teilen wir unsere Erfahrungen in entspannter Runde.
+			`,
+			en: `
+				Faith isn’t just something to discuss - it’s also something you can try out.
+				We’ll start with a delicious “bring-and-share” style snack
+				(everyone brings a little something).
+				Afterward, we’ll set up various stations
+				that you can explore at your own pace and in peace:
+				Try out prayer, enjoy the silence, take time to reflect,
+				or read a Bible passage with an open mind for yourself.
+				Finally, we’ll share our experiences in a relaxed setting.
+			`
 		},
 		date: '2026-07-29',
 		startTime: '19:00',
