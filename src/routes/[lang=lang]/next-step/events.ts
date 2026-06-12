@@ -27,12 +27,14 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		// German Course 2026-06-14
 		eventId: "u24ot83p60s3566",
 		languages: [],
+		targetGroup: "internationals",
 	},
 	{
 		// King’s Café 2026-06-14
 		eventId: "y00kor06e7d0l78",
 		extraDescription: kcExtraDescription,
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 	{
 		title: sameText('Story Night'),
@@ -43,11 +45,13 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-06-15',
 		startTime: '19:00',
 		languages: ["de"],
+		targetGroup: "germans",
 	},
 	{
 		// SMD-Abend 2026-06-16
 		eventId: "574ql11y0skg500",
 		languages: ["de", "en"],
+		targetGroup: "both",
 	},
 	{
 		title: {
@@ -79,17 +83,20 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			de: "KIT Egon-Eiermann-Hörsaal (Geb. 20.40)",
 			en: "KIT Egon-Eiermann-Hörsaal (Building 20.40)"
 		},
+		targetGroup: "both",
 	},
 	{
 		// German Course 2026-06-21
 		eventId: "4833syi9r5f3409",
 		languages: [],
+		targetGroup: "internationals",
 	},
 	{
 		// King’s Café 2026-06-21
 		eventId: "g8zjje0b2k4cz6z",
 		extraDescription: kcExtraDescription,
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 	{
 		// TODO link to SMD Calender event when that exists
@@ -100,17 +107,20 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		description: kcMoreInfoFollow,
 		date: '2026-06-27',
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 	{
 		// German Course 2026-06-28
 		eventId: "225f8l8675656h9",
 		languages: [],
+		targetGroup: "internationals",
 	},
 	{
 		// King’s Café 2026-06-28
 		eventId: "61xttp7s31hooe7",
 		extraDescription: kcExtraDescription,
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 	{
 		title: sameText('Doubt & Discussion'),
@@ -121,17 +131,20 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-07-01',
 		startTime: '19:00',
 		languages: ["de"],
+		targetGroup: "germans",
 	},
 	{
 		// German Course 2026-07-05
 		eventId: "j50578yd5k6jw07",
 		languages: [],
+		targetGroup: "internationals",
 	},
 	{
 		// King’s Café 2026-07-05
 		eventId: "gwnaqhgfw8wx4k3",
 		extraDescription: kcExtraDescription,
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 	{
 		title: {
@@ -147,6 +160,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		location: sameText("ICF Bannwaldallee 14"),
 		group: "SfC Karlsruhe",
 		languages: ["de", "en"],
+		targetGroup: "both",
 	},
 	{
 		title: sameText('Cinema & Deep Talk'),
@@ -157,6 +171,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-07-17',
 		startTime: '19:00',
 		languages: ["de"],
+		targetGroup: "germans",
 	},
 	{
 		title: sameText('Try Jesus'),
@@ -167,6 +182,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-07-29',
 		startTime: '19:00',
 		languages: ["de"],
+		targetGroup: "germans",
 	},
 	{
 		// TODO link to SMD Calender event when that exists
@@ -177,6 +193,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		description: kcMoreInfoFollow,
 		date: '2026-08-08',
 		languages: ["de", "en"],
+		targetGroup: "internationals",
 	},
 ];
 

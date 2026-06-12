@@ -9,6 +9,7 @@
 	import LanguageSpan from '../_components/LanguageSpan.svelte';
 
 	import type { PageData } from './$types';
+	import type { NextStepTargetGroup } from './next_step_types';
 	export let data: PageData;
 	$: nextStepEvents = data.nextStepEvents;
 
@@ -60,6 +61,22 @@
 				de: 'in unserer WhatsApp-Gruppe',
 				en: 'in our WhatsApp group'
 			},
+			datesFilterNote: {
+				de: 'Hinweis: Die Filter hier dienen rein der Übersichtlichkeit. Deutschsprechende Menschen sind auch sehr willkommen bei den Events "für Internationale", und genauso auch anders herum. Schau also gerne auch dort rein, wenn du magst :)',
+				en: 'Note: The filters are solely provided to improve clarity. Internationals are also welcomed at events "for German-speaking", and vice versa. So feel free to also check those out :). Please be aware that we cannot ensure a proper translation at German-only events.'
+			},
+			forGermans: {
+				de: 'für Deutschsprechende',
+				en: 'for German-speaking'
+			},
+			allEvents: {
+				de: 'alle Termine',
+				en: 'all dates'
+			},
+			forInternationals: {
+				de: 'für Internationale',
+				en: 'for internationals'
+			},
 			hochschulgruppenTitle: {
 				de: 'Hochschulgruppen',
 				en: 'Student Groups'
@@ -91,6 +108,27 @@
 		},
 		lang
 	);
+
+	const EventFilterValues = ['forGermans', 'allEvents', 'forInternationals'] as const;
+	type EventFilterSel = (typeof EventFilterValues)[number];
+
+	let filterValue: EventFilterSel = $page.params.lang === 'de' ? 'forGermans' : 'forInternationals';
+
+	let excludedTargetGroup: NextStepTargetGroup | null;
+	$: excludedTargetGroup =
+		filterValue === 'allEvents'
+			? null
+			: filterValue === 'forGermans'
+			? 'internationals'
+			: 'germans';
+	$: filteredEvents =
+		excludedTargetGroup === null
+			? nextStepEvents
+			: nextStepEvents?.filter((ev) => ev.targetGroup !== excludedTargetGroup);
+
+	function selectFilter(key: EventFilterSel) {
+		filterValue = key;
+	}
 
 	const whatsAppGroup = 'https://chat.whatsapp.com/LhYduQiTlka25vWqnYomJz';
 </script>
@@ -127,8 +165,19 @@
 			{tr.datesNote}
 			<a href={whatsAppGroup}>{tr.datesNoteWhatsApp}</a>.
 		</p>
+		<div class="wrapping-chips">
+			{#each EventFilterValues as filter}
+				<button
+					type="button"
+					aria-pressed={filterValue === filter}
+					on:click={() => selectFilter(filter)}
+				>
+					{tr[filter]}
+				</button>
+			{/each}
+		</div>
 		<div class="flex w-full flex-col gap-4">
-			{#each nextStepEvents || [] as event}
+			{#each filteredEvents || [] as event}
 				<a class="event-card flex flex-row items-center gap-2" href={event.href}>
 					<div class="flex grow flex-col gap-1">
 						<div

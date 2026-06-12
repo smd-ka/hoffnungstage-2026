@@ -4,6 +4,13 @@ import { pb } from '$lib/pocketbase';
 const LOCALE_BCP = 'en-u-ca-iso8601';
 const TIMEZONE = 'Europe/Berlin';
 
+export const NextStepTargetGroups = [
+	"both",
+	"germans",
+	"internationals",
+] as const;
+export type NextStepTargetGroup = typeof NextStepTargetGroups[number];
+
 export interface NextStepLocalEvent {
 	logo?: string;
 	title: TranslatedText;
@@ -15,12 +22,14 @@ export interface NextStepLocalEvent {
 	languages: readonly SupportedLanguage[];
 	location?: TranslatedText;
 	locationHref?: string;
+	targetGroup: NextStepTargetGroup;
 }
 
 export interface NextStepRemoteEvent {
 	eventId: string;
 	extraDescription?: TranslatedText;
 	languages: readonly SupportedLanguage[];
+	targetGroup: NextStepTargetGroup;
 }
 
 export type NextStepEvent = NextStepLocalEvent | NextStepRemoteEvent;
@@ -67,5 +76,6 @@ async function lookupEventData(data: NextStepRemoteEvent): Promise<NextStepLocal
 		languages: data.languages,
 		location: sameText(item.location),
 		locationHref: item.location_url,
+		targetGroup: data.targetGroup,
 	};
 }
