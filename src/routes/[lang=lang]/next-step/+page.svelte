@@ -22,8 +22,8 @@
 				en: 'Next <span class="title-italic">step</span>'
 			},
 			subtitle: {
-				de: 'Mehr entdecken über Glauben und das Leben',
-				en: 'Discover more about faith and life'
+				de: 'Glaube, Leben & Sinn weiterdenken',
+				en: 'Develop Your Faith, Life & Meaning'
 			},
 			catchUp: {
 				de: `
@@ -67,6 +67,27 @@
 				de: 'für Internationale',
 				en: 'for internationals'
 			},
+			// smallgroups are only planned in German
+			smallgroupsTitle: {
+				de: 'Dein Platz im Alltag: Smallgroups & Hauskreise'
+			},
+			smallgroupsNote: {
+				de: `
+					Du suchst nach fester Gemeinschaft, echten Freundschaften
+					und einem Ort, an dem du im Unialltag auftanken kannst?
+					Parallel zu den großen Events starten unsere Kleingruppen.
+				`
+			},
+			smallgroupsConcept: {
+				de: `
+					Die Idee:
+					Wir treffen uns regelmäßig alle 1-2 Wochen
+					im gemütlichen Rahmen in verschiedenen WGs
+					oder in Räumen der christlichen Hochschulgruppen (SMD, SfC, EC).
+					Wir essen zusammen, lesen gemeinsam ein Evangelium, teilen unser Leben
+					und haben jede Menge Platz für all deine persönlichen Fragen.
+				`
+			},
 			hochschulgruppenTitle: {
 				de: 'Hochschulgruppen',
 				en: 'Student Groups'
@@ -90,6 +111,10 @@
 			whatsappMoreInfoHereAnd: {
 				de: 'Mehr Infos folgen später hier und',
 				en: 'More infos will be posted here later and'
+			},
+			whatsappMoreInfoOnly: {
+				de: 'Mehr Infos gibt es',
+				en: 'More infos are available'
 			},
 			whatsappInGroup: {
 				de: 'in unserer WhatsApp-Gruppe',
@@ -243,6 +268,20 @@
 			{/each}
 		</div>
 	</section>
+
+	<!-- Smallgroups -->
+	<!-- hide for non-German speakers as those are only planned in German -->
+	{#if lang === 'de'}
+		<section class="page-section">
+			<h2>{tr.smallgroupsTitle}</h2>
+			<p>{tr.smallgroupsNote}</p>
+			<p>{tr.smallgroupsConcept}</p>
+			<p>
+				{tr.whatsappMoreInfoOnly}
+				<a href={whatsAppGroup}>{tr.whatsappInGroup}</a>.
+			</p>
+		</section>
+	{/if}
 
 	<!-- Hochschulgruppen -->
 	<section class="page-section">

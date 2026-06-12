@@ -259,13 +259,6 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 export const nextStepGroups: NextStepGroup[][] = [
 	[
 		{
-			title: sameText("Smallgroups"),
-			description: {
-				de: 'Gemeinsam wollen wir in der Bibel über Jesus lesen. Weitere Infos folgen hier.',
-				en: 'Together we want to read about Jesus in the Bible. More information will follow hier.'
-			}
-		},
-		{
 			logo: kings_cafe_logo,
 			title: { de: 'Internationales Studentencafé', en: 'International Student Café' },
 			description: {
