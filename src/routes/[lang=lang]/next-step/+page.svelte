@@ -48,18 +48,8 @@
 				en: 'Dates'
 			},
 			datesNote: {
-				de: `
-					Du kannst gerne bei den folgenden Events vorbeischauen.
-					Mehr Infos folgen später hier und
-				`,
-				en: `
-					Feel free to stop by the following events.
-					More infos will be posted here later and
-				`
-			},
-			datesNoteWhatsApp: {
-				de: 'in unserer WhatsApp-Gruppe',
-				en: 'in our WhatsApp group'
+				de: 'Du kannst gerne bei den folgenden Events vorbeischauen.',
+				en: 'Feel free to stop by the following events.'
 			},
 			datesFilterNote: {
 				de: 'Hinweis: Die Filter hier dienen rein der Übersichtlichkeit. Deutschsprechende Menschen sind auch sehr willkommen bei den Events "für Internationale", und genauso auch anders herum. Schau also gerne auch dort rein, wenn du magst :)',
@@ -96,6 +86,14 @@
 			location: {
 				de: 'Ort',
 				en: 'Location'
+			},
+			whatsappMoreInfoHereAnd: {
+				de: 'Mehr Infos folgen später hier und',
+				en: 'More infos will be posted here later and'
+			},
+			whatsappInGroup: {
+				de: 'in unserer WhatsApp-Gruppe',
+				en: 'in our WhatsApp group'
 			},
 			whatsappNote: {
 				de: 'Für kurzfristige Updates schaue in unsere WhatsApp Gruppe:',
@@ -163,7 +161,8 @@
 		<h2>{tr.datesTitle}</h2>
 		<p>
 			{tr.datesNote}
-			<a href={whatsAppGroup}>{tr.datesNoteWhatsApp}</a>.
+			{tr.whatsappMoreInfoHereAnd}
+			<a href={whatsAppGroup}>{tr.whatsappInGroup}</a>.
 		</p>
 		<p>{tr.datesFilterNote}</p>
 		<div class="wrapping-chips">
