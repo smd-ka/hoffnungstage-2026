@@ -165,6 +165,7 @@
 			{tr.datesNote}
 			<a href={whatsAppGroup}>{tr.datesNoteWhatsApp}</a>.
 		</p>
+		<p>{tr.datesFilterNote}</p>
 		<div class="wrapping-chips">
 			{#each EventFilterValues as filter}
 				<button
