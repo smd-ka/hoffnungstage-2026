@@ -47,16 +47,9 @@
 	}
 </script>
 
-<div class="flex flex-row flex-wrap justify-center gap-4">
+<div class="wrapping-chips">
 	{#each ProgramFilterValues as filter}
-		<button
-			type="button"
-			on:click={() => selectFilter(filter)}
-			class="rounded-full px-4 py-2 text-xs font-medium transition-all sm:text-sm
-				{value === filter
-				? 'bg-indigo-600 text-white shadow-md'
-				: 'bg-white/10 text-white/80 hover:bg-white/20 hover:text-white'}"
-		>
+		<button type="button" aria-pressed={value === filter} on:click={() => selectFilter(filter)}>
 			{tr[filter]}
 		</button>
 	{/each}

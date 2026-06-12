@@ -40,12 +40,12 @@
 		background-blend-mode: normal;
 	}
 
-	body > * {
+	body>* {
 		/* revert overflow scrolling background color */
 		@apply bg-white;
 	}
 
-	p > a {
+	p>a {
 		@apply underline hover:no-underline;
 	}
 
@@ -115,5 +115,24 @@
 
 	.horizontal-chips button[aria-pressed='false'] {
 		@apply bg-white/5 text-white/70;
+	}
+
+	/* wrapping chips (wrap, not attached) */
+	/* e.g.: ( alpha ) ( beta ) ( gamma ) */
+
+	.wrapping-chips {
+		@apply flex flex-row flex-wrap justify-center gap-4;
+	}
+
+	.wrapping-chips button {
+		@apply rounded-full px-4 py-2 text-xs font-medium transition-all sm:text-sm;
+	}
+
+	.wrapping-chips button[aria-pressed='false'] {
+		@apply bg-white/10 text-white/80 hover:bg-white/20 hover:text-white;
+	}
+
+	.wrapping-chips button[aria-pressed='true'] {
+		@apply bg-indigo-600 text-white shadow-md;
 	}
 }
