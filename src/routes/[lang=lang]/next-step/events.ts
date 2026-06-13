@@ -62,6 +62,8 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-06-15',
 		startTime: '19:00',
 		languages: ["de"],
+		location: sameText("Baggersee Weingarten"),
+		locationHref: "https://maps.app.goo.gl/hNB9PDCDAt6e7L64A",
 		targetGroup: "germans",
 	},
 	{
@@ -167,6 +169,8 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		date: '2026-07-01',
 		startTime: '19:00',
 		languages: ["de"],
+		location: sameText("Schlossgarten Karlsruhe"),
+		locationHref: "https://maps.app.goo.gl/CqiZ4JxVzBthE3Xm9",
 		targetGroup: "germans",
 	},
 	{
