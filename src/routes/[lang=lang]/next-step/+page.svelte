@@ -345,12 +345,13 @@
 	</section>
 
 	<!-- WhatsApp -->
+	<!-- alt= are superfluous => empty -->
 	<section class="page-section">
 		<p>
 			{tr.whatsappNote}
 		</p>
 		<a class="button" href={whatsAppGroup}>
-			<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
+			<img class="m-1 w-6" src={whatsapp_logo} alt="" />
 			{tr.whatsappButton}
 		</a>
 		<p>
