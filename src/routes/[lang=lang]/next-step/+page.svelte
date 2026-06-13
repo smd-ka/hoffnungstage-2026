@@ -113,8 +113,8 @@
 				en: 'More infos will be posted here later and'
 			},
 			whatsappMoreInfoOnly: {
-				de: 'Mehr Infos gibt es',
-				en: 'More infos are available'
+				de: 'Mehr Infos gibt es ',
+				en: 'More infos are available '
 			},
 			whatsappInGroup: {
 				de: 'in unserer WhatsApp-Gruppe',
@@ -277,8 +277,7 @@
 			<p>{tr.smallgroupsNote}</p>
 			<p>{tr.smallgroupsConcept}</p>
 			<p>
-				{tr.whatsappMoreInfoOnly}
-				<a href={whatsAppGroup}>{tr.whatsappInGroup}</a>.
+				{tr.whatsappMoreInfoOnly}<a href={whatsAppGroup}>{tr.whatsappInGroup}</a>.
 			</p>
 		</section>
 	{/if}
