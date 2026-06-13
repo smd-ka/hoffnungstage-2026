@@ -17,6 +17,10 @@
 
 	$: tr = createTranslator(
 		{
+			enumOr: {
+				de: ' oder ',
+				en: ', or '
+			},
 			title: {
 				de: 'Next <span class="title-italic">step</span>',
 				en: 'Next <span class="title-italic">step</span>'
@@ -69,13 +73,13 @@
 			},
 			// smallgroups are only planned in German
 			smallgroupsTitle: {
-				de: 'Dein Platz im Alltag: Smallgroups & Hauskreise'
+				de: 'Dein Platz im Alltag: Smallgroups / Hauskreise'
 			},
 			smallgroupsNote: {
 				de: `
 					Du suchst nach fester Gemeinschaft, echten Freundschaften
 					und einem Ort, an dem du im Unialltag auftanken kannst?
-					Parallel zu den großen Events starten unsere Kleingruppen.
+					Dann schnupper doch in unsere Kleingruppen rein.
 				`
 			},
 			smallgroupsConcept: {
@@ -87,6 +91,18 @@
 					Wir essen zusammen, lesen gemeinsam ein Evangelium, teilen unser Leben
 					und haben jede Menge Platz für all deine persönlichen Fragen.
 				`
+			},
+			smallgroupsContact: {
+				de: 'Falls du Bock auf eine Kleingruppe hast, sprich uns gerne an, entweder direkt an einem der Events, '
+			},
+			smallgroupsByMail: {
+				de: 'schreib uns per Mail'
+			},
+			smallgroupsByWhatsApp: {
+				de: 'kontaktiere uns per WhatsApp'
+			},
+			smallgroupsContactPost: {
+				de: '.'
 			},
 			hochschulgruppenTitle: {
 				de: 'Hochschulgruppen',
@@ -306,7 +322,9 @@
 			<p>{tr.smallgroupsNote}</p>
 			<p>{tr.smallgroupsConcept}</p>
 			<p>
-				{tr.whatsappMoreInfoOnly}<a href={whatsAppGroup}>{tr.whatsappInGroup}</a>.
+				{tr.smallgroupsContact}<a href={mailAddress}>{tr.smallgroupsByMail}</a>{tr.enumOr}<a
+					href={whatsAppGroup}>{tr.smallgroupsByWhatsApp}</a
+				>{tr.smallgroupsContactPost}
 			</p>
 		</section>
 	{/if}
