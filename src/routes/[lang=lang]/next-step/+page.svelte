@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { createTranslator, type TranslatedLanguage } from '$lib/language';
 	import { nextStepGroups } from './events';
-	import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+	import { faArrowUpRightFromSquare, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 	import Fa from 'svelte-fa';
 	import whatsapp_logo from '$lib/assets/logos/whatsapp_Digital_Glyph_White_RGB_2026.svg';
 	import { formatDateWithDayName } from '$lib/program/helpers';
@@ -143,6 +143,10 @@
 			whatsappButton: {
 				de: 'Trete unserer WhatsApp-Gruppe bei',
 				en: 'Join our WhatsApp group'
+			},
+			mailAlternativeNote: {
+				de: 'Alternativ kannst du uns auch per Mail erreichen:',
+				en: 'Otherwise you can also reach out to us by email:'
 			}
 		},
 		lang
@@ -348,6 +352,13 @@
 		<a class="button" href={whatsAppGroup}>
 			<img class="m-1 w-6" src={whatsapp_logo} alt="WhatsApp Logo" />
 			{tr.whatsappButton}
+		</a>
+		<p>
+			{tr.mailAlternativeNote}
+		</p>
+		<a class="button" href="mailto:{mailAddress}">
+			<Fa class="m-1" icon={faEnvelope} alt="" />
+			{mailAddress}
 		</a>
 	</section>
 </main>
