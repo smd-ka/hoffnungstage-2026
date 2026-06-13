@@ -342,7 +342,7 @@
 
 	<!-- WhatsApp -->
 	<section class="page-section">
-		<p class="text-lg">
+		<p>
 			{tr.whatsappNote}
 		</p>
 		<a class="button" href={whatsAppGroup}>
