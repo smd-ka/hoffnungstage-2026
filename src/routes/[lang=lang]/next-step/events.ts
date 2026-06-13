@@ -42,8 +42,22 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			en: "„Story Night“ – What’s your story?"
 		},
 		description: {
-			de: 'Grillen, See & Lebensgeschichten mit Jesus',
-			en: 'BBQ, Lake & Life Stories with Jesus'
+			de: `
+				Jeder Mensch hat eine Geschichte.
+				Nach einem entspannten, gemeinsamen Grillen am See
+				teilen 3–4 Personen ganz ehrlich prägende Momente aus ihrem Leben
+				und erzählen, welche Rolle Jesus darin spielt.
+				Danach ist Zeit, in kleinen Runden bei gemütlicher Atmosphäre am Wasser
+				über deine eigenen Prägungen zu quatschen und um Fragen zu stellen.
+			`,
+			en: `
+				Everyone has a story.
+				After a relaxed lakeside barbecue,
+				3–4 people will share some of the most formative moments of their lives
+				and talk about the role Jesus plays in them.
+				Afterward, there’s time to chat in small groups by the water in a cozy atmosphere
+				about your own experiences and to ask questions.
+			`,
 		},
 		date: '2026-06-15',
 		startTime: '19:00',
