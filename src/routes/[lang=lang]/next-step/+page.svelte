@@ -112,13 +112,29 @@
 				de: 'Mehr Infos folgen später hier und',
 				en: 'More infos will be posted here later and'
 			},
-			whatsappMoreInfoOnly: {
-				de: 'Mehr Infos gibt es ',
-				en: 'More infos are available '
-			},
 			whatsappInGroup: {
 				de: 'in unserer WhatsApp-Gruppe',
 				en: 'in our WhatsApp group'
+			},
+			whatsappLocationNotePre: {
+				de: 'Der genaue Standort wird zeitnah ',
+				en: 'The exact location will be timely shared '
+			},
+			whatsappLocationNotePost: {
+				de: ' geteilt.',
+				en: '.'
+			},
+			mailLocationNotePre: {
+				de: 'Falls du kein WhatsApp hast, melde dich gern etwas vorher bei uns ',
+				en: 'If you don’t use WhatsApp, feel free to contact us '
+			},
+			mailBy: {
+				de: 'per Mail',
+				en: 'by email'
+			},
+			mailLocationNotePost: {
+				de: '.',
+				en: ' a little before the start.'
 			},
 			whatsappNote: {
 				de: 'Für kurzfristige Updates schaue in unsere WhatsApp Gruppe:',
@@ -154,6 +170,7 @@
 	}
 
 	const whatsAppGroup = 'https://chat.whatsapp.com/LhYduQiTlka25vWqnYomJz';
+	const mailAddress = 'next-step@hoffnungstage-ka.de';
 </script>
 
 <svelte:head>
@@ -260,6 +277,14 @@
 								{/if}
 							</p>
 						</div>
+						{#if event.exactLocationRequired ?? false}
+							<p class="text-white/70">
+								{tr.whatsappLocationNotePre}<a href={whatsAppGroup}>{tr.whatsappInGroup}</a
+								>{tr.whatsappLocationNotePost}
+								{tr.mailLocationNotePre}<a href="mailto:{mailAddress}">{tr.mailBy}</a
+								>{tr.mailLocationNotePost}
+							</p>
+						{/if}
 					</div>
 					{#if event.href !== undefined}
 						<Fa icon={faArrowUpRightFromSquare} />

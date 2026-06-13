@@ -64,6 +64,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		languages: ["de"],
 		location: sameText("Baggersee Weingarten"),
 		locationHref: "https://maps.app.goo.gl/hNB9PDCDAt6e7L64A",
+		exactLocationRequired: true,
 		targetGroup: "germans",
 	},
 	{
@@ -171,6 +172,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 		languages: ["de"],
 		location: sameText("Schlossgarten Karlsruhe"),
 		locationHref: "https://maps.app.goo.gl/CqiZ4JxVzBthE3Xm9",
+		exactLocationRequired: true,
 		targetGroup: "germans",
 	},
 	{

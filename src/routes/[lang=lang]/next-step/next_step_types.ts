@@ -22,6 +22,7 @@ export interface NextStepLocalEvent {
 	languages: readonly SupportedLanguage[];
 	location?: TranslatedText;
 	locationHref?: string;
+	exactLocationRequired?: boolean;
 	targetGroup: NextStepTargetGroup;
 }
 
