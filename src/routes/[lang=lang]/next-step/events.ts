@@ -103,6 +103,7 @@ export const nextStepEventsDefs: NextStepEvent[] = [
 			de: "KIT Egon-Eiermann-Hörsaal (Geb. 20.40)",
 			en: "KIT Egon-Eiermann-Hörsaal (Building 20.40)"
 		},
+		locationHref: "https://maps.app.goo.gl/oHcaoZHdo1HGi1Zu5",
 		targetGroup: "both",
 	},
 	{
